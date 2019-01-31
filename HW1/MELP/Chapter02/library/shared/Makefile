@@ -2,7 +2,16 @@
 #PIC=Position independent code for x86 architectures
 CFLAGS := -Wall -g -fPIC -I../inc
 OBJECTS := testlib.o
- 
+
+ifeq ($(PLATFORM),ARM)
+CC=arm-cortex_a8-linux-gnueabihf-gcc
+endif
+
+ifeq ($(PLATFORM),QEMU)
+CC=arm-unknown-linux-gnueabi-gcc
+endif
+
+
 all: libtest.so
 
 # Build the shared library

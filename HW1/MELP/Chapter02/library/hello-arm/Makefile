@@ -2,7 +2,7 @@ CFLAGS := -c -Wall -I../inc
 PROGS := hello-arm-static hello-arm-shared
 
 ifeq ($(PLATFORM),ARM)
-CC=arm-cortex_a8-linux-gnueabihf-gcc
+CC = arm-cortex_a8-linux-gnueabihf-gcc
 endif
 
 ifeq ($(PLATFORM),QEMU)
