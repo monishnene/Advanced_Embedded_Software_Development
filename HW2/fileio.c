@@ -17,6 +17,8 @@
 #define READONLY 444
 #define WRITEONLY 222
 #define READWRITE 666
+#define EXECUTE 111
+#define ALL 777
 
 /* Permission codes user-group-ownership
 0 = ---
