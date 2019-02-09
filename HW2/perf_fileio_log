@@ -1,0 +1,16 @@
+# started on Fri Feb  8 20:07:01 2019
+
+
+ Performance counter stats for './fileio.elf commandline_test_string':
+
+         18.151178      task-clock (msec)         #    0.409 CPUs utilized          
+                24      context-switches          #    0.001 M/sec                  
+                 0      cpu-migrations            #    0.000 K/sec                  
+               499      page-faults               #    0.027 M/sec                  
+   <not supported>      cycles                                                      
+   <not supported>      instructions                                                
+   <not supported>      branches                                                    
+   <not supported>      branch-misses                                               
+
+       0.044384118 seconds time elapsed
+

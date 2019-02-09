@@ -1,5 +1,6 @@
 /***********************************************************************
  * fileio.c
+ *
  * Advanced Embedded Software Development
  * Author: Monish Nene
  * Date: 02/04/2018
@@ -53,79 +54,14 @@ void modify_permissions(uint8_t* filename,uint16_t permit)
 	sprintf(command,"chmod %d %s",permit,filename);
 	system(command);
 	free(command);
-}
-
-void flush_file(uint8_t* filename)
-{	
-	FILE* fptr=fopen(filename, "r");
-	uint32_t i=0,file_size=0;
-	if(fptr!=NULL)
-	{
-		printf("Flushing data of file %s\n",filename);
-		fseek(fptr,0,SEEK_END);
-		file_size=ftell(fptr);
-		fseek(fptr,0,SEEK_SET);
-		uint8_t* buffer = (uint8_t*)malloc(file_size);
-		i=fread(buffer,1,file_size,fptr);
-		for(i=0;i<file_size;i++)
-		{
-			putchar(*(buffer+i));
-		}
-		free(buffer);
-		fclose(fptr);
-	}
-	else
-	{
-		printf("File %s not found\n",filename);
-	}
-	return;
-}
-
-void read_char(uint8_t* filename,uint8_t* buffer)
-{	
-	FILE* fptr=fopen(filename, "r");	
-	uint32_t i=0,file_size=0;
-	if(fptr!=NULL)
-	{
-		i=fread(buffer,1,1,fptr);
-	}
-	else
-	{
-		printf("File %s not found\n",filename);
-	}
-	fclose(fptr);
-	return;
-}
-
-void read_str(uint8_t* filename,uint8_t* buffer)
-{	
-	FILE* fptr=fopen(filename, "r");
-	uint32_t i=0,file_size=0;
-	if(fptr!=NULL)
-	{
-		fseek(fptr,0,SEEK_END);
-		file_size=ftell(fptr);
-		fseek(fptr,0,SEEK_SET);
-		uint8_t* temp = (uint8_t*)malloc(file_size);
-		i=fread(temp,1,file_size,fptr);
-		while(*(temp+i)!=0)
-		{
-			*(buffer+i)=*(temp+i++);
-		}
-	}
-	else
-	{
-		printf("File %s not found\n",filename);
-	}
-	fclose(fptr);
-	return;
-}
+}	
 	
 int32_t main(int32_t argc, uint8_t **argv)
 {
 	uint8_t i=0,j=0,counter=0,temp_char=0; 
 	uint8_t* str = (uint8_t*) malloc(STRING_SIZE);
-	uint8_t *filename,*buffer;	
+	uint8_t *filename,*buffer;
+	FILE* fptr;
 	uint8_t* data_read = (uint8_t*) malloc(STRING_SIZE);
 	if(argc==1)
 	{
@@ -144,17 +80,18 @@ int32_t main(int32_t argc, uint8_t **argv)
 	}
 	buffer="This string is appended\n";
 	filename="test.txt";
-	printf("Input string is %s\n",str);
 	file_write(filename,str,strlen(str));	
 	modify_permissions(filename,WRITEONLY);	
 	file_append(filename,buffer,strlen(buffer));
+	fptr=fopen(filename, "r");
 	modify_permissions(filename,READONLY);
-	read_char(filename,&temp_char);
-	printf("read char output = %c\n",temp_char);
-	read_str(filename,buffer);
-	printf("read string output = %s\n",buffer);
-	flush_file(filename);	
+	temp_char=(uint8_t)fgetc(fptr);
+	printf("read char output = %c\n",temp_char);	
+	str=fgets(str,STRING_SIZE,fptr);
+	printf("read string output = %s\n",str);
 	modify_permissions(filename,READWRITE);
+	fflush(stdin);
+	fclose(fptr);
 	free(str);
 	free(data_read);
 	return 0;

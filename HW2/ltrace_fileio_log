@@ -1,0 +1,116 @@
+  0.000000 SYS_brk(0)                                      = 0x561d87291000 <0.000048>
+  0.000751 SYS_access("/etc/ld.so.nohwcap", 00)            = -2 <0.000100>
+  0.000221 SYS_access("/etc/ld.so.preload", 04)            = -2 <0.000089>
+  0.000485 SYS_openat(0xffffff9c, 0x7f3b08470428, 0x80000, 0) = 3 <0.000084>
+  0.000124 SYS_fstat(3, 0x7ffedac665a0)                    = 0 <0.000014>
+  0.000029 SYS_mmap(0, 0x157db, 1, 2)                      = 0x7f3b08660000 <0.000037>
+  0.000061 SYS_close(3)                                    = 0 <0.000012>
+  0.000044 SYS_access("/etc/ld.so.nohwcap", 00)            = -2 <0.000076>
+  0.000204 SYS_openat(0xffffff9c, 0x7f3b08678dd0, 0x80000, 0) = 3 <0.000107>
+  0.001100 SYS_read(3, "\177ELF\002\001\001\003", 832)     = 832 <0.000577>
+  0.000659 SYS_fstat(3, 0x7ffedac66600)                    = 0 <0.000029>
+  0.000051 SYS_mmap(0, 8192, 3, 34)                        = 0x7f3b0865e000 <0.000051>
+  0.000091 SYS_mmap(0, 0x3f0ae0, 5, 2050)                  = 0x7f3b0805e000 <0.000037>
+  0.000066 SYS_mprotect(0x7f3b08245000, 2097152, 0)        = 0 <0.000027>
+  0.000044 SYS_mmap(0x7f3b08445000, 0x6000, 3, 2066)       = 0x7f3b08445000 <0.000039>
+  0.000074 SYS_mmap(0x7f3b0844b000, 0x3ae0, 3, 50)         = 0x7f3b0844b000 <0.000183>
+  0.000229 SYS_close(3)                                    = 0 <0.000016>
+  0.000061 SYS_arch_prctl(4098, 0x7f3b0865f4c0, 0x7f3b0865fe10, 0x7f3b0865e998) = 0 <0.000030>
+  0.000137 SYS_mprotect(0x7f3b08445000, 16384, 1)          = 0 <0.000027>
+  0.000052 SYS_mprotect(0x561d85ddd000, 4096, 1)           = 0 <0.000026>
+  0.000191 SYS_mprotect(0x7f3b08676000, 4096, 1)           = 0 <0.000029>
+  0.000052 SYS_munmap(0x7f3b08660000, 88027)               = 0 <0.000043>
+  0.004569 malloc(100 <unfinished ...>
+  0.000557     SYS_brk(0)                                  = 0x561d87291000 <0.000046>
+  0.000046     SYS_brk(0x561d872b2000)                     = 0x561d872b2000 <0.000018>
+  0.000054 <... malloc resumed> )                          = 0x561d87291260 <0.000646>
+  0.000030 malloc(100)                                     = 0x561d872912d0 <0.000118>
+  0.000172 strlen("commandline_test_string ")              = 24 <0.000185>
+  0.000222 fopen("test.txt", "w" <unfinished ...>
+  0.000556     SYS_openat(0xffffff9c, 0x561d85bdce63, 577, 438) = 3 <0.000164>
+  0.000202 <... fopen resumed> )                           = 0x561d87291340 <0.000750>
+  0.000031 fwrite("commandline_test_string ", 1, 24, 0x561d87291340 <unfinished ...>
+  0.000344     SYS_fstat(3, 0x7ffedac66d70)                = 0 <0.000030>
+  0.000056 <... fwrite resumed> )                          = 24 <0.000392>
+  0.000029 fclose(0x561d87291340 <unfinished ...>
+  0.000298     SYS_write(3, "commandline_test_string ", 24) = 24 <0.000138>
+  0.000165     SYS_close(3)                                = 0 <0.000078>
+  0.000128 <... fclose resumed> )                          = 0 <0.000582>
+  0.000031 malloc(100)                                     = 0x561d87291570 <0.000281>
+  0.000324 sprintf("chmod 222 test.txt", "chmod %d %s", 222, "test.txt") = 18 <0.000153>
+  0.000308 system("chmod 222 test.txt" <unfinished ...>
+  0.000176     SYS_rt_sigaction(2, 0x7ffedac66c20, 0x7ffedac66cc0, 8) = 0 <0.000050>
+  0.000070     SYS_rt_sigaction(3, 0x7ffedac66c20, 0x7ffedac66cc0, 8) = 0 <0.000028>
+  0.000054     SYS_rt_sigprocmask(0, 0x7ffedac66e58, 0x7ffedac66dd0, 8) = 0 <0.000028>
+  0.000053     SYS_clone(0x100011, 0, 0x7ffedac66d8c, 8)   = 0x3449 <0.000332>
+  0.000377     SYS_wait4(0x3449, 0x7ffedac66d88, 0, 0)     = 0x3449 <0.005361>
+  0.005482     SYS_rt_sigaction(2, 0x7ffedac66c20, 0, 8)   = 0 <0.000044>
+  0.000073     SYS_rt_sigaction(3, 0x7ffedac66c20, 0, 8)   = 0 <0.000028>
+  0.000054     SYS_rt_sigprocmask(2, 0x7ffedac66dd0, 0, 8) = 0 <0.000027>
+  0.000062 --- SIGCHLD (Child exited) ---
+  0.000022 <... system resumed> )                          = 0 <0.006418>
+  0.000036 free(0x561d87291570)                            = <void> <0.000414>
+  0.000460 strlen("This string is appended\n")             = 24 <0.000187>
+  0.000225 fopen("test.txt", "a" <unfinished ...>
+  0.000178     SYS_openat(0xffffff9c, 0x561d85bdce63, 1089, 438) = 3 <0.000067>
+  0.000077     SYS_lseek(3, 0, 2)                          = 24 <0.000017>
+  0.000040 <... fopen resumed> )                           = 0x561d87291340 <0.000288>
+  0.000029 fwrite("This string is appended\n", 1, 24, 0x561d87291340 <unfinished ...>
+  0.000515     SYS_fstat(3, 0x7ffedac66d70)                = 0 <0.000041>
+  0.000067 <... fwrite resumed> )                          = 24 <0.000570>
+  0.000031 fclose(0x561d87291340 <unfinished ...>
+  0.000153     SYS_write(3, "This string is appended\n", 24) = 24 <0.000154>
+  0.000181     SYS_close(3)                                = 0 <0.000032>
+  0.000078 <... fclose resumed> )                          = 0 <0.000403>
+  0.000031 fopen("test.txt", "r" <unfinished ...>
+  0.000166     SYS_openat(0xffffff9c, 0x561d85bdce63, 0, 0) = 3 <0.000058>
+  0.000085 <... fopen resumed> )                           = 0x561d87291340 <0.000245>
+  0.000028 malloc(100)                                     = 0x561d87291570 <0.006972>
+  0.008144 sprintf("chmod 444 test.txt", "chmod %d %s", 444, "test.txt") = 18 <0.000503>
+  0.001525 system("chmod 444 test.txt" <unfinished ...>
+  0.005065     SYS_rt_sigaction(2, 0x7ffedac66c20, 0x7ffedac66cc0, 8) = 0 <0.000087>
+  0.000101     SYS_rt_sigaction(3, 0x7ffedac66c20, 0x7ffedac66cc0, 8) = 0 <0.000031>
+  0.000060     SYS_rt_sigprocmask(0, 0x7ffedac66e58, 0x7ffedac66dd0, 8) = 0 <0.000030>
+  0.000057     SYS_clone(0x100011, 0, 0x7ffedac66d8c, 8)   = 0x344b <0.000186>
+  0.000227     SYS_wait4(0x344b, 0x7ffedac66d88, 0, 0)     = 0x344b <0.005665>
+  0.005796     SYS_rt_sigaction(2, 0x7ffedac66c20, 0, 8)   = 0 <0.000092>
+  0.000125     SYS_rt_sigaction(3, 0x7ffedac66c20, 0, 8)   = 0 <0.000028>
+  0.000055     SYS_rt_sigprocmask(2, 0x7ffedac66dd0, 0, 8) = 0 <0.000028>
+  0.000057 --- SIGCHLD (Child exited) ---
+  0.000207 <... system resumed> )                          = 0 <0.011560>
+  0.000203 free(0x561d87291570)                            = <void> <0.000166>
+  0.000214 fgetc(0x561d87291340 <unfinished ...>
+  0.000115     SYS_fstat(3, 0x7ffedac66e10)                = 0 <0.000027>
+  0.000039     SYS_read(3, "commandline_test_string This str"..., 4096) = 48 <0.000020>
+  0.000117 <... fgetc resumed> )                           = 'c' <0.000265>
+  0.000024 printf("read char output = %c\n", 'c' <unfinished ...>
+  0.000181     SYS_fstat(1, 0x7ffedac66790)                = 0 <0.000025>
+  0.000033     SYS_write(1, "read char output = c\n", 21)  = 21 <0.001022>
+  0.001769 <... printf resumed> )                          = 21 <0.001961>
+  0.000050 fgets("ommandline_test_string This stri"..., 100, 0x561d87291340) = 0x561d87291260 <0.000338>
+  0.000909 printf("read string output = %s\n", "ommandline_test_string This stri"... <unfinished ...>
+  0.000385     SYS_write(1, "read string output = ommandline_"..., 68) = 68 <0.000558>
+  0.000585     SYS_write(1, "\n", 1)                       = 1 <0.000070>
+  0.000112 <... printf resumed> )                          = 69 <0.001069>
+  0.000035 malloc(100)                                     = 0x561d87291570 <0.000149>
+  0.000187 sprintf("chmod 666 test.txt", "chmod %d %s", 666, "test.txt") = 18 <0.000279>
+  0.000434 system("chmod 666 test.txt" <unfinished ...>
+  0.000512     SYS_rt_sigaction(2, 0x7ffedac66c20, 0x7ffedac66cc0, 8) = 0 <0.000072>
+  0.000090     SYS_rt_sigaction(3, 0x7ffedac66c20, 0x7ffedac66cc0, 8) = 0 <0.000028>
+  0.000337     SYS_rt_sigprocmask(0, 0x7ffedac66e58, 0x7ffedac66dd0, 8) = 0 <0.000049>
+  0.000092     SYS_clone(0x100011, 0, 0x7ffedac66d8c, 8)   = 0x344d <0.000282>
+  0.000409     SYS_wait4(0x344d, 0x7ffedac66d88, 0, 0)     = 0x344d <0.014822>
+  0.015066     SYS_rt_sigaction(2, 0x7ffedac66c20, 0, 8)   = 0 <0.000042>
+  0.000069     SYS_rt_sigaction(3, 0x7ffedac66c20, 0, 8)   = 0 <0.000026>
+  0.000051     SYS_rt_sigprocmask(2, 0x7ffedac66dd0, 0, 8) = 0 <0.000026>
+  0.000052 --- SIGCHLD (Child exited) ---
+  0.000021 <... system resumed> )                          = 0 <0.016693>
+  0.000040 free(0x561d87291570)                            = <void> <0.000164>
+  0.000215 fflush(0x7f3b08449a00)                          = 0 <0.017351>
+  0.017501 fclose(0x561d87291340 <unfinished ...>
+  0.001961     SYS_close(3)                                = 0 <0.000829>
+  0.000776 <... fclose resumed> )                          = 0 <0.002257>
+  0.001358 free(0x561d87291260)                            = <void> <0.001474>
+  0.001542 free(0x561d872912d0)                            = <void> <0.000151>
+  0.000211 SYS_exit_group(0 <no return ...>
+  0.000169 +++ exited (status 0) +++
