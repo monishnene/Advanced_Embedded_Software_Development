@@ -1,0 +1,1 @@
+Transfer image to sd card = sudo dd if="path of image" of=/dev/sd"sdcardletter" bs=1M
