@@ -25,6 +25,9 @@
 		CC=arm-unknown-linux-gnueabi-gcc
 	endif
 
+	ifeq ($(PLATFORM),BBG)
+		CC = arm-linux-gcc
+	endif
 
 .PHONY:	compile-all \
 	clean \
