@@ -1,0 +1,15 @@
+set sysroot ~/buildroot/output/staging
+target extended-remote  10.0.0.133:9002
+remote put merge_sort.elf merge_sort.elf
+set remote exec-file merge_sort.elf
+file merge_sort.elf
+break main
+break 94
+break 99
+run
+c
+p i
+s
+c
+p i
+c

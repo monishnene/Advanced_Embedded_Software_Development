@@ -77,3 +77,7 @@ perf:
 	sudo	perf	stat	-o	perf_fileio_log	./fileio.elf commandline_test_string 
 
 trace_all:	perf	ltrace	strace
+
+
+send:
+	scp fileio.elf  root@10.0.0.133:/usr/bin/

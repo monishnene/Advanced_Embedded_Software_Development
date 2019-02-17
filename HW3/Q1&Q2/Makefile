@@ -1,4 +1,4 @@
-	common_sources=	cron_sort.c
+	common_sources=	data_structure.c
 	
 	common_includes = 
 
@@ -40,7 +40,7 @@
 	trace_all\
 	send
 
-build:	cron_sort.elf	
+build:	data_structure.elf	
 
 %.elf:	$(objects)	$(deps)	
 	$(CC)	$(flags)	-o	$@	$(objects)
@@ -81,3 +81,7 @@ trace_all:	perf	ltrace	strace
 
 send:
 	scp fileio.elf	root@10.0.0.133:/
+
+run:
+	./data_structure.elf Tiger Dog  Cat Elephant Frog Goat Sheep Lion Eagle Shark Whale Dolphin Rhino Panda Bear  Monkey Pig Giraffe Zebra Horse Rabbit Wolf Chicken Buffalo
+
