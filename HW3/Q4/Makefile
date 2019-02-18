@@ -1,83 +1,28 @@
-	common_sources=	data_structure.c
+obj-m += data_structure.o
+
+PATH1=~/buildroot/output/build/linux-4796173fc58688055a99a1cef19a839174067220
+PWD=$(shell pwd)
+PATH2=~/buildroot/output/host/bin/arm-buildroot-linux-uclibcgnueabihf-
+PATH3=/lib/modules/$(shell uname -r)/build
+
+ifeq ($(PLATFORM),BBG)
 	
-	common_includes = 
+	build_command=make	ARCH=arm	CROSS_COMPILE=$(PATH2)	-C	$(PATH1)	M=$(PWD)	modules
+	clean_command=make    -C      $(PATH1)        M=$(PWD)        clean
+else
+	build_command=make	-C	$(PATH3)	M=$(PWD)	modules
+	clean_command=make	-C	$(PATH3)	M=$(PWD)	clean
+endif
 
-	common_flags =	-g \
-			-O0 \
-			-lpthread\
-			-pthread \
-			-lrt \
-			-lm \
-			-lc
-
-	CC=gcc
-	flags =	$(common_flags)
-	sources =	$(common_sources)
-	includes =	$(common_includes)
-	objects:= $(sources:.c=.o)
-	deps:= $(sources:.c=.d)	
-
-	ifeq ($(PLATFORM),ARM)
-		CC =arm-cortex_a8-linux-gnueabihf-gcc
-	endif
-
-	ifeq ($(PLATFORM),QEMU)
-		CC=arm-unknown-linux-gnueabi-gcc
-	endif
-
-	ifeq ($(PLATFORM),BBG)
-		CC =~/buildroot/output/host/usr/bin/arm-linux-gcc
-	endif
-
-.PHONY:	compile-all \
-	clean \
-	build \
-	run \
-	local\
-	strace\
-	ltrace\
-	perf\
-	trace_all\
+.PHONY:	build\
+	clean\
 	send
 
-build:	data_structure.elf	
+build:
+	$(build_command)
 
-%.elf:	$(objects)	$(deps)	
-	$(CC)	$(flags)	-o	$@	$(objects)
-
-%.i:%.c		$(includes)
-	$(CC)	$(flags)	-E	$<	-o	$@
-
-%.asm:%.c	$(includes)
-	$(CC)	$(flags)	-S	$<	-o	$@
-
-%.o:%.c		$(includes)
-	$(CC)	$(flags)	-c	$<	-o	$@
-
-%.o:%.s		$(includes)
-	$(CC)	$(flags)	-c	$<	-o	$@
-	
-%.d:%.c		$(includes)
-	$(CC)	$(flags)	-M	$<	-o	$@	
-
-%.d:%.s		$(includes)
-	$(CC)	$(flags)	-M	$<	-o	$@
-
-compile-all:	$(objects) 
-
-clean :
-	rm	-f	*.o	*.s	*.i	*.o	*.d	*.elf *.swp
-
-strace:
-	sudo	strace	-C	-r	-tt	-T	-o	strace_fileio_log	./fileio.elf commandline_test_string 
-
-ltrace:
-	sudo	ltrace	-n4	-T	-r	-S	-o	ltrace_fileio_log	./fileio.elf commandline_test_string 
-
-perf:
-	sudo	perf	stat	-o	perf_fileio_log	./fileio.elf commandline_test_string 
-
-trace_all:	perf	ltrace	strace
+clean:
+	$(clean_command)
 
 send:
-	scp fileio.elf	root@10.0.0.133:/
+	scp	$1	root@$2:/
