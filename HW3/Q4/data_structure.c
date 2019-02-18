@@ -26,21 +26,23 @@ MODULE_PARM_DESC(filter,"Animal filter -> ");
 module_param(count_greater_than,uint,S_IRUGO);
 MODULE_PARM_DESC(count_greater_than,"count_greater_than -> ");
 
-unsigned char* hash_table;
-unsigned char** unique_array;
-int unique_animals;
-unsigned char* animals[ECOSYSTEM_SIZE];
 
 typedef struct
 {
-	unsigned char** animal;
+	unsigned char* animal;
 	struct list_head list;
 }node_t;
 
 unsigned char* hash_table;
+unsigned char** unique_array;
+int unique_animals;
+unsigned char* animals[ECOSYSTEM_SIZE];
+node_t* nodes[50];	
+unsigned char* hash_table;
+unsigned char node_counter=0;
 
 unsigned char raw_size=50,
-*raw[50]={"Tiger","Dog","Cat","Elephant","Frog","Goat","Sheep","Lion","Eagle","Shark","Whale","Dolphin","Rhino","Panda","Bear","Monkey","Pig","Giraffe","Zebra","Horse","Rabbit","Wolf","Chicken","Buffalo","Panda","Bear","Monkey","Pig","Goat","Sheep","Lion","Eagle","Shark","Whale","Dolphin","Rhino","Panda","Bear","Monkey","Pig","Giraffe","Zebra","Sheep","Lion","Eagle","Shark","Whale","Dolphin","Rhino","Dolphin"};
+*raw[50]={"Tiger","Dog","Cat","Elephant","Frog","Dog","Sheep","Lion","Eagle","Shark","Whale","Dolphin","Rhino","Panda","Bear","Monkey","Lion","Giraffe","Zebra","Horse","Rabbit","Wolf","Chicken","Buffalo","Panda","Bear","Monkey","Lion","Dog","Sheep","Lion","Eagle","Shark","Whale","Dolphin","Rhino","Panda","Bear","Monkey","Lion","Giraffe","Zebra","Sheep","Lion","Eagle","Shark","Whale","Dolphin","Rhino","Dolphin"};
 
 
 unsigned int hash(unsigned char* str)
@@ -49,7 +51,8 @@ unsigned int hash(unsigned char* str)
 	unsigned int i=0;
 	while(*(str+i)!=0)
 	{
-		key=*(str+i)**(str+i++)*key;		
+		key=*(str+i)*(*(str+i))*key;
+		i++;
 	}
 	key=key%HASH_TABLE_SIZE;
 	return key;
@@ -58,34 +61,22 @@ unsigned int hash(unsigned char* str)
 void link_list_operation(unsigned char* animal_type,unsigned int count)
 {
 	node_t *ptr,my_head;
-	node_t* nodes[unique_animals];
+	unsigned int i=0,size=0,unique_animals_copy=0;
 	INIT_LIST_HEAD(&my_head.list);
 	printk("\ncount_greater_than = %d\n",count);
-	static unsigned char none_str[]="none";
-	unsigned int i=0,node_counter=0,size=0,key=0,unique_animals_copy=0,j=0;
 	if(animal_type==NULL)
 	{
 		printk("Animal Type is NULL\n");
-		*animal_type=none_str;
 		unique_animals_copy=unique_animals;
 		for(i=0;i<unique_animals;i++)
 		{
 			if(*(hash_table+hash(unique_array[i]))>count)
 			{
 				nodes[node_counter]=(node_t*)kmalloc(sizeof(node_t*),GFP_KERNEL);
-				j=0;
-				printk("Single node allocated for %s\n",animal_type);
-				while(*(unique_array[i]+j)!=NULL)
-				{
-					*((nodes[node_counter]->animal)+j)=*(unique_array[i]+j);
-					j++;				
-				}
+				printk("Single node allocated for %s\n",unique_array[i]);
+				nodes[node_counter]->animal=unique_array[i];
 				list_add(&(nodes[node_counter]->list),&my_head.list);
 				node_counter++;
-			}
-			else
-			{
-				unique_animals_copy--;
 			}
 		}
 		size=unique_animals_copy;
@@ -93,19 +84,13 @@ void link_list_operation(unsigned char* animal_type,unsigned int count)
 	else
 	{		
 		printk("Animal Type is %s\n",animal_type);
-		size=*(hash_table+hash(*animal_type));
+		size=*(hash_table+hash(animal_type));
 		if(size>count)
 		{			
 			size=1; 
-			node_t* nodes[size];
 			nodes[node_counter]=(node_t*)kmalloc(sizeof(node_t*),GFP_KERNEL);
-			printk("Single node allocated for %s\n",animal_type);			
-			j=0;
-			while(*(animal_type+j)!=NULL)
-			{
-				*((nodes[node_counter]->animal)+j)=*(animal_type+j);
-				j++;
-			}
+			printk("Single node allocated for %s\n",animal_type);
+			nodes[node_counter]->animal=animal_type;
 			list_add(&(nodes[node_counter]->list),&my_head.list);	
 			node_counter++;
 		}
@@ -115,10 +100,11 @@ void link_list_operation(unsigned char* animal_type,unsigned int count)
 			size=0; 
 		}
 	}
-	printk("\n\nSet 1:\nAnimals in Ecosystem\nFilter 1: %s, Filter 2: count_greater_than=%d\n",animal_type,count);
+	printk("\n\nSet 2:\nAnimals in Ecosystem\nFilter 1: %s, Filter 2: count_greater_than=%d\n",animal_type,count);
+	printk("\nData Structure used is LinkList\nSize of each node = %d bytes and total nodes = %d\nTotal Space Allocated = %d bytes\n",sizeof(node_t),node_counter,sizeof(node_t)*node_counter);
 	list_for_each_entry(ptr,&my_head.list,list)
 	{
-		printk("%s\t",*(ptr->animal));
+		printk("%s\t",ptr->animal);
 	}
 	printk("\n");
 }
@@ -157,15 +143,14 @@ unsigned int bubble_sort_alphabetical(int count,unsigned char** data)
 
 static int __init data_structure_init(void)
 {
-	unsigned int i=0;
-	unsigned char* ptr;
+	unsigned int i=0,key=0;
 	unique_animals=raw_size-1;
 	unique_array=(unsigned char**)kmalloc(unique_animals*sizeof(unsigned char*),GFP_KERNEL);
 	hash_table =(unsigned char*)kmalloc(unique_animals,GFP_KERNEL);
-	for(i=1;i<raw_size;i++)
+	for(i=0;i<raw_size;i++)
 	{
-		*(unique_array+i-1)=(unsigned char*)kmalloc(ANIMAL_NAME_SIZE,GFP_KERNEL);
-		*(unique_array+i-1)=strcpy(*(unique_array+i-1),raw[i]);
+		*(unique_array+i)=(unsigned char*)kmalloc(ANIMAL_NAME_SIZE,GFP_KERNEL);
+		*(unique_array+i)=strcpy(*(unique_array+i),raw[i]);
 	}
 	unique_animals=bubble_sort_alphabetical(unique_animals,unique_array);
 	printk("\nUnique Animals in the Ecosystem are\n");
@@ -185,9 +170,10 @@ static int __init data_structure_init(void)
 	printk("\n\nSet 1:\nAnimals in Ecosystem\n");
 	for(i=0;i<unique_animals;i++)
 	{
-		printk("%s=%d\t",unique_array[i],*(hash_table+hash(unique_array[i])));
+		key=hash(unique_array[i]);
+		printk("key=%d\t%s=%d,",key,unique_array[i],*(hash_table+key));
 	}
-	printk("\n\nData Structure used is Hash Table\nSize of each node = %ld bytes and total nodes = %d\nTotal Space Allocated = %ld bytes\n",sizeof(unsigned char*),unique_animals,sizeof(unsigned char*)*unique_animals);
+	printk("\n\nData Structure used is Hash Table\nSize of each node = %d bytes and total nodes = %d\nTotal Space Allocated = %d bytes\n",sizeof(unsigned char*),unique_animals,sizeof(unsigned char*)*unique_animals);
 	link_list_operation(filter,count_greater_than);
 	return 0;
 }
@@ -195,6 +181,7 @@ static int __init data_structure_init(void)
 static void __exit data_structure_exit(void)
 {
 	int i=0; 
+	printk("\nFreeing List of Animals\n");
 	for(i=0;i<ECOSYSTEM_SIZE;i++)
 	{
 		kfree(animals[i]);
@@ -203,7 +190,14 @@ static void __exit data_structure_exit(void)
 	{
 		kfree(unique_array[i]);
 	}
-	kfree(hash_table);
+	printk("\nFreeing HashTable of Set1\n");
+	kfree(hash_table);	
+	printk("\nFreeing LinkList of Set2\n");
+	for(i=0;i<node_counter;i++)
+	{
+		kfree(nodes[i]);
+	}
+	printk("\nExit Succesful\n");
 }
 
 module_init(data_structure_init);
