@@ -17,6 +17,15 @@ MODULE_AUTHOR("Monish Nene");
 MODULE_DESCRIPTION("Kernel Module Data Structure for Ecosystem");
 MODULE_VERSION("1.0");
 
+
+static char *filter = NULL;
+static unsigned int count_greater_than = 0;
+
+module_param(filter,charp,S_IRUGO);
+MODULE_PARM_DESC(filter,"Animal filter -> ");
+module_param(count_greater_than,uint,S_IRUGO);
+MODULE_PARM_DESC(count_greater_than,"count_greater_than -> ");
+
 unsigned char* hash_table;
 unsigned char** unique_array;
 int unique_animals;
@@ -34,7 +43,7 @@ unsigned char raw_size=50,
 *raw[50]={"Tiger","Dog","Cat","Elephant","Frog","Goat","Sheep","Lion","Eagle","Shark","Whale","Dolphin","Rhino","Panda","Bear","Monkey","Pig","Giraffe","Zebra","Horse","Rabbit","Wolf","Chicken","Buffalo","Panda","Bear","Monkey","Pig","Goat","Sheep","Lion","Eagle","Shark","Whale","Dolphin","Rhino","Panda","Bear","Monkey","Pig","Giraffe","Zebra","Sheep","Lion","Eagle","Shark","Whale","Dolphin","Rhino","Dolphin"};
 
 
-unsigned int hash(uint8_t* str)
+unsigned int hash(unsigned char* str)
 {
 	unsigned int key=1;
 	unsigned int i=0;
@@ -46,15 +55,17 @@ unsigned int hash(uint8_t* str)
 	return key;
 }
 
-void link_list_operation(unsigned char** animal_type,unsigned int count)
+void link_list_operation(unsigned char* animal_type,unsigned int count)
 {
-	node_t *ptr;
+	node_t *ptr,my_head;
 	node_t* nodes[unique_animals];
-	LIST_HEAD(my_head);
+	INIT_LIST_HEAD(&my_head.list);
+	printk("\ncount_greater_than = %d\n",count);
 	static unsigned char none_str[]="none";
-	unsigned int i=0,node_counter=0,size=0,key=0,unique_animals_copy=0;
+	unsigned int i=0,node_counter=0,size=0,key=0,unique_animals_copy=0,j=0;
 	if(animal_type==NULL)
 	{
+		printk("Animal Type is NULL\n");
 		*animal_type=none_str;
 		unique_animals_copy=unique_animals;
 		for(i=0;i<unique_animals;i++)
@@ -62,8 +73,14 @@ void link_list_operation(unsigned char** animal_type,unsigned int count)
 			if(*(hash_table+hash(unique_array[i]))>count)
 			{
 				nodes[node_counter]=(node_t*)kmalloc(sizeof(node_t*),GFP_KERNEL);
-				nodes[node_counter]->animal=animal_type;
-				list_add(&(nodes[node_counter]->list),&my_head);
+				j=0;
+				printk("Single node allocated for %s\n",animal_type);
+				while(*(unique_array[i]+j)!=NULL)
+				{
+					*((nodes[node_counter]->animal)+j)=*(unique_array[i]+j);
+					j++;				
+				}
+				list_add(&(nodes[node_counter]->list),&my_head.list);
 				node_counter++;
 			}
 			else
@@ -74,16 +91,23 @@ void link_list_operation(unsigned char** animal_type,unsigned int count)
 		size=unique_animals_copy;
 	}
 	else
-	{
+	{		
+		printk("Animal Type is %s\n",animal_type);
 		size=*(hash_table+hash(*animal_type));
 		if(size>count)
-		{
+		{			
+			size=1; 
 			node_t* nodes[size];
 			nodes[node_counter]=(node_t*)kmalloc(sizeof(node_t*),GFP_KERNEL);
-			nodes[node_counter]->animal=animal_type;
-			list_add(&(nodes[node_counter]->list),&my_head);	
+			printk("Single node allocated for %s\n",animal_type);			
+			j=0;
+			while(*(animal_type+j)!=NULL)
+			{
+				*((nodes[node_counter]->animal)+j)=*(animal_type+j);
+				j++;
+			}
+			list_add(&(nodes[node_counter]->list),&my_head.list);	
 			node_counter++;
-			size=1; 
 		}
 		else
 		{
@@ -91,8 +115,8 @@ void link_list_operation(unsigned char** animal_type,unsigned int count)
 			size=0; 
 		}
 	}
-	printk("\n\nSet 1:\nAnimals in Ecosystem\nFilter 1: %s, Filter 2: count_greater_than=%d\n",*animal_type,count);
-	list_for_each_entry(ptr,&my_head,list)
+	printk("\n\nSet 1:\nAnimals in Ecosystem\nFilter 1: %s, Filter 2: count_greater_than=%d\n",animal_type,count);
+	list_for_each_entry(ptr,&my_head.list,list)
 	{
 		printk("%s\t",*(ptr->animal));
 	}
@@ -154,9 +178,9 @@ static int __init data_structure_init(void)
 	for(i=0;i<ECOSYSTEM_SIZE;i++)
 	{
 		animals[i]=(unsigned char*)kmalloc(ANIMAL_NAME_SIZE,GFP_KERNEL);
-		animals[i]=strcpy(animals[i],unique_array[i]);
+		animals[i]=strcpy(animals[i],raw[i]);
 		printk("%s\t",animals[i]);
-		*(hash_table+hash(animals[i]));
+		*(hash_table+hash(animals[i]))+=1;
 	}
 	printk("\n\nSet 1:\nAnimals in Ecosystem\n");
 	for(i=0;i<unique_animals;i++)
@@ -164,10 +188,7 @@ static int __init data_structure_init(void)
 		printk("%s=%d\t",unique_array[i],*(hash_table+hash(unique_array[i])));
 	}
 	printk("\n\nData Structure used is Hash Table\nSize of each node = %ld bytes and total nodes = %d\nTotal Space Allocated = %ld bytes\n",sizeof(unsigned char*),unique_animals,sizeof(unsigned char*)*unique_animals);
-	link_list_operation(NULL,0);
-	link_list_operation(&unique_array[10],0);
-	link_list_operation(NULL,2);
-	link_list_operation(&unique_array[40],2);
+	link_list_operation(filter,count_greater_than);
 	return 0;
 }
 
