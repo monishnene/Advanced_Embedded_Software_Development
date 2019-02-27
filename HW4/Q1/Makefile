@@ -2,13 +2,8 @@
 	
 	common_includes = 
 
-	common_flags =	-g \
-			-O0 \
-			-lpthread\
-			-pthread \
-			-lrt \
-			-lm \
-			-lc
+	common_flags =	-pthread \
+			-lrt
 
 	CC=gcc
 	flags =	$(common_flags)
