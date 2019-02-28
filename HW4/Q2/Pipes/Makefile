@@ -1,4 +1,4 @@
-	common_sources= two_threads.c
+	common_sources= pipe.c
 	
 	common_includes = 
 
@@ -29,7 +29,7 @@
 	clean \
 	build 
 
-build:	two_threads.elf	
+build:	pipe.elf	
 
 %.elf:	$(objects)	$(deps)	
 	$(CC)	-o	$@	$(objects)	$(flags)	

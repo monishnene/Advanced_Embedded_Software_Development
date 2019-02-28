@@ -10,11 +10,13 @@
 #include <semaphore.h>
 #include <syscall.h>
 #define RUNTIME 100
+#define DELAY 10
 #define PERIOD 100//ms
 #define SECTOMSEC 1e3
 #define SECTONSEC 1e9
 #define MSECTONSEC 1e6
-#define STR_SIZE 200 
+#define STR_SIZE 200
+#define LETTERS 26
 
 uint32_t log_id=0;
 uint8_t condition1=1,condition2=1;
@@ -26,7 +28,7 @@ struct tm *time_and_date;
 
 void* analyze_file(void* ptr)
 {
-	uint8_t* hash=(uint8_t*)calloc(26,1);
+	uint32_t hash[LETTERS];
 	uint8_t* str=(uint8_t*)calloc(STR_SIZE,1);
 	uint8_t temp=0;
 	uint32_t i=0,n=0,file_size=0;
@@ -36,16 +38,20 @@ void* analyze_file(void* ptr)
 	fseek(fptr,0,SEEK_END);
 	file_size=ftell(fptr);
 	fseek(fptr,0,SEEK_SET);
+	for(i=0;i<LETTERS;i++)
+	{
+		hash[i]=0;
+	}
 	for(i=0;i<file_size;i++)
 	{
 		n=fread(&temp,1,1,fptr);
 		if((temp>='a')&&(temp<='z'))
 		{
-			*(hash+temp-'a')+=1;
+			hash[temp-'a']++;
 		}
 		else if ((temp>='A')&&(temp<='Z'))
 		{
-			*(hash+temp-'A')+=1;
+			hash[temp-'A']++;
 		}
 	}
 	fclose(fptr);	
@@ -57,18 +63,19 @@ void* analyze_file(void* ptr)
 	sprintf(str,"\n\nLog ID : %d\tThread 1\nTime & Date : %sProcess Id = %d\tThread ID = %d\nThe alphabets that occurs less than 100 times are:\t",log_id++,asctime(time_and_date),process_id,thread_id);
 	n=fwrite(str,1,strlen(str),fptr);
 	bzero((void *)str,STR_SIZE);
-	for(i=0;i<26;i++)
+	for(i=0;i<LETTERS;i++)
 	{
-		if(*(hash+i)<100)
+		if(hash[i]<100)
 		{
-			sprintf(str,"%c:%d\t",'a'+i,*(hash+i));
+			sprintf(str,"%c:%d\t",'a'+i,hash[i]);
 			n=fwrite(str,1,strlen(str),fptr);	
 		}
 	}
 	fclose(fptr);
 	sem_post(&sem_logfile);
+	sleep(DELAY);
 	sem_wait(&sem_logfile);
-	printf("Thread 2\tProcess Id = %d\tThread ID = %d\n",process_id,thread_id);
+	printf("Thread 1\tProcess Id = %d\tThread ID = %d\n",process_id,thread_id);
 	fptr=fopen((uint8_t*)ptr,"a");
 	present_time=time(NULL);
 	time_and_date = localtime(&present_time);
@@ -84,7 +91,6 @@ void* analyze_file(void* ptr)
 	fclose(fptr);
 	sem_post(&sem_logfile);
 	free(str);
-	free(hash);
 	return (void *)ptr;
 }
 
