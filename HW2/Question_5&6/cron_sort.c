@@ -22,6 +22,7 @@ void cronlog(int32_t count,int32_t* data)
 	sprintf(str,"Time & Date : %sProcess Id = %d\nUser ID = %d\nSorted Data = [",asctime(time_and_date),process_id,user_id);
 	FILE* fptr = fopen("cronlog.txt","a");
 	fwrite(str, 1, strlen(str), fptr);
+	
 	for(i=0;i<count;i++)
 	{
 		sprintf(str," %d,",data[i]);

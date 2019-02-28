@@ -2,8 +2,9 @@
 	
 	common_includes = 
 
-	common_flags =	-pthread \
-			-lrt
+	common_flags =	-lrt \
+			-pthread
+			
 
 	CC=gcc
 	flags =	$(common_flags)
@@ -38,25 +39,25 @@
 build:	two_threads.elf	
 
 %.elf:	$(objects)	$(deps)	
-	$(CC)	$(flags)	-o	$@	$(objects)
+	$(CC)	-o	$@	$(objects)	$(flags)	
 
 %.i:%.c		$(includes)
-	$(CC)	$(flags)	-E	$<	-o	$@
+	$(CC)	-E	$<	-o	$@	$(flags)	
 
 %.asm:%.c	$(includes)
-	$(CC)	$(flags)	-S	$<	-o	$@
+	$(CC)	-S	$<	-o	$@	$(flags)	
 
 %.o:%.c		$(includes)
-	$(CC)	$(flags)	-c	$<	-o	$@
+	$(CC)	-c	$<	-o	$@	$(flags)	
 
 %.o:%.s		$(includes)
-	$(CC)	$(flags)	-c	$<	-o	$@
+	$(CC)	-c	$<	-o	$@	$(flags)	
 	
 %.d:%.c		$(includes)
-	$(CC)	$(flags)	-M	$<	-o	$@	
+	$(CC)	-M	$<	-o	$@	$(flags)		
 
 %.d:%.s		$(includes)
-	$(CC)	$(flags)	-M	$<	-o	$@
+	$(CC)	-M	$<	-o	$@	$(flags)	
 
 compile-all:	$(objects) 
 
