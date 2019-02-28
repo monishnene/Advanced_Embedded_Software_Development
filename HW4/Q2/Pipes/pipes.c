@@ -9,17 +9,8 @@
 #include <sys/types.h>
 #include <semaphore.h>
 #include <syscall.h>
-#define RUNTIME 100
-#define DELAY 10
-#define PERIOD 100//ms
-#define SECTOMSEC 1e3
-#define SECTONSEC 1e9
-#define MSECTONSEC (uint32_t)1e6
-#define STR_SIZE 200
-#define LETTERS 26
 
 uint32_t log_id=0;
-struct timespec accutime;
 uint8_t condition1=1,condition2=1;
 sem_t sem_thread2;
 sem_t sem_logfile;
@@ -60,9 +51,8 @@ void* analyze_file(void* ptr)
 	printf("Thread 1\tProcess Id = %d\tThread ID = %d\n",process_id,thread_id);
 	fptr=fopen((uint8_t*)ptr,"a");
 	present_time=time(NULL);
-	clock_gettime(CLOCK_REALTIME,&accutime);
 	time_and_date = localtime(&present_time);
-	sprintf(str,"\n\nLog ID : %d\tThread 1\nTime & Date : %smilliseconds=%ld\tProcess Id = %d\tThread ID = %d\nThe alphabets that occurs less than 100 times are:\t",log_id++,asctime(time_and_date),accutime.tv_nsec/MSECTONSEC,process_id,thread_id);
+	sprintf(str,"\n\nLog ID : %d\tThread 1\nTime & Date : %sProcess Id = %d\tThread ID = %d\nThe alphabets that occurs less than 100 times are:\t",log_id++,asctime(time_and_date),process_id,thread_id);
 	n=fwrite(str,1,strlen(str),fptr);
 	bzero((void *)str,STR_SIZE);
 	for(i=0;i<LETTERS;i++)
@@ -75,20 +65,19 @@ void* analyze_file(void* ptr)
 	}
 	fclose(fptr);
 	sem_post(&sem_logfile);
-	//sleep(DELAY);
+	sleep(DELAY);
 	sem_wait(&sem_logfile);
 	printf("Thread 1\tProcess Id = %d\tThread ID = %d\n",process_id,thread_id);
 	fptr=fopen((uint8_t*)ptr,"a");
 	present_time=time(NULL);
-	clock_gettime(CLOCK_REALTIME,&accutime);
 	time_and_date = localtime(&present_time);
 	if(condition1)
 	{
-		sprintf(str,"\n\nLog ID : %d\tThread 1\nTime & Date : %smilliseconds=%ld\tProcess Id = %d\tThread ID = %d\nExiting with cause Completed Work",log_id++,asctime(time_and_date),accutime.tv_nsec/MSECTONSEC,process_id,thread_id);		
+		sprintf(str,"\n\nLog ID : %d\tThread 1\nTime & Date : %sProcess Id = %d\tThread ID = %d\nExiting with cause Completed Work",log_id++,asctime(time_and_date),process_id,thread_id);		
 	}
 	else
 	{
-		sprintf(str,"\n\nLog ID : %d\tThread 1\nTime & Date : %smilliseconds=%ld\tProcess Id = %d\tThread ID = %d\nExiting with cause USR1",log_id++,asctime(time_and_date),accutime.tv_nsec/MSECTONSEC,process_id,thread_id);	
+		sprintf(str,"\n\nLog ID : %d\tThread 1\nTime & Date : %sProcess Id = %d\tThread ID = %d\nExiting with cause USR1",log_id++,asctime(time_and_date),process_id,thread_id);	
 	}	
 	n=fwrite(str,1,strlen(str),fptr);
 	fclose(fptr);
@@ -112,9 +101,8 @@ void* cpu_util(void* ptr)
 		printf("Thread 2\tProcess Id = %d\tThread ID = %d\n",process_id,thread_id);
 		fptr=fopen((uint8_t*)ptr,"a");
 		present_time=time(NULL);
-		clock_gettime(CLOCK_REALTIME,&accutime);
 		time_and_date = localtime(&present_time);
-		sprintf(str,"\n\nLog ID : %d\tThread 2\nTime & Date : %smilliseconds=%ld\tProcess Id = %d\tThread ID = %d\nCPU Utilization:\n",log_id++,asctime(time_and_date),accutime.tv_nsec/MSECTONSEC,process_id,thread_id);		
+		sprintf(str,"\n\nLog ID : %d\tThread 2\nTime & Date : %sProcess Id = %d\tThread ID = %d\nCPU Utilization:\n",log_id++,asctime(time_and_date),process_id,thread_id);		
 		n=fwrite(str,1,strlen(str),fptr);		
 		sem_wait(&sem_stat);
 		system("cat /proc/stat>cpu_util.txt");
@@ -136,9 +124,8 @@ void* cpu_util(void* ptr)
 	printf("Thread 2\tProcess Id = %d\tThread ID = %d\n",process_id,thread_id);
 	fptr=fopen((uint8_t*)ptr,"a");
 	present_time=time(NULL);
-	clock_gettime(CLOCK_REALTIME,&accutime);
 	time_and_date = localtime(&present_time);
-	sprintf(str,"\n\nLog ID : %d\tThread 2\nTime & Date : %smilliseconds=%ld\tProcess Id = %d\tThread ID = %d\nExiting with cause USR2",log_id++,asctime(time_and_date),accutime.tv_nsec/MSECTONSEC,process_id,thread_id);		
+	sprintf(str,"\n\nLog ID : %d\tThread 2\nTime & Date : %sProcess Id = %d\tThread ID = %d\nExiting with cause USR2",log_id++,asctime(time_and_date),process_id,thread_id);		
 	n=fwrite(str,1,strlen(str),fptr);
 	fclose(fptr);
 	sem_post(&sem_logfile);
@@ -218,7 +205,7 @@ int32_t main(int32_t argc, uint8_t **argv)
 		kill(getpid(),SIGINT);
 	}
 	//Start threads	
-error=remove(filename); 
+	error=remove(filename); 
 	sem_post(&sem_logfile);
 	sem_post(&sem_stat);
 	sem_post(&sem_thread2);
