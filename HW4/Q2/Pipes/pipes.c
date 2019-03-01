@@ -21,6 +21,7 @@
 sem_t* sem_logfile;
 sem_t* sem_send_receive[2];
 _Bool chance=0;
+struct timespec accutime,timer;
 time_t present_time;
 struct tm *time_and_date;
 uint8_t led = 1;
@@ -34,9 +35,9 @@ void send_data(uint8_t* buffer,uint32_t size)
 	
 }
 
-void receive_data(uint8_t* buffer)
+uint32_t receive_data(uint8_t* buffer)
 {
-
+	return 0;
 }
 
 void first_log(uint8_t* filename)
@@ -99,15 +100,17 @@ int32_t main(int32_t argc, uint8_t **argv)
 	first_log(filename);
 	for(i=0;i<TOTAL_MESSAGES;i++)
 	{
+		size=6;
 		if(i%2==chance)
 		{
 			//send			
 			sem_wait(sem_send_receive[chance]);
+			clock_gettime(CLOCK_REALTIME,&accutime);	
+			srand(accutime.tv_nsec);	
 			transmission_id=rand();
 			random=transmission_id%2;
 			if(random)
 			{
-				size=2;
 				led=rand()%2;
 				*(buffer)=LED_SIGNAL;				
 				*((uint32_t*)(buffer+1))=transmission_id;
@@ -118,17 +121,17 @@ int32_t main(int32_t argc, uint8_t **argv)
 			}
 			else
 			{
-				*(buffer)=STR_SIGNAL;
-				srand(transmission_id);
+				*(buffer)=STR_SIGNAL;	
+				*((uint32_t*)(buffer+1))=transmission_id;
 				sprintf(buffer+5,"Next Animal in the ecosystem is %s",animals[rand()%TOTAL_ANIMALS]);
-				send_data(buffer,5+strlen(buffer+5));
+				send_data(buffer,size+strlen(buffer+5));
 				sprintf(msg,"Transmission ID: %d, Sent STR : %s",transmission_id,buffer+5);
 				log_event(filename,msg);
 			}
 		}
 		else
 		{
-			receive_data(buffer);
+			size=receive_data(buffer);
 			transmission_id=*((uint32_t*)(buffer+1));
 			if(*(buffer)==LED_SIGNAL)
 			{
@@ -162,7 +165,7 @@ int32_t main(int32_t argc, uint8_t **argv)
 		sem_close(sem_send_receive[1]);
     		sem_unlink("/sem_logfile");
     		sem_unlink("/sem_send_receive1");	
-    		sem_unlink("/sem_send_receive2");
+    		sem_unlink("/sem_send_receive2");\
 	}
     	return 0;
 }
