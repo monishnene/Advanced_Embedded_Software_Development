@@ -11,6 +11,8 @@
 #include <syscall.h>
 #include <sys/wait.h>
 #include <fcntl.h>
+#include <sys/ipc.h>
+#include <sys/shm.h>
 #define STR_SIZE 200
 #define LED_SIGNAL 1
 #define STR_SIGNAL 2
@@ -20,7 +22,10 @@
 
 sem_t* sem_logfile;
 sem_t* sem_send_receive[2];
+key_t key;
+int32_t shared_memory=0;
 _Bool chance=0;
+uint32_t counter=0;
 struct timespec accutime,timer;
 time_t present_time;
 struct tm *time_and_date;
@@ -32,11 +37,18 @@ uint8_t* process_name[2]={"Child","Parent"};
 
 void send_data(uint8_t* buffer,uint32_t size)
 {
-	
+	uint8_t* sm_ptr=shmat(shared_memory,(void*)0,0);
+	memcpy(sm_ptr,buffer,BUFFER_SIZE);
+	shmdt(sm_ptr);
+	sem_post(sem_send_receive[!chance]);
 }
 
 uint32_t receive_data(uint8_t* buffer)
 {
+	sem_wait(sem_send_receive[chance]);
+	uint8_t* sm_ptr=shmat(shared_memory,(void*)0,0);
+	memcpy(buffer,sm_ptr,BUFFER_SIZE);
+	shmdt(sm_ptr);
 	return 0;
 }
 
@@ -81,8 +93,10 @@ int32_t main(int32_t argc, uint8_t **argv)
 	uint8_t* msg=(uint8_t*)calloc(BUFFER_SIZE,1);
 	srand(time(NULL));
 	sem_logfile = sem_open("/sem_logfile", O_CREAT, 0644, 1);
-	sem_send_receive[0] = sem_open("/sem_send_receive1", O_CREAT, 0644, 1);
-	sem_send_receive[1] = sem_open("/sem_send_receive2", O_CREAT, 0644, 1);
+	sem_send_receive[0] = sem_open("/sem_send_receive1", O_CREAT, 0644, 0);
+	sem_send_receive[1] = sem_open("/sem_send_receive2", O_CREAT, 0644, 0);
+	key = ftok(IPC,65);
+	shared_memory=shmget(key,BUFFER_SIZE,0666|IPC_CREAT);
 	if(argc==1)
 	{
 		printf("Format:%s <filename> \n",*argv);
@@ -104,7 +118,6 @@ int32_t main(int32_t argc, uint8_t **argv)
 		if(i%2==chance)
 		{
 			//send			
-			sem_wait(sem_send_receive[chance]);
 			clock_gettime(CLOCK_REALTIME,&accutime);	
 			srand(accutime.tv_nsec);	
 			transmission_id=rand();
@@ -132,7 +145,6 @@ int32_t main(int32_t argc, uint8_t **argv)
 		else
 		{
 			size=receive_data(buffer);
-			transmission_id=*((uint32_t*)(buffer+1));
 			if(*(buffer)==LED_SIGNAL)
 			{
 				led=*(buffer+5);
@@ -149,7 +161,6 @@ int32_t main(int32_t argc, uint8_t **argv)
 				sprintf(msg,"Transmission ID: %d, Unrecognized format of received data",transmission_id);
 				log_event(filename,msg);	
 			}
-			sem_post(sem_send_receive[!chance]);
 		}
 		bzero(msg,BUFFER_SIZE);
 		bzero(buffer,BUFFER_SIZE);
@@ -165,7 +176,8 @@ int32_t main(int32_t argc, uint8_t **argv)
 		sem_close(sem_send_receive[1]);
     		sem_unlink("/sem_logfile");
     		sem_unlink("/sem_send_receive1");	
-    		sem_unlink("/sem_send_receive2");\
+    		sem_unlink("/sem_send_receive2");
+		shmctl(shared_memory,IPC_RMID,NULL);	
 	}
     	return 0;
 }

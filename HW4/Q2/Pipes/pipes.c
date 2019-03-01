@@ -19,24 +19,26 @@
 #define TOTAL_ANIMALS 12
 
 sem_t* sem_logfile;
-sem_t* sem_send_receive[2];
+sem_t* sem_memory;
 _Bool chance=0;
+uint32_t counter=0;
 struct timespec accutime,timer;
 time_t present_time;
 struct tm *time_and_date;
 uint8_t led = 1;
-uint8_t IPC[]="Pipes";
+uint8_t IPC[]="Shared Memory";
 uint8_t* animals[TOTAL_ANIMALS]={"Tiger","Zebra","Lion","Giraffe","Rhino","Bear","Panda","Deer",
 		"Cheetah","Wolf","Hippo","Elephant"};
 uint8_t* process_name[2]={"Child","Parent"};
 
 void send_data(uint8_t* buffer,uint32_t size)
 {
-	
+	sem_post(sem_memory);
 }
 
 uint32_t receive_data(uint8_t* buffer)
 {
+	sem_wait(sem_memory);
 	return 0;
 }
 
@@ -81,8 +83,7 @@ int32_t main(int32_t argc, uint8_t **argv)
 	uint8_t* msg=(uint8_t*)calloc(BUFFER_SIZE,1);
 	srand(time(NULL));
 	sem_logfile = sem_open("/sem_logfile", O_CREAT, 0644, 1);
-	sem_send_receive[0] = sem_open("/sem_send_receive1", O_CREAT, 0644, 1);
-	sem_send_receive[1] = sem_open("/sem_send_receive2", O_CREAT, 0644, 1);
+	sem_memory = sem_open("/sem_memory", O_CREAT, 0644, 1);
 	if(argc==1)
 	{
 		printf("Format:%s <filename> \n",*argv);
@@ -98,13 +99,13 @@ int32_t main(int32_t argc, uint8_t **argv)
 		chance=1;
 	}
 	first_log(filename);
+	sem_post(sem_memory);
 	for(i=0;i<TOTAL_MESSAGES;i++)
 	{
 		size=6;
 		if(i%2==chance)
 		{
 			//send			
-			sem_wait(sem_send_receive[chance]);
 			clock_gettime(CLOCK_REALTIME,&accutime);	
 			srand(accutime.tv_nsec);	
 			transmission_id=rand();
@@ -132,7 +133,6 @@ int32_t main(int32_t argc, uint8_t **argv)
 		else
 		{
 			size=receive_data(buffer);
-			transmission_id=*((uint32_t*)(buffer+1));
 			if(*(buffer)==LED_SIGNAL)
 			{
 				led=*(buffer+5);
@@ -149,7 +149,6 @@ int32_t main(int32_t argc, uint8_t **argv)
 				sprintf(msg,"Transmission ID: %d, Unrecognized format of received data",transmission_id);
 				log_event(filename,msg);	
 			}
-			sem_post(sem_send_receive[!chance]);
 		}
 		bzero(msg,BUFFER_SIZE);
 		bzero(buffer,BUFFER_SIZE);
@@ -161,11 +160,9 @@ int32_t main(int32_t argc, uint8_t **argv)
 	if(chance)
 	{
     		sem_close(sem_logfile);
-		sem_close(sem_send_receive[0]);	
-		sem_close(sem_send_receive[1]);
+		sem_close(sem_memory);
     		sem_unlink("/sem_logfile");
-    		sem_unlink("/sem_send_receive1");	
-    		sem_unlink("/sem_send_receive2");\
+		sem_unlink("/sem_memory");	
 	}
     	return 0;
 }
