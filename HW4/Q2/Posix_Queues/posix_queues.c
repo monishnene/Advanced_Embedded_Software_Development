@@ -150,6 +150,7 @@ int32_t main(int32_t argc, uint8_t **argv)
 		else
 		{
 			size=receive_data(buffer);
+			transmission_id=*((uint32_t*)(buffer+1));
 			if(*(buffer)==LED_SIGNAL)
 			{
 				led=*(buffer+5);

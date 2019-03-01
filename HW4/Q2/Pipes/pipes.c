@@ -19,26 +19,32 @@
 #define TOTAL_ANIMALS 12
 
 sem_t* sem_logfile;
-sem_t* sem_memory;
+sem_t* sem_send_receive[2];
+sem_t* sem_transmission;
+int32_t pipe_id[2];
 _Bool chance=0;
 uint32_t counter=0;
 struct timespec accutime,timer;
 time_t present_time;
 struct tm *time_and_date;
 uint8_t led = 1;
-uint8_t IPC[]="Shared Memory";
+uint8_t IPC[]="Pipes";
 uint8_t* animals[TOTAL_ANIMALS]={"Tiger","Zebra","Lion","Giraffe","Rhino","Bear","Panda","Deer",
 		"Cheetah","Wolf","Hippo","Elephant"};
 uint8_t* process_name[2]={"Child","Parent"};
 
 void send_data(uint8_t* buffer,uint32_t size)
 {
-	sem_post(sem_memory);
+	sem_wait(sem_transmission);
+	write(pipe_id[1],buffer,size);
+	sem_post(sem_send_receive[!chance]);
 }
 
 uint32_t receive_data(uint8_t* buffer)
 {
-	sem_wait(sem_memory);
+	sem_wait(sem_send_receive[chance]);
+	uint32_t size = read(pipe_id[0],buffer,BUFFER_SIZE);
+	sem_post(sem_transmission);
 	return 0;
 }
 
@@ -83,7 +89,11 @@ int32_t main(int32_t argc, uint8_t **argv)
 	uint8_t* msg=(uint8_t*)calloc(BUFFER_SIZE,1);
 	srand(time(NULL));
 	sem_logfile = sem_open("/sem_logfile", O_CREAT, 0644, 1);
-	sem_memory = sem_open("/sem_memory", O_CREAT, 0644, 1);
+	sem_send_receive[0] = sem_open("/sem_send_receive1", O_CREAT, 0644, 0);
+	sem_send_receive[1] = sem_open("/sem_send_receive2", O_CREAT, 0644, 0);
+	sem_transmission = sem_open("/sem_transmission", O_CREAT, 0644, 1);
+	error=pipe(pipe_id);
+	sem_post(sem_transmission);
 	if(argc==1)
 	{
 		printf("Format:%s <filename> \n",*argv);
@@ -99,7 +109,6 @@ int32_t main(int32_t argc, uint8_t **argv)
 		chance=1;
 	}
 	first_log(filename);
-	sem_post(sem_memory);
 	for(i=0;i<TOTAL_MESSAGES;i++)
 	{
 		size=6;
@@ -133,6 +142,7 @@ int32_t main(int32_t argc, uint8_t **argv)
 		else
 		{
 			size=receive_data(buffer);
+			transmission_id=*((uint32_t*)(buffer+1));
 			if(*(buffer)==LED_SIGNAL)
 			{
 				led=*(buffer+5);
@@ -160,9 +170,13 @@ int32_t main(int32_t argc, uint8_t **argv)
 	if(chance)
 	{
     		sem_close(sem_logfile);
-		sem_close(sem_memory);
+		sem_close(sem_send_receive[0]);	
+		sem_close(sem_send_receive[1]);
+		sem_close(sem_transmission);
     		sem_unlink("/sem_logfile");
-		sem_unlink("/sem_memory");	
+    		sem_unlink("/sem_send_receive1");	
+    		sem_unlink("/sem_send_receive2");
+		sem_unlink("/sem_transmission");
 	}
     	return 0;
 }

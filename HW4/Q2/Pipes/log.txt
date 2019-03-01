@@ -1,166 +1,166 @@
 
-Time & Date : Thu Feb 28 18:36:43 2019
-Process Id : 7145	IPC method : Pipes	File Descriptor : 3
+Time & Date : Thu Feb 28 23:29:50 2019
+Process Id : 4658 Process:Parent	IPC method : Pipes	File Descriptor : 5
 
-Time & Date : Thu Feb 28 18:36:43 2019
-Process Id : 7145
-Transmission ID: 0, Unrecognized format of received data
+Time & Date : Thu Feb 28 23:29:50 2019
+Process Id : 4659 Process:Child	IPC method : Pipes	File Descriptor : 5
 
-Time & Date : Thu Feb 28 18:36:43 2019
-Process Id : 7145
-Transmission ID: 1650504390, Sent STR : Next Animal in the ecosystem is Bear
+Time & Date : Thu Feb 28 23:29:50 2019
+Process Id : 4658 Process:Parent
+Transmission ID: 1895652792, Received STR : Next Animal in the ecosystem is Bear
 
-Time & Date : Thu Feb 28 18:36:43 2019
-Process Id : 7145
-Transmission ID: 0, Unrecognized format of received data
+Time & Date : Thu Feb 28 23:29:50 2019
+Process Id : 4658 Process:Parent
+Transmission ID: 1397766957, Sent LED : 1
 
-Time & Date : Thu Feb 28 18:36:43 2019
-Process Id : 7146	IPC method : Pipes	File Descriptor : 3
+Time & Date : Thu Feb 28 23:29:50 2019
+Process Id : 4659 Process:Child
+Transmission ID: 1895652792, Sent STR : Next Animal in the ecosystem is Bear
 
-Time & Date : Thu Feb 28 18:36:43 2019
-Process Id : 7146
-Transmission ID: 1650504390, Sent STR : Next Animal in the ecosystem is Bear
+Time & Date : Thu Feb 28 23:29:50 2019
+Process Id : 4659 Process:Child
+Transmission ID: 1397766957, Received LED : 1
 
-Time & Date : Thu Feb 28 18:36:43 2019
-Process Id : 7146
-Transmission ID: 0, Unrecognized format of received data
+Time & Date : Thu Feb 28 23:29:50 2019
+Process Id : 4658 Process:Parent
+Transmission ID: 1630045832, Received STR : Next Animal in the ecosystem is Wolf
 
-Time & Date : Thu Feb 28 18:36:43 2019
-Process Id : 7145
-Transmission ID: 1106456994, Sent STR : Next Animal in the ecosystem is Zebra
+Time & Date : Thu Feb 28 23:29:50 2019
+Process Id : 4658 Process:Parent
+Transmission ID: 1894424256, Sent STR : Next Animal in the ecosystem is Zebra
 
-Time & Date : Thu Feb 28 18:36:43 2019
-Process Id : 7145
-Transmission ID: 0, Unrecognized format of received data
+Time & Date : Thu Feb 28 23:29:50 2019
+Process Id : 4659 Process:Child
+Transmission ID: 1630045832, Sent STR : Next Animal in the ecosystem is Wolf
 
-Time & Date : Thu Feb 28 18:36:43 2019
-Process Id : 7146
-Transmission ID: 1106456994, Sent STR : Next Animal in the ecosystem is Zebra
+Time & Date : Thu Feb 28 23:29:50 2019
+Process Id : 4659 Process:Child
+Transmission ID: 1894424256, Received STR : Next Animal in the ecosystem is Zebra
 
-Time & Date : Thu Feb 28 18:36:43 2019
-Process Id : 7146
-Transmission ID: 0, Unrecognized format of received data
+Time & Date : Thu Feb 28 23:29:50 2019
+Process Id : 4658 Process:Parent
+Transmission ID: 281470768, Received STR : Next Animal in the ecosystem is Tiger
 
-Time & Date : Thu Feb 28 18:36:43 2019
-Process Id : 7145
-Transmission ID: 2003609666, Sent STR : Next Animal in the ecosystem is Tiger
+Time & Date : Thu Feb 28 23:29:50 2019
+Process Id : 4658 Process:Parent
+Transmission ID: 346910717, Sent LED : 1
 
-Time & Date : Thu Feb 28 18:36:43 2019
-Process Id : 7145
-Transmission ID: 0, Unrecognized format of received data
+Time & Date : Thu Feb 28 23:29:50 2019
+Process Id : 4659 Process:Child
+Transmission ID: 281470768, Sent STR : Next Animal in the ecosystem is Tiger
 
-Time & Date : Thu Feb 28 18:36:43 2019
-Process Id : 7146
-Transmission ID: 2003609666, Sent STR : Next Animal in the ecosystem is Tiger
+Time & Date : Thu Feb 28 23:29:50 2019
+Process Id : 4659 Process:Child
+Transmission ID: 346910717, Received LED : 1
 
-Time & Date : Thu Feb 28 18:36:43 2019
-Process Id : 7146
-Transmission ID: 0, Unrecognized format of received data
+Time & Date : Thu Feb 28 23:29:50 2019
+Process Id : 4658 Process:Parent
+Transmission ID: 1062098446, Received STR : Next Animal in the ecosystem is Tiger
 
-Time & Date : Thu Feb 28 18:36:43 2019
-Process Id : 7145
-Transmission ID: 1151658249, Sent LED : 0
+Time & Date : Thu Feb 28 23:29:50 2019
+Process Id : 4658 Process:Parent
+Transmission ID: 1853556864, Sent STR : Next Animal in the ecosystem is Panda
 
-Time & Date : Thu Feb 28 18:36:43 2019
-Process Id : 7145
-Transmission ID: 0, Unrecognized format of received data
+Time & Date : Thu Feb 28 23:29:50 2019
+Process Id : 4659 Process:Child
+Transmission ID: 1062098446, Sent STR : Next Animal in the ecosystem is Tiger
 
-Time & Date : Thu Feb 28 18:36:43 2019
-Process Id : 7146
-Transmission ID: 1151658249, Sent LED : 0
+Time & Date : Thu Feb 28 23:29:50 2019
+Process Id : 4659 Process:Child
+Transmission ID: 1853556864, Received STR : Next Animal in the ecosystem is Panda
 
-Time & Date : Thu Feb 28 18:36:43 2019
-Process Id : 7146
-Transmission ID: 0, Unrecognized format of received data
+Time & Date : Thu Feb 28 23:29:50 2019
+Process Id : 4658 Process:Parent
+Transmission ID: 1223677259, Received LED : 1
 
-Time & Date : Thu Feb 28 18:36:43 2019
-Process Id : 7145
-Transmission ID: 1005410202, Sent STR : Next Animal in the ecosystem is Panda
+Time & Date : Thu Feb 28 23:29:50 2019
+Process Id : 4658 Process:Parent
+Transmission ID: 1208806426, Sent STR : Next Animal in the ecosystem is Deer
 
-Time & Date : Thu Feb 28 18:36:43 2019
-Process Id : 7145
-Transmission ID: 0, Unrecognized format of received data
+Time & Date : Thu Feb 28 23:29:50 2019
+Process Id : 4659 Process:Child
+Transmission ID: 1223677259, Sent LED : 1
 
-Time & Date : Thu Feb 28 18:36:43 2019
-Process Id : 7146
-Transmission ID: 1005410202, Sent STR : Next Animal in the ecosystem is Panda
+Time & Date : Thu Feb 28 23:29:50 2019
+Process Id : 4659 Process:Child
+Transmission ID: 1208806426, Received STR : Next Animal in the ecosystem is Deer
 
-Time & Date : Thu Feb 28 18:36:43 2019
-Process Id : 7146
-Transmission ID: 0, Unrecognized format of received data
+Time & Date : Thu Feb 28 23:29:50 2019
+Process Id : 4658 Process:Parent
+Transmission ID: 8799926, Received STR : Next Animal in the ecosystem is Lion
 
-Time & Date : Thu Feb 28 18:36:43 2019
-Process Id : 7145
-Transmission ID: 1314129435, Sent LED : 1
+Time & Date : Thu Feb 28 23:29:50 2019
+Process Id : 4658 Process:Parent
+Transmission ID: 1348262882, Sent STR : Next Animal in the ecosystem is Elephant
 
-Time & Date : Thu Feb 28 18:36:43 2019
-Process Id : 7145
-Transmission ID: 0, Unrecognized format of received data
+Time & Date : Thu Feb 28 23:29:50 2019
+Process Id : 4659 Process:Child
+Transmission ID: 8799926, Sent STR : Next Animal in the ecosystem is Lion
 
-Time & Date : Thu Feb 28 18:36:43 2019
-Process Id : 7146
-Transmission ID: 1314129435, Sent LED : 1
+Time & Date : Thu Feb 28 23:29:50 2019
+Process Id : 4659 Process:Child
+Transmission ID: 1348262882, Received STR : Next Animal in the ecosystem is Elephant
 
-Time & Date : Thu Feb 28 18:36:43 2019
-Process Id : 7146
-Transmission ID: 0, Unrecognized format of received data
+Time & Date : Thu Feb 28 23:29:50 2019
+Process Id : 4658 Process:Parent
+Transmission ID: 1658617520, Received STR : Next Animal in the ecosystem is Deer
 
-Time & Date : Thu Feb 28 18:36:43 2019
-Process Id : 7145
-Transmission ID: 981956179, Sent LED : 1
+Time & Date : Thu Feb 28 23:29:50 2019
+Process Id : 4658 Process:Parent
+Transmission ID: 365579878, Sent STR : Next Animal in the ecosystem is Giraffe
 
-Time & Date : Thu Feb 28 18:36:43 2019
-Process Id : 7145
-Transmission ID: 0, Unrecognized format of received data
+Time & Date : Thu Feb 28 23:29:50 2019
+Process Id : 4659 Process:Child
+Transmission ID: 1658617520, Sent STR : Next Animal in the ecosystem is Deer
 
-Time & Date : Thu Feb 28 18:36:43 2019
-Process Id : 7146
-Transmission ID: 981956179, Sent LED : 1
+Time & Date : Thu Feb 28 23:29:50 2019
+Process Id : 4659 Process:Child
+Transmission ID: 365579878, Received STR : Next Animal in the ecosystem is Giraffe
 
-Time & Date : Thu Feb 28 18:36:43 2019
-Process Id : 7146
-Transmission ID: 0, Unrecognized format of received data
+Time & Date : Thu Feb 28 23:29:50 2019
+Process Id : 4658 Process:Parent
+Transmission ID: 1017174375, Received LED : 0
 
-Time & Date : Thu Feb 28 18:36:43 2019
-Process Id : 7145
-Transmission ID: 1647024457, Sent LED : 1
+Time & Date : Thu Feb 28 23:29:50 2019
+Process Id : 4658 Process:Parent
+Transmission ID: 1236034452, Sent STR : Next Animal in the ecosystem is Lion
 
-Time & Date : Thu Feb 28 18:36:43 2019
-Process Id : 7145
-Transmission ID: 0, Unrecognized format of received data
+Time & Date : Thu Feb 28 23:29:50 2019
+Process Id : 4659 Process:Child
+Transmission ID: 1017174375, Sent LED : 0
 
-Time & Date : Thu Feb 28 18:36:43 2019
-Process Id : 7146
-Transmission ID: 1647024457, Sent LED : 1
+Time & Date : Thu Feb 28 23:29:50 2019
+Process Id : 4659 Process:Child
+Transmission ID: 1236034452, Received STR : Next Animal in the ecosystem is Lion
 
-Time & Date : Thu Feb 28 18:36:43 2019
-Process Id : 7146
-Transmission ID: 0, Unrecognized format of received data
+Time & Date : Thu Feb 28 23:29:50 2019
+Process Id : 4658 Process:Parent
+Transmission ID: 199213039, Received LED : 1
 
-Time & Date : Thu Feb 28 18:36:43 2019
-Process Id : 7145
-Transmission ID: 967786280, Sent STR : Next Animal in the ecosystem is Deer
+Time & Date : Thu Feb 28 23:29:50 2019
+Process Id : 4658 Process:Parent
+Transmission ID: 1898422763, Sent LED : 0
 
-Time & Date : Thu Feb 28 18:36:43 2019
-Process Id : 7145
-Transmission ID: 0, Unrecognized format of received data
+Time & Date : Thu Feb 28 23:29:50 2019
+Process Id : 4659 Process:Child
+Transmission ID: 199213039, Sent LED : 1
 
-Time & Date : Thu Feb 28 18:36:43 2019
-Process Id : 7146
-Transmission ID: 967786280, Sent STR : Next Animal in the ecosystem is Deer
+Time & Date : Thu Feb 28 23:29:50 2019
+Process Id : 4659 Process:Child
+Transmission ID: 1898422763, Received LED : 0
 
-Time & Date : Thu Feb 28 18:36:43 2019
-Process Id : 7146
-Transmission ID: 0, Unrecognized format of received data
+Time & Date : Thu Feb 28 23:29:50 2019
+Process Id : 4658 Process:Parent
+Transmission ID: 2038452113, Received LED : 0
 
-Time & Date : Thu Feb 28 18:36:43 2019
-Process Id : 7145
-Transmission ID: 417457901, Sent LED : 0
+Time & Date : Thu Feb 28 23:29:50 2019
+Process Id : 4658 Process:Parent
+Transmission ID: 996740710, Sent STR : Next Animal in the ecosystem is Giraffe
 
-Time & Date : Thu Feb 28 18:36:43 2019
-Process Id : 7146
-Transmission ID: 417457901, Sent LED : 0
+Time & Date : Thu Feb 28 23:29:50 2019
+Process Id : 4659 Process:Child
+Transmission ID: 2038452113, Sent LED : 0
 
-Time & Date : Thu Feb 28 18:36:43 2019
-Process Id : 7146
-Transmission ID: 0, Unrecognized format of received data
+Time & Date : Thu Feb 28 23:29:50 2019
+Process Id : 4659 Process:Child
+Transmission ID: 996740710, Received STR : Next Animal in the ecosystem is Giraffe

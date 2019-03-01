@@ -22,6 +22,7 @@
 
 sem_t* sem_logfile;
 sem_t* sem_send_receive[2];
+sem_t* sem_transmission;
 key_t key;
 int32_t shared_memory=0;
 _Bool chance=0;
@@ -37,6 +38,7 @@ uint8_t* process_name[2]={"Child","Parent"};
 
 void send_data(uint8_t* buffer,uint32_t size)
 {
+	sem_wait(sem_transmission);
 	uint8_t* sm_ptr=shmat(shared_memory,(void*)0,0);
 	memcpy(sm_ptr,buffer,BUFFER_SIZE);
 	shmdt(sm_ptr);
@@ -49,6 +51,7 @@ uint32_t receive_data(uint8_t* buffer)
 	uint8_t* sm_ptr=shmat(shared_memory,(void*)0,0);
 	memcpy(buffer,sm_ptr,BUFFER_SIZE);
 	shmdt(sm_ptr);
+	sem_post(sem_transmission);
 	return 0;
 }
 
@@ -95,8 +98,10 @@ int32_t main(int32_t argc, uint8_t **argv)
 	sem_logfile = sem_open("/sem_logfile", O_CREAT, 0644, 1);
 	sem_send_receive[0] = sem_open("/sem_send_receive1", O_CREAT, 0644, 0);
 	sem_send_receive[1] = sem_open("/sem_send_receive2", O_CREAT, 0644, 0);
+	sem_transmission = sem_open("/sem_transmission", O_CREAT, 0644, 1);
 	key = ftok(IPC,65);
 	shared_memory=shmget(key,BUFFER_SIZE,0666|IPC_CREAT);
+	sem_post(sem_transmission);
 	if(argc==1)
 	{
 		printf("Format:%s <filename> \n",*argv);
@@ -145,6 +150,7 @@ int32_t main(int32_t argc, uint8_t **argv)
 		else
 		{
 			size=receive_data(buffer);
+			transmission_id=*((uint32_t*)(buffer+1));
 			if(*(buffer)==LED_SIGNAL)
 			{
 				led=*(buffer+5);
@@ -174,10 +180,11 @@ int32_t main(int32_t argc, uint8_t **argv)
     		sem_close(sem_logfile);
 		sem_close(sem_send_receive[0]);	
 		sem_close(sem_send_receive[1]);
+		sem_close(sem_transmission);
     		sem_unlink("/sem_logfile");
     		sem_unlink("/sem_send_receive1");	
     		sem_unlink("/sem_send_receive2");
-		shmctl(shared_memory,IPC_RMID,NULL);	
+		sem_unlink("/sem_transmission");
 	}
     	return 0;
 }
