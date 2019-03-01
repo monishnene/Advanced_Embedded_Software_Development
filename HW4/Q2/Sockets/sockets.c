@@ -10,33 +10,40 @@
 #include <semaphore.h>
 #include <syscall.h>
 #include <sys/wait.h>
+#include<arpa/inet.h> 
 #include <fcntl.h>
+#include <sys/socket.h>
 #define STR_SIZE 200
 #define LED_SIGNAL 1
 #define STR_SIGNAL 2
 #define TOTAL_MESSAGES 20
 #define BUFFER_SIZE 100
 #define TOTAL_ANIMALS 12
+#define PORT 9000
+#define TIMEOUT 10
 
 sem_t* sem_logfile;
 sem_t* sem_send_receive[2];
 _Bool chance=0;
 time_t present_time;
 struct tm *time_and_date;
+struct timespec accutime,timer;
 uint8_t led = 1;
-uint8_t IPC[]="Pipes";
+uint8_t IPC[]="Sockets";
 uint8_t* animals[TOTAL_ANIMALS]={"Tiger","Zebra","Lion","Giraffe","Rhino","Bear","Panda","Deer",
 		"Cheetah","Wolf","Hippo","Elephant"};
 uint8_t* process_name[2]={"Child","Parent"};
+int32_t sock;
+struct sockaddr_in sock_struct;
 
 void send_data(uint8_t* buffer,uint32_t size)
 {
-	
+	write(sock,buffer,size);
 }
 
-void receive_data(uint8_t* buffer)
+uint32_t receive_data(uint8_t* buffer)
 {
-
+	return read(sock,buffer,BUFFER_SIZE);
 }
 
 void first_log(uint8_t* filename)
@@ -74,14 +81,18 @@ void log_event(uint8_t* filename,uint8_t* msg)
 int32_t main(int32_t argc, uint8_t **argv)
 {
 	uint8_t* filename;
-	int32_t error=0,transmission_id=0;
+	int32_t error=0,transmission_id=0,socket_desc=0;
 	uint32_t i=0,random=0,size=0;
 	uint8_t* buffer=(uint8_t*)calloc(BUFFER_SIZE,1);
 	uint8_t* msg=(uint8_t*)calloc(BUFFER_SIZE,1);
-	srand(time(NULL));
 	sem_logfile = sem_open("/sem_logfile", O_CREAT, 0644, 1);
 	sem_send_receive[0] = sem_open("/sem_send_receive1", O_CREAT, 0644, 1);
 	sem_send_receive[1] = sem_open("/sem_send_receive2", O_CREAT, 0644, 1);
+	sock_struct.sin_addr.s_addr = INADDR_ANY;
+        sock_struct.sin_family = AF_INET;
+	sock_struct.sin_port = htons(PORT);
+	timer.tv_sec=TIMEOUT;
+        setsockopt(sock,SOL_SOCKET,SO_RCVTIMEO | SO_REUSEADDR | SO_REUSEPORT, (const char*)&timer,sizeof timer);
 	if(argc==1)
 	{
 		printf("Format:%s <filename> \n",*argv);
@@ -95,19 +106,31 @@ int32_t main(int32_t argc, uint8_t **argv)
 	if(fork())
 	{
 		chance=1;
+    		socket_desc = socket(AF_INET , SOCK_STREAM , 0);
+    		error=bind(socket_desc,(struct sockaddr *)&sock_struct, sizeof(sock_struct));
+    		listen(socket_desc , 3);
+    		size = sizeof(struct sockaddr_in);
+		sock = accept(socket_desc, (struct sockaddr *)&sock_struct, (socklen_t*)&size);
+	}
+	else
+	{
+		sock = socket(AF_INET, SOCK_STREAM, 0);
+        	error=connect(sock, (struct sockaddr *)&sock_struct, sizeof(sock_struct));
 	}
 	first_log(filename);
 	for(i=0;i<TOTAL_MESSAGES;i++)
 	{
+		size=6;
 		if(i%2==chance)
 		{
 			//send			
 			sem_wait(sem_send_receive[chance]);
+			clock_gettime(CLOCK_REALTIME,&accutime);	
+			srand(accutime.tv_nsec);	
 			transmission_id=rand();
 			random=transmission_id%2;
 			if(random)
 			{
-				size=2;
 				led=rand()%2;
 				*(buffer)=LED_SIGNAL;				
 				*((uint32_t*)(buffer+1))=transmission_id;
@@ -121,14 +144,14 @@ int32_t main(int32_t argc, uint8_t **argv)
 				*(buffer)=STR_SIGNAL;
 				srand(transmission_id);
 				sprintf(buffer+5,"Next Animal in the ecosystem is %s",animals[rand()%TOTAL_ANIMALS]);
-				send_data(buffer,5+strlen(buffer+5));
+				send_data(buffer,size+strlen(buffer+5));
 				sprintf(msg,"Transmission ID: %d, Sent STR : %s",transmission_id,buffer+5);
 				log_event(filename,msg);
 			}
 		}
 		else
 		{
-			receive_data(buffer);
+			size=receive_data(buffer);
 			transmission_id=*((uint32_t*)(buffer+1));
 			if(*(buffer)==LED_SIGNAL)
 			{
@@ -163,6 +186,8 @@ int32_t main(int32_t argc, uint8_t **argv)
     		sem_unlink("/sem_logfile");
     		sem_unlink("/sem_send_receive1");	
     		sem_unlink("/sem_send_receive2");
+    		shutdown(sock,SHUT_RDWR);
+    		close(sock);
 	}
     	return 0;
 }

@@ -1,4 +1,4 @@
-	common_sources= pipe.c
+	common_sources= pipes.c
 	
 	common_includes = 
 
@@ -29,7 +29,7 @@
 	clean \
 	build 
 
-build:	pipe.elf	
+build:	pipes.elf	
 
 %.elf:	$(objects)	$(deps)	
 	$(CC)	-o	$@	$(objects)	$(flags)	

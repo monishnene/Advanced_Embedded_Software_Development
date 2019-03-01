@@ -24,7 +24,7 @@ _Bool chance=0;
 time_t present_time;
 struct tm *time_and_date;
 uint8_t led = 1;
-uint8_t IPC[]="Pipes";
+uint8_t IPC[]="Posix Queues";
 uint8_t* animals[TOTAL_ANIMALS]={"Tiger","Zebra","Lion","Giraffe","Rhino","Bear","Panda","Deer",
 		"Cheetah","Wolf","Hippo","Elephant"};
 uint8_t* process_name[2]={"Child","Parent"};
