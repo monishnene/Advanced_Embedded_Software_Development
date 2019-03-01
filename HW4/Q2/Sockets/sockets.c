@@ -141,8 +141,8 @@ int32_t main(int32_t argc, uint8_t **argv)
 			}
 			else
 			{
-				*(buffer)=STR_SIGNAL;
-				srand(transmission_id);
+				*(buffer)=STR_SIGNAL;	
+				*((uint32_t*)(buffer+1))=transmission_id;
 				sprintf(buffer+5,"Next Animal in the ecosystem is %s",animals[rand()%TOTAL_ANIMALS]);
 				send_data(buffer,size+strlen(buffer+5));
 				sprintf(msg,"Transmission ID: %d, Sent STR : %s",transmission_id,buffer+5);
