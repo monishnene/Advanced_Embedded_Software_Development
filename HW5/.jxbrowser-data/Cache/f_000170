@@ -1,0 +1,314 @@
+[
+  {
+    "downloadLink": "api/bundle?vid=tirtos_tivac__2.16.00.08&download=true&analyticsDevice=TM4C1294NCPDT&analyticsDevtool=undefined&analyticsPath=Software%2FTI-RTOS%20for%20TivaC%2FDevelopment%20Tools%2FEK-TM4C1294XL%2FDriver%20Examples%2FSPI%20Examples%2FSPI%20Loopback",
+    "makeofflineLink": "api/bundles?vids=tirtos_tivac__2.16.00.08",
+    "removeofflineLink": "api/resources?id=SrHXKtGehTWFC8&path=Software/TI-RTOS for TivaC/Development Tools/EK-TM4C1294XL/Driver Examples/SPI Examples/SPI Loopback&removeoffline=true",
+    "_id": "SrHXKtGehTWFC8",
+    "advanced": {
+      "overrideProjectSpecDeviceId": true
+    },
+    "allowPartialDownload": false,
+    "coreTypes": [
+      "Cortex M.TM4C1294NCPDT"
+    ],
+    "dependencies": [],
+    "devtools": [
+      "EK-TM4C1294XL"
+    ],
+    "devtools_category": [
+      "EK-TM4C1294XL"
+    ],
+    "implictDependencyFile": "tirtos_tivac_2_16_00_08/resources/ek_tm4C1294XLEvaluationKit/driverExamples/tiDriverExamples/spiExamples/com_ti_rtsc_tirtostivac_example_151.dependency.tirex.json",
+    "isIncludedFile": true,
+    "link": "api/linkTo/SrHXKtGehTWFC8?analyticsDevice=TM4C1294NCPDT&analyticsDevtool=undefined&analyticsPath=Software%2FTI-RTOS%20for%20TivaC%2FDevelopment%20Tools%2FEK-TM4C1294XL%2FDriver%20Examples%2FSPI%20Examples%2FSPI%20Loopback&extname=.h",
+    "linkType": "local",
+    "name": "Board.h",
+    "package": "TI-RTOS for TivaC",
+    "packageId": "tirtos_tivac",
+    "packagePath": "tirtos_tivac_2_16_00_08",
+    "packageUId": "tirtos_tivac__2.16.00.08",
+    "packageVersion": "2.16.00.08",
+    "parentID": "SrH1ziqMeNhqpY",
+    "resourceType": "file",
+    "semver": "0.0.0",
+    "version": "UNVERSIONED",
+    "type": "resource",
+    "text": "Board.h",
+    "url": "/api/resources?device=TM4C1294NCPDT&package=com.ti.SIMPLELINK_CC13X0_SDK__3.10.00.11::com.ti.SIMPLELINK_CC13X2_26X2_SDK__3.10.00.53::com.ti.SIMPLELINK_CC13X2_SDK__2.30.00.45::com.ti.SIMPLELINK_CC26X2_SDK__2.30.00.34::com.ti.SIMPLELINK_CC2640R2_SDK__2.40.00.32::com.ti.SIMPLELINK_CC2652RB_BLE_SDK__3.10.00.15::com.ti.SIMPLELINK_MSP432_SDK__3.10.00.08::com.ti.SIMPLELINK_MSP432E4_SDK__3.10.00.11::com.ti.SIMPLELINK_CC32XX_SDK__3.10.00.04::com.ti.SIMPLELINK_CC2640R2_SDK_BLE_EXAMPLE_PACK__1.50.00.62::com.ti.SIMPLELINK_SDK_BLE_PLUGIN__1.40.00.42::com.ti.SIMPLELINK_MSP432_SDK_WIFI_PLUGIN__2.40.00.22::com.ti.SIMPLELINK_SDK_VOICE_DETECTION_PLUGIN__1.50.00.15::com.ti.SIMPLELINK_SDK_TI_15_4_STACK_PLUGIN__2.20.00.05::com.ti.SIMPLELINK_ZIGBEE_SDK_PLUGIN__2.20.00.06::com.ti.AWS_CC32XX__2.20.00.02::com.ti.AWS_MSP432E4__2.20.00.02::com.ti.WATSON_MSP432E4__1.20.00.04::com.ti.WATSON_CC32XX__1.20.00.04::com.ti.SAIL__1.30.00.02::com.ti.AZURE_CC32XX__2.20.00.05::com.ti.AZURE_MSP432E4__2.20.00.05::com.ti.SIMPLELINK_SDK_NFC_PLUGIN__2.20.00.08::com.ti.mmwave_industrial_toolbox__3.3.1::com.ti.mmwave_automotive_toolbox__2.4.7::c2000ware_software_package__1.00.06.00::digital_power_c2000ware_sdk_software_package__1.03.00.00::powerSUITE_software_package__2.04.00.00::msp430ware__3.80.07.00::energia.core__18.0.0::energia.tool.arm-none-eabi-gcc__latest-20170620::energia.tool.ino2cpp__1.0.3::energia.boards.cc13xx__5.20.0::energia.boards.cc3220emt__5.6.2::energia.boards.msp432r__5.6.3::sitara__1.02.00.00::tm4c__2.1.4.178::tirtos_cc13xx_cc26xx__2.21.00.06::tirtos_tivac__2.16.00.08::tirtos_simplelink__2.13.01.09::sysbios__6.50.01.12::xdctools__3.51.02.21::motor_control_c2000ware_sdk_software_package__1.00.00.00&path=Software/TI-RTOS%20for%20TivaC/Development%20Tools/EK-TM4C1294XL/Driver%20Examples/SPI%20Examples/SPI%20Loopback",
+    "packageOrder": 248,
+    "offline": "true"
+  },
+  {
+    "downloadLink": "api/bundle?vid=tirtos_tivac__2.16.00.08&download=true&analyticsDevice=TM4C1294NCPDT&analyticsDevtool=undefined&analyticsPath=Software%2FTI-RTOS%20for%20TivaC%2FDevelopment%20Tools%2FEK-TM4C1294XL%2FDriver%20Examples%2FSPI%20Examples%2FSPI%20Loopback",
+    "makeofflineLink": "api/bundles?vids=tirtos_tivac__2.16.00.08",
+    "removeofflineLink": "api/resources?id=SrHnDPZ5nsqY_U&path=Software/TI-RTOS for TivaC/Development Tools/EK-TM4C1294XL/Driver Examples/SPI Examples/SPI Loopback&removeoffline=true",
+    "_id": "SrHnDPZ5nsqY_U",
+    "advanced": {
+      "overrideProjectSpecDeviceId": true
+    },
+    "allowPartialDownload": false,
+    "coreTypes": [
+      "Cortex M.TM4C1294NCPDT"
+    ],
+    "dependencies": [],
+    "devtools": [
+      "EK-TM4C1294XL"
+    ],
+    "devtools_category": [
+      "EK-TM4C1294XL"
+    ],
+    "implictDependencyFile": "tirtos_tivac_2_16_00_08/resources/ek_tm4C1294XLEvaluationKit/driverExamples/tiDriverExamples/spiExamples/com_ti_rtsc_tirtostivac_example_151.dependency.tirex.json",
+    "isIncludedFile": true,
+    "link": "api/linkTo/SrHnDPZ5nsqY_U?analyticsDevice=TM4C1294NCPDT&analyticsDevtool=undefined&analyticsPath=Software%2FTI-RTOS%20for%20TivaC%2FDevelopment%20Tools%2FEK-TM4C1294XL%2FDriver%20Examples%2FSPI%20Examples%2FSPI%20Loopback&extname=.c",
+    "linkType": "local",
+    "name": "EK_TM4C1294XL.c",
+    "package": "TI-RTOS for TivaC",
+    "packageId": "tirtos_tivac",
+    "packagePath": "tirtos_tivac_2_16_00_08",
+    "packageUId": "tirtos_tivac__2.16.00.08",
+    "packageVersion": "2.16.00.08",
+    "parentID": "SrH1ziqMeNhqpY",
+    "resourceType": "file",
+    "semver": "0.0.0",
+    "version": "UNVERSIONED",
+    "type": "resource",
+    "text": "EK_TM4C1294XL.c",
+    "url": "/api/resources?device=TM4C1294NCPDT&package=com.ti.SIMPLELINK_CC13X0_SDK__3.10.00.11::com.ti.SIMPLELINK_CC13X2_26X2_SDK__3.10.00.53::com.ti.SIMPLELINK_CC13X2_SDK__2.30.00.45::com.ti.SIMPLELINK_CC26X2_SDK__2.30.00.34::com.ti.SIMPLELINK_CC2640R2_SDK__2.40.00.32::com.ti.SIMPLELINK_CC2652RB_BLE_SDK__3.10.00.15::com.ti.SIMPLELINK_MSP432_SDK__3.10.00.08::com.ti.SIMPLELINK_MSP432E4_SDK__3.10.00.11::com.ti.SIMPLELINK_CC32XX_SDK__3.10.00.04::com.ti.SIMPLELINK_CC2640R2_SDK_BLE_EXAMPLE_PACK__1.50.00.62::com.ti.SIMPLELINK_SDK_BLE_PLUGIN__1.40.00.42::com.ti.SIMPLELINK_MSP432_SDK_WIFI_PLUGIN__2.40.00.22::com.ti.SIMPLELINK_SDK_VOICE_DETECTION_PLUGIN__1.50.00.15::com.ti.SIMPLELINK_SDK_TI_15_4_STACK_PLUGIN__2.20.00.05::com.ti.SIMPLELINK_ZIGBEE_SDK_PLUGIN__2.20.00.06::com.ti.AWS_CC32XX__2.20.00.02::com.ti.AWS_MSP432E4__2.20.00.02::com.ti.WATSON_MSP432E4__1.20.00.04::com.ti.WATSON_CC32XX__1.20.00.04::com.ti.SAIL__1.30.00.02::com.ti.AZURE_CC32XX__2.20.00.05::com.ti.AZURE_MSP432E4__2.20.00.05::com.ti.SIMPLELINK_SDK_NFC_PLUGIN__2.20.00.08::com.ti.mmwave_industrial_toolbox__3.3.1::com.ti.mmwave_automotive_toolbox__2.4.7::c2000ware_software_package__1.00.06.00::digital_power_c2000ware_sdk_software_package__1.03.00.00::powerSUITE_software_package__2.04.00.00::msp430ware__3.80.07.00::energia.core__18.0.0::energia.tool.arm-none-eabi-gcc__latest-20170620::energia.tool.ino2cpp__1.0.3::energia.boards.cc13xx__5.20.0::energia.boards.cc3220emt__5.6.2::energia.boards.msp432r__5.6.3::sitara__1.02.00.00::tm4c__2.1.4.178::tirtos_cc13xx_cc26xx__2.21.00.06::tirtos_tivac__2.16.00.08::tirtos_simplelink__2.13.01.09::sysbios__6.50.01.12::xdctools__3.51.02.21::motor_control_c2000ware_sdk_software_package__1.00.00.00&path=Software/TI-RTOS%20for%20TivaC/Development%20Tools/EK-TM4C1294XL/Driver%20Examples/SPI%20Examples/SPI%20Loopback",
+    "packageOrder": 248,
+    "offline": "true"
+  },
+  {
+    "downloadLink": "api/bundle?vid=tirtos_tivac__2.16.00.08&download=true&analyticsDevice=TM4C1294NCPDT&analyticsDevtool=undefined&analyticsPath=Software%2FTI-RTOS%20for%20TivaC%2FDevelopment%20Tools%2FEK-TM4C1294XL%2FDriver%20Examples%2FSPI%20Examples%2FSPI%20Loopback",
+    "makeofflineLink": "api/bundles?vids=tirtos_tivac__2.16.00.08",
+    "removeofflineLink": "api/resources?id=SrHJ9iripteai4&path=Software/TI-RTOS for TivaC/Development Tools/EK-TM4C1294XL/Driver Examples/SPI Examples/SPI Loopback&removeoffline=true",
+    "_id": "SrHJ9iripteai4",
+    "advanced": {
+      "overrideProjectSpecDeviceId": true
+    },
+    "allowPartialDownload": false,
+    "coreTypes": [
+      "Cortex M.TM4C1294NCPDT"
+    ],
+    "dependencies": [],
+    "devtools": [
+      "EK-TM4C1294XL"
+    ],
+    "devtools_category": [
+      "EK-TM4C1294XL"
+    ],
+    "implictDependencyFile": "tirtos_tivac_2_16_00_08/resources/ek_tm4C1294XLEvaluationKit/driverExamples/tiDriverExamples/spiExamples/com_ti_rtsc_tirtostivac_example_151.dependency.tirex.json",
+    "isIncludedFile": true,
+    "link": "api/linkTo/SrHJ9iripteai4?analyticsDevice=TM4C1294NCPDT&analyticsDevtool=undefined&analyticsPath=Software%2FTI-RTOS%20for%20TivaC%2FDevelopment%20Tools%2FEK-TM4C1294XL%2FDriver%20Examples%2FSPI%20Examples%2FSPI%20Loopback&extname=.cmd",
+    "linkType": "local",
+    "name": "EK_TM4C1294XL.cmd",
+    "package": "TI-RTOS for TivaC",
+    "packageId": "tirtos_tivac",
+    "packagePath": "tirtos_tivac_2_16_00_08",
+    "packageUId": "tirtos_tivac__2.16.00.08",
+    "packageVersion": "2.16.00.08",
+    "parentID": "SrH1ziqMeNhqpY",
+    "resourceType": "file",
+    "semver": "0.0.0",
+    "version": "UNVERSIONED",
+    "type": "resource",
+    "text": "EK_TM4C1294XL.cmd",
+    "url": "/api/resources?device=TM4C1294NCPDT&package=com.ti.SIMPLELINK_CC13X0_SDK__3.10.00.11::com.ti.SIMPLELINK_CC13X2_26X2_SDK__3.10.00.53::com.ti.SIMPLELINK_CC13X2_SDK__2.30.00.45::com.ti.SIMPLELINK_CC26X2_SDK__2.30.00.34::com.ti.SIMPLELINK_CC2640R2_SDK__2.40.00.32::com.ti.SIMPLELINK_CC2652RB_BLE_SDK__3.10.00.15::com.ti.SIMPLELINK_MSP432_SDK__3.10.00.08::com.ti.SIMPLELINK_MSP432E4_SDK__3.10.00.11::com.ti.SIMPLELINK_CC32XX_SDK__3.10.00.04::com.ti.SIMPLELINK_CC2640R2_SDK_BLE_EXAMPLE_PACK__1.50.00.62::com.ti.SIMPLELINK_SDK_BLE_PLUGIN__1.40.00.42::com.ti.SIMPLELINK_MSP432_SDK_WIFI_PLUGIN__2.40.00.22::com.ti.SIMPLELINK_SDK_VOICE_DETECTION_PLUGIN__1.50.00.15::com.ti.SIMPLELINK_SDK_TI_15_4_STACK_PLUGIN__2.20.00.05::com.ti.SIMPLELINK_ZIGBEE_SDK_PLUGIN__2.20.00.06::com.ti.AWS_CC32XX__2.20.00.02::com.ti.AWS_MSP432E4__2.20.00.02::com.ti.WATSON_MSP432E4__1.20.00.04::com.ti.WATSON_CC32XX__1.20.00.04::com.ti.SAIL__1.30.00.02::com.ti.AZURE_CC32XX__2.20.00.05::com.ti.AZURE_MSP432E4__2.20.00.05::com.ti.SIMPLELINK_SDK_NFC_PLUGIN__2.20.00.08::com.ti.mmwave_industrial_toolbox__3.3.1::com.ti.mmwave_automotive_toolbox__2.4.7::c2000ware_software_package__1.00.06.00::digital_power_c2000ware_sdk_software_package__1.03.00.00::powerSUITE_software_package__2.04.00.00::msp430ware__3.80.07.00::energia.core__18.0.0::energia.tool.arm-none-eabi-gcc__latest-20170620::energia.tool.ino2cpp__1.0.3::energia.boards.cc13xx__5.20.0::energia.boards.cc3220emt__5.6.2::energia.boards.msp432r__5.6.3::sitara__1.02.00.00::tm4c__2.1.4.178::tirtos_cc13xx_cc26xx__2.21.00.06::tirtos_tivac__2.16.00.08::tirtos_simplelink__2.13.01.09::sysbios__6.50.01.12::xdctools__3.51.02.21::motor_control_c2000ware_sdk_software_package__1.00.00.00&path=Software/TI-RTOS%20for%20TivaC/Development%20Tools/EK-TM4C1294XL/Driver%20Examples/SPI%20Examples/SPI%20Loopback",
+    "packageOrder": 248,
+    "offline": "true"
+  },
+  {
+    "downloadLink": "api/bundle?vid=tirtos_tivac__2.16.00.08&download=true&analyticsDevice=TM4C1294NCPDT&analyticsDevtool=undefined&analyticsPath=Software%2FTI-RTOS%20for%20TivaC%2FDevelopment%20Tools%2FEK-TM4C1294XL%2FDriver%20Examples%2FSPI%20Examples%2FSPI%20Loopback",
+    "makeofflineLink": "api/bundles?vids=tirtos_tivac__2.16.00.08",
+    "removeofflineLink": "api/resources?id=SrHXNvz_-l84IY&path=Software/TI-RTOS for TivaC/Development Tools/EK-TM4C1294XL/Driver Examples/SPI Examples/SPI Loopback&removeoffline=true",
+    "_id": "SrHXNvz_-l84IY",
+    "advanced": {
+      "overrideProjectSpecDeviceId": true
+    },
+    "allowPartialDownload": false,
+    "coreTypes": [
+      "Cortex M.TM4C1294NCPDT"
+    ],
+    "dependencies": [],
+    "devtools": [
+      "EK-TM4C1294XL"
+    ],
+    "devtools_category": [
+      "EK-TM4C1294XL"
+    ],
+    "implictDependencyFile": "tirtos_tivac_2_16_00_08/resources/ek_tm4C1294XLEvaluationKit/driverExamples/tiDriverExamples/spiExamples/com_ti_rtsc_tirtostivac_example_151.dependency.tirex.json",
+    "isIncludedFile": true,
+    "link": "api/linkTo/SrHXNvz_-l84IY?analyticsDevice=TM4C1294NCPDT&analyticsDevtool=undefined&analyticsPath=Software%2FTI-RTOS%20for%20TivaC%2FDevelopment%20Tools%2FEK-TM4C1294XL%2FDriver%20Examples%2FSPI%20Examples%2FSPI%20Loopback&extname=.h",
+    "linkType": "local",
+    "name": "EK_TM4C1294XL.h",
+    "package": "TI-RTOS for TivaC",
+    "packageId": "tirtos_tivac",
+    "packagePath": "tirtos_tivac_2_16_00_08",
+    "packageUId": "tirtos_tivac__2.16.00.08",
+    "packageVersion": "2.16.00.08",
+    "parentID": "SrH1ziqMeNhqpY",
+    "resourceType": "file",
+    "semver": "0.0.0",
+    "version": "UNVERSIONED",
+    "type": "resource",
+    "text": "EK_TM4C1294XL.h",
+    "url": "/api/resources?device=TM4C1294NCPDT&package=com.ti.SIMPLELINK_CC13X0_SDK__3.10.00.11::com.ti.SIMPLELINK_CC13X2_26X2_SDK__3.10.00.53::com.ti.SIMPLELINK_CC13X2_SDK__2.30.00.45::com.ti.SIMPLELINK_CC26X2_SDK__2.30.00.34::com.ti.SIMPLELINK_CC2640R2_SDK__2.40.00.32::com.ti.SIMPLELINK_CC2652RB_BLE_SDK__3.10.00.15::com.ti.SIMPLELINK_MSP432_SDK__3.10.00.08::com.ti.SIMPLELINK_MSP432E4_SDK__3.10.00.11::com.ti.SIMPLELINK_CC32XX_SDK__3.10.00.04::com.ti.SIMPLELINK_CC2640R2_SDK_BLE_EXAMPLE_PACK__1.50.00.62::com.ti.SIMPLELINK_SDK_BLE_PLUGIN__1.40.00.42::com.ti.SIMPLELINK_MSP432_SDK_WIFI_PLUGIN__2.40.00.22::com.ti.SIMPLELINK_SDK_VOICE_DETECTION_PLUGIN__1.50.00.15::com.ti.SIMPLELINK_SDK_TI_15_4_STACK_PLUGIN__2.20.00.05::com.ti.SIMPLELINK_ZIGBEE_SDK_PLUGIN__2.20.00.06::com.ti.AWS_CC32XX__2.20.00.02::com.ti.AWS_MSP432E4__2.20.00.02::com.ti.WATSON_MSP432E4__1.20.00.04::com.ti.WATSON_CC32XX__1.20.00.04::com.ti.SAIL__1.30.00.02::com.ti.AZURE_CC32XX__2.20.00.05::com.ti.AZURE_MSP432E4__2.20.00.05::com.ti.SIMPLELINK_SDK_NFC_PLUGIN__2.20.00.08::com.ti.mmwave_industrial_toolbox__3.3.1::com.ti.mmwave_automotive_toolbox__2.4.7::c2000ware_software_package__1.00.06.00::digital_power_c2000ware_sdk_software_package__1.03.00.00::powerSUITE_software_package__2.04.00.00::msp430ware__3.80.07.00::energia.core__18.0.0::energia.tool.arm-none-eabi-gcc__latest-20170620::energia.tool.ino2cpp__1.0.3::energia.boards.cc13xx__5.20.0::energia.boards.cc3220emt__5.6.2::energia.boards.msp432r__5.6.3::sitara__1.02.00.00::tm4c__2.1.4.178::tirtos_cc13xx_cc26xx__2.21.00.06::tirtos_tivac__2.16.00.08::tirtos_simplelink__2.13.01.09::sysbios__6.50.01.12::xdctools__3.51.02.21::motor_control_c2000ware_sdk_software_package__1.00.00.00&path=Software/TI-RTOS%20for%20TivaC/Development%20Tools/EK-TM4C1294XL/Driver%20Examples/SPI%20Examples/SPI%20Loopback",
+    "packageOrder": 248,
+    "offline": "true"
+  },
+  {
+    "downloadLink": "api/bundle?vid=tirtos_tivac__2.16.00.08&download=true&analyticsDevice=TM4C1294NCPDT&analyticsDevtool=undefined&analyticsPath=Software%2FTI-RTOS%20for%20TivaC%2FDevelopment%20Tools%2FEK-TM4C1294XL%2FDriver%20Examples%2FSPI%20Examples%2FSPI%20Loopback",
+    "makeofflineLink": "api/bundles?vids=tirtos_tivac__2.16.00.08",
+    "removeofflineLink": "api/resources?id=SrHN5de8DT8KNI&path=Software/TI-RTOS for TivaC/Development Tools/EK-TM4C1294XL/Driver Examples/SPI Examples/SPI Loopback&removeoffline=true",
+    "_id": "SrHN5de8DT8KNI",
+    "advanced": {
+      "overrideProjectSpecDeviceId": true
+    },
+    "allowPartialDownload": false,
+    "coreTypes": [
+      "Cortex M.TM4C1294NCPDT"
+    ],
+    "dependencies": [],
+    "devtools": [
+      "EK-TM4C1294XL"
+    ],
+    "devtools_category": [
+      "EK-TM4C1294XL"
+    ],
+    "implictDependencyFile": "tirtos_tivac_2_16_00_08/resources/ek_tm4C1294XLEvaluationKit/driverExamples/tiDriverExamples/spiExamples/com_ti_rtsc_tirtostivac_example_151.dependency.tirex.json",
+    "isIncludedFile": true,
+    "link": "api/linkTo/SrHN5de8DT8KNI?analyticsDevice=TM4C1294NCPDT&analyticsDevtool=undefined&analyticsPath=Software%2FTI-RTOS%20for%20TivaC%2FDevelopment%20Tools%2FEK-TM4C1294XL%2FDriver%20Examples%2FSPI%20Examples%2FSPI%20Loopback&extname=.defs",
+    "linkType": "local",
+    "name": "makefile.defs",
+    "package": "TI-RTOS for TivaC",
+    "packageId": "tirtos_tivac",
+    "packagePath": "tirtos_tivac_2_16_00_08",
+    "packageUId": "tirtos_tivac__2.16.00.08",
+    "packageVersion": "2.16.00.08",
+    "parentID": "SrH1ziqMeNhqpY",
+    "resourceType": "file",
+    "semver": "0.0.0",
+    "version": "UNVERSIONED",
+    "type": "resource",
+    "text": "makefile.defs",
+    "url": "/api/resources?device=TM4C1294NCPDT&package=com.ti.SIMPLELINK_CC13X0_SDK__3.10.00.11::com.ti.SIMPLELINK_CC13X2_26X2_SDK__3.10.00.53::com.ti.SIMPLELINK_CC13X2_SDK__2.30.00.45::com.ti.SIMPLELINK_CC26X2_SDK__2.30.00.34::com.ti.SIMPLELINK_CC2640R2_SDK__2.40.00.32::com.ti.SIMPLELINK_CC2652RB_BLE_SDK__3.10.00.15::com.ti.SIMPLELINK_MSP432_SDK__3.10.00.08::com.ti.SIMPLELINK_MSP432E4_SDK__3.10.00.11::com.ti.SIMPLELINK_CC32XX_SDK__3.10.00.04::com.ti.SIMPLELINK_CC2640R2_SDK_BLE_EXAMPLE_PACK__1.50.00.62::com.ti.SIMPLELINK_SDK_BLE_PLUGIN__1.40.00.42::com.ti.SIMPLELINK_MSP432_SDK_WIFI_PLUGIN__2.40.00.22::com.ti.SIMPLELINK_SDK_VOICE_DETECTION_PLUGIN__1.50.00.15::com.ti.SIMPLELINK_SDK_TI_15_4_STACK_PLUGIN__2.20.00.05::com.ti.SIMPLELINK_ZIGBEE_SDK_PLUGIN__2.20.00.06::com.ti.AWS_CC32XX__2.20.00.02::com.ti.AWS_MSP432E4__2.20.00.02::com.ti.WATSON_MSP432E4__1.20.00.04::com.ti.WATSON_CC32XX__1.20.00.04::com.ti.SAIL__1.30.00.02::com.ti.AZURE_CC32XX__2.20.00.05::com.ti.AZURE_MSP432E4__2.20.00.05::com.ti.SIMPLELINK_SDK_NFC_PLUGIN__2.20.00.08::com.ti.mmwave_industrial_toolbox__3.3.1::com.ti.mmwave_automotive_toolbox__2.4.7::c2000ware_software_package__1.00.06.00::digital_power_c2000ware_sdk_software_package__1.03.00.00::powerSUITE_software_package__2.04.00.00::msp430ware__3.80.07.00::energia.core__18.0.0::energia.tool.arm-none-eabi-gcc__latest-20170620::energia.tool.ino2cpp__1.0.3::energia.boards.cc13xx__5.20.0::energia.boards.cc3220emt__5.6.2::energia.boards.msp432r__5.6.3::sitara__1.02.00.00::tm4c__2.1.4.178::tirtos_cc13xx_cc26xx__2.21.00.06::tirtos_tivac__2.16.00.08::tirtos_simplelink__2.13.01.09::sysbios__6.50.01.12::xdctools__3.51.02.21::motor_control_c2000ware_sdk_software_package__1.00.00.00&path=Software/TI-RTOS%20for%20TivaC/Development%20Tools/EK-TM4C1294XL/Driver%20Examples/SPI%20Examples/SPI%20Loopback",
+    "packageOrder": 248,
+    "offline": "true"
+  },
+  {
+    "downloadLink": "api/bundle?vid=tirtos_tivac__2.16.00.08&download=true&analyticsDevice=TM4C1294NCPDT&analyticsDevtool=undefined&analyticsPath=Software%2FTI-RTOS%20for%20TivaC%2FDevelopment%20Tools%2FEK-TM4C1294XL%2FDriver%20Examples%2FSPI%20Examples%2FSPI%20Loopback",
+    "makeofflineLink": "api/bundles?vids=tirtos_tivac__2.16.00.08",
+    "removeofflineLink": "api/resources?id=SrHBRd2OZPbxuQ&path=Software/TI-RTOS for TivaC/Development Tools/EK-TM4C1294XL/Driver Examples/SPI Examples/SPI Loopback&removeoffline=true",
+    "_id": "SrHBRd2OZPbxuQ",
+    "advanced": {
+      "overrideProjectSpecDeviceId": true
+    },
+    "allowPartialDownload": false,
+    "coreTypes": [
+      "Cortex M.TM4C1294NCPDT"
+    ],
+    "dependencies": [],
+    "devtools": [
+      "EK-TM4C1294XL"
+    ],
+    "devtools_category": [
+      "EK-TM4C1294XL"
+    ],
+    "implictDependencyFile": "tirtos_tivac_2_16_00_08/resources/ek_tm4C1294XLEvaluationKit/driverExamples/tiDriverExamples/spiExamples/com_ti_rtsc_tirtostivac_example_151.dependency.tirex.json",
+    "isIncludedFile": true,
+    "link": "api/linkTo/SrHBRd2OZPbxuQ?analyticsDevice=TM4C1294NCPDT&analyticsDevtool=undefined&analyticsPath=Software%2FTI-RTOS%20for%20TivaC%2FDevelopment%20Tools%2FEK-TM4C1294XL%2FDriver%20Examples%2FSPI%20Examples%2FSPI%20Loopback&extname=.c",
+    "linkType": "local",
+    "name": "spiloopback.c",
+    "package": "TI-RTOS for TivaC",
+    "packageId": "tirtos_tivac",
+    "packagePath": "tirtos_tivac_2_16_00_08",
+    "packageUId": "tirtos_tivac__2.16.00.08",
+    "packageVersion": "2.16.00.08",
+    "parentID": "SrH1ziqMeNhqpY",
+    "resourceType": "file",
+    "semver": "0.0.0",
+    "version": "UNVERSIONED",
+    "type": "resource",
+    "text": "spiloopback.c",
+    "url": "/api/resources?device=TM4C1294NCPDT&package=com.ti.SIMPLELINK_CC13X0_SDK__3.10.00.11::com.ti.SIMPLELINK_CC13X2_26X2_SDK__3.10.00.53::com.ti.SIMPLELINK_CC13X2_SDK__2.30.00.45::com.ti.SIMPLELINK_CC26X2_SDK__2.30.00.34::com.ti.SIMPLELINK_CC2640R2_SDK__2.40.00.32::com.ti.SIMPLELINK_CC2652RB_BLE_SDK__3.10.00.15::com.ti.SIMPLELINK_MSP432_SDK__3.10.00.08::com.ti.SIMPLELINK_MSP432E4_SDK__3.10.00.11::com.ti.SIMPLELINK_CC32XX_SDK__3.10.00.04::com.ti.SIMPLELINK_CC2640R2_SDK_BLE_EXAMPLE_PACK__1.50.00.62::com.ti.SIMPLELINK_SDK_BLE_PLUGIN__1.40.00.42::com.ti.SIMPLELINK_MSP432_SDK_WIFI_PLUGIN__2.40.00.22::com.ti.SIMPLELINK_SDK_VOICE_DETECTION_PLUGIN__1.50.00.15::com.ti.SIMPLELINK_SDK_TI_15_4_STACK_PLUGIN__2.20.00.05::com.ti.SIMPLELINK_ZIGBEE_SDK_PLUGIN__2.20.00.06::com.ti.AWS_CC32XX__2.20.00.02::com.ti.AWS_MSP432E4__2.20.00.02::com.ti.WATSON_MSP432E4__1.20.00.04::com.ti.WATSON_CC32XX__1.20.00.04::com.ti.SAIL__1.30.00.02::com.ti.AZURE_CC32XX__2.20.00.05::com.ti.AZURE_MSP432E4__2.20.00.05::com.ti.SIMPLELINK_SDK_NFC_PLUGIN__2.20.00.08::com.ti.mmwave_industrial_toolbox__3.3.1::com.ti.mmwave_automotive_toolbox__2.4.7::c2000ware_software_package__1.00.06.00::digital_power_c2000ware_sdk_software_package__1.03.00.00::powerSUITE_software_package__2.04.00.00::msp430ware__3.80.07.00::energia.core__18.0.0::energia.tool.arm-none-eabi-gcc__latest-20170620::energia.tool.ino2cpp__1.0.3::energia.boards.cc13xx__5.20.0::energia.boards.cc3220emt__5.6.2::energia.boards.msp432r__5.6.3::sitara__1.02.00.00::tm4c__2.1.4.178::tirtos_cc13xx_cc26xx__2.21.00.06::tirtos_tivac__2.16.00.08::tirtos_simplelink__2.13.01.09::sysbios__6.50.01.12::xdctools__3.51.02.21::motor_control_c2000ware_sdk_software_package__1.00.00.00&path=Software/TI-RTOS%20for%20TivaC/Development%20Tools/EK-TM4C1294XL/Driver%20Examples/SPI%20Examples/SPI%20Loopback",
+    "packageOrder": 248,
+    "offline": "true"
+  },
+  {
+    "downloadLink": "api/bundle?vid=tirtos_tivac__2.16.00.08&download=true&analyticsDevice=TM4C1294NCPDT&analyticsDevtool=undefined&analyticsPath=Software%2FTI-RTOS%20for%20TivaC%2FDevelopment%20Tools%2FEK-TM4C1294XL%2FDriver%20Examples%2FSPI%20Examples%2FSPI%20Loopback",
+    "makeofflineLink": "api/bundles?vids=tirtos_tivac__2.16.00.08",
+    "removeofflineLink": "api/resources?id=SrHgCi0e5SkuaI&path=Software/TI-RTOS for TivaC/Development Tools/EK-TM4C1294XL/Driver Examples/SPI Examples/SPI Loopback&removeoffline=true",
+    "_id": "SrHgCi0e5SkuaI",
+    "advanced": {
+      "overrideProjectSpecDeviceId": true
+    },
+    "allowPartialDownload": false,
+    "coreTypes": [
+      "Cortex M.TM4C1294NCPDT"
+    ],
+    "dependencies": [],
+    "devtools": [
+      "EK-TM4C1294XL"
+    ],
+    "devtools_category": [
+      "EK-TM4C1294XL"
+    ],
+    "implictDependencyFile": "tirtos_tivac_2_16_00_08/resources/ek_tm4C1294XLEvaluationKit/driverExamples/tiDriverExamples/spiExamples/com_ti_rtsc_tirtostivac_example_151.dependency.tirex.json",
+    "isIncludedFile": true,
+    "link": "api/linkTo/SrHgCi0e5SkuaI?analyticsDevice=TM4C1294NCPDT&analyticsDevtool=undefined&analyticsPath=Software%2FTI-RTOS%20for%20TivaC%2FDevelopment%20Tools%2FEK-TM4C1294XL%2FDriver%20Examples%2FSPI%20Examples%2FSPI%20Loopback&extname=.cfg",
+    "linkType": "local",
+    "name": "spiloopback.cfg",
+    "package": "TI-RTOS for TivaC",
+    "packageId": "tirtos_tivac",
+    "packagePath": "tirtos_tivac_2_16_00_08",
+    "packageUId": "tirtos_tivac__2.16.00.08",
+    "packageVersion": "2.16.00.08",
+    "parentID": "SrH1ziqMeNhqpY",
+    "resourceType": "file",
+    "semver": "0.0.0",
+    "version": "UNVERSIONED",
+    "type": "resource",
+    "text": "spiloopback.cfg",
+    "url": "/api/resources?device=TM4C1294NCPDT&package=com.ti.SIMPLELINK_CC13X0_SDK__3.10.00.11::com.ti.SIMPLELINK_CC13X2_26X2_SDK__3.10.00.53::com.ti.SIMPLELINK_CC13X2_SDK__2.30.00.45::com.ti.SIMPLELINK_CC26X2_SDK__2.30.00.34::com.ti.SIMPLELINK_CC2640R2_SDK__2.40.00.32::com.ti.SIMPLELINK_CC2652RB_BLE_SDK__3.10.00.15::com.ti.SIMPLELINK_MSP432_SDK__3.10.00.08::com.ti.SIMPLELINK_MSP432E4_SDK__3.10.00.11::com.ti.SIMPLELINK_CC32XX_SDK__3.10.00.04::com.ti.SIMPLELINK_CC2640R2_SDK_BLE_EXAMPLE_PACK__1.50.00.62::com.ti.SIMPLELINK_SDK_BLE_PLUGIN__1.40.00.42::com.ti.SIMPLELINK_MSP432_SDK_WIFI_PLUGIN__2.40.00.22::com.ti.SIMPLELINK_SDK_VOICE_DETECTION_PLUGIN__1.50.00.15::com.ti.SIMPLELINK_SDK_TI_15_4_STACK_PLUGIN__2.20.00.05::com.ti.SIMPLELINK_ZIGBEE_SDK_PLUGIN__2.20.00.06::com.ti.AWS_CC32XX__2.20.00.02::com.ti.AWS_MSP432E4__2.20.00.02::com.ti.WATSON_MSP432E4__1.20.00.04::com.ti.WATSON_CC32XX__1.20.00.04::com.ti.SAIL__1.30.00.02::com.ti.AZURE_CC32XX__2.20.00.05::com.ti.AZURE_MSP432E4__2.20.00.05::com.ti.SIMPLELINK_SDK_NFC_PLUGIN__2.20.00.08::com.ti.mmwave_industrial_toolbox__3.3.1::com.ti.mmwave_automotive_toolbox__2.4.7::c2000ware_software_package__1.00.06.00::digital_power_c2000ware_sdk_software_package__1.03.00.00::powerSUITE_software_package__2.04.00.00::msp430ware__3.80.07.00::energia.core__18.0.0::energia.tool.arm-none-eabi-gcc__latest-20170620::energia.tool.ino2cpp__1.0.3::energia.boards.cc13xx__5.20.0::energia.boards.cc3220emt__5.6.2::energia.boards.msp432r__5.6.3::sitara__1.02.00.00::tm4c__2.1.4.178::tirtos_cc13xx_cc26xx__2.21.00.06::tirtos_tivac__2.16.00.08::tirtos_simplelink__2.13.01.09::sysbios__6.50.01.12::xdctools__3.51.02.21::motor_control_c2000ware_sdk_software_package__1.00.00.00&path=Software/TI-RTOS%20for%20TivaC/Development%20Tools/EK-TM4C1294XL/Driver%20Examples/SPI%20Examples/SPI%20Loopback",
+    "packageOrder": 248,
+    "offline": "true"
+  },
+  {
+    "downloadLink": "api/bundle?vid=tirtos_tivac__2.16.00.08&download=true&analyticsDevice=TM4C1294NCPDT&analyticsDevtool=undefined&analyticsPath=Software%2FTI-RTOS%20for%20TivaC%2FDevelopment%20Tools%2FEK-TM4C1294XL%2FDriver%20Examples%2FSPI%20Examples%2FSPI%20Loopback",
+    "makeofflineLink": "api/bundles?vids=tirtos_tivac__2.16.00.08",
+    "removeofflineLink": "api/resources?id=SrHhP6DpGWmAMY&path=Software/TI-RTOS for TivaC/Development Tools/EK-TM4C1294XL/Driver Examples/SPI Examples/SPI Loopback&removeoffline=true",
+    "_id": "SrHhP6DpGWmAMY",
+    "advanced": {
+      "overrideProjectSpecDeviceId": true
+    },
+    "allowPartialDownload": false,
+    "coreTypes": [
+      "Cortex M.TM4C1294NCPDT"
+    ],
+    "dependencies": [],
+    "devtools": [
+      "EK-TM4C1294XL"
+    ],
+    "devtools_category": [
+      "EK-TM4C1294XL"
+    ],
+    "implictDependencyFile": "tirtos_tivac_2_16_00_08/resources/ek_tm4C1294XLEvaluationKit/driverExamples/tiDriverExamples/spiExamples/com_ti_rtsc_tirtostivac_example_151.dependency.tirex.json",
+    "isIncludedFile": true,
+    "link": "api/linkTo/SrHhP6DpGWmAMY?analyticsDevice=TM4C1294NCPDT&analyticsDevtool=undefined&analyticsPath=Software%2FTI-RTOS%20for%20TivaC%2FDevelopment%20Tools%2FEK-TM4C1294XL%2FDriver%20Examples%2FSPI%20Examples%2FSPI%20Loopback&extname=.txt",
+    "linkType": "local",
+    "name": "spiloopback_readme.txt",
+    "package": "TI-RTOS for TivaC",
+    "packageId": "tirtos_tivac",
+    "packagePath": "tirtos_tivac_2_16_00_08",
+    "packageUId": "tirtos_tivac__2.16.00.08",
+    "packageVersion": "2.16.00.08",
+    "parentID": "SrH1ziqMeNhqpY",
+    "resourceType": "file",
+    "semver": "0.0.0",
+    "version": "UNVERSIONED",
+    "type": "resource",
+    "text": "spiloopback_readme.txt",
+    "url": "/api/resources?device=TM4C1294NCPDT&package=com.ti.SIMPLELINK_CC13X0_SDK__3.10.00.11::com.ti.SIMPLELINK_CC13X2_26X2_SDK__3.10.00.53::com.ti.SIMPLELINK_CC13X2_SDK__2.30.00.45::com.ti.SIMPLELINK_CC26X2_SDK__2.30.00.34::com.ti.SIMPLELINK_CC2640R2_SDK__2.40.00.32::com.ti.SIMPLELINK_CC2652RB_BLE_SDK__3.10.00.15::com.ti.SIMPLELINK_MSP432_SDK__3.10.00.08::com.ti.SIMPLELINK_MSP432E4_SDK__3.10.00.11::com.ti.SIMPLELINK_CC32XX_SDK__3.10.00.04::com.ti.SIMPLELINK_CC2640R2_SDK_BLE_EXAMPLE_PACK__1.50.00.62::com.ti.SIMPLELINK_SDK_BLE_PLUGIN__1.40.00.42::com.ti.SIMPLELINK_MSP432_SDK_WIFI_PLUGIN__2.40.00.22::com.ti.SIMPLELINK_SDK_VOICE_DETECTION_PLUGIN__1.50.00.15::com.ti.SIMPLELINK_SDK_TI_15_4_STACK_PLUGIN__2.20.00.05::com.ti.SIMPLELINK_ZIGBEE_SDK_PLUGIN__2.20.00.06::com.ti.AWS_CC32XX__2.20.00.02::com.ti.AWS_MSP432E4__2.20.00.02::com.ti.WATSON_MSP432E4__1.20.00.04::com.ti.WATSON_CC32XX__1.20.00.04::com.ti.SAIL__1.30.00.02::com.ti.AZURE_CC32XX__2.20.00.05::com.ti.AZURE_MSP432E4__2.20.00.05::com.ti.SIMPLELINK_SDK_NFC_PLUGIN__2.20.00.08::com.ti.mmwave_industrial_toolbox__3.3.1::com.ti.mmwave_automotive_toolbox__2.4.7::c2000ware_software_package__1.00.06.00::digital_power_c2000ware_sdk_software_package__1.03.00.00::powerSUITE_software_package__2.04.00.00::msp430ware__3.80.07.00::energia.core__18.0.0::energia.tool.arm-none-eabi-gcc__latest-20170620::energia.tool.ino2cpp__1.0.3::energia.boards.cc13xx__5.20.0::energia.boards.cc3220emt__5.6.2::energia.boards.msp432r__5.6.3::sitara__1.02.00.00::tm4c__2.1.4.178::tirtos_cc13xx_cc26xx__2.21.00.06::tirtos_tivac__2.16.00.08::tirtos_simplelink__2.13.01.09::sysbios__6.50.01.12::xdctools__3.51.02.21::motor_control_c2000ware_sdk_software_package__1.00.00.00&path=Software/TI-RTOS%20for%20TivaC/Development%20Tools/EK-TM4C1294XL/Driver%20Examples/SPI%20Examples/SPI%20Loopback",
+    "packageOrder": 248,
+    "offline": "true"
+  }
+]

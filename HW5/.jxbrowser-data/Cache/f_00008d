@@ -1,0 +1,314 @@
+[
+  {
+    "downloadLink": "api/bundle?vid=tirtos_tivac__2.16.00.08&download=true&analyticsDevice=TM4C1294NCPDT&analyticsDevtool=undefined&analyticsPath=Software%2FTI-RTOS%20for%20TivaC%2FDevelopment%20Tools%2FEK-TM4C1294XL%2FDriver%20Examples%2FEmpty%20Examples%2FEmpty%20Project",
+    "makeofflineLink": "api/bundles?vids=tirtos_tivac__2.16.00.08",
+    "removeofflineLink": "api/resources?id=SrHeqC7nBtVTrI&path=Software/TI-RTOS for TivaC/Development Tools/EK-TM4C1294XL/Driver Examples/Empty Examples/Empty Project&removeoffline=true",
+    "_id": "SrHeqC7nBtVTrI",
+    "advanced": {
+      "overrideProjectSpecDeviceId": true
+    },
+    "allowPartialDownload": false,
+    "coreTypes": [
+      "Cortex M.TM4C1294NCPDT"
+    ],
+    "dependencies": [],
+    "devtools": [
+      "EK-TM4C1294XL"
+    ],
+    "devtools_category": [
+      "EK-TM4C1294XL"
+    ],
+    "implictDependencyFile": "tirtos_tivac_2_16_00_08/resources/ek_tm4C1294XLEvaluationKit/driverExamples/tiDriverExamples/emptyExamples/com_ti_rtsc_tirtostivac_example_141.dependency.tirex.json",
+    "isIncludedFile": true,
+    "link": "api/linkTo/SrHeqC7nBtVTrI?analyticsDevice=TM4C1294NCPDT&analyticsDevtool=undefined&analyticsPath=Software%2FTI-RTOS%20for%20TivaC%2FDevelopment%20Tools%2FEK-TM4C1294XL%2FDriver%20Examples%2FEmpty%20Examples%2FEmpty%20Project&extname=.h",
+    "linkType": "local",
+    "name": "Board.h",
+    "package": "TI-RTOS for TivaC",
+    "packageId": "tirtos_tivac",
+    "packagePath": "tirtos_tivac_2_16_00_08",
+    "packageUId": "tirtos_tivac__2.16.00.08",
+    "packageVersion": "2.16.00.08",
+    "parentID": "SrHTvoao3imT0w",
+    "resourceType": "file",
+    "semver": "0.0.0",
+    "version": "UNVERSIONED",
+    "type": "resource",
+    "text": "Board.h",
+    "url": "/api/resources?device=TM4C1294NCPDT&package=c2000ware_software_package__1.00.06.00::digital_power_c2000ware_sdk_software_package__1.03.00.00::powerSUITE_software_package__2.04.00.00::msp430ware__3.80.07.00::tm4c__2.1.4.178::tirtos_tivac__2.16.00.08::xdctools__3.51.02.21&path=Software/TI-RTOS%20for%20TivaC/Development%20Tools/EK-TM4C1294XL/Driver%20Examples/Empty%20Examples/Empty%20Project",
+    "packageOrder": 248,
+    "offline": "true"
+  },
+  {
+    "downloadLink": "api/bundle?vid=tirtos_tivac__2.16.00.08&download=true&analyticsDevice=TM4C1294NCPDT&analyticsDevtool=undefined&analyticsPath=Software%2FTI-RTOS%20for%20TivaC%2FDevelopment%20Tools%2FEK-TM4C1294XL%2FDriver%20Examples%2FEmpty%20Examples%2FEmpty%20Project",
+    "makeofflineLink": "api/bundles?vids=tirtos_tivac__2.16.00.08",
+    "removeofflineLink": "api/resources?id=SrHEC8CeH4-v50&path=Software/TI-RTOS for TivaC/Development Tools/EK-TM4C1294XL/Driver Examples/Empty Examples/Empty Project&removeoffline=true",
+    "_id": "SrHEC8CeH4-v50",
+    "advanced": {
+      "overrideProjectSpecDeviceId": true
+    },
+    "allowPartialDownload": false,
+    "coreTypes": [
+      "Cortex M.TM4C1294NCPDT"
+    ],
+    "dependencies": [],
+    "devtools": [
+      "EK-TM4C1294XL"
+    ],
+    "devtools_category": [
+      "EK-TM4C1294XL"
+    ],
+    "implictDependencyFile": "tirtos_tivac_2_16_00_08/resources/ek_tm4C1294XLEvaluationKit/driverExamples/tiDriverExamples/emptyExamples/com_ti_rtsc_tirtostivac_example_141.dependency.tirex.json",
+    "isIncludedFile": true,
+    "link": "api/linkTo/SrHEC8CeH4-v50?analyticsDevice=TM4C1294NCPDT&analyticsDevtool=undefined&analyticsPath=Software%2FTI-RTOS%20for%20TivaC%2FDevelopment%20Tools%2FEK-TM4C1294XL%2FDriver%20Examples%2FEmpty%20Examples%2FEmpty%20Project&extname=.c",
+    "linkType": "local",
+    "name": "EK_TM4C1294XL.c",
+    "package": "TI-RTOS for TivaC",
+    "packageId": "tirtos_tivac",
+    "packagePath": "tirtos_tivac_2_16_00_08",
+    "packageUId": "tirtos_tivac__2.16.00.08",
+    "packageVersion": "2.16.00.08",
+    "parentID": "SrHTvoao3imT0w",
+    "resourceType": "file",
+    "semver": "0.0.0",
+    "version": "UNVERSIONED",
+    "type": "resource",
+    "text": "EK_TM4C1294XL.c",
+    "url": "/api/resources?device=TM4C1294NCPDT&package=c2000ware_software_package__1.00.06.00::digital_power_c2000ware_sdk_software_package__1.03.00.00::powerSUITE_software_package__2.04.00.00::msp430ware__3.80.07.00::tm4c__2.1.4.178::tirtos_tivac__2.16.00.08::xdctools__3.51.02.21&path=Software/TI-RTOS%20for%20TivaC/Development%20Tools/EK-TM4C1294XL/Driver%20Examples/Empty%20Examples/Empty%20Project",
+    "packageOrder": 248,
+    "offline": "true"
+  },
+  {
+    "downloadLink": "api/bundle?vid=tirtos_tivac__2.16.00.08&download=true&analyticsDevice=TM4C1294NCPDT&analyticsDevtool=undefined&analyticsPath=Software%2FTI-RTOS%20for%20TivaC%2FDevelopment%20Tools%2FEK-TM4C1294XL%2FDriver%20Examples%2FEmpty%20Examples%2FEmpty%20Project",
+    "makeofflineLink": "api/bundles?vids=tirtos_tivac__2.16.00.08",
+    "removeofflineLink": "api/resources?id=SrHw77xXH_r728&path=Software/TI-RTOS for TivaC/Development Tools/EK-TM4C1294XL/Driver Examples/Empty Examples/Empty Project&removeoffline=true",
+    "_id": "SrHw77xXH_r728",
+    "advanced": {
+      "overrideProjectSpecDeviceId": true
+    },
+    "allowPartialDownload": false,
+    "coreTypes": [
+      "Cortex M.TM4C1294NCPDT"
+    ],
+    "dependencies": [],
+    "devtools": [
+      "EK-TM4C1294XL"
+    ],
+    "devtools_category": [
+      "EK-TM4C1294XL"
+    ],
+    "implictDependencyFile": "tirtos_tivac_2_16_00_08/resources/ek_tm4C1294XLEvaluationKit/driverExamples/tiDriverExamples/emptyExamples/com_ti_rtsc_tirtostivac_example_141.dependency.tirex.json",
+    "isIncludedFile": true,
+    "link": "api/linkTo/SrHw77xXH_r728?analyticsDevice=TM4C1294NCPDT&analyticsDevtool=undefined&analyticsPath=Software%2FTI-RTOS%20for%20TivaC%2FDevelopment%20Tools%2FEK-TM4C1294XL%2FDriver%20Examples%2FEmpty%20Examples%2FEmpty%20Project&extname=.cmd",
+    "linkType": "local",
+    "name": "EK_TM4C1294XL.cmd",
+    "package": "TI-RTOS for TivaC",
+    "packageId": "tirtos_tivac",
+    "packagePath": "tirtos_tivac_2_16_00_08",
+    "packageUId": "tirtos_tivac__2.16.00.08",
+    "packageVersion": "2.16.00.08",
+    "parentID": "SrHTvoao3imT0w",
+    "resourceType": "file",
+    "semver": "0.0.0",
+    "version": "UNVERSIONED",
+    "type": "resource",
+    "text": "EK_TM4C1294XL.cmd",
+    "url": "/api/resources?device=TM4C1294NCPDT&package=c2000ware_software_package__1.00.06.00::digital_power_c2000ware_sdk_software_package__1.03.00.00::powerSUITE_software_package__2.04.00.00::msp430ware__3.80.07.00::tm4c__2.1.4.178::tirtos_tivac__2.16.00.08::xdctools__3.51.02.21&path=Software/TI-RTOS%20for%20TivaC/Development%20Tools/EK-TM4C1294XL/Driver%20Examples/Empty%20Examples/Empty%20Project",
+    "packageOrder": 248,
+    "offline": "true"
+  },
+  {
+    "downloadLink": "api/bundle?vid=tirtos_tivac__2.16.00.08&download=true&analyticsDevice=TM4C1294NCPDT&analyticsDevtool=undefined&analyticsPath=Software%2FTI-RTOS%20for%20TivaC%2FDevelopment%20Tools%2FEK-TM4C1294XL%2FDriver%20Examples%2FEmpty%20Examples%2FEmpty%20Project",
+    "makeofflineLink": "api/bundles?vids=tirtos_tivac__2.16.00.08",
+    "removeofflineLink": "api/resources?id=SrHifWfioQtszk&path=Software/TI-RTOS for TivaC/Development Tools/EK-TM4C1294XL/Driver Examples/Empty Examples/Empty Project&removeoffline=true",
+    "_id": "SrHifWfioQtszk",
+    "advanced": {
+      "overrideProjectSpecDeviceId": true
+    },
+    "allowPartialDownload": false,
+    "coreTypes": [
+      "Cortex M.TM4C1294NCPDT"
+    ],
+    "dependencies": [],
+    "devtools": [
+      "EK-TM4C1294XL"
+    ],
+    "devtools_category": [
+      "EK-TM4C1294XL"
+    ],
+    "implictDependencyFile": "tirtos_tivac_2_16_00_08/resources/ek_tm4C1294XLEvaluationKit/driverExamples/tiDriverExamples/emptyExamples/com_ti_rtsc_tirtostivac_example_141.dependency.tirex.json",
+    "isIncludedFile": true,
+    "link": "api/linkTo/SrHifWfioQtszk?analyticsDevice=TM4C1294NCPDT&analyticsDevtool=undefined&analyticsPath=Software%2FTI-RTOS%20for%20TivaC%2FDevelopment%20Tools%2FEK-TM4C1294XL%2FDriver%20Examples%2FEmpty%20Examples%2FEmpty%20Project&extname=.h",
+    "linkType": "local",
+    "name": "EK_TM4C1294XL.h",
+    "package": "TI-RTOS for TivaC",
+    "packageId": "tirtos_tivac",
+    "packagePath": "tirtos_tivac_2_16_00_08",
+    "packageUId": "tirtos_tivac__2.16.00.08",
+    "packageVersion": "2.16.00.08",
+    "parentID": "SrHTvoao3imT0w",
+    "resourceType": "file",
+    "semver": "0.0.0",
+    "version": "UNVERSIONED",
+    "type": "resource",
+    "text": "EK_TM4C1294XL.h",
+    "url": "/api/resources?device=TM4C1294NCPDT&package=c2000ware_software_package__1.00.06.00::digital_power_c2000ware_sdk_software_package__1.03.00.00::powerSUITE_software_package__2.04.00.00::msp430ware__3.80.07.00::tm4c__2.1.4.178::tirtos_tivac__2.16.00.08::xdctools__3.51.02.21&path=Software/TI-RTOS%20for%20TivaC/Development%20Tools/EK-TM4C1294XL/Driver%20Examples/Empty%20Examples/Empty%20Project",
+    "packageOrder": 248,
+    "offline": "true"
+  },
+  {
+    "downloadLink": "api/bundle?vid=tirtos_tivac__2.16.00.08&download=true&analyticsDevice=TM4C1294NCPDT&analyticsDevtool=undefined&analyticsPath=Software%2FTI-RTOS%20for%20TivaC%2FDevelopment%20Tools%2FEK-TM4C1294XL%2FDriver%20Examples%2FEmpty%20Examples%2FEmpty%20Project",
+    "makeofflineLink": "api/bundles?vids=tirtos_tivac__2.16.00.08",
+    "removeofflineLink": "api/resources?id=SrH-sCpGyuHpsA&path=Software/TI-RTOS for TivaC/Development Tools/EK-TM4C1294XL/Driver Examples/Empty Examples/Empty Project&removeoffline=true",
+    "_id": "SrH-sCpGyuHpsA",
+    "advanced": {
+      "overrideProjectSpecDeviceId": true
+    },
+    "allowPartialDownload": false,
+    "coreTypes": [
+      "Cortex M.TM4C1294NCPDT"
+    ],
+    "dependencies": [],
+    "devtools": [
+      "EK-TM4C1294XL"
+    ],
+    "devtools_category": [
+      "EK-TM4C1294XL"
+    ],
+    "implictDependencyFile": "tirtos_tivac_2_16_00_08/resources/ek_tm4C1294XLEvaluationKit/driverExamples/tiDriverExamples/emptyExamples/com_ti_rtsc_tirtostivac_example_141.dependency.tirex.json",
+    "isIncludedFile": true,
+    "link": "api/linkTo/SrH-sCpGyuHpsA?analyticsDevice=TM4C1294NCPDT&analyticsDevtool=undefined&analyticsPath=Software%2FTI-RTOS%20for%20TivaC%2FDevelopment%20Tools%2FEK-TM4C1294XL%2FDriver%20Examples%2FEmpty%20Examples%2FEmpty%20Project&extname=.c",
+    "linkType": "local",
+    "name": "empty.c",
+    "package": "TI-RTOS for TivaC",
+    "packageId": "tirtos_tivac",
+    "packagePath": "tirtos_tivac_2_16_00_08",
+    "packageUId": "tirtos_tivac__2.16.00.08",
+    "packageVersion": "2.16.00.08",
+    "parentID": "SrHTvoao3imT0w",
+    "resourceType": "file",
+    "semver": "0.0.0",
+    "version": "UNVERSIONED",
+    "type": "resource",
+    "text": "empty.c",
+    "url": "/api/resources?device=TM4C1294NCPDT&package=c2000ware_software_package__1.00.06.00::digital_power_c2000ware_sdk_software_package__1.03.00.00::powerSUITE_software_package__2.04.00.00::msp430ware__3.80.07.00::tm4c__2.1.4.178::tirtos_tivac__2.16.00.08::xdctools__3.51.02.21&path=Software/TI-RTOS%20for%20TivaC/Development%20Tools/EK-TM4C1294XL/Driver%20Examples/Empty%20Examples/Empty%20Project",
+    "packageOrder": 248,
+    "offline": "true"
+  },
+  {
+    "downloadLink": "api/bundle?vid=tirtos_tivac__2.16.00.08&download=true&analyticsDevice=TM4C1294NCPDT&analyticsDevtool=undefined&analyticsPath=Software%2FTI-RTOS%20for%20TivaC%2FDevelopment%20Tools%2FEK-TM4C1294XL%2FDriver%20Examples%2FEmpty%20Examples%2FEmpty%20Project",
+    "makeofflineLink": "api/bundles?vids=tirtos_tivac__2.16.00.08",
+    "removeofflineLink": "api/resources?id=SrHxh9UiCw7zWc&path=Software/TI-RTOS for TivaC/Development Tools/EK-TM4C1294XL/Driver Examples/Empty Examples/Empty Project&removeoffline=true",
+    "_id": "SrHxh9UiCw7zWc",
+    "advanced": {
+      "overrideProjectSpecDeviceId": true
+    },
+    "allowPartialDownload": false,
+    "coreTypes": [
+      "Cortex M.TM4C1294NCPDT"
+    ],
+    "dependencies": [],
+    "devtools": [
+      "EK-TM4C1294XL"
+    ],
+    "devtools_category": [
+      "EK-TM4C1294XL"
+    ],
+    "implictDependencyFile": "tirtos_tivac_2_16_00_08/resources/ek_tm4C1294XLEvaluationKit/driverExamples/tiDriverExamples/emptyExamples/com_ti_rtsc_tirtostivac_example_141.dependency.tirex.json",
+    "isIncludedFile": true,
+    "link": "api/linkTo/SrHxh9UiCw7zWc?analyticsDevice=TM4C1294NCPDT&analyticsDevtool=undefined&analyticsPath=Software%2FTI-RTOS%20for%20TivaC%2FDevelopment%20Tools%2FEK-TM4C1294XL%2FDriver%20Examples%2FEmpty%20Examples%2FEmpty%20Project&extname=.cfg",
+    "linkType": "local",
+    "name": "empty.cfg",
+    "package": "TI-RTOS for TivaC",
+    "packageId": "tirtos_tivac",
+    "packagePath": "tirtos_tivac_2_16_00_08",
+    "packageUId": "tirtos_tivac__2.16.00.08",
+    "packageVersion": "2.16.00.08",
+    "parentID": "SrHTvoao3imT0w",
+    "resourceType": "file",
+    "semver": "0.0.0",
+    "version": "UNVERSIONED",
+    "type": "resource",
+    "text": "empty.cfg",
+    "url": "/api/resources?device=TM4C1294NCPDT&package=c2000ware_software_package__1.00.06.00::digital_power_c2000ware_sdk_software_package__1.03.00.00::powerSUITE_software_package__2.04.00.00::msp430ware__3.80.07.00::tm4c__2.1.4.178::tirtos_tivac__2.16.00.08::xdctools__3.51.02.21&path=Software/TI-RTOS%20for%20TivaC/Development%20Tools/EK-TM4C1294XL/Driver%20Examples/Empty%20Examples/Empty%20Project",
+    "packageOrder": 248,
+    "offline": "true"
+  },
+  {
+    "downloadLink": "api/bundle?vid=tirtos_tivac__2.16.00.08&download=true&analyticsDevice=TM4C1294NCPDT&analyticsDevtool=undefined&analyticsPath=Software%2FTI-RTOS%20for%20TivaC%2FDevelopment%20Tools%2FEK-TM4C1294XL%2FDriver%20Examples%2FEmpty%20Examples%2FEmpty%20Project",
+    "makeofflineLink": "api/bundles?vids=tirtos_tivac__2.16.00.08",
+    "removeofflineLink": "api/resources?id=SrH_2b0GnaXum0&path=Software/TI-RTOS for TivaC/Development Tools/EK-TM4C1294XL/Driver Examples/Empty Examples/Empty Project&removeoffline=true",
+    "_id": "SrH_2b0GnaXum0",
+    "advanced": {
+      "overrideProjectSpecDeviceId": true
+    },
+    "allowPartialDownload": false,
+    "coreTypes": [
+      "Cortex M.TM4C1294NCPDT"
+    ],
+    "dependencies": [],
+    "devtools": [
+      "EK-TM4C1294XL"
+    ],
+    "devtools_category": [
+      "EK-TM4C1294XL"
+    ],
+    "implictDependencyFile": "tirtos_tivac_2_16_00_08/resources/ek_tm4C1294XLEvaluationKit/driverExamples/tiDriverExamples/emptyExamples/com_ti_rtsc_tirtostivac_example_141.dependency.tirex.json",
+    "isIncludedFile": true,
+    "link": "api/linkTo/SrH_2b0GnaXum0?analyticsDevice=TM4C1294NCPDT&analyticsDevtool=undefined&analyticsPath=Software%2FTI-RTOS%20for%20TivaC%2FDevelopment%20Tools%2FEK-TM4C1294XL%2FDriver%20Examples%2FEmpty%20Examples%2FEmpty%20Project&extname=.txt",
+    "linkType": "local",
+    "name": "empty_readme.txt",
+    "package": "TI-RTOS for TivaC",
+    "packageId": "tirtos_tivac",
+    "packagePath": "tirtos_tivac_2_16_00_08",
+    "packageUId": "tirtos_tivac__2.16.00.08",
+    "packageVersion": "2.16.00.08",
+    "parentID": "SrHTvoao3imT0w",
+    "resourceType": "file",
+    "semver": "0.0.0",
+    "version": "UNVERSIONED",
+    "type": "resource",
+    "text": "empty_readme.txt",
+    "url": "/api/resources?device=TM4C1294NCPDT&package=c2000ware_software_package__1.00.06.00::digital_power_c2000ware_sdk_software_package__1.03.00.00::powerSUITE_software_package__2.04.00.00::msp430ware__3.80.07.00::tm4c__2.1.4.178::tirtos_tivac__2.16.00.08::xdctools__3.51.02.21&path=Software/TI-RTOS%20for%20TivaC/Development%20Tools/EK-TM4C1294XL/Driver%20Examples/Empty%20Examples/Empty%20Project",
+    "packageOrder": 248,
+    "offline": "true"
+  },
+  {
+    "downloadLink": "api/bundle?vid=tirtos_tivac__2.16.00.08&download=true&analyticsDevice=TM4C1294NCPDT&analyticsDevtool=undefined&analyticsPath=Software%2FTI-RTOS%20for%20TivaC%2FDevelopment%20Tools%2FEK-TM4C1294XL%2FDriver%20Examples%2FEmpty%20Examples%2FEmpty%20Project",
+    "makeofflineLink": "api/bundles?vids=tirtos_tivac__2.16.00.08",
+    "removeofflineLink": "api/resources?id=SrHeOEAptDL71Y&path=Software/TI-RTOS for TivaC/Development Tools/EK-TM4C1294XL/Driver Examples/Empty Examples/Empty Project&removeoffline=true",
+    "_id": "SrHeOEAptDL71Y",
+    "advanced": {
+      "overrideProjectSpecDeviceId": true
+    },
+    "allowPartialDownload": false,
+    "coreTypes": [
+      "Cortex M.TM4C1294NCPDT"
+    ],
+    "dependencies": [],
+    "devtools": [
+      "EK-TM4C1294XL"
+    ],
+    "devtools_category": [
+      "EK-TM4C1294XL"
+    ],
+    "implictDependencyFile": "tirtos_tivac_2_16_00_08/resources/ek_tm4C1294XLEvaluationKit/driverExamples/tiDriverExamples/emptyExamples/com_ti_rtsc_tirtostivac_example_141.dependency.tirex.json",
+    "isIncludedFile": true,
+    "link": "api/linkTo/SrHeOEAptDL71Y?analyticsDevice=TM4C1294NCPDT&analyticsDevtool=undefined&analyticsPath=Software%2FTI-RTOS%20for%20TivaC%2FDevelopment%20Tools%2FEK-TM4C1294XL%2FDriver%20Examples%2FEmpty%20Examples%2FEmpty%20Project&extname=.defs",
+    "linkType": "local",
+    "name": "makefile.defs",
+    "package": "TI-RTOS for TivaC",
+    "packageId": "tirtos_tivac",
+    "packagePath": "tirtos_tivac_2_16_00_08",
+    "packageUId": "tirtos_tivac__2.16.00.08",
+    "packageVersion": "2.16.00.08",
+    "parentID": "SrHTvoao3imT0w",
+    "resourceType": "file",
+    "semver": "0.0.0",
+    "version": "UNVERSIONED",
+    "type": "resource",
+    "text": "makefile.defs",
+    "url": "/api/resources?device=TM4C1294NCPDT&package=c2000ware_software_package__1.00.06.00::digital_power_c2000ware_sdk_software_package__1.03.00.00::powerSUITE_software_package__2.04.00.00::msp430ware__3.80.07.00::tm4c__2.1.4.178::tirtos_tivac__2.16.00.08::xdctools__3.51.02.21&path=Software/TI-RTOS%20for%20TivaC/Development%20Tools/EK-TM4C1294XL/Driver%20Examples/Empty%20Examples/Empty%20Project",
+    "packageOrder": 248,
+    "offline": "true"
+  }
+]

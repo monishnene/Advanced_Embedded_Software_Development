@@ -1,0 +1,470 @@
+[
+  {
+    "downloadLink": "api/bundle?vid=tirtos_tivac__2.16.00.08&download=true&analyticsDevice=TM4C1294NCPDT&analyticsDevtool=undefined&analyticsPath=Software%2FTI-RTOS%20for%20TivaC%2FDevelopment%20Tools%2FEK-TM4C1294XL%2FDriver%20Examples%2FUART%20Examples%2FUART%20Console",
+    "makeofflineLink": "api/bundles?vids=tirtos_tivac__2.16.00.08",
+    "removeofflineLink": "api/resources?id=SrHC8zsX8o-y6s&path=Software/TI-RTOS for TivaC/Development Tools/EK-TM4C1294XL/Driver Examples/UART Examples/UART Console&removeoffline=true",
+    "_id": "SrHC8zsX8o-y6s",
+    "advanced": {
+      "overrideProjectSpecDeviceId": true
+    },
+    "allowPartialDownload": false,
+    "coreTypes": [
+      "Cortex M.TM4C1294NCPDT"
+    ],
+    "dependencies": [],
+    "devtools": [
+      "EK-TM4C1294XL"
+    ],
+    "devtools_category": [
+      "EK-TM4C1294XL"
+    ],
+    "implictDependencyFile": "tirtos_tivac_2_16_00_08/resources/ek_tm4C1294XLEvaluationKit/driverExamples/tiDriverExamples/uartExamples/com_ti_rtsc_tirtostivac_example_152.dependency.tirex.json",
+    "isIncludedFile": true,
+    "link": "api/linkTo/SrHC8zsX8o-y6s?analyticsDevice=TM4C1294NCPDT&analyticsDevtool=undefined&analyticsPath=Software%2FTI-RTOS%20for%20TivaC%2FDevelopment%20Tools%2FEK-TM4C1294XL%2FDriver%20Examples%2FUART%20Examples%2FUART%20Console&extname=.h",
+    "linkType": "local",
+    "name": "Board.h",
+    "package": "TI-RTOS for TivaC",
+    "packageId": "tirtos_tivac",
+    "packagePath": "tirtos_tivac_2_16_00_08",
+    "packageUId": "tirtos_tivac__2.16.00.08",
+    "packageVersion": "2.16.00.08",
+    "parentID": "SrHbxy_kbCh7_s",
+    "resourceType": "file",
+    "semver": "0.0.0",
+    "version": "UNVERSIONED",
+    "type": "resource",
+    "text": "Board.h",
+    "url": "/api/resources?device=TM4C1294NCPDT&package=c2000ware_software_package__1.00.06.00::digital_power_c2000ware_sdk_software_package__1.03.00.00::powerSUITE_software_package__2.04.00.00::msp430ware__3.80.07.00::tm4c__2.1.4.178::tirtos_tivac__2.16.00.08::xdctools__3.51.02.21&path=Software/TI-RTOS%20for%20TivaC/Development%20Tools/EK-TM4C1294XL/Driver%20Examples/UART%20Examples/UART%20Console",
+    "packageOrder": 248,
+    "offline": "true"
+  },
+  {
+    "downloadLink": "api/bundle?vid=tirtos_tivac__2.16.00.08&download=true&analyticsDevice=TM4C1294NCPDT&analyticsDevtool=undefined&analyticsPath=Software%2FTI-RTOS%20for%20TivaC%2FDevelopment%20Tools%2FEK-TM4C1294XL%2FDriver%20Examples%2FUART%20Examples%2FUART%20Console",
+    "makeofflineLink": "api/bundles?vids=tirtos_tivac__2.16.00.08",
+    "removeofflineLink": "api/resources?id=SrHC-YpjGY2vQ0&path=Software/TI-RTOS for TivaC/Development Tools/EK-TM4C1294XL/Driver Examples/UART Examples/UART Console&removeoffline=true",
+    "_id": "SrHC-YpjGY2vQ0",
+    "advanced": {
+      "overrideProjectSpecDeviceId": true
+    },
+    "allowPartialDownload": false,
+    "coreTypes": [
+      "Cortex M.TM4C1294NCPDT"
+    ],
+    "dependencies": [],
+    "devtools": [
+      "EK-TM4C1294XL"
+    ],
+    "devtools_category": [
+      "EK-TM4C1294XL"
+    ],
+    "implictDependencyFile": "tirtos_tivac_2_16_00_08/resources/ek_tm4C1294XLEvaluationKit/driverExamples/tiDriverExamples/uartExamples/com_ti_rtsc_tirtostivac_example_152.dependency.tirex.json",
+    "isIncludedFile": true,
+    "link": "api/linkTo/SrHC-YpjGY2vQ0?analyticsDevice=TM4C1294NCPDT&analyticsDevtool=undefined&analyticsPath=Software%2FTI-RTOS%20for%20TivaC%2FDevelopment%20Tools%2FEK-TM4C1294XL%2FDriver%20Examples%2FUART%20Examples%2FUART%20Console&extname=.c",
+    "linkType": "local",
+    "name": "EK_TM4C1294XL.c",
+    "package": "TI-RTOS for TivaC",
+    "packageId": "tirtos_tivac",
+    "packagePath": "tirtos_tivac_2_16_00_08",
+    "packageUId": "tirtos_tivac__2.16.00.08",
+    "packageVersion": "2.16.00.08",
+    "parentID": "SrHbxy_kbCh7_s",
+    "resourceType": "file",
+    "semver": "0.0.0",
+    "version": "UNVERSIONED",
+    "type": "resource",
+    "text": "EK_TM4C1294XL.c",
+    "url": "/api/resources?device=TM4C1294NCPDT&package=c2000ware_software_package__1.00.06.00::digital_power_c2000ware_sdk_software_package__1.03.00.00::powerSUITE_software_package__2.04.00.00::msp430ware__3.80.07.00::tm4c__2.1.4.178::tirtos_tivac__2.16.00.08::xdctools__3.51.02.21&path=Software/TI-RTOS%20for%20TivaC/Development%20Tools/EK-TM4C1294XL/Driver%20Examples/UART%20Examples/UART%20Console",
+    "packageOrder": 248,
+    "offline": "true"
+  },
+  {
+    "downloadLink": "api/bundle?vid=tirtos_tivac__2.16.00.08&download=true&analyticsDevice=TM4C1294NCPDT&analyticsDevtool=undefined&analyticsPath=Software%2FTI-RTOS%20for%20TivaC%2FDevelopment%20Tools%2FEK-TM4C1294XL%2FDriver%20Examples%2FUART%20Examples%2FUART%20Console",
+    "makeofflineLink": "api/bundles?vids=tirtos_tivac__2.16.00.08",
+    "removeofflineLink": "api/resources?id=SrHJvbbrwswhP4&path=Software/TI-RTOS for TivaC/Development Tools/EK-TM4C1294XL/Driver Examples/UART Examples/UART Console&removeoffline=true",
+    "_id": "SrHJvbbrwswhP4",
+    "advanced": {
+      "overrideProjectSpecDeviceId": true
+    },
+    "allowPartialDownload": false,
+    "coreTypes": [
+      "Cortex M.TM4C1294NCPDT"
+    ],
+    "dependencies": [],
+    "devtools": [
+      "EK-TM4C1294XL"
+    ],
+    "devtools_category": [
+      "EK-TM4C1294XL"
+    ],
+    "implictDependencyFile": "tirtos_tivac_2_16_00_08/resources/ek_tm4C1294XLEvaluationKit/driverExamples/tiDriverExamples/uartExamples/com_ti_rtsc_tirtostivac_example_152.dependency.tirex.json",
+    "isIncludedFile": true,
+    "link": "api/linkTo/SrHJvbbrwswhP4?analyticsDevice=TM4C1294NCPDT&analyticsDevtool=undefined&analyticsPath=Software%2FTI-RTOS%20for%20TivaC%2FDevelopment%20Tools%2FEK-TM4C1294XL%2FDriver%20Examples%2FUART%20Examples%2FUART%20Console&extname=.cmd",
+    "linkType": "local",
+    "name": "EK_TM4C1294XL.cmd",
+    "package": "TI-RTOS for TivaC",
+    "packageId": "tirtos_tivac",
+    "packagePath": "tirtos_tivac_2_16_00_08",
+    "packageUId": "tirtos_tivac__2.16.00.08",
+    "packageVersion": "2.16.00.08",
+    "parentID": "SrHbxy_kbCh7_s",
+    "resourceType": "file",
+    "semver": "0.0.0",
+    "version": "UNVERSIONED",
+    "type": "resource",
+    "text": "EK_TM4C1294XL.cmd",
+    "url": "/api/resources?device=TM4C1294NCPDT&package=c2000ware_software_package__1.00.06.00::digital_power_c2000ware_sdk_software_package__1.03.00.00::powerSUITE_software_package__2.04.00.00::msp430ware__3.80.07.00::tm4c__2.1.4.178::tirtos_tivac__2.16.00.08::xdctools__3.51.02.21&path=Software/TI-RTOS%20for%20TivaC/Development%20Tools/EK-TM4C1294XL/Driver%20Examples/UART%20Examples/UART%20Console",
+    "packageOrder": 248,
+    "offline": "true"
+  },
+  {
+    "downloadLink": "api/bundle?vid=tirtos_tivac__2.16.00.08&download=true&analyticsDevice=TM4C1294NCPDT&analyticsDevtool=undefined&analyticsPath=Software%2FTI-RTOS%20for%20TivaC%2FDevelopment%20Tools%2FEK-TM4C1294XL%2FDriver%20Examples%2FUART%20Examples%2FUART%20Console",
+    "makeofflineLink": "api/bundles?vids=tirtos_tivac__2.16.00.08",
+    "removeofflineLink": "api/resources?id=SrHhRn3_ue25rM&path=Software/TI-RTOS for TivaC/Development Tools/EK-TM4C1294XL/Driver Examples/UART Examples/UART Console&removeoffline=true",
+    "_id": "SrHhRn3_ue25rM",
+    "advanced": {
+      "overrideProjectSpecDeviceId": true
+    },
+    "allowPartialDownload": false,
+    "coreTypes": [
+      "Cortex M.TM4C1294NCPDT"
+    ],
+    "dependencies": [],
+    "devtools": [
+      "EK-TM4C1294XL"
+    ],
+    "devtools_category": [
+      "EK-TM4C1294XL"
+    ],
+    "implictDependencyFile": "tirtos_tivac_2_16_00_08/resources/ek_tm4C1294XLEvaluationKit/driverExamples/tiDriverExamples/uartExamples/com_ti_rtsc_tirtostivac_example_152.dependency.tirex.json",
+    "isIncludedFile": true,
+    "link": "api/linkTo/SrHhRn3_ue25rM?analyticsDevice=TM4C1294NCPDT&analyticsDevtool=undefined&analyticsPath=Software%2FTI-RTOS%20for%20TivaC%2FDevelopment%20Tools%2FEK-TM4C1294XL%2FDriver%20Examples%2FUART%20Examples%2FUART%20Console&extname=.h",
+    "linkType": "local",
+    "name": "EK_TM4C1294XL.h",
+    "package": "TI-RTOS for TivaC",
+    "packageId": "tirtos_tivac",
+    "packagePath": "tirtos_tivac_2_16_00_08",
+    "packageUId": "tirtos_tivac__2.16.00.08",
+    "packageVersion": "2.16.00.08",
+    "parentID": "SrHbxy_kbCh7_s",
+    "resourceType": "file",
+    "semver": "0.0.0",
+    "version": "UNVERSIONED",
+    "type": "resource",
+    "text": "EK_TM4C1294XL.h",
+    "url": "/api/resources?device=TM4C1294NCPDT&package=c2000ware_software_package__1.00.06.00::digital_power_c2000ware_sdk_software_package__1.03.00.00::powerSUITE_software_package__2.04.00.00::msp430ware__3.80.07.00::tm4c__2.1.4.178::tirtos_tivac__2.16.00.08::xdctools__3.51.02.21&path=Software/TI-RTOS%20for%20TivaC/Development%20Tools/EK-TM4C1294XL/Driver%20Examples/UART%20Examples/UART%20Console",
+    "packageOrder": 248,
+    "offline": "true"
+  },
+  {
+    "downloadLink": "api/bundle?vid=tirtos_tivac__2.16.00.08&download=true&analyticsDevice=TM4C1294NCPDT&analyticsDevtool=undefined&analyticsPath=Software%2FTI-RTOS%20for%20TivaC%2FDevelopment%20Tools%2FEK-TM4C1294XL%2FDriver%20Examples%2FUART%20Examples%2FUART%20Console",
+    "makeofflineLink": "api/bundles?vids=tirtos_tivac__2.16.00.08",
+    "removeofflineLink": "api/resources?id=SrHUtcxNohg9-Q&path=Software/TI-RTOS for TivaC/Development Tools/EK-TM4C1294XL/Driver Examples/UART Examples/UART Console&removeoffline=true",
+    "_id": "SrHUtcxNohg9-Q",
+    "advanced": {
+      "overrideProjectSpecDeviceId": true
+    },
+    "allowPartialDownload": false,
+    "coreTypes": [
+      "Cortex M.TM4C1294NCPDT"
+    ],
+    "dependencies": [],
+    "devtools": [
+      "EK-TM4C1294XL"
+    ],
+    "devtools_category": [
+      "EK-TM4C1294XL"
+    ],
+    "implictDependencyFile": "tirtos_tivac_2_16_00_08/resources/ek_tm4C1294XLEvaluationKit/driverExamples/tiDriverExamples/uartExamples/com_ti_rtsc_tirtostivac_example_152.dependency.tirex.json",
+    "isIncludedFile": true,
+    "link": "api/linkTo/SrHUtcxNohg9-Q?analyticsDevice=TM4C1294NCPDT&analyticsDevtool=undefined&analyticsPath=Software%2FTI-RTOS%20for%20TivaC%2FDevelopment%20Tools%2FEK-TM4C1294XL%2FDriver%20Examples%2FUART%20Examples%2FUART%20Console&extname=.c",
+    "linkType": "local",
+    "name": "UARTUtils.c",
+    "package": "TI-RTOS for TivaC",
+    "packageId": "tirtos_tivac",
+    "packagePath": "tirtos_tivac_2_16_00_08",
+    "packageUId": "tirtos_tivac__2.16.00.08",
+    "packageVersion": "2.16.00.08",
+    "parentID": "SrHbxy_kbCh7_s",
+    "resourceType": "file",
+    "semver": "0.0.0",
+    "version": "UNVERSIONED",
+    "type": "resource",
+    "text": "UARTUtils.c",
+    "url": "/api/resources?device=TM4C1294NCPDT&package=c2000ware_software_package__1.00.06.00::digital_power_c2000ware_sdk_software_package__1.03.00.00::powerSUITE_software_package__2.04.00.00::msp430ware__3.80.07.00::tm4c__2.1.4.178::tirtos_tivac__2.16.00.08::xdctools__3.51.02.21&path=Software/TI-RTOS%20for%20TivaC/Development%20Tools/EK-TM4C1294XL/Driver%20Examples/UART%20Examples/UART%20Console",
+    "packageOrder": 248,
+    "offline": "true"
+  },
+  {
+    "downloadLink": "api/bundle?vid=tirtos_tivac__2.16.00.08&download=true&analyticsDevice=TM4C1294NCPDT&analyticsDevtool=undefined&analyticsPath=Software%2FTI-RTOS%20for%20TivaC%2FDevelopment%20Tools%2FEK-TM4C1294XL%2FDriver%20Examples%2FUART%20Examples%2FUART%20Console",
+    "makeofflineLink": "api/bundles?vids=tirtos_tivac__2.16.00.08",
+    "removeofflineLink": "api/resources?id=SrHbruDxDNV6zs&path=Software/TI-RTOS for TivaC/Development Tools/EK-TM4C1294XL/Driver Examples/UART Examples/UART Console&removeoffline=true",
+    "_id": "SrHbruDxDNV6zs",
+    "advanced": {
+      "overrideProjectSpecDeviceId": true
+    },
+    "allowPartialDownload": false,
+    "coreTypes": [
+      "Cortex M.TM4C1294NCPDT"
+    ],
+    "dependencies": [],
+    "devtools": [
+      "EK-TM4C1294XL"
+    ],
+    "devtools_category": [
+      "EK-TM4C1294XL"
+    ],
+    "implictDependencyFile": "tirtos_tivac_2_16_00_08/resources/ek_tm4C1294XLEvaluationKit/driverExamples/tiDriverExamples/uartExamples/com_ti_rtsc_tirtostivac_example_152.dependency.tirex.json",
+    "isIncludedFile": true,
+    "link": "api/linkTo/SrHbruDxDNV6zs?analyticsDevice=TM4C1294NCPDT&analyticsDevtool=undefined&analyticsPath=Software%2FTI-RTOS%20for%20TivaC%2FDevelopment%20Tools%2FEK-TM4C1294XL%2FDriver%20Examples%2FUART%20Examples%2FUART%20Console&extname=.h",
+    "linkType": "local",
+    "name": "UARTUtils.h",
+    "package": "TI-RTOS for TivaC",
+    "packageId": "tirtos_tivac",
+    "packagePath": "tirtos_tivac_2_16_00_08",
+    "packageUId": "tirtos_tivac__2.16.00.08",
+    "packageVersion": "2.16.00.08",
+    "parentID": "SrHbxy_kbCh7_s",
+    "resourceType": "file",
+    "semver": "0.0.0",
+    "version": "UNVERSIONED",
+    "type": "resource",
+    "text": "UARTUtils.h",
+    "url": "/api/resources?device=TM4C1294NCPDT&package=c2000ware_software_package__1.00.06.00::digital_power_c2000ware_sdk_software_package__1.03.00.00::powerSUITE_software_package__2.04.00.00::msp430ware__3.80.07.00::tm4c__2.1.4.178::tirtos_tivac__2.16.00.08::xdctools__3.51.02.21&path=Software/TI-RTOS%20for%20TivaC/Development%20Tools/EK-TM4C1294XL/Driver%20Examples/UART%20Examples/UART%20Console",
+    "packageOrder": 248,
+    "offline": "true"
+  },
+  {
+    "downloadLink": "api/bundle?vid=tirtos_tivac__2.16.00.08&download=true&analyticsDevice=TM4C1294NCPDT&analyticsDevtool=undefined&analyticsPath=Software%2FTI-RTOS%20for%20TivaC%2FDevelopment%20Tools%2FEK-TM4C1294XL%2FDriver%20Examples%2FUART%20Examples%2FUART%20Console",
+    "makeofflineLink": "api/bundles?vids=tirtos_tivac__2.16.00.08",
+    "removeofflineLink": "api/resources?id=SrHYnNbIiNB70U&path=Software/TI-RTOS for TivaC/Development Tools/EK-TM4C1294XL/Driver Examples/UART Examples/UART Console&removeoffline=true",
+    "_id": "SrHYnNbIiNB70U",
+    "advanced": {
+      "overrideProjectSpecDeviceId": true
+    },
+    "allowPartialDownload": false,
+    "coreTypes": [
+      "Cortex M.TM4C1294NCPDT"
+    ],
+    "dependencies": [],
+    "devtools": [
+      "EK-TM4C1294XL"
+    ],
+    "devtools_category": [
+      "EK-TM4C1294XL"
+    ],
+    "implictDependencyFile": "tirtos_tivac_2_16_00_08/resources/ek_tm4C1294XLEvaluationKit/driverExamples/tiDriverExamples/uartExamples/com_ti_rtsc_tirtostivac_example_152.dependency.tirex.json",
+    "isIncludedFile": true,
+    "link": "api/linkTo/SrHYnNbIiNB70U?analyticsDevice=TM4C1294NCPDT&analyticsDevtool=undefined&analyticsPath=Software%2FTI-RTOS%20for%20TivaC%2FDevelopment%20Tools%2FEK-TM4C1294XL%2FDriver%20Examples%2FUART%20Examples%2FUART%20Console&extname=.c",
+    "linkType": "local",
+    "name": "USBCDCD_LoggerIdle.c",
+    "package": "TI-RTOS for TivaC",
+    "packageId": "tirtos_tivac",
+    "packagePath": "tirtos_tivac_2_16_00_08",
+    "packageUId": "tirtos_tivac__2.16.00.08",
+    "packageVersion": "2.16.00.08",
+    "parentID": "SrHbxy_kbCh7_s",
+    "resourceType": "file",
+    "semver": "0.0.0",
+    "version": "UNVERSIONED",
+    "type": "resource",
+    "text": "USBCDCD_LoggerIdle.c",
+    "url": "/api/resources?device=TM4C1294NCPDT&package=c2000ware_software_package__1.00.06.00::digital_power_c2000ware_sdk_software_package__1.03.00.00::powerSUITE_software_package__2.04.00.00::msp430ware__3.80.07.00::tm4c__2.1.4.178::tirtos_tivac__2.16.00.08::xdctools__3.51.02.21&path=Software/TI-RTOS%20for%20TivaC/Development%20Tools/EK-TM4C1294XL/Driver%20Examples/UART%20Examples/UART%20Console",
+    "packageOrder": 248,
+    "offline": "true"
+  },
+  {
+    "downloadLink": "api/bundle?vid=tirtos_tivac__2.16.00.08&download=true&analyticsDevice=TM4C1294NCPDT&analyticsDevtool=undefined&analyticsPath=Software%2FTI-RTOS%20for%20TivaC%2FDevelopment%20Tools%2FEK-TM4C1294XL%2FDriver%20Examples%2FUART%20Examples%2FUART%20Console",
+    "makeofflineLink": "api/bundles?vids=tirtos_tivac__2.16.00.08",
+    "removeofflineLink": "api/resources?id=SrHfR6Se-ZcnYo&path=Software/TI-RTOS for TivaC/Development Tools/EK-TM4C1294XL/Driver Examples/UART Examples/UART Console&removeoffline=true",
+    "_id": "SrHfR6Se-ZcnYo",
+    "advanced": {
+      "overrideProjectSpecDeviceId": true
+    },
+    "allowPartialDownload": false,
+    "coreTypes": [
+      "Cortex M.TM4C1294NCPDT"
+    ],
+    "dependencies": [],
+    "devtools": [
+      "EK-TM4C1294XL"
+    ],
+    "devtools_category": [
+      "EK-TM4C1294XL"
+    ],
+    "implictDependencyFile": "tirtos_tivac_2_16_00_08/resources/ek_tm4C1294XLEvaluationKit/driverExamples/tiDriverExamples/uartExamples/com_ti_rtsc_tirtostivac_example_152.dependency.tirex.json",
+    "isIncludedFile": true,
+    "link": "api/linkTo/SrHfR6Se-ZcnYo?analyticsDevice=TM4C1294NCPDT&analyticsDevtool=undefined&analyticsPath=Software%2FTI-RTOS%20for%20TivaC%2FDevelopment%20Tools%2FEK-TM4C1294XL%2FDriver%20Examples%2FUART%20Examples%2FUART%20Console&extname=.h",
+    "linkType": "local",
+    "name": "USBCDCD_LoggerIdle.h",
+    "package": "TI-RTOS for TivaC",
+    "packageId": "tirtos_tivac",
+    "packagePath": "tirtos_tivac_2_16_00_08",
+    "packageUId": "tirtos_tivac__2.16.00.08",
+    "packageVersion": "2.16.00.08",
+    "parentID": "SrHbxy_kbCh7_s",
+    "resourceType": "file",
+    "semver": "0.0.0",
+    "version": "UNVERSIONED",
+    "type": "resource",
+    "text": "USBCDCD_LoggerIdle.h",
+    "url": "/api/resources?device=TM4C1294NCPDT&package=c2000ware_software_package__1.00.06.00::digital_power_c2000ware_sdk_software_package__1.03.00.00::powerSUITE_software_package__2.04.00.00::msp430ware__3.80.07.00::tm4c__2.1.4.178::tirtos_tivac__2.16.00.08::xdctools__3.51.02.21&path=Software/TI-RTOS%20for%20TivaC/Development%20Tools/EK-TM4C1294XL/Driver%20Examples/UART%20Examples/UART%20Console",
+    "packageOrder": 248,
+    "offline": "true"
+  },
+  {
+    "downloadLink": "api/bundle?vid=tirtos_tivac__2.16.00.08&download=true&analyticsDevice=TM4C1294NCPDT&analyticsDevtool=undefined&analyticsPath=Software%2FTI-RTOS%20for%20TivaC%2FDevelopment%20Tools%2FEK-TM4C1294XL%2FDriver%20Examples%2FUART%20Examples%2FUART%20Console",
+    "makeofflineLink": "api/bundles?vids=tirtos_tivac__2.16.00.08",
+    "removeofflineLink": "api/resources?id=SrHip_DG1R9rg0&path=Software/TI-RTOS for TivaC/Development Tools/EK-TM4C1294XL/Driver Examples/UART Examples/UART Console&removeoffline=true",
+    "_id": "SrHip_DG1R9rg0",
+    "advanced": {
+      "overrideProjectSpecDeviceId": true
+    },
+    "allowPartialDownload": false,
+    "coreTypes": [
+      "Cortex M.TM4C1294NCPDT"
+    ],
+    "dependencies": [],
+    "devtools": [
+      "EK-TM4C1294XL"
+    ],
+    "devtools_category": [
+      "EK-TM4C1294XL"
+    ],
+    "implictDependencyFile": "tirtos_tivac_2_16_00_08/resources/ek_tm4C1294XLEvaluationKit/driverExamples/tiDriverExamples/uartExamples/com_ti_rtsc_tirtostivac_example_152.dependency.tirex.json",
+    "isIncludedFile": true,
+    "link": "api/linkTo/SrHip_DG1R9rg0?analyticsDevice=TM4C1294NCPDT&analyticsDevtool=undefined&analyticsPath=Software%2FTI-RTOS%20for%20TivaC%2FDevelopment%20Tools%2FEK-TM4C1294XL%2FDriver%20Examples%2FUART%20Examples%2FUART%20Console&extname=.defs",
+    "linkType": "local",
+    "name": "makefile.defs",
+    "package": "TI-RTOS for TivaC",
+    "packageId": "tirtos_tivac",
+    "packagePath": "tirtos_tivac_2_16_00_08",
+    "packageUId": "tirtos_tivac__2.16.00.08",
+    "packageVersion": "2.16.00.08",
+    "parentID": "SrHbxy_kbCh7_s",
+    "resourceType": "file",
+    "semver": "0.0.0",
+    "version": "UNVERSIONED",
+    "type": "resource",
+    "text": "makefile.defs",
+    "url": "/api/resources?device=TM4C1294NCPDT&package=c2000ware_software_package__1.00.06.00::digital_power_c2000ware_sdk_software_package__1.03.00.00::powerSUITE_software_package__2.04.00.00::msp430ware__3.80.07.00::tm4c__2.1.4.178::tirtos_tivac__2.16.00.08::xdctools__3.51.02.21&path=Software/TI-RTOS%20for%20TivaC/Development%20Tools/EK-TM4C1294XL/Driver%20Examples/UART%20Examples/UART%20Console",
+    "packageOrder": 248,
+    "offline": "true"
+  },
+  {
+    "downloadLink": "api/bundle?vid=tirtos_tivac__2.16.00.08&download=true&analyticsDevice=TM4C1294NCPDT&analyticsDevtool=undefined&analyticsPath=Software%2FTI-RTOS%20for%20TivaC%2FDevelopment%20Tools%2FEK-TM4C1294XL%2FDriver%20Examples%2FUART%20Examples%2FUART%20Console",
+    "makeofflineLink": "api/bundles?vids=tirtos_tivac__2.16.00.08",
+    "removeofflineLink": "api/resources?id=SrHobOD6-GxbyM&path=Software/TI-RTOS for TivaC/Development Tools/EK-TM4C1294XL/Driver Examples/UART Examples/UART Console&removeoffline=true",
+    "_id": "SrHobOD6-GxbyM",
+    "advanced": {
+      "overrideProjectSpecDeviceId": true
+    },
+    "allowPartialDownload": false,
+    "coreTypes": [
+      "Cortex M.TM4C1294NCPDT"
+    ],
+    "dependencies": [],
+    "devtools": [
+      "EK-TM4C1294XL"
+    ],
+    "devtools_category": [
+      "EK-TM4C1294XL"
+    ],
+    "implictDependencyFile": "tirtos_tivac_2_16_00_08/resources/ek_tm4C1294XLEvaluationKit/driverExamples/tiDriverExamples/uartExamples/com_ti_rtsc_tirtostivac_example_152.dependency.tirex.json",
+    "isIncludedFile": true,
+    "link": "api/linkTo/SrHobOD6-GxbyM?analyticsDevice=TM4C1294NCPDT&analyticsDevtool=undefined&analyticsPath=Software%2FTI-RTOS%20for%20TivaC%2FDevelopment%20Tools%2FEK-TM4C1294XL%2FDriver%20Examples%2FUART%20Examples%2FUART%20Console&extname=.c",
+    "linkType": "local",
+    "name": "uartconsole.c",
+    "package": "TI-RTOS for TivaC",
+    "packageId": "tirtos_tivac",
+    "packagePath": "tirtos_tivac_2_16_00_08",
+    "packageUId": "tirtos_tivac__2.16.00.08",
+    "packageVersion": "2.16.00.08",
+    "parentID": "SrHbxy_kbCh7_s",
+    "resourceType": "file",
+    "semver": "0.0.0",
+    "version": "UNVERSIONED",
+    "type": "resource",
+    "text": "uartconsole.c",
+    "url": "/api/resources?device=TM4C1294NCPDT&package=c2000ware_software_package__1.00.06.00::digital_power_c2000ware_sdk_software_package__1.03.00.00::powerSUITE_software_package__2.04.00.00::msp430ware__3.80.07.00::tm4c__2.1.4.178::tirtos_tivac__2.16.00.08::xdctools__3.51.02.21&path=Software/TI-RTOS%20for%20TivaC/Development%20Tools/EK-TM4C1294XL/Driver%20Examples/UART%20Examples/UART%20Console",
+    "packageOrder": 248,
+    "offline": "true"
+  },
+  {
+    "downloadLink": "api/bundle?vid=tirtos_tivac__2.16.00.08&download=true&analyticsDevice=TM4C1294NCPDT&analyticsDevtool=undefined&analyticsPath=Software%2FTI-RTOS%20for%20TivaC%2FDevelopment%20Tools%2FEK-TM4C1294XL%2FDriver%20Examples%2FUART%20Examples%2FUART%20Console",
+    "makeofflineLink": "api/bundles?vids=tirtos_tivac__2.16.00.08",
+    "removeofflineLink": "api/resources?id=SrHMoLjwKLqY80&path=Software/TI-RTOS for TivaC/Development Tools/EK-TM4C1294XL/Driver Examples/UART Examples/UART Console&removeoffline=true",
+    "_id": "SrHMoLjwKLqY80",
+    "advanced": {
+      "overrideProjectSpecDeviceId": true
+    },
+    "allowPartialDownload": false,
+    "coreTypes": [
+      "Cortex M.TM4C1294NCPDT"
+    ],
+    "dependencies": [],
+    "devtools": [
+      "EK-TM4C1294XL"
+    ],
+    "devtools_category": [
+      "EK-TM4C1294XL"
+    ],
+    "implictDependencyFile": "tirtos_tivac_2_16_00_08/resources/ek_tm4C1294XLEvaluationKit/driverExamples/tiDriverExamples/uartExamples/com_ti_rtsc_tirtostivac_example_152.dependency.tirex.json",
+    "isIncludedFile": true,
+    "link": "api/linkTo/SrHMoLjwKLqY80?analyticsDevice=TM4C1294NCPDT&analyticsDevtool=undefined&analyticsPath=Software%2FTI-RTOS%20for%20TivaC%2FDevelopment%20Tools%2FEK-TM4C1294XL%2FDriver%20Examples%2FUART%20Examples%2FUART%20Console&extname=.cfg",
+    "linkType": "local",
+    "name": "uartconsole.cfg",
+    "package": "TI-RTOS for TivaC",
+    "packageId": "tirtos_tivac",
+    "packagePath": "tirtos_tivac_2_16_00_08",
+    "packageUId": "tirtos_tivac__2.16.00.08",
+    "packageVersion": "2.16.00.08",
+    "parentID": "SrHbxy_kbCh7_s",
+    "resourceType": "file",
+    "semver": "0.0.0",
+    "version": "UNVERSIONED",
+    "type": "resource",
+    "text": "uartconsole.cfg",
+    "url": "/api/resources?device=TM4C1294NCPDT&package=c2000ware_software_package__1.00.06.00::digital_power_c2000ware_sdk_software_package__1.03.00.00::powerSUITE_software_package__2.04.00.00::msp430ware__3.80.07.00::tm4c__2.1.4.178::tirtos_tivac__2.16.00.08::xdctools__3.51.02.21&path=Software/TI-RTOS%20for%20TivaC/Development%20Tools/EK-TM4C1294XL/Driver%20Examples/UART%20Examples/UART%20Console",
+    "packageOrder": 248,
+    "offline": "true"
+  },
+  {
+    "downloadLink": "api/bundle?vid=tirtos_tivac__2.16.00.08&download=true&analyticsDevice=TM4C1294NCPDT&analyticsDevtool=undefined&analyticsPath=Software%2FTI-RTOS%20for%20TivaC%2FDevelopment%20Tools%2FEK-TM4C1294XL%2FDriver%20Examples%2FUART%20Examples%2FUART%20Console",
+    "makeofflineLink": "api/bundles?vids=tirtos_tivac__2.16.00.08",
+    "removeofflineLink": "api/resources?id=SrHFbX6iC7CFOw&path=Software/TI-RTOS for TivaC/Development Tools/EK-TM4C1294XL/Driver Examples/UART Examples/UART Console&removeoffline=true",
+    "_id": "SrHFbX6iC7CFOw",
+    "advanced": {
+      "overrideProjectSpecDeviceId": true
+    },
+    "allowPartialDownload": false,
+    "coreTypes": [
+      "Cortex M.TM4C1294NCPDT"
+    ],
+    "dependencies": [],
+    "devtools": [
+      "EK-TM4C1294XL"
+    ],
+    "devtools_category": [
+      "EK-TM4C1294XL"
+    ],
+    "implictDependencyFile": "tirtos_tivac_2_16_00_08/resources/ek_tm4C1294XLEvaluationKit/driverExamples/tiDriverExamples/uartExamples/com_ti_rtsc_tirtostivac_example_152.dependency.tirex.json",
+    "isIncludedFile": true,
+    "link": "api/linkTo/SrHFbX6iC7CFOw?analyticsDevice=TM4C1294NCPDT&analyticsDevtool=undefined&analyticsPath=Software%2FTI-RTOS%20for%20TivaC%2FDevelopment%20Tools%2FEK-TM4C1294XL%2FDriver%20Examples%2FUART%20Examples%2FUART%20Console&extname=.txt",
+    "linkType": "local",
+    "name": "uartconsole_readme.txt",
+    "package": "TI-RTOS for TivaC",
+    "packageId": "tirtos_tivac",
+    "packagePath": "tirtos_tivac_2_16_00_08",
+    "packageUId": "tirtos_tivac__2.16.00.08",
+    "packageVersion": "2.16.00.08",
+    "parentID": "SrHbxy_kbCh7_s",
+    "resourceType": "file",
+    "semver": "0.0.0",
+    "version": "UNVERSIONED",
+    "type": "resource",
+    "text": "uartconsole_readme.txt",
+    "url": "/api/resources?device=TM4C1294NCPDT&package=c2000ware_software_package__1.00.06.00::digital_power_c2000ware_sdk_software_package__1.03.00.00::powerSUITE_software_package__2.04.00.00::msp430ware__3.80.07.00::tm4c__2.1.4.178::tirtos_tivac__2.16.00.08::xdctools__3.51.02.21&path=Software/TI-RTOS%20for%20TivaC/Development%20Tools/EK-TM4C1294XL/Driver%20Examples/UART%20Examples/UART%20Console",
+    "packageOrder": 248,
+    "offline": "true"
+  }
+]

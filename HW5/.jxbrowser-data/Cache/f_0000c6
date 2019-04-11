@@ -1,0 +1,640 @@
+[
+  {
+    "text": "CC1310 Development Kit",
+    "type": "folder",
+    "numChildren": 21,
+    "numChildrenLocal": 0,
+    "children": true,
+    "allowPartialDownload": false,
+    "state": {
+      "opened": false
+    },
+    "url": "/api/resources?path=Development%20Tools/Kits%20and%20Boards&package=com.ti.SIMPLELINK_CC13X0_SDK__3.10.00.11::com.ti.SIMPLELINK_CC13X2_26X2_SDK__3.10.00.53::com.ti.SIMPLELINK_CC13X2_SDK__2.30.00.45::com.ti.SIMPLELINK_CC26X2_SDK__2.30.00.34::com.ti.SIMPLELINK_CC2640R2_SDK__2.40.00.32::com.ti.SIMPLELINK_CC2652RB_BLE_SDK__3.10.00.15::com.ti.SIMPLELINK_MSP432_SDK__3.10.00.08::com.ti.SIMPLELINK_MSP432E4_SDK__3.10.00.11::com.ti.SIMPLELINK_CC32XX_SDK__3.10.00.04::com.ti.SIMPLELINK_CC2640R2_SDK_BLE_EXAMPLE_PACK__1.50.00.62::com.ti.SIMPLELINK_SDK_BLE_PLUGIN__1.40.00.42::com.ti.SIMPLELINK_MSP432_SDK_WIFI_PLUGIN__2.40.00.22::com.ti.SIMPLELINK_SDK_VOICE_DETECTION_PLUGIN__1.50.00.15::com.ti.SIMPLELINK_SDK_TI_15_4_STACK_PLUGIN__2.20.00.05::com.ti.SIMPLELINK_ZIGBEE_SDK_PLUGIN__2.20.00.06::com.ti.AWS_CC32XX__2.20.00.02::com.ti.AWS_MSP432E4__2.20.00.02::com.ti.WATSON_MSP432E4__1.20.00.04::com.ti.WATSON_CC32XX__1.20.00.04::com.ti.SAIL__1.30.00.02::com.ti.AZURE_CC32XX__2.20.00.05::com.ti.AZURE_MSP432E4__2.20.00.05::com.ti.SIMPLELINK_SDK_NFC_PLUGIN__2.20.00.08::com.ti.mmwave_industrial_toolbox__3.3.1::com.ti.mmwave_automotive_toolbox__2.4.7::c2000ware_software_package__1.00.06.00::digital_power_c2000ware_sdk_software_package__1.03.00.00::powerSUITE_software_package__2.04.00.00::msp430ware__3.80.07.00::energia.core__18.0.0::energia.tool.arm-none-eabi-gcc__6.3.1-20170620::energia.tool.ino2cpp__1.0.3::energia.boards.cc13xx__5.20.0::energia.boards.cc3220emt__5.6.2::energia.boards.msp432r__5.6.3::sitara__1.02.00.00::tm4c__2.1.4.178::tirtos_cc13xx_cc26xx__2.21.00.06::tirtos_tivac__2.16.00.08::tirtos_simplelink__2.13.01.09::sysbios__6.50.01.12::xdctools__3.51.02.21::motor_control_c2000ware_sdk_software_package__1.00.00.00",
+    "overviewDescription": "",
+    "overviewImage": "tirex-product-tree/cc13xx_devtools/.metadata/.tirex/img/cc1310dk.jpg",
+    "packageOrder": 0
+  },
+  {
+    "text": "CC2650 Development Kit (4XS)",
+    "type": "folder",
+    "numChildren": 32,
+    "numChildrenLocal": 0,
+    "children": true,
+    "allowPartialDownload": false,
+    "state": {
+      "opened": false
+    },
+    "url": "/api/resources?path=Development%20Tools/Kits%20and%20Boards&package=com.ti.SIMPLELINK_CC13X0_SDK__3.10.00.11::com.ti.SIMPLELINK_CC13X2_26X2_SDK__3.10.00.53::com.ti.SIMPLELINK_CC13X2_SDK__2.30.00.45::com.ti.SIMPLELINK_CC26X2_SDK__2.30.00.34::com.ti.SIMPLELINK_CC2640R2_SDK__2.40.00.32::com.ti.SIMPLELINK_CC2652RB_BLE_SDK__3.10.00.15::com.ti.SIMPLELINK_MSP432_SDK__3.10.00.08::com.ti.SIMPLELINK_MSP432E4_SDK__3.10.00.11::com.ti.SIMPLELINK_CC32XX_SDK__3.10.00.04::com.ti.SIMPLELINK_CC2640R2_SDK_BLE_EXAMPLE_PACK__1.50.00.62::com.ti.SIMPLELINK_SDK_BLE_PLUGIN__1.40.00.42::com.ti.SIMPLELINK_MSP432_SDK_WIFI_PLUGIN__2.40.00.22::com.ti.SIMPLELINK_SDK_VOICE_DETECTION_PLUGIN__1.50.00.15::com.ti.SIMPLELINK_SDK_TI_15_4_STACK_PLUGIN__2.20.00.05::com.ti.SIMPLELINK_ZIGBEE_SDK_PLUGIN__2.20.00.06::com.ti.AWS_CC32XX__2.20.00.02::com.ti.AWS_MSP432E4__2.20.00.02::com.ti.WATSON_MSP432E4__1.20.00.04::com.ti.WATSON_CC32XX__1.20.00.04::com.ti.SAIL__1.30.00.02::com.ti.AZURE_CC32XX__2.20.00.05::com.ti.AZURE_MSP432E4__2.20.00.05::com.ti.SIMPLELINK_SDK_NFC_PLUGIN__2.20.00.08::com.ti.mmwave_industrial_toolbox__3.3.1::com.ti.mmwave_automotive_toolbox__2.4.7::c2000ware_software_package__1.00.06.00::digital_power_c2000ware_sdk_software_package__1.03.00.00::powerSUITE_software_package__2.04.00.00::msp430ware__3.80.07.00::energia.core__18.0.0::energia.tool.arm-none-eabi-gcc__6.3.1-20170620::energia.tool.ino2cpp__1.0.3::energia.boards.cc13xx__5.20.0::energia.boards.cc3220emt__5.6.2::energia.boards.msp432r__5.6.3::sitara__1.02.00.00::tm4c__2.1.4.178::tirtos_cc13xx_cc26xx__2.21.00.06::tirtos_tivac__2.16.00.08::tirtos_simplelink__2.13.01.09::sysbios__6.50.01.12::xdctools__3.51.02.21::motor_control_c2000ware_sdk_software_package__1.00.00.00",
+    "overviewDescription": "",
+    "overviewImage": "tirex-product-tree/cc26xx_devtools/.metadata/.tirex/img/cc2650dk.jpg",
+    "packageOrder": 0
+  },
+  {
+    "text": "CC2650 Development Kit (5XD)",
+    "type": "folder",
+    "numChildren": 32,
+    "numChildrenLocal": 0,
+    "children": true,
+    "allowPartialDownload": false,
+    "state": {
+      "opened": false
+    },
+    "url": "/api/resources?path=Development%20Tools/Kits%20and%20Boards&package=com.ti.SIMPLELINK_CC13X0_SDK__3.10.00.11::com.ti.SIMPLELINK_CC13X2_26X2_SDK__3.10.00.53::com.ti.SIMPLELINK_CC13X2_SDK__2.30.00.45::com.ti.SIMPLELINK_CC26X2_SDK__2.30.00.34::com.ti.SIMPLELINK_CC2640R2_SDK__2.40.00.32::com.ti.SIMPLELINK_CC2652RB_BLE_SDK__3.10.00.15::com.ti.SIMPLELINK_MSP432_SDK__3.10.00.08::com.ti.SIMPLELINK_MSP432E4_SDK__3.10.00.11::com.ti.SIMPLELINK_CC32XX_SDK__3.10.00.04::com.ti.SIMPLELINK_CC2640R2_SDK_BLE_EXAMPLE_PACK__1.50.00.62::com.ti.SIMPLELINK_SDK_BLE_PLUGIN__1.40.00.42::com.ti.SIMPLELINK_MSP432_SDK_WIFI_PLUGIN__2.40.00.22::com.ti.SIMPLELINK_SDK_VOICE_DETECTION_PLUGIN__1.50.00.15::com.ti.SIMPLELINK_SDK_TI_15_4_STACK_PLUGIN__2.20.00.05::com.ti.SIMPLELINK_ZIGBEE_SDK_PLUGIN__2.20.00.06::com.ti.AWS_CC32XX__2.20.00.02::com.ti.AWS_MSP432E4__2.20.00.02::com.ti.WATSON_MSP432E4__1.20.00.04::com.ti.WATSON_CC32XX__1.20.00.04::com.ti.SAIL__1.30.00.02::com.ti.AZURE_CC32XX__2.20.00.05::com.ti.AZURE_MSP432E4__2.20.00.05::com.ti.SIMPLELINK_SDK_NFC_PLUGIN__2.20.00.08::com.ti.mmwave_industrial_toolbox__3.3.1::com.ti.mmwave_automotive_toolbox__2.4.7::c2000ware_software_package__1.00.06.00::digital_power_c2000ware_sdk_software_package__1.03.00.00::powerSUITE_software_package__2.04.00.00::msp430ware__3.80.07.00::energia.core__18.0.0::energia.tool.arm-none-eabi-gcc__6.3.1-20170620::energia.tool.ino2cpp__1.0.3::energia.boards.cc13xx__5.20.0::energia.boards.cc3220emt__5.6.2::energia.boards.msp432r__5.6.3::sitara__1.02.00.00::tm4c__2.1.4.178::tirtos_cc13xx_cc26xx__2.21.00.06::tirtos_tivac__2.16.00.08::tirtos_simplelink__2.13.01.09::sysbios__6.50.01.12::xdctools__3.51.02.21::motor_control_c2000ware_sdk_software_package__1.00.00.00",
+    "overviewDescription": "",
+    "overviewImage": "tirex-product-tree/cc26xx_devtools/.metadata/.tirex/img/cc2650dk.jpg",
+    "packageOrder": 0
+  },
+  {
+    "text": "CC2650 Development Kit (7ID)",
+    "type": "folder",
+    "numChildren": 32,
+    "numChildrenLocal": 0,
+    "children": true,
+    "allowPartialDownload": false,
+    "state": {
+      "opened": false
+    },
+    "url": "/api/resources?path=Development%20Tools/Kits%20and%20Boards&package=com.ti.SIMPLELINK_CC13X0_SDK__3.10.00.11::com.ti.SIMPLELINK_CC13X2_26X2_SDK__3.10.00.53::com.ti.SIMPLELINK_CC13X2_SDK__2.30.00.45::com.ti.SIMPLELINK_CC26X2_SDK__2.30.00.34::com.ti.SIMPLELINK_CC2640R2_SDK__2.40.00.32::com.ti.SIMPLELINK_CC2652RB_BLE_SDK__3.10.00.15::com.ti.SIMPLELINK_MSP432_SDK__3.10.00.08::com.ti.SIMPLELINK_MSP432E4_SDK__3.10.00.11::com.ti.SIMPLELINK_CC32XX_SDK__3.10.00.04::com.ti.SIMPLELINK_CC2640R2_SDK_BLE_EXAMPLE_PACK__1.50.00.62::com.ti.SIMPLELINK_SDK_BLE_PLUGIN__1.40.00.42::com.ti.SIMPLELINK_MSP432_SDK_WIFI_PLUGIN__2.40.00.22::com.ti.SIMPLELINK_SDK_VOICE_DETECTION_PLUGIN__1.50.00.15::com.ti.SIMPLELINK_SDK_TI_15_4_STACK_PLUGIN__2.20.00.05::com.ti.SIMPLELINK_ZIGBEE_SDK_PLUGIN__2.20.00.06::com.ti.AWS_CC32XX__2.20.00.02::com.ti.AWS_MSP432E4__2.20.00.02::com.ti.WATSON_MSP432E4__1.20.00.04::com.ti.WATSON_CC32XX__1.20.00.04::com.ti.SAIL__1.30.00.02::com.ti.AZURE_CC32XX__2.20.00.05::com.ti.AZURE_MSP432E4__2.20.00.05::com.ti.SIMPLELINK_SDK_NFC_PLUGIN__2.20.00.08::com.ti.mmwave_industrial_toolbox__3.3.1::com.ti.mmwave_automotive_toolbox__2.4.7::c2000ware_software_package__1.00.06.00::digital_power_c2000ware_sdk_software_package__1.03.00.00::powerSUITE_software_package__2.04.00.00::msp430ware__3.80.07.00::energia.core__18.0.0::energia.tool.arm-none-eabi-gcc__6.3.1-20170620::energia.tool.ino2cpp__1.0.3::energia.boards.cc13xx__5.20.0::energia.boards.cc3220emt__5.6.2::energia.boards.msp432r__5.6.3::sitara__1.02.00.00::tm4c__2.1.4.178::tirtos_cc13xx_cc26xx__2.21.00.06::tirtos_tivac__2.16.00.08::tirtos_simplelink__2.13.01.09::sysbios__6.50.01.12::xdctools__3.51.02.21::motor_control_c2000ware_sdk_software_package__1.00.00.00",
+    "overviewDescription": "",
+    "overviewImage": "tirex-product-tree/cc26xx_devtools/.metadata/.tirex/img/cc2650dk.jpg",
+    "packageOrder": 0
+  },
+  {
+    "text": "CC2650 SensorTag",
+    "type": "folder",
+    "numChildren": 12,
+    "numChildrenLocal": 0,
+    "children": true,
+    "allowPartialDownload": false,
+    "state": {
+      "opened": false
+    },
+    "url": "/api/resources?path=Development%20Tools/Kits%20and%20Boards&package=com.ti.SIMPLELINK_CC13X0_SDK__3.10.00.11::com.ti.SIMPLELINK_CC13X2_26X2_SDK__3.10.00.53::com.ti.SIMPLELINK_CC13X2_SDK__2.30.00.45::com.ti.SIMPLELINK_CC26X2_SDK__2.30.00.34::com.ti.SIMPLELINK_CC2640R2_SDK__2.40.00.32::com.ti.SIMPLELINK_CC2652RB_BLE_SDK__3.10.00.15::com.ti.SIMPLELINK_MSP432_SDK__3.10.00.08::com.ti.SIMPLELINK_MSP432E4_SDK__3.10.00.11::com.ti.SIMPLELINK_CC32XX_SDK__3.10.00.04::com.ti.SIMPLELINK_CC2640R2_SDK_BLE_EXAMPLE_PACK__1.50.00.62::com.ti.SIMPLELINK_SDK_BLE_PLUGIN__1.40.00.42::com.ti.SIMPLELINK_MSP432_SDK_WIFI_PLUGIN__2.40.00.22::com.ti.SIMPLELINK_SDK_VOICE_DETECTION_PLUGIN__1.50.00.15::com.ti.SIMPLELINK_SDK_TI_15_4_STACK_PLUGIN__2.20.00.05::com.ti.SIMPLELINK_ZIGBEE_SDK_PLUGIN__2.20.00.06::com.ti.AWS_CC32XX__2.20.00.02::com.ti.AWS_MSP432E4__2.20.00.02::com.ti.WATSON_MSP432E4__1.20.00.04::com.ti.WATSON_CC32XX__1.20.00.04::com.ti.SAIL__1.30.00.02::com.ti.AZURE_CC32XX__2.20.00.05::com.ti.AZURE_MSP432E4__2.20.00.05::com.ti.SIMPLELINK_SDK_NFC_PLUGIN__2.20.00.08::com.ti.mmwave_industrial_toolbox__3.3.1::com.ti.mmwave_automotive_toolbox__2.4.7::c2000ware_software_package__1.00.06.00::digital_power_c2000ware_sdk_software_package__1.03.00.00::powerSUITE_software_package__2.04.00.00::msp430ware__3.80.07.00::energia.core__18.0.0::energia.tool.arm-none-eabi-gcc__6.3.1-20170620::energia.tool.ino2cpp__1.0.3::energia.boards.cc13xx__5.20.0::energia.boards.cc3220emt__5.6.2::energia.boards.msp432r__5.6.3::sitara__1.02.00.00::tm4c__2.1.4.178::tirtos_cc13xx_cc26xx__2.21.00.06::tirtos_tivac__2.16.00.08::tirtos_simplelink__2.13.01.09::sysbios__6.50.01.12::xdctools__3.51.02.21::motor_control_c2000ware_sdk_software_package__1.00.00.00",
+    "overviewDescription": "",
+    "overviewImage": "tirex-product-tree/cc26xx_devtools/.metadata/.tirex/img/cc2650stk.jpg",
+    "packageOrder": 0
+  },
+  {
+    "text": "MSP-EXP430G2",
+    "type": "folder",
+    "numChildren": 4,
+    "numChildrenLocal": 14,
+    "children": true,
+    "allowPartialDownload": false,
+    "state": {
+      "opened": false
+    },
+    "url": "/api/resources?path=Development%20Tools/Kits%20and%20Boards&package=com.ti.SIMPLELINK_CC13X0_SDK__3.10.00.11::com.ti.SIMPLELINK_CC13X2_26X2_SDK__3.10.00.53::com.ti.SIMPLELINK_CC13X2_SDK__2.30.00.45::com.ti.SIMPLELINK_CC26X2_SDK__2.30.00.34::com.ti.SIMPLELINK_CC2640R2_SDK__2.40.00.32::com.ti.SIMPLELINK_CC2652RB_BLE_SDK__3.10.00.15::com.ti.SIMPLELINK_MSP432_SDK__3.10.00.08::com.ti.SIMPLELINK_MSP432E4_SDK__3.10.00.11::com.ti.SIMPLELINK_CC32XX_SDK__3.10.00.04::com.ti.SIMPLELINK_CC2640R2_SDK_BLE_EXAMPLE_PACK__1.50.00.62::com.ti.SIMPLELINK_SDK_BLE_PLUGIN__1.40.00.42::com.ti.SIMPLELINK_MSP432_SDK_WIFI_PLUGIN__2.40.00.22::com.ti.SIMPLELINK_SDK_VOICE_DETECTION_PLUGIN__1.50.00.15::com.ti.SIMPLELINK_SDK_TI_15_4_STACK_PLUGIN__2.20.00.05::com.ti.SIMPLELINK_ZIGBEE_SDK_PLUGIN__2.20.00.06::com.ti.AWS_CC32XX__2.20.00.02::com.ti.AWS_MSP432E4__2.20.00.02::com.ti.WATSON_MSP432E4__1.20.00.04::com.ti.WATSON_CC32XX__1.20.00.04::com.ti.SAIL__1.30.00.02::com.ti.AZURE_CC32XX__2.20.00.05::com.ti.AZURE_MSP432E4__2.20.00.05::com.ti.SIMPLELINK_SDK_NFC_PLUGIN__2.20.00.08::com.ti.mmwave_industrial_toolbox__3.3.1::com.ti.mmwave_automotive_toolbox__2.4.7::c2000ware_software_package__1.00.06.00::digital_power_c2000ware_sdk_software_package__1.03.00.00::powerSUITE_software_package__2.04.00.00::msp430ware__3.80.07.00::energia.core__18.0.0::energia.tool.arm-none-eabi-gcc__6.3.1-20170620::energia.tool.ino2cpp__1.0.3::energia.boards.cc13xx__5.20.0::energia.boards.cc3220emt__5.6.2::energia.boards.msp432r__5.6.3::sitara__1.02.00.00::tm4c__2.1.4.178::tirtos_cc13xx_cc26xx__2.21.00.06::tirtos_tivac__2.16.00.08::tirtos_simplelink__2.13.01.09::sysbios__6.50.01.12::xdctools__3.51.02.21::motor_control_c2000ware_sdk_software_package__1.00.00.00",
+    "overviewDescription": "The MSP-EXP430G2 LaunchPad is an easy-to-use flash programmer and debugging tool for the MSP430G2xx Value Line microcontrollers. It features everything you need to start developing on an MSP430 microcontroller device. It has on-board emulation for programming and debugging and features a 14/20-pin DIP socket, on-board buttons and LEDs & BoosterPack-compatible pinouts that support a wide range of plug-in modules for added functionality such as wireless, displays & more.<br><br>The MSP-EXP430G2 LaunchPad also comes with 2 MSP430 device, with up to 16kB Flash, 512B RAM, 16MHz CPU speed and integrated peripherals such as 8ch 10-bit ADC, timers, serial communication (UART, I2C & SPI) & more!<br><br>The MSP-EXP430G2 LaunchPad is not supported by the Mac or Linux versions of the Code Composter Studio™ Integrated Development Environment. If you want to work with these operating systems, we suggest you select one of the many other MSP LaunchPads.",
+    "overviewImage": "tirex-product-tree/msp430_devtools_3_80_07_00/.metadata/.tirex/images/msp-exp430g2_thumb.png",
+    "packageOrder": 0
+  },
+  {
+    "text": "MSP432P401R LaunchPad - Red 2.x (Red)",
+    "type": "folder",
+    "numChildren": 2,
+    "numChildrenLocal": 0,
+    "children": true,
+    "allowPartialDownload": false,
+    "state": {
+      "opened": false
+    },
+    "url": "/api/resources?path=Development%20Tools/Kits%20and%20Boards&package=com.ti.SIMPLELINK_CC13X0_SDK__3.10.00.11::com.ti.SIMPLELINK_CC13X2_26X2_SDK__3.10.00.53::com.ti.SIMPLELINK_CC13X2_SDK__2.30.00.45::com.ti.SIMPLELINK_CC26X2_SDK__2.30.00.34::com.ti.SIMPLELINK_CC2640R2_SDK__2.40.00.32::com.ti.SIMPLELINK_CC2652RB_BLE_SDK__3.10.00.15::com.ti.SIMPLELINK_MSP432_SDK__3.10.00.08::com.ti.SIMPLELINK_MSP432E4_SDK__3.10.00.11::com.ti.SIMPLELINK_CC32XX_SDK__3.10.00.04::com.ti.SIMPLELINK_CC2640R2_SDK_BLE_EXAMPLE_PACK__1.50.00.62::com.ti.SIMPLELINK_SDK_BLE_PLUGIN__1.40.00.42::com.ti.SIMPLELINK_MSP432_SDK_WIFI_PLUGIN__2.40.00.22::com.ti.SIMPLELINK_SDK_VOICE_DETECTION_PLUGIN__1.50.00.15::com.ti.SIMPLELINK_SDK_TI_15_4_STACK_PLUGIN__2.20.00.05::com.ti.SIMPLELINK_ZIGBEE_SDK_PLUGIN__2.20.00.06::com.ti.AWS_CC32XX__2.20.00.02::com.ti.AWS_MSP432E4__2.20.00.02::com.ti.WATSON_MSP432E4__1.20.00.04::com.ti.WATSON_CC32XX__1.20.00.04::com.ti.SAIL__1.30.00.02::com.ti.AZURE_CC32XX__2.20.00.05::com.ti.AZURE_MSP432E4__2.20.00.05::com.ti.SIMPLELINK_SDK_NFC_PLUGIN__2.20.00.08::com.ti.mmwave_industrial_toolbox__3.3.1::com.ti.mmwave_automotive_toolbox__2.4.7::c2000ware_software_package__1.00.06.00::digital_power_c2000ware_sdk_software_package__1.03.00.00::powerSUITE_software_package__2.04.00.00::msp430ware__3.80.07.00::energia.core__18.0.0::energia.tool.arm-none-eabi-gcc__6.3.1-20170620::energia.tool.ino2cpp__1.0.3::energia.boards.cc13xx__5.20.0::energia.boards.cc3220emt__5.6.2::energia.boards.msp432r__5.6.3::sitara__1.02.00.00::tm4c__2.1.4.178::tirtos_cc13xx_cc26xx__2.21.00.06::tirtos_tivac__2.16.00.08::tirtos_simplelink__2.13.01.09::sysbios__6.50.01.12::xdctools__3.51.02.21::motor_control_c2000ware_sdk_software_package__1.00.00.00",
+    "overviewDescription": "The MSP432P401R LaunchPad enables you to develop high performance applications that benefit from low power operation. It features the MSP432P401R, a 48MHz ARM Cortex M4F with 256kB of Flash, 80uA/MHz active power and 660nA RTC operation, 14-bit 1MSPS differential SAR ADC and AES256 accelerator.<br><br>This Launchpad includes an on-board emulator with EnergyTrace+ Technology, which means you can program and debug your projects without the need for additional tools, while also measuring total system energy consumption.<br><br>All pins of the MSP-EXP432P401R device are fanned out for easy access. These pins make it easy to plug in 20-pin and 40-pin BoosterPacks that add additional functionality including Bluetooth Low Energy, Wifi wireless connectivity, and more.<br><br>The out-of-box application provided with the MSP-EXP432P401R LaunchPad features a graphical user-interface that enables the user to type in the desired beats per minute of an RGB LED, and select from over 16 million color options.<br><br><p>For XMS432P401R Revision C, MSP432P401R Revision C devices and MSP-EXP432P401R – Rev2.x (Red) LaunchPad ONLY. For previous revisions, visit <a href='http://www.ti.com/xms432support'>http://www.ti.com/xms432support</a> before using.</p>",
+    "overviewImage": "tirex-product-tree/msp432_devtools_2_30_00_01/.metadata/.tirex/images/msp-exp432p401r_thumb.png",
+    "packageOrder": 0
+  },
+  {
+    "text": "CC1310-CC1190 LaunchPad",
+    "type": "folder",
+    "numChildren": 12,
+    "numChildrenLocal": 3,
+    "children": true,
+    "allowPartialDownload": false,
+    "state": {
+      "opened": false
+    },
+    "url": "/api/resources?path=Development%20Tools/Kits%20and%20Boards&package=com.ti.SIMPLELINK_CC13X0_SDK__3.10.00.11::com.ti.SIMPLELINK_CC13X2_26X2_SDK__3.10.00.53::com.ti.SIMPLELINK_CC13X2_SDK__2.30.00.45::com.ti.SIMPLELINK_CC26X2_SDK__2.30.00.34::com.ti.SIMPLELINK_CC2640R2_SDK__2.40.00.32::com.ti.SIMPLELINK_CC2652RB_BLE_SDK__3.10.00.15::com.ti.SIMPLELINK_MSP432_SDK__3.10.00.08::com.ti.SIMPLELINK_MSP432E4_SDK__3.10.00.11::com.ti.SIMPLELINK_CC32XX_SDK__3.10.00.04::com.ti.SIMPLELINK_CC2640R2_SDK_BLE_EXAMPLE_PACK__1.50.00.62::com.ti.SIMPLELINK_SDK_BLE_PLUGIN__1.40.00.42::com.ti.SIMPLELINK_MSP432_SDK_WIFI_PLUGIN__2.40.00.22::com.ti.SIMPLELINK_SDK_VOICE_DETECTION_PLUGIN__1.50.00.15::com.ti.SIMPLELINK_SDK_TI_15_4_STACK_PLUGIN__2.20.00.05::com.ti.SIMPLELINK_ZIGBEE_SDK_PLUGIN__2.20.00.06::com.ti.AWS_CC32XX__2.20.00.02::com.ti.AWS_MSP432E4__2.20.00.02::com.ti.WATSON_MSP432E4__1.20.00.04::com.ti.WATSON_CC32XX__1.20.00.04::com.ti.SAIL__1.30.00.02::com.ti.AZURE_CC32XX__2.20.00.05::com.ti.AZURE_MSP432E4__2.20.00.05::com.ti.SIMPLELINK_SDK_NFC_PLUGIN__2.20.00.08::com.ti.mmwave_industrial_toolbox__3.3.1::com.ti.mmwave_automotive_toolbox__2.4.7::c2000ware_software_package__1.00.06.00::digital_power_c2000ware_sdk_software_package__1.03.00.00::powerSUITE_software_package__2.04.00.00::msp430ware__3.80.07.00::energia.core__18.0.0::energia.tool.arm-none-eabi-gcc__6.3.1-20170620::energia.tool.ino2cpp__1.0.3::energia.boards.cc13xx__5.20.0::energia.boards.cc3220emt__5.6.2::energia.boards.msp432r__5.6.3::sitara__1.02.00.00::tm4c__2.1.4.178::tirtos_cc13xx_cc26xx__2.21.00.06::tirtos_tivac__2.16.00.08::tirtos_simplelink__2.13.01.09::sysbios__6.50.01.12::xdctools__3.51.02.21::motor_control_c2000ware_sdk_software_package__1.00.00.00",
+    "overviewLink": "tirex-product-tree/cc13xx_devtools/.metadata/.tirex/project0_cc13-90lp/landing_page_index.html",
+    "packageOrder": 0
+  },
+  {
+    "text": "CC1310 LaunchPad",
+    "type": "folder",
+    "numChildren": 12,
+    "numChildrenLocal": 3,
+    "children": true,
+    "allowPartialDownload": false,
+    "state": {
+      "opened": false
+    },
+    "url": "/api/resources?path=Development%20Tools/Kits%20and%20Boards&package=com.ti.SIMPLELINK_CC13X0_SDK__3.10.00.11::com.ti.SIMPLELINK_CC13X2_26X2_SDK__3.10.00.53::com.ti.SIMPLELINK_CC13X2_SDK__2.30.00.45::com.ti.SIMPLELINK_CC26X2_SDK__2.30.00.34::com.ti.SIMPLELINK_CC2640R2_SDK__2.40.00.32::com.ti.SIMPLELINK_CC2652RB_BLE_SDK__3.10.00.15::com.ti.SIMPLELINK_MSP432_SDK__3.10.00.08::com.ti.SIMPLELINK_MSP432E4_SDK__3.10.00.11::com.ti.SIMPLELINK_CC32XX_SDK__3.10.00.04::com.ti.SIMPLELINK_CC2640R2_SDK_BLE_EXAMPLE_PACK__1.50.00.62::com.ti.SIMPLELINK_SDK_BLE_PLUGIN__1.40.00.42::com.ti.SIMPLELINK_MSP432_SDK_WIFI_PLUGIN__2.40.00.22::com.ti.SIMPLELINK_SDK_VOICE_DETECTION_PLUGIN__1.50.00.15::com.ti.SIMPLELINK_SDK_TI_15_4_STACK_PLUGIN__2.20.00.05::com.ti.SIMPLELINK_ZIGBEE_SDK_PLUGIN__2.20.00.06::com.ti.AWS_CC32XX__2.20.00.02::com.ti.AWS_MSP432E4__2.20.00.02::com.ti.WATSON_MSP432E4__1.20.00.04::com.ti.WATSON_CC32XX__1.20.00.04::com.ti.SAIL__1.30.00.02::com.ti.AZURE_CC32XX__2.20.00.05::com.ti.AZURE_MSP432E4__2.20.00.05::com.ti.SIMPLELINK_SDK_NFC_PLUGIN__2.20.00.08::com.ti.mmwave_industrial_toolbox__3.3.1::com.ti.mmwave_automotive_toolbox__2.4.7::c2000ware_software_package__1.00.06.00::digital_power_c2000ware_sdk_software_package__1.03.00.00::powerSUITE_software_package__2.04.00.00::msp430ware__3.80.07.00::energia.core__18.0.0::energia.tool.arm-none-eabi-gcc__6.3.1-20170620::energia.tool.ino2cpp__1.0.3::energia.boards.cc13xx__5.20.0::energia.boards.cc3220emt__5.6.2::energia.boards.msp432r__5.6.3::sitara__1.02.00.00::tm4c__2.1.4.178::tirtos_cc13xx_cc26xx__2.21.00.06::tirtos_tivac__2.16.00.08::tirtos_simplelink__2.13.01.09::sysbios__6.50.01.12::xdctools__3.51.02.21::motor_control_c2000ware_sdk_software_package__1.00.00.00",
+    "overviewLink": "tirex-product-tree/cc13xx_devtools/.metadata/.tirex/project0_1310lp/landing_page_index.html",
+    "packageOrder": 0
+  },
+  {
+    "text": "CC1312R LaunchPad",
+    "type": "folder",
+    "numChildren": 4,
+    "numChildrenLocal": 1,
+    "children": true,
+    "allowPartialDownload": false,
+    "state": {
+      "opened": false
+    },
+    "url": "/api/resources?path=Development%20Tools/Kits%20and%20Boards&package=com.ti.SIMPLELINK_CC13X0_SDK__3.10.00.11::com.ti.SIMPLELINK_CC13X2_26X2_SDK__3.10.00.53::com.ti.SIMPLELINK_CC13X2_SDK__2.30.00.45::com.ti.SIMPLELINK_CC26X2_SDK__2.30.00.34::com.ti.SIMPLELINK_CC2640R2_SDK__2.40.00.32::com.ti.SIMPLELINK_CC2652RB_BLE_SDK__3.10.00.15::com.ti.SIMPLELINK_MSP432_SDK__3.10.00.08::com.ti.SIMPLELINK_MSP432E4_SDK__3.10.00.11::com.ti.SIMPLELINK_CC32XX_SDK__3.10.00.04::com.ti.SIMPLELINK_CC2640R2_SDK_BLE_EXAMPLE_PACK__1.50.00.62::com.ti.SIMPLELINK_SDK_BLE_PLUGIN__1.40.00.42::com.ti.SIMPLELINK_MSP432_SDK_WIFI_PLUGIN__2.40.00.22::com.ti.SIMPLELINK_SDK_VOICE_DETECTION_PLUGIN__1.50.00.15::com.ti.SIMPLELINK_SDK_TI_15_4_STACK_PLUGIN__2.20.00.05::com.ti.SIMPLELINK_ZIGBEE_SDK_PLUGIN__2.20.00.06::com.ti.AWS_CC32XX__2.20.00.02::com.ti.AWS_MSP432E4__2.20.00.02::com.ti.WATSON_MSP432E4__1.20.00.04::com.ti.WATSON_CC32XX__1.20.00.04::com.ti.SAIL__1.30.00.02::com.ti.AZURE_CC32XX__2.20.00.05::com.ti.AZURE_MSP432E4__2.20.00.05::com.ti.SIMPLELINK_SDK_NFC_PLUGIN__2.20.00.08::com.ti.mmwave_industrial_toolbox__3.3.1::com.ti.mmwave_automotive_toolbox__2.4.7::c2000ware_software_package__1.00.06.00::digital_power_c2000ware_sdk_software_package__1.03.00.00::powerSUITE_software_package__2.04.00.00::msp430ware__3.80.07.00::energia.core__18.0.0::energia.tool.arm-none-eabi-gcc__6.3.1-20170620::energia.tool.ino2cpp__1.0.3::energia.boards.cc13xx__5.20.0::energia.boards.cc3220emt__5.6.2::energia.boards.msp432r__5.6.3::sitara__1.02.00.00::tm4c__2.1.4.178::tirtos_cc13xx_cc26xx__2.21.00.06::tirtos_tivac__2.16.00.08::tirtos_simplelink__2.13.01.09::sysbios__6.50.01.12::xdctools__3.51.02.21::motor_control_c2000ware_sdk_software_package__1.00.00.00",
+    "overviewLink": "tirex-product-tree/cc13xx_devtools/.metadata/.tirex/project0_cc1312r1lp/landing_page_index.html",
+    "packageOrder": 0
+  },
+  {
+    "text": "CC1350 LaunchPad",
+    "type": "folder",
+    "numChildren": 4,
+    "numChildrenLocal": 1,
+    "children": true,
+    "allowPartialDownload": false,
+    "state": {
+      "opened": false
+    },
+    "url": "/api/resources?path=Development%20Tools/Kits%20and%20Boards&package=com.ti.SIMPLELINK_CC13X0_SDK__3.10.00.11::com.ti.SIMPLELINK_CC13X2_26X2_SDK__3.10.00.53::com.ti.SIMPLELINK_CC13X2_SDK__2.30.00.45::com.ti.SIMPLELINK_CC26X2_SDK__2.30.00.34::com.ti.SIMPLELINK_CC2640R2_SDK__2.40.00.32::com.ti.SIMPLELINK_CC2652RB_BLE_SDK__3.10.00.15::com.ti.SIMPLELINK_MSP432_SDK__3.10.00.08::com.ti.SIMPLELINK_MSP432E4_SDK__3.10.00.11::com.ti.SIMPLELINK_CC32XX_SDK__3.10.00.04::com.ti.SIMPLELINK_CC2640R2_SDK_BLE_EXAMPLE_PACK__1.50.00.62::com.ti.SIMPLELINK_SDK_BLE_PLUGIN__1.40.00.42::com.ti.SIMPLELINK_MSP432_SDK_WIFI_PLUGIN__2.40.00.22::com.ti.SIMPLELINK_SDK_VOICE_DETECTION_PLUGIN__1.50.00.15::com.ti.SIMPLELINK_SDK_TI_15_4_STACK_PLUGIN__2.20.00.05::com.ti.SIMPLELINK_ZIGBEE_SDK_PLUGIN__2.20.00.06::com.ti.AWS_CC32XX__2.20.00.02::com.ti.AWS_MSP432E4__2.20.00.02::com.ti.WATSON_MSP432E4__1.20.00.04::com.ti.WATSON_CC32XX__1.20.00.04::com.ti.SAIL__1.30.00.02::com.ti.AZURE_CC32XX__2.20.00.05::com.ti.AZURE_MSP432E4__2.20.00.05::com.ti.SIMPLELINK_SDK_NFC_PLUGIN__2.20.00.08::com.ti.mmwave_industrial_toolbox__3.3.1::com.ti.mmwave_automotive_toolbox__2.4.7::c2000ware_software_package__1.00.06.00::digital_power_c2000ware_sdk_software_package__1.03.00.00::powerSUITE_software_package__2.04.00.00::msp430ware__3.80.07.00::energia.core__18.0.0::energia.tool.arm-none-eabi-gcc__6.3.1-20170620::energia.tool.ino2cpp__1.0.3::energia.boards.cc13xx__5.20.0::energia.boards.cc3220emt__5.6.2::energia.boards.msp432r__5.6.3::sitara__1.02.00.00::tm4c__2.1.4.178::tirtos_cc13xx_cc26xx__2.21.00.06::tirtos_tivac__2.16.00.08::tirtos_simplelink__2.13.01.09::sysbios__6.50.01.12::xdctools__3.51.02.21::motor_control_c2000ware_sdk_software_package__1.00.00.00",
+    "overviewLink": "tirex-product-tree/cc13xx_devtools/.metadata/.tirex/project0_1350lp/landing_page_index.html",
+    "packageOrder": 0
+  },
+  {
+    "text": "CC1350 SensorTag",
+    "type": "folder",
+    "numChildren": 4,
+    "numChildrenLocal": 1,
+    "children": true,
+    "allowPartialDownload": false,
+    "state": {
+      "opened": false
+    },
+    "url": "/api/resources?path=Development%20Tools/Kits%20and%20Boards&package=com.ti.SIMPLELINK_CC13X0_SDK__3.10.00.11::com.ti.SIMPLELINK_CC13X2_26X2_SDK__3.10.00.53::com.ti.SIMPLELINK_CC13X2_SDK__2.30.00.45::com.ti.SIMPLELINK_CC26X2_SDK__2.30.00.34::com.ti.SIMPLELINK_CC2640R2_SDK__2.40.00.32::com.ti.SIMPLELINK_CC2652RB_BLE_SDK__3.10.00.15::com.ti.SIMPLELINK_MSP432_SDK__3.10.00.08::com.ti.SIMPLELINK_MSP432E4_SDK__3.10.00.11::com.ti.SIMPLELINK_CC32XX_SDK__3.10.00.04::com.ti.SIMPLELINK_CC2640R2_SDK_BLE_EXAMPLE_PACK__1.50.00.62::com.ti.SIMPLELINK_SDK_BLE_PLUGIN__1.40.00.42::com.ti.SIMPLELINK_MSP432_SDK_WIFI_PLUGIN__2.40.00.22::com.ti.SIMPLELINK_SDK_VOICE_DETECTION_PLUGIN__1.50.00.15::com.ti.SIMPLELINK_SDK_TI_15_4_STACK_PLUGIN__2.20.00.05::com.ti.SIMPLELINK_ZIGBEE_SDK_PLUGIN__2.20.00.06::com.ti.AWS_CC32XX__2.20.00.02::com.ti.AWS_MSP432E4__2.20.00.02::com.ti.WATSON_MSP432E4__1.20.00.04::com.ti.WATSON_CC32XX__1.20.00.04::com.ti.SAIL__1.30.00.02::com.ti.AZURE_CC32XX__2.20.00.05::com.ti.AZURE_MSP432E4__2.20.00.05::com.ti.SIMPLELINK_SDK_NFC_PLUGIN__2.20.00.08::com.ti.mmwave_industrial_toolbox__3.3.1::com.ti.mmwave_automotive_toolbox__2.4.7::c2000ware_software_package__1.00.06.00::digital_power_c2000ware_sdk_software_package__1.03.00.00::powerSUITE_software_package__2.04.00.00::msp430ware__3.80.07.00::energia.core__18.0.0::energia.tool.arm-none-eabi-gcc__6.3.1-20170620::energia.tool.ino2cpp__1.0.3::energia.boards.cc13xx__5.20.0::energia.boards.cc3220emt__5.6.2::energia.boards.msp432r__5.6.3::sitara__1.02.00.00::tm4c__2.1.4.178::tirtos_cc13xx_cc26xx__2.21.00.06::tirtos_tivac__2.16.00.08::tirtos_simplelink__2.13.01.09::sysbios__6.50.01.12::xdctools__3.51.02.21::motor_control_c2000ware_sdk_software_package__1.00.00.00",
+    "overviewLink": "tirex-product-tree/cc13xx_devtools/.metadata/.tirex/project0_1350stk/landing_page_index.html",
+    "packageOrder": 0
+  },
+  {
+    "text": "CC1352R LaunchPad",
+    "type": "folder",
+    "numChildren": 3,
+    "numChildrenLocal": 1,
+    "children": true,
+    "allowPartialDownload": false,
+    "state": {
+      "opened": false
+    },
+    "url": "/api/resources?path=Development%20Tools/Kits%20and%20Boards&package=com.ti.SIMPLELINK_CC13X0_SDK__3.10.00.11::com.ti.SIMPLELINK_CC13X2_26X2_SDK__3.10.00.53::com.ti.SIMPLELINK_CC13X2_SDK__2.30.00.45::com.ti.SIMPLELINK_CC26X2_SDK__2.30.00.34::com.ti.SIMPLELINK_CC2640R2_SDK__2.40.00.32::com.ti.SIMPLELINK_CC2652RB_BLE_SDK__3.10.00.15::com.ti.SIMPLELINK_MSP432_SDK__3.10.00.08::com.ti.SIMPLELINK_MSP432E4_SDK__3.10.00.11::com.ti.SIMPLELINK_CC32XX_SDK__3.10.00.04::com.ti.SIMPLELINK_CC2640R2_SDK_BLE_EXAMPLE_PACK__1.50.00.62::com.ti.SIMPLELINK_SDK_BLE_PLUGIN__1.40.00.42::com.ti.SIMPLELINK_MSP432_SDK_WIFI_PLUGIN__2.40.00.22::com.ti.SIMPLELINK_SDK_VOICE_DETECTION_PLUGIN__1.50.00.15::com.ti.SIMPLELINK_SDK_TI_15_4_STACK_PLUGIN__2.20.00.05::com.ti.SIMPLELINK_ZIGBEE_SDK_PLUGIN__2.20.00.06::com.ti.AWS_CC32XX__2.20.00.02::com.ti.AWS_MSP432E4__2.20.00.02::com.ti.WATSON_MSP432E4__1.20.00.04::com.ti.WATSON_CC32XX__1.20.00.04::com.ti.SAIL__1.30.00.02::com.ti.AZURE_CC32XX__2.20.00.05::com.ti.AZURE_MSP432E4__2.20.00.05::com.ti.SIMPLELINK_SDK_NFC_PLUGIN__2.20.00.08::com.ti.mmwave_industrial_toolbox__3.3.1::com.ti.mmwave_automotive_toolbox__2.4.7::c2000ware_software_package__1.00.06.00::digital_power_c2000ware_sdk_software_package__1.03.00.00::powerSUITE_software_package__2.04.00.00::msp430ware__3.80.07.00::energia.core__18.0.0::energia.tool.arm-none-eabi-gcc__6.3.1-20170620::energia.tool.ino2cpp__1.0.3::energia.boards.cc13xx__5.20.0::energia.boards.cc3220emt__5.6.2::energia.boards.msp432r__5.6.3::sitara__1.02.00.00::tm4c__2.1.4.178::tirtos_cc13xx_cc26xx__2.21.00.06::tirtos_tivac__2.16.00.08::tirtos_simplelink__2.13.01.09::sysbios__6.50.01.12::xdctools__3.51.02.21::motor_control_c2000ware_sdk_software_package__1.00.00.00",
+    "overviewLink": "tirex-product-tree/cc13xx_devtools/.metadata/.tirex/project0_cc1352r1lp/landing_page_index.html",
+    "packageOrder": 0
+  },
+  {
+    "text": "ULP Sense BoosterPack",
+    "type": "folder",
+    "numChildren": 24,
+    "numChildrenLocal": 6,
+    "children": true,
+    "allowPartialDownload": false,
+    "state": {
+      "opened": false
+    },
+    "url": "/api/resources?path=Development%20Tools/Kits%20and%20Boards&package=com.ti.SIMPLELINK_CC13X0_SDK__3.10.00.11::com.ti.SIMPLELINK_CC13X2_26X2_SDK__3.10.00.53::com.ti.SIMPLELINK_CC13X2_SDK__2.30.00.45::com.ti.SIMPLELINK_CC26X2_SDK__2.30.00.34::com.ti.SIMPLELINK_CC2640R2_SDK__2.40.00.32::com.ti.SIMPLELINK_CC2652RB_BLE_SDK__3.10.00.15::com.ti.SIMPLELINK_MSP432_SDK__3.10.00.08::com.ti.SIMPLELINK_MSP432E4_SDK__3.10.00.11::com.ti.SIMPLELINK_CC32XX_SDK__3.10.00.04::com.ti.SIMPLELINK_CC2640R2_SDK_BLE_EXAMPLE_PACK__1.50.00.62::com.ti.SIMPLELINK_SDK_BLE_PLUGIN__1.40.00.42::com.ti.SIMPLELINK_MSP432_SDK_WIFI_PLUGIN__2.40.00.22::com.ti.SIMPLELINK_SDK_VOICE_DETECTION_PLUGIN__1.50.00.15::com.ti.SIMPLELINK_SDK_TI_15_4_STACK_PLUGIN__2.20.00.05::com.ti.SIMPLELINK_ZIGBEE_SDK_PLUGIN__2.20.00.06::com.ti.AWS_CC32XX__2.20.00.02::com.ti.AWS_MSP432E4__2.20.00.02::com.ti.WATSON_MSP432E4__1.20.00.04::com.ti.WATSON_CC32XX__1.20.00.04::com.ti.SAIL__1.30.00.02::com.ti.AZURE_CC32XX__2.20.00.05::com.ti.AZURE_MSP432E4__2.20.00.05::com.ti.SIMPLELINK_SDK_NFC_PLUGIN__2.20.00.08::com.ti.mmwave_industrial_toolbox__3.3.1::com.ti.mmwave_automotive_toolbox__2.4.7::c2000ware_software_package__1.00.06.00::digital_power_c2000ware_sdk_software_package__1.03.00.00::powerSUITE_software_package__2.04.00.00::msp430ware__3.80.07.00::energia.core__18.0.0::energia.tool.arm-none-eabi-gcc__6.3.1-20170620::energia.tool.ino2cpp__1.0.3::energia.boards.cc13xx__5.20.0::energia.boards.cc3220emt__5.6.2::energia.boards.msp432r__5.6.3::sitara__1.02.00.00::tm4c__2.1.4.178::tirtos_cc13xx_cc26xx__2.21.00.06::tirtos_tivac__2.16.00.08::tirtos_simplelink__2.13.01.09::sysbios__6.50.01.12::xdctools__3.51.02.21::motor_control_c2000ware_sdk_software_package__1.00.00.00",
+    "overviewLink": "tirex-product-tree/cc13xx_devtools/.metadata/.tirex/project0_ulpsensebp/landing_page_index.html",
+    "packageOrder": 0
+  },
+  {
+    "text": "Angle of Arrival BoosterPack",
+    "type": "folder",
+    "numChildren": 4,
+    "numChildrenLocal": 1,
+    "children": true,
+    "allowPartialDownload": false,
+    "state": {
+      "opened": false
+    },
+    "url": "/api/resources?path=Development%20Tools/Kits%20and%20Boards&package=com.ti.SIMPLELINK_CC13X0_SDK__3.10.00.11::com.ti.SIMPLELINK_CC13X2_26X2_SDK__3.10.00.53::com.ti.SIMPLELINK_CC13X2_SDK__2.30.00.45::com.ti.SIMPLELINK_CC26X2_SDK__2.30.00.34::com.ti.SIMPLELINK_CC2640R2_SDK__2.40.00.32::com.ti.SIMPLELINK_CC2652RB_BLE_SDK__3.10.00.15::com.ti.SIMPLELINK_MSP432_SDK__3.10.00.08::com.ti.SIMPLELINK_MSP432E4_SDK__3.10.00.11::com.ti.SIMPLELINK_CC32XX_SDK__3.10.00.04::com.ti.SIMPLELINK_CC2640R2_SDK_BLE_EXAMPLE_PACK__1.50.00.62::com.ti.SIMPLELINK_SDK_BLE_PLUGIN__1.40.00.42::com.ti.SIMPLELINK_MSP432_SDK_WIFI_PLUGIN__2.40.00.22::com.ti.SIMPLELINK_SDK_VOICE_DETECTION_PLUGIN__1.50.00.15::com.ti.SIMPLELINK_SDK_TI_15_4_STACK_PLUGIN__2.20.00.05::com.ti.SIMPLELINK_ZIGBEE_SDK_PLUGIN__2.20.00.06::com.ti.AWS_CC32XX__2.20.00.02::com.ti.AWS_MSP432E4__2.20.00.02::com.ti.WATSON_MSP432E4__1.20.00.04::com.ti.WATSON_CC32XX__1.20.00.04::com.ti.SAIL__1.30.00.02::com.ti.AZURE_CC32XX__2.20.00.05::com.ti.AZURE_MSP432E4__2.20.00.05::com.ti.SIMPLELINK_SDK_NFC_PLUGIN__2.20.00.08::com.ti.mmwave_industrial_toolbox__3.3.1::com.ti.mmwave_automotive_toolbox__2.4.7::c2000ware_software_package__1.00.06.00::digital_power_c2000ware_sdk_software_package__1.03.00.00::powerSUITE_software_package__2.04.00.00::msp430ware__3.80.07.00::energia.core__18.0.0::energia.tool.arm-none-eabi-gcc__6.3.1-20170620::energia.tool.ino2cpp__1.0.3::energia.boards.cc13xx__5.20.0::energia.boards.cc3220emt__5.6.2::energia.boards.msp432r__5.6.3::sitara__1.02.00.00::tm4c__2.1.4.178::tirtos_cc13xx_cc26xx__2.21.00.06::tirtos_tivac__2.16.00.08::tirtos_simplelink__2.13.01.09::sysbios__6.50.01.12::xdctools__3.51.02.21::motor_control_c2000ware_sdk_software_package__1.00.00.00",
+    "overviewLink": "tirex-product-tree/cc26xx_devtools/.metadata/.tirex/project0_boostxl_aoa_bp/landing_page_index.html",
+    "packageOrder": 0
+  },
+  {
+    "text": "CC2640R2 LaunchPad",
+    "type": "folder",
+    "numChildren": 4,
+    "numChildrenLocal": 1,
+    "children": true,
+    "allowPartialDownload": false,
+    "state": {
+      "opened": false
+    },
+    "url": "/api/resources?path=Development%20Tools/Kits%20and%20Boards&package=com.ti.SIMPLELINK_CC13X0_SDK__3.10.00.11::com.ti.SIMPLELINK_CC13X2_26X2_SDK__3.10.00.53::com.ti.SIMPLELINK_CC13X2_SDK__2.30.00.45::com.ti.SIMPLELINK_CC26X2_SDK__2.30.00.34::com.ti.SIMPLELINK_CC2640R2_SDK__2.40.00.32::com.ti.SIMPLELINK_CC2652RB_BLE_SDK__3.10.00.15::com.ti.SIMPLELINK_MSP432_SDK__3.10.00.08::com.ti.SIMPLELINK_MSP432E4_SDK__3.10.00.11::com.ti.SIMPLELINK_CC32XX_SDK__3.10.00.04::com.ti.SIMPLELINK_CC2640R2_SDK_BLE_EXAMPLE_PACK__1.50.00.62::com.ti.SIMPLELINK_SDK_BLE_PLUGIN__1.40.00.42::com.ti.SIMPLELINK_MSP432_SDK_WIFI_PLUGIN__2.40.00.22::com.ti.SIMPLELINK_SDK_VOICE_DETECTION_PLUGIN__1.50.00.15::com.ti.SIMPLELINK_SDK_TI_15_4_STACK_PLUGIN__2.20.00.05::com.ti.SIMPLELINK_ZIGBEE_SDK_PLUGIN__2.20.00.06::com.ti.AWS_CC32XX__2.20.00.02::com.ti.AWS_MSP432E4__2.20.00.02::com.ti.WATSON_MSP432E4__1.20.00.04::com.ti.WATSON_CC32XX__1.20.00.04::com.ti.SAIL__1.30.00.02::com.ti.AZURE_CC32XX__2.20.00.05::com.ti.AZURE_MSP432E4__2.20.00.05::com.ti.SIMPLELINK_SDK_NFC_PLUGIN__2.20.00.08::com.ti.mmwave_industrial_toolbox__3.3.1::com.ti.mmwave_automotive_toolbox__2.4.7::c2000ware_software_package__1.00.06.00::digital_power_c2000ware_sdk_software_package__1.03.00.00::powerSUITE_software_package__2.04.00.00::msp430ware__3.80.07.00::energia.core__18.0.0::energia.tool.arm-none-eabi-gcc__6.3.1-20170620::energia.tool.ino2cpp__1.0.3::energia.boards.cc13xx__5.20.0::energia.boards.cc3220emt__5.6.2::energia.boards.msp432r__5.6.3::sitara__1.02.00.00::tm4c__2.1.4.178::tirtos_cc13xx_cc26xx__2.21.00.06::tirtos_tivac__2.16.00.08::tirtos_simplelink__2.13.01.09::sysbios__6.50.01.12::xdctools__3.51.02.21::motor_control_c2000ware_sdk_software_package__1.00.00.00",
+    "overviewLink": "tirex-product-tree/cc26xx_devtools/.metadata/.tirex/project0_cc2640r2lp/landing_page_index.html",
+    "packageOrder": 0
+  },
+  {
+    "text": "CC2650 LaunchPad",
+    "type": "folder",
+    "numChildren": 12,
+    "numChildrenLocal": 0,
+    "children": true,
+    "allowPartialDownload": false,
+    "state": {
+      "opened": false
+    },
+    "url": "/api/resources?path=Development%20Tools/Kits%20and%20Boards&package=com.ti.SIMPLELINK_CC13X0_SDK__3.10.00.11::com.ti.SIMPLELINK_CC13X2_26X2_SDK__3.10.00.53::com.ti.SIMPLELINK_CC13X2_SDK__2.30.00.45::com.ti.SIMPLELINK_CC26X2_SDK__2.30.00.34::com.ti.SIMPLELINK_CC2640R2_SDK__2.40.00.32::com.ti.SIMPLELINK_CC2652RB_BLE_SDK__3.10.00.15::com.ti.SIMPLELINK_MSP432_SDK__3.10.00.08::com.ti.SIMPLELINK_MSP432E4_SDK__3.10.00.11::com.ti.SIMPLELINK_CC32XX_SDK__3.10.00.04::com.ti.SIMPLELINK_CC2640R2_SDK_BLE_EXAMPLE_PACK__1.50.00.62::com.ti.SIMPLELINK_SDK_BLE_PLUGIN__1.40.00.42::com.ti.SIMPLELINK_MSP432_SDK_WIFI_PLUGIN__2.40.00.22::com.ti.SIMPLELINK_SDK_VOICE_DETECTION_PLUGIN__1.50.00.15::com.ti.SIMPLELINK_SDK_TI_15_4_STACK_PLUGIN__2.20.00.05::com.ti.SIMPLELINK_ZIGBEE_SDK_PLUGIN__2.20.00.06::com.ti.AWS_CC32XX__2.20.00.02::com.ti.AWS_MSP432E4__2.20.00.02::com.ti.WATSON_MSP432E4__1.20.00.04::com.ti.WATSON_CC32XX__1.20.00.04::com.ti.SAIL__1.30.00.02::com.ti.AZURE_CC32XX__2.20.00.05::com.ti.AZURE_MSP432E4__2.20.00.05::com.ti.SIMPLELINK_SDK_NFC_PLUGIN__2.20.00.08::com.ti.mmwave_industrial_toolbox__3.3.1::com.ti.mmwave_automotive_toolbox__2.4.7::c2000ware_software_package__1.00.06.00::digital_power_c2000ware_sdk_software_package__1.03.00.00::powerSUITE_software_package__2.04.00.00::msp430ware__3.80.07.00::energia.core__18.0.0::energia.tool.arm-none-eabi-gcc__6.3.1-20170620::energia.tool.ino2cpp__1.0.3::energia.boards.cc13xx__5.20.0::energia.boards.cc3220emt__5.6.2::energia.boards.msp432r__5.6.3::sitara__1.02.00.00::tm4c__2.1.4.178::tirtos_cc13xx_cc26xx__2.21.00.06::tirtos_tivac__2.16.00.08::tirtos_simplelink__2.13.01.09::sysbios__6.50.01.12::xdctools__3.51.02.21::motor_control_c2000ware_sdk_software_package__1.00.00.00",
+    "overviewLink": "tirex-product-tree/cc26xx_devtools/.metadata/.tirex/project0_cc2650lp/landing_page_index.html",
+    "packageOrder": 0
+  },
+  {
+    "text": "CC2650MODA BoosterPack",
+    "type": "folder",
+    "numChildren": 12,
+    "numChildrenLocal": 0,
+    "children": true,
+    "allowPartialDownload": false,
+    "state": {
+      "opened": false
+    },
+    "url": "/api/resources?path=Development%20Tools/Kits%20and%20Boards&package=com.ti.SIMPLELINK_CC13X0_SDK__3.10.00.11::com.ti.SIMPLELINK_CC13X2_26X2_SDK__3.10.00.53::com.ti.SIMPLELINK_CC13X2_SDK__2.30.00.45::com.ti.SIMPLELINK_CC26X2_SDK__2.30.00.34::com.ti.SIMPLELINK_CC2640R2_SDK__2.40.00.32::com.ti.SIMPLELINK_CC2652RB_BLE_SDK__3.10.00.15::com.ti.SIMPLELINK_MSP432_SDK__3.10.00.08::com.ti.SIMPLELINK_MSP432E4_SDK__3.10.00.11::com.ti.SIMPLELINK_CC32XX_SDK__3.10.00.04::com.ti.SIMPLELINK_CC2640R2_SDK_BLE_EXAMPLE_PACK__1.50.00.62::com.ti.SIMPLELINK_SDK_BLE_PLUGIN__1.40.00.42::com.ti.SIMPLELINK_MSP432_SDK_WIFI_PLUGIN__2.40.00.22::com.ti.SIMPLELINK_SDK_VOICE_DETECTION_PLUGIN__1.50.00.15::com.ti.SIMPLELINK_SDK_TI_15_4_STACK_PLUGIN__2.20.00.05::com.ti.SIMPLELINK_ZIGBEE_SDK_PLUGIN__2.20.00.06::com.ti.AWS_CC32XX__2.20.00.02::com.ti.AWS_MSP432E4__2.20.00.02::com.ti.WATSON_MSP432E4__1.20.00.04::com.ti.WATSON_CC32XX__1.20.00.04::com.ti.SAIL__1.30.00.02::com.ti.AZURE_CC32XX__2.20.00.05::com.ti.AZURE_MSP432E4__2.20.00.05::com.ti.SIMPLELINK_SDK_NFC_PLUGIN__2.20.00.08::com.ti.mmwave_industrial_toolbox__3.3.1::com.ti.mmwave_automotive_toolbox__2.4.7::c2000ware_software_package__1.00.06.00::digital_power_c2000ware_sdk_software_package__1.03.00.00::powerSUITE_software_package__2.04.00.00::msp430ware__3.80.07.00::energia.core__18.0.0::energia.tool.arm-none-eabi-gcc__6.3.1-20170620::energia.tool.ino2cpp__1.0.3::energia.boards.cc13xx__5.20.0::energia.boards.cc3220emt__5.6.2::energia.boards.msp432r__5.6.3::sitara__1.02.00.00::tm4c__2.1.4.178::tirtos_cc13xx_cc26xx__2.21.00.06::tirtos_tivac__2.16.00.08::tirtos_simplelink__2.13.01.09::sysbios__6.50.01.12::xdctools__3.51.02.21::motor_control_c2000ware_sdk_software_package__1.00.00.00",
+    "overviewLink": "tirex-product-tree/cc26xx_devtools/.metadata/.tirex/project0_cc2650modabp/landing_page_index.html",
+    "packageOrder": 0
+  },
+  {
+    "text": "CC2652RB LaunchPad",
+    "type": "folder",
+    "numChildren": 3,
+    "numChildrenLocal": 1,
+    "children": true,
+    "allowPartialDownload": false,
+    "state": {
+      "opened": false
+    },
+    "url": "/api/resources?path=Development%20Tools/Kits%20and%20Boards&package=com.ti.SIMPLELINK_CC13X0_SDK__3.10.00.11::com.ti.SIMPLELINK_CC13X2_26X2_SDK__3.10.00.53::com.ti.SIMPLELINK_CC13X2_SDK__2.30.00.45::com.ti.SIMPLELINK_CC26X2_SDK__2.30.00.34::com.ti.SIMPLELINK_CC2640R2_SDK__2.40.00.32::com.ti.SIMPLELINK_CC2652RB_BLE_SDK__3.10.00.15::com.ti.SIMPLELINK_MSP432_SDK__3.10.00.08::com.ti.SIMPLELINK_MSP432E4_SDK__3.10.00.11::com.ti.SIMPLELINK_CC32XX_SDK__3.10.00.04::com.ti.SIMPLELINK_CC2640R2_SDK_BLE_EXAMPLE_PACK__1.50.00.62::com.ti.SIMPLELINK_SDK_BLE_PLUGIN__1.40.00.42::com.ti.SIMPLELINK_MSP432_SDK_WIFI_PLUGIN__2.40.00.22::com.ti.SIMPLELINK_SDK_VOICE_DETECTION_PLUGIN__1.50.00.15::com.ti.SIMPLELINK_SDK_TI_15_4_STACK_PLUGIN__2.20.00.05::com.ti.SIMPLELINK_ZIGBEE_SDK_PLUGIN__2.20.00.06::com.ti.AWS_CC32XX__2.20.00.02::com.ti.AWS_MSP432E4__2.20.00.02::com.ti.WATSON_MSP432E4__1.20.00.04::com.ti.WATSON_CC32XX__1.20.00.04::com.ti.SAIL__1.30.00.02::com.ti.AZURE_CC32XX__2.20.00.05::com.ti.AZURE_MSP432E4__2.20.00.05::com.ti.SIMPLELINK_SDK_NFC_PLUGIN__2.20.00.08::com.ti.mmwave_industrial_toolbox__3.3.1::com.ti.mmwave_automotive_toolbox__2.4.7::c2000ware_software_package__1.00.06.00::digital_power_c2000ware_sdk_software_package__1.03.00.00::powerSUITE_software_package__2.04.00.00::msp430ware__3.80.07.00::energia.core__18.0.0::energia.tool.arm-none-eabi-gcc__6.3.1-20170620::energia.tool.ino2cpp__1.0.3::energia.boards.cc13xx__5.20.0::energia.boards.cc3220emt__5.6.2::energia.boards.msp432r__5.6.3::sitara__1.02.00.00::tm4c__2.1.4.178::tirtos_cc13xx_cc26xx__2.21.00.06::tirtos_tivac__2.16.00.08::tirtos_simplelink__2.13.01.09::sysbios__6.50.01.12::xdctools__3.51.02.21::motor_control_c2000ware_sdk_software_package__1.00.00.00",
+    "overviewLink": "tirex-product-tree/cc26xx_devtools/.metadata/.tirex/project0_cc2652rblp/landing_page_index.html",
+    "packageOrder": 0
+  },
+  {
+    "text": "CC26x2R LaunchPad",
+    "type": "folder",
+    "numChildren": 6,
+    "numChildrenLocal": 2,
+    "children": true,
+    "allowPartialDownload": false,
+    "state": {
+      "opened": false
+    },
+    "url": "/api/resources?path=Development%20Tools/Kits%20and%20Boards&package=com.ti.SIMPLELINK_CC13X0_SDK__3.10.00.11::com.ti.SIMPLELINK_CC13X2_26X2_SDK__3.10.00.53::com.ti.SIMPLELINK_CC13X2_SDK__2.30.00.45::com.ti.SIMPLELINK_CC26X2_SDK__2.30.00.34::com.ti.SIMPLELINK_CC2640R2_SDK__2.40.00.32::com.ti.SIMPLELINK_CC2652RB_BLE_SDK__3.10.00.15::com.ti.SIMPLELINK_MSP432_SDK__3.10.00.08::com.ti.SIMPLELINK_MSP432E4_SDK__3.10.00.11::com.ti.SIMPLELINK_CC32XX_SDK__3.10.00.04::com.ti.SIMPLELINK_CC2640R2_SDK_BLE_EXAMPLE_PACK__1.50.00.62::com.ti.SIMPLELINK_SDK_BLE_PLUGIN__1.40.00.42::com.ti.SIMPLELINK_MSP432_SDK_WIFI_PLUGIN__2.40.00.22::com.ti.SIMPLELINK_SDK_VOICE_DETECTION_PLUGIN__1.50.00.15::com.ti.SIMPLELINK_SDK_TI_15_4_STACK_PLUGIN__2.20.00.05::com.ti.SIMPLELINK_ZIGBEE_SDK_PLUGIN__2.20.00.06::com.ti.AWS_CC32XX__2.20.00.02::com.ti.AWS_MSP432E4__2.20.00.02::com.ti.WATSON_MSP432E4__1.20.00.04::com.ti.WATSON_CC32XX__1.20.00.04::com.ti.SAIL__1.30.00.02::com.ti.AZURE_CC32XX__2.20.00.05::com.ti.AZURE_MSP432E4__2.20.00.05::com.ti.SIMPLELINK_SDK_NFC_PLUGIN__2.20.00.08::com.ti.mmwave_industrial_toolbox__3.3.1::com.ti.mmwave_automotive_toolbox__2.4.7::c2000ware_software_package__1.00.06.00::digital_power_c2000ware_sdk_software_package__1.03.00.00::powerSUITE_software_package__2.04.00.00::msp430ware__3.80.07.00::energia.core__18.0.0::energia.tool.arm-none-eabi-gcc__6.3.1-20170620::energia.tool.ino2cpp__1.0.3::energia.boards.cc13xx__5.20.0::energia.boards.cc3220emt__5.6.2::energia.boards.msp432r__5.6.3::sitara__1.02.00.00::tm4c__2.1.4.178::tirtos_cc13xx_cc26xx__2.21.00.06::tirtos_tivac__2.16.00.08::tirtos_simplelink__2.13.01.09::sysbios__6.50.01.12::xdctools__3.51.02.21::motor_control_c2000ware_sdk_software_package__1.00.00.00",
+    "overviewLink": "tirex-product-tree/cc26xx_devtools/.metadata/.tirex/project0_cc26x2r1lp/landing_page_index.html",
+    "packageOrder": 0
+  },
+  {
+    "text": "MSP432E401Y LaunchPad",
+    "type": "folder",
+    "numChildren": 1,
+    "numChildrenLocal": 44,
+    "children": true,
+    "allowPartialDownload": false,
+    "state": {
+      "opened": false
+    },
+    "url": "/api/resources?path=Development%20Tools/Kits%20and%20Boards&package=com.ti.SIMPLELINK_CC13X0_SDK__3.10.00.11::com.ti.SIMPLELINK_CC13X2_26X2_SDK__3.10.00.53::com.ti.SIMPLELINK_CC13X2_SDK__2.30.00.45::com.ti.SIMPLELINK_CC26X2_SDK__2.30.00.34::com.ti.SIMPLELINK_CC2640R2_SDK__2.40.00.32::com.ti.SIMPLELINK_CC2652RB_BLE_SDK__3.10.00.15::com.ti.SIMPLELINK_MSP432_SDK__3.10.00.08::com.ti.SIMPLELINK_MSP432E4_SDK__3.10.00.11::com.ti.SIMPLELINK_CC32XX_SDK__3.10.00.04::com.ti.SIMPLELINK_CC2640R2_SDK_BLE_EXAMPLE_PACK__1.50.00.62::com.ti.SIMPLELINK_SDK_BLE_PLUGIN__1.40.00.42::com.ti.SIMPLELINK_MSP432_SDK_WIFI_PLUGIN__2.40.00.22::com.ti.SIMPLELINK_SDK_VOICE_DETECTION_PLUGIN__1.50.00.15::com.ti.SIMPLELINK_SDK_TI_15_4_STACK_PLUGIN__2.20.00.05::com.ti.SIMPLELINK_ZIGBEE_SDK_PLUGIN__2.20.00.06::com.ti.AWS_CC32XX__2.20.00.02::com.ti.AWS_MSP432E4__2.20.00.02::com.ti.WATSON_MSP432E4__1.20.00.04::com.ti.WATSON_CC32XX__1.20.00.04::com.ti.SAIL__1.30.00.02::com.ti.AZURE_CC32XX__2.20.00.05::com.ti.AZURE_MSP432E4__2.20.00.05::com.ti.SIMPLELINK_SDK_NFC_PLUGIN__2.20.00.08::com.ti.mmwave_industrial_toolbox__3.3.1::com.ti.mmwave_automotive_toolbox__2.4.7::c2000ware_software_package__1.00.06.00::digital_power_c2000ware_sdk_software_package__1.03.00.00::powerSUITE_software_package__2.04.00.00::msp430ware__3.80.07.00::energia.core__18.0.0::energia.tool.arm-none-eabi-gcc__6.3.1-20170620::energia.tool.ino2cpp__1.0.3::energia.boards.cc13xx__5.20.0::energia.boards.cc3220emt__5.6.2::energia.boards.msp432r__5.6.3::sitara__1.02.00.00::tm4c__2.1.4.178::tirtos_cc13xx_cc26xx__2.21.00.06::tirtos_tivac__2.16.00.08::tirtos_simplelink__2.13.01.09::sysbios__6.50.01.12::xdctools__3.51.02.21::motor_control_c2000ware_sdk_software_package__1.00.00.00",
+    "overviewDescription": "<p>The SimpleLink™ Ethernet MSP432E401Y microcontroller LaunchPad™ Development Kit is an intuitive evaluation platform for SimpleLink™ Arm® Cortex®-M4F-based Ethernet MCUs. The Ethernet LaunchPad development kit highlights the MSP432E401Y MCU  with integrated Ethernet MAC and PHY and a wide variety of wired communication interfaces including USB-OTG, CAN, Quad-SPI (QSSI), I2C, SPI,  UART and other serial protocols. Featuring a 120MHz Arm Cortex-M4F CPU,  1MB of flash, 256kB of SRAM, and advanced cryptographic accelerators, MSP432E4 MCUs offer an ample amount of processing resources for developers to implement wired and wireless connectivity stacks and processing algorithms to develop a robust  Ethernet solutions. Developers can leverage a number of SimpleLink wireless MCU BoosterPack™ plug-in modules and SimpleLink SDK plug-ins to seamlessly add wireless connectivity and cloud integration to the application to build IoT-ready, interoperable, and intelligent industrial gateway applications.</p>",
+    "overviewImage": "tirex-product-tree/msp432_devtools_2_30_00_01/.metadata/.tirex/images/msp-exp432e401y_thumb.png",
+    "packageOrder": 0
+  },
+  {
+    "text": "MSP-EXP430G2ET",
+    "type": "folder",
+    "numChildren": 2,
+    "numChildrenLocal": 48,
+    "children": true,
+    "allowPartialDownload": false,
+    "state": {
+      "opened": false
+    },
+    "url": "/api/resources?path=Development%20Tools/Kits%20and%20Boards&package=com.ti.SIMPLELINK_CC13X0_SDK__3.10.00.11::com.ti.SIMPLELINK_CC13X2_26X2_SDK__3.10.00.53::com.ti.SIMPLELINK_CC13X2_SDK__2.30.00.45::com.ti.SIMPLELINK_CC26X2_SDK__2.30.00.34::com.ti.SIMPLELINK_CC2640R2_SDK__2.40.00.32::com.ti.SIMPLELINK_CC2652RB_BLE_SDK__3.10.00.15::com.ti.SIMPLELINK_MSP432_SDK__3.10.00.08::com.ti.SIMPLELINK_MSP432E4_SDK__3.10.00.11::com.ti.SIMPLELINK_CC32XX_SDK__3.10.00.04::com.ti.SIMPLELINK_CC2640R2_SDK_BLE_EXAMPLE_PACK__1.50.00.62::com.ti.SIMPLELINK_SDK_BLE_PLUGIN__1.40.00.42::com.ti.SIMPLELINK_MSP432_SDK_WIFI_PLUGIN__2.40.00.22::com.ti.SIMPLELINK_SDK_VOICE_DETECTION_PLUGIN__1.50.00.15::com.ti.SIMPLELINK_SDK_TI_15_4_STACK_PLUGIN__2.20.00.05::com.ti.SIMPLELINK_ZIGBEE_SDK_PLUGIN__2.20.00.06::com.ti.AWS_CC32XX__2.20.00.02::com.ti.AWS_MSP432E4__2.20.00.02::com.ti.WATSON_MSP432E4__1.20.00.04::com.ti.WATSON_CC32XX__1.20.00.04::com.ti.SAIL__1.30.00.02::com.ti.AZURE_CC32XX__2.20.00.05::com.ti.AZURE_MSP432E4__2.20.00.05::com.ti.SIMPLELINK_SDK_NFC_PLUGIN__2.20.00.08::com.ti.mmwave_industrial_toolbox__3.3.1::com.ti.mmwave_automotive_toolbox__2.4.7::c2000ware_software_package__1.00.06.00::digital_power_c2000ware_sdk_software_package__1.03.00.00::powerSUITE_software_package__2.04.00.00::msp430ware__3.80.07.00::energia.core__18.0.0::energia.tool.arm-none-eabi-gcc__6.3.1-20170620::energia.tool.ino2cpp__1.0.3::energia.boards.cc13xx__5.20.0::energia.boards.cc3220emt__5.6.2::energia.boards.msp432r__5.6.3::sitara__1.02.00.00::tm4c__2.1.4.178::tirtos_cc13xx_cc26xx__2.21.00.06::tirtos_tivac__2.16.00.08::tirtos_simplelink__2.13.01.09::sysbios__6.50.01.12::xdctools__3.51.02.21::motor_control_c2000ware_sdk_software_package__1.00.00.00",
+    "overviewDescription": "<p>The MSP-EXP430G2ET LaunchPad Development Kit is an easy-to-use microcontroller development board for the low-power and low-cost MSP430G2x MCUs. It has on-board emulation for programming and debugging and features a 14/20-pin DIP socket, on-board buttons and LEDs & BoosterPack Plug-in Module pinouts that support a wide range of modules for added functionality such as wireless, displays & more.</p>",
+    "overviewImage": "tirex-product-tree/msp430_devtools_3_80_07_00/.metadata/.tirex/images/msp-exp430g2et_thumb.png",
+    "packageOrder": 0
+  },
+  {
+    "text": "MSP432P4111 LaunchPad",
+    "type": "folder",
+    "numChildren": 1,
+    "numChildrenLocal": 33,
+    "children": true,
+    "allowPartialDownload": false,
+    "state": {
+      "opened": false
+    },
+    "url": "/api/resources?path=Development%20Tools/Kits%20and%20Boards&package=com.ti.SIMPLELINK_CC13X0_SDK__3.10.00.11::com.ti.SIMPLELINK_CC13X2_26X2_SDK__3.10.00.53::com.ti.SIMPLELINK_CC13X2_SDK__2.30.00.45::com.ti.SIMPLELINK_CC26X2_SDK__2.30.00.34::com.ti.SIMPLELINK_CC2640R2_SDK__2.40.00.32::com.ti.SIMPLELINK_CC2652RB_BLE_SDK__3.10.00.15::com.ti.SIMPLELINK_MSP432_SDK__3.10.00.08::com.ti.SIMPLELINK_MSP432E4_SDK__3.10.00.11::com.ti.SIMPLELINK_CC32XX_SDK__3.10.00.04::com.ti.SIMPLELINK_CC2640R2_SDK_BLE_EXAMPLE_PACK__1.50.00.62::com.ti.SIMPLELINK_SDK_BLE_PLUGIN__1.40.00.42::com.ti.SIMPLELINK_MSP432_SDK_WIFI_PLUGIN__2.40.00.22::com.ti.SIMPLELINK_SDK_VOICE_DETECTION_PLUGIN__1.50.00.15::com.ti.SIMPLELINK_SDK_TI_15_4_STACK_PLUGIN__2.20.00.05::com.ti.SIMPLELINK_ZIGBEE_SDK_PLUGIN__2.20.00.06::com.ti.AWS_CC32XX__2.20.00.02::com.ti.AWS_MSP432E4__2.20.00.02::com.ti.WATSON_MSP432E4__1.20.00.04::com.ti.WATSON_CC32XX__1.20.00.04::com.ti.SAIL__1.30.00.02::com.ti.AZURE_CC32XX__2.20.00.05::com.ti.AZURE_MSP432E4__2.20.00.05::com.ti.SIMPLELINK_SDK_NFC_PLUGIN__2.20.00.08::com.ti.mmwave_industrial_toolbox__3.3.1::com.ti.mmwave_automotive_toolbox__2.4.7::c2000ware_software_package__1.00.06.00::digital_power_c2000ware_sdk_software_package__1.03.00.00::powerSUITE_software_package__2.04.00.00::msp430ware__3.80.07.00::energia.core__18.0.0::energia.tool.arm-none-eabi-gcc__6.3.1-20170620::energia.tool.ino2cpp__1.0.3::energia.boards.cc13xx__5.20.0::energia.boards.cc3220emt__5.6.2::energia.boards.msp432r__5.6.3::sitara__1.02.00.00::tm4c__2.1.4.178::tirtos_cc13xx_cc26xx__2.21.00.06::tirtos_tivac__2.16.00.08::tirtos_simplelink__2.13.01.09::sysbios__6.50.01.12::xdctools__3.51.02.21::motor_control_c2000ware_sdk_software_package__1.00.00.00",
+    "overviewDescription": "The MSP432P4111 LaunchPad enables you to develop high performance applications that benefit from low power operation. It features the MSP432P4111, a 48MHz ARM Cortex M4F with 2MB of Flash and 256kB RAM, 120uA/MHz active power, 850nA RTC operation.  MSP432P4111 also offers the industry’s best SAR ADC at 14-bit 1MSPS, an 320 Segment LCD driver, and AES256 accelerator.<br><br>This Launchpad includes an on-board emulator with EnergyTrace+ Technology, which means you can program and debug your projects without the need for additional tools, while also measuring total system energy consumption.<br><br>All pins of the MSP-EXP432P4111 device are fanned out for easy access and connected to the onboard LCD. These pins make it easy to plug in 20-pin and 40-pin BoosterPacks that add additional functionality including Bluetooth Low Energy, Wifi wireless connectivity, Ultrasonic measurement, and more.<br><br>The out-of-box application provided with the MSP-EXP432P4111 LaunchPad features a graphical user-interface that enables the user to type in the desired beats per minute of an RGB LED, and select from over 16 million color options.",
+    "overviewImage": "tirex-product-tree/msp432_devtools_2_30_00_01/.metadata/.tirex/images/msp-exp432p4111_thumb.png",
+    "packageOrder": 0
+  },
+  {
+    "text": "CC1352P1 LaunchPad",
+    "type": "folder",
+    "numChildren": 2,
+    "numChildrenLocal": 1,
+    "children": true,
+    "allowPartialDownload": false,
+    "state": {
+      "opened": false
+    },
+    "url": "/api/resources?path=Development%20Tools/Kits%20and%20Boards&package=com.ti.SIMPLELINK_CC13X0_SDK__3.10.00.11::com.ti.SIMPLELINK_CC13X2_26X2_SDK__3.10.00.53::com.ti.SIMPLELINK_CC13X2_SDK__2.30.00.45::com.ti.SIMPLELINK_CC26X2_SDK__2.30.00.34::com.ti.SIMPLELINK_CC2640R2_SDK__2.40.00.32::com.ti.SIMPLELINK_CC2652RB_BLE_SDK__3.10.00.15::com.ti.SIMPLELINK_MSP432_SDK__3.10.00.08::com.ti.SIMPLELINK_MSP432E4_SDK__3.10.00.11::com.ti.SIMPLELINK_CC32XX_SDK__3.10.00.04::com.ti.SIMPLELINK_CC2640R2_SDK_BLE_EXAMPLE_PACK__1.50.00.62::com.ti.SIMPLELINK_SDK_BLE_PLUGIN__1.40.00.42::com.ti.SIMPLELINK_MSP432_SDK_WIFI_PLUGIN__2.40.00.22::com.ti.SIMPLELINK_SDK_VOICE_DETECTION_PLUGIN__1.50.00.15::com.ti.SIMPLELINK_SDK_TI_15_4_STACK_PLUGIN__2.20.00.05::com.ti.SIMPLELINK_ZIGBEE_SDK_PLUGIN__2.20.00.06::com.ti.AWS_CC32XX__2.20.00.02::com.ti.AWS_MSP432E4__2.20.00.02::com.ti.WATSON_MSP432E4__1.20.00.04::com.ti.WATSON_CC32XX__1.20.00.04::com.ti.SAIL__1.30.00.02::com.ti.AZURE_CC32XX__2.20.00.05::com.ti.AZURE_MSP432E4__2.20.00.05::com.ti.SIMPLELINK_SDK_NFC_PLUGIN__2.20.00.08::com.ti.mmwave_industrial_toolbox__3.3.1::com.ti.mmwave_automotive_toolbox__2.4.7::c2000ware_software_package__1.00.06.00::digital_power_c2000ware_sdk_software_package__1.03.00.00::powerSUITE_software_package__2.04.00.00::msp430ware__3.80.07.00::energia.core__18.0.0::energia.tool.arm-none-eabi-gcc__6.3.1-20170620::energia.tool.ino2cpp__1.0.3::energia.boards.cc13xx__5.20.0::energia.boards.cc3220emt__5.6.2::energia.boards.msp432r__5.6.3::sitara__1.02.00.00::tm4c__2.1.4.178::tirtos_cc13xx_cc26xx__2.21.00.06::tirtos_tivac__2.16.00.08::tirtos_simplelink__2.13.01.09::sysbios__6.50.01.12::xdctools__3.51.02.21::motor_control_c2000ware_sdk_software_package__1.00.00.00",
+    "overviewLink": "tirex-product-tree/cc13xx_devtools/.metadata/.tirex/project0_cc1352p1lp/landing_page_index.html",
+    "packageOrder": 0
+  },
+  {
+    "text": "MSP-EXP430F5529LP",
+    "type": "folder",
+    "numChildren": 2,
+    "numChildrenLocal": 25,
+    "children": true,
+    "allowPartialDownload": false,
+    "state": {
+      "opened": false
+    },
+    "url": "/api/resources?path=Development%20Tools/Kits%20and%20Boards&package=com.ti.SIMPLELINK_CC13X0_SDK__3.10.00.11::com.ti.SIMPLELINK_CC13X2_26X2_SDK__3.10.00.53::com.ti.SIMPLELINK_CC13X2_SDK__2.30.00.45::com.ti.SIMPLELINK_CC26X2_SDK__2.30.00.34::com.ti.SIMPLELINK_CC2640R2_SDK__2.40.00.32::com.ti.SIMPLELINK_CC2652RB_BLE_SDK__3.10.00.15::com.ti.SIMPLELINK_MSP432_SDK__3.10.00.08::com.ti.SIMPLELINK_MSP432E4_SDK__3.10.00.11::com.ti.SIMPLELINK_CC32XX_SDK__3.10.00.04::com.ti.SIMPLELINK_CC2640R2_SDK_BLE_EXAMPLE_PACK__1.50.00.62::com.ti.SIMPLELINK_SDK_BLE_PLUGIN__1.40.00.42::com.ti.SIMPLELINK_MSP432_SDK_WIFI_PLUGIN__2.40.00.22::com.ti.SIMPLELINK_SDK_VOICE_DETECTION_PLUGIN__1.50.00.15::com.ti.SIMPLELINK_SDK_TI_15_4_STACK_PLUGIN__2.20.00.05::com.ti.SIMPLELINK_ZIGBEE_SDK_PLUGIN__2.20.00.06::com.ti.AWS_CC32XX__2.20.00.02::com.ti.AWS_MSP432E4__2.20.00.02::com.ti.WATSON_MSP432E4__1.20.00.04::com.ti.WATSON_CC32XX__1.20.00.04::com.ti.SAIL__1.30.00.02::com.ti.AZURE_CC32XX__2.20.00.05::com.ti.AZURE_MSP432E4__2.20.00.05::com.ti.SIMPLELINK_SDK_NFC_PLUGIN__2.20.00.08::com.ti.mmwave_industrial_toolbox__3.3.1::com.ti.mmwave_automotive_toolbox__2.4.7::c2000ware_software_package__1.00.06.00::digital_power_c2000ware_sdk_software_package__1.03.00.00::powerSUITE_software_package__2.04.00.00::msp430ware__3.80.07.00::energia.core__18.0.0::energia.tool.arm-none-eabi-gcc__6.3.1-20170620::energia.tool.ino2cpp__1.0.3::energia.boards.cc13xx__5.20.0::energia.boards.cc3220emt__5.6.2::energia.boards.msp432r__5.6.3::sitara__1.02.00.00::tm4c__2.1.4.178::tirtos_cc13xx_cc26xx__2.21.00.06::tirtos_tivac__2.16.00.08::tirtos_simplelink__2.13.01.09::sysbios__6.50.01.12::xdctools__3.51.02.21::motor_control_c2000ware_sdk_software_package__1.00.00.00",
+    "overviewDescription": "<p>The MSP430 LaunchPad now has USB! The MSP-EXP430F5529LP LaunchPad is an inexpensive, simple evaluation module for the MSP430F5529 USB microcontroller. It’s an easy way to start developing on the MSP430, with on-board emulation for programming and debugging, as well as buttons and LEDs for simple user interface.</p><p>Rapid prototyping is a snap, thanks to 40-pin BoosterPack expansion headers, as well as a wide range of available BoosterPack plug-in modules. You can quickly add features like wireless, displays, sensors, and much more. The 40-pin interface is compatible with any 20-pin BoosterPack that is compliant with the standard.</p><p>The MSP430F5529 16-bit MCU has 128KB Flash, 8KB RAM, 25MHz CPU speed, integrated USB, and many peripherals plenty to get you started in your development.</p>",
+    "overviewImage": "tirex-product-tree/msp430_devtools_3_80_07_00/.metadata/.tirex/images/msp-exp430f5529lp_thumb.png",
+    "packageOrder": 0
+  },
+  {
+    "text": "MSP432E411Y BGA EVM",
+    "type": "folder",
+    "numChildren": 0,
+    "numChildrenLocal": 44,
+    "children": true,
+    "allowPartialDownload": false,
+    "state": {
+      "opened": false
+    },
+    "url": "/api/resources?path=Development%20Tools/Kits%20and%20Boards&package=com.ti.SIMPLELINK_CC13X0_SDK__3.10.00.11::com.ti.SIMPLELINK_CC13X2_26X2_SDK__3.10.00.53::com.ti.SIMPLELINK_CC13X2_SDK__2.30.00.45::com.ti.SIMPLELINK_CC26X2_SDK__2.30.00.34::com.ti.SIMPLELINK_CC2640R2_SDK__2.40.00.32::com.ti.SIMPLELINK_CC2652RB_BLE_SDK__3.10.00.15::com.ti.SIMPLELINK_MSP432_SDK__3.10.00.08::com.ti.SIMPLELINK_MSP432E4_SDK__3.10.00.11::com.ti.SIMPLELINK_CC32XX_SDK__3.10.00.04::com.ti.SIMPLELINK_CC2640R2_SDK_BLE_EXAMPLE_PACK__1.50.00.62::com.ti.SIMPLELINK_SDK_BLE_PLUGIN__1.40.00.42::com.ti.SIMPLELINK_MSP432_SDK_WIFI_PLUGIN__2.40.00.22::com.ti.SIMPLELINK_SDK_VOICE_DETECTION_PLUGIN__1.50.00.15::com.ti.SIMPLELINK_SDK_TI_15_4_STACK_PLUGIN__2.20.00.05::com.ti.SIMPLELINK_ZIGBEE_SDK_PLUGIN__2.20.00.06::com.ti.AWS_CC32XX__2.20.00.02::com.ti.AWS_MSP432E4__2.20.00.02::com.ti.WATSON_MSP432E4__1.20.00.04::com.ti.WATSON_CC32XX__1.20.00.04::com.ti.SAIL__1.30.00.02::com.ti.AZURE_CC32XX__2.20.00.05::com.ti.AZURE_MSP432E4__2.20.00.05::com.ti.SIMPLELINK_SDK_NFC_PLUGIN__2.20.00.08::com.ti.mmwave_industrial_toolbox__3.3.1::com.ti.mmwave_automotive_toolbox__2.4.7::c2000ware_software_package__1.00.06.00::digital_power_c2000ware_sdk_software_package__1.03.00.00::powerSUITE_software_package__2.04.00.00::msp430ware__3.80.07.00::energia.core__18.0.0::energia.tool.arm-none-eabi-gcc__6.3.1-20170620::energia.tool.ino2cpp__1.0.3::energia.boards.cc13xx__5.20.0::energia.boards.cc3220emt__5.6.2::energia.boards.msp432r__5.6.3::sitara__1.02.00.00::tm4c__2.1.4.178::tirtos_cc13xx_cc26xx__2.21.00.06::tirtos_tivac__2.16.00.08::tirtos_simplelink__2.13.01.09::sysbios__6.50.01.12::xdctools__3.51.02.21::motor_control_c2000ware_sdk_software_package__1.00.00.00",
+    "overviewDescription": "<p>The SimpleLink™ Ethernet MSP432E411Y microcontroller Evaluation Board is an intuitive evaluation platform for SimpleLink™ ARM® Cortex®-M4F-based Ethernet MCUs.  The Evaluation Board highlights the MSP432E411Y MCU with integrated Ethernet MAC and PHY, integrated LCD controller, and a wide variety of wired communication interfaces including USB-OTG, CAN, Quad-SPI (QSSI), I2C, SPI, UART and other serial protocols.  Featuring a 120MHz ARM Cortex-M4F CPU, 1MB of flash, 256kB of SRAM, and advanced cryptographic accelerators, MSP432E4 MCUs offer an ample amount of processing resources for developers to implement wired and wireless connectivity stacks and processing algorithms to develop robust Ethernet solutions.</p>",
+    "overviewImage": "tirex-product-tree/msp432_devtools_2_30_00_01/.metadata/.tirex/images/msp432e411y-bgaevm_thumb.png",
+    "packageOrder": 0
+  },
+  {
+    "text": "IWR1443 Industrial EVM",
+    "type": "folder",
+    "numChildren": 4,
+    "numChildrenLocal": 0,
+    "children": true,
+    "allowPartialDownload": true,
+    "state": {
+      "opened": false
+    },
+    "url": "/api/resources?path=Development%20Tools/Kits%20and%20Boards&package=com.ti.SIMPLELINK_CC13X0_SDK__3.10.00.11::com.ti.SIMPLELINK_CC13X2_26X2_SDK__3.10.00.53::com.ti.SIMPLELINK_CC13X2_SDK__2.30.00.45::com.ti.SIMPLELINK_CC26X2_SDK__2.30.00.34::com.ti.SIMPLELINK_CC2640R2_SDK__2.40.00.32::com.ti.SIMPLELINK_CC2652RB_BLE_SDK__3.10.00.15::com.ti.SIMPLELINK_MSP432_SDK__3.10.00.08::com.ti.SIMPLELINK_MSP432E4_SDK__3.10.00.11::com.ti.SIMPLELINK_CC32XX_SDK__3.10.00.04::com.ti.SIMPLELINK_CC2640R2_SDK_BLE_EXAMPLE_PACK__1.50.00.62::com.ti.SIMPLELINK_SDK_BLE_PLUGIN__1.40.00.42::com.ti.SIMPLELINK_MSP432_SDK_WIFI_PLUGIN__2.40.00.22::com.ti.SIMPLELINK_SDK_VOICE_DETECTION_PLUGIN__1.50.00.15::com.ti.SIMPLELINK_SDK_TI_15_4_STACK_PLUGIN__2.20.00.05::com.ti.SIMPLELINK_ZIGBEE_SDK_PLUGIN__2.20.00.06::com.ti.AWS_CC32XX__2.20.00.02::com.ti.AWS_MSP432E4__2.20.00.02::com.ti.WATSON_MSP432E4__1.20.00.04::com.ti.WATSON_CC32XX__1.20.00.04::com.ti.SAIL__1.30.00.02::com.ti.AZURE_CC32XX__2.20.00.05::com.ti.AZURE_MSP432E4__2.20.00.05::com.ti.SIMPLELINK_SDK_NFC_PLUGIN__2.20.00.08::com.ti.mmwave_industrial_toolbox__3.3.1::com.ti.mmwave_automotive_toolbox__2.4.7::c2000ware_software_package__1.00.06.00::digital_power_c2000ware_sdk_software_package__1.03.00.00::powerSUITE_software_package__2.04.00.00::msp430ware__3.80.07.00::energia.core__18.0.0::energia.tool.arm-none-eabi-gcc__6.3.1-20170620::energia.tool.ino2cpp__1.0.3::energia.boards.cc13xx__5.20.0::energia.boards.cc3220emt__5.6.2::energia.boards.msp432r__5.6.3::sitara__1.02.00.00::tm4c__2.1.4.178::tirtos_cc13xx_cc26xx__2.21.00.06::tirtos_tivac__2.16.00.08::tirtos_simplelink__2.13.01.09::sysbios__6.50.01.12::xdctools__3.51.02.21::motor_control_c2000ware_sdk_software_package__1.00.00.00",
+    "overviewLink": "tirex-product-tree/mmwave_devtools_1_0_0/IWR1443BOOST.html",
+    "packageOrder": 0
+  },
+  {
+    "text": "CC1352P-2 LaunchPad",
+    "type": "folder",
+    "numChildren": 2,
+    "numChildrenLocal": 1,
+    "children": true,
+    "allowPartialDownload": false,
+    "state": {
+      "opened": false
+    },
+    "url": "/api/resources?path=Development%20Tools/Kits%20and%20Boards&package=com.ti.SIMPLELINK_CC13X0_SDK__3.10.00.11::com.ti.SIMPLELINK_CC13X2_26X2_SDK__3.10.00.53::com.ti.SIMPLELINK_CC13X2_SDK__2.30.00.45::com.ti.SIMPLELINK_CC26X2_SDK__2.30.00.34::com.ti.SIMPLELINK_CC2640R2_SDK__2.40.00.32::com.ti.SIMPLELINK_CC2652RB_BLE_SDK__3.10.00.15::com.ti.SIMPLELINK_MSP432_SDK__3.10.00.08::com.ti.SIMPLELINK_MSP432E4_SDK__3.10.00.11::com.ti.SIMPLELINK_CC32XX_SDK__3.10.00.04::com.ti.SIMPLELINK_CC2640R2_SDK_BLE_EXAMPLE_PACK__1.50.00.62::com.ti.SIMPLELINK_SDK_BLE_PLUGIN__1.40.00.42::com.ti.SIMPLELINK_MSP432_SDK_WIFI_PLUGIN__2.40.00.22::com.ti.SIMPLELINK_SDK_VOICE_DETECTION_PLUGIN__1.50.00.15::com.ti.SIMPLELINK_SDK_TI_15_4_STACK_PLUGIN__2.20.00.05::com.ti.SIMPLELINK_ZIGBEE_SDK_PLUGIN__2.20.00.06::com.ti.AWS_CC32XX__2.20.00.02::com.ti.AWS_MSP432E4__2.20.00.02::com.ti.WATSON_MSP432E4__1.20.00.04::com.ti.WATSON_CC32XX__1.20.00.04::com.ti.SAIL__1.30.00.02::com.ti.AZURE_CC32XX__2.20.00.05::com.ti.AZURE_MSP432E4__2.20.00.05::com.ti.SIMPLELINK_SDK_NFC_PLUGIN__2.20.00.08::com.ti.mmwave_industrial_toolbox__3.3.1::com.ti.mmwave_automotive_toolbox__2.4.7::c2000ware_software_package__1.00.06.00::digital_power_c2000ware_sdk_software_package__1.03.00.00::powerSUITE_software_package__2.04.00.00::msp430ware__3.80.07.00::energia.core__18.0.0::energia.tool.arm-none-eabi-gcc__6.3.1-20170620::energia.tool.ino2cpp__1.0.3::energia.boards.cc13xx__5.20.0::energia.boards.cc3220emt__5.6.2::energia.boards.msp432r__5.6.3::sitara__1.02.00.00::tm4c__2.1.4.178::tirtos_cc13xx_cc26xx__2.21.00.06::tirtos_tivac__2.16.00.08::tirtos_simplelink__2.13.01.09::sysbios__6.50.01.12::xdctools__3.51.02.21::motor_control_c2000ware_sdk_software_package__1.00.00.00",
+    "overviewLink": "tirex-product-tree/cc13xx_devtools/.metadata/.tirex/project0_cc1352p-2lp/landing_page_index.html",
+    "packageOrder": 0
+  },
+  {
+    "text": "MSP-EXP430FR5969",
+    "type": "folder",
+    "numChildren": 2,
+    "numChildrenLocal": 16,
+    "children": true,
+    "allowPartialDownload": false,
+    "state": {
+      "opened": false
+    },
+    "url": "/api/resources?path=Development%20Tools/Kits%20and%20Boards&package=com.ti.SIMPLELINK_CC13X0_SDK__3.10.00.11::com.ti.SIMPLELINK_CC13X2_26X2_SDK__3.10.00.53::com.ti.SIMPLELINK_CC13X2_SDK__2.30.00.45::com.ti.SIMPLELINK_CC26X2_SDK__2.30.00.34::com.ti.SIMPLELINK_CC2640R2_SDK__2.40.00.32::com.ti.SIMPLELINK_CC2652RB_BLE_SDK__3.10.00.15::com.ti.SIMPLELINK_MSP432_SDK__3.10.00.08::com.ti.SIMPLELINK_MSP432E4_SDK__3.10.00.11::com.ti.SIMPLELINK_CC32XX_SDK__3.10.00.04::com.ti.SIMPLELINK_CC2640R2_SDK_BLE_EXAMPLE_PACK__1.50.00.62::com.ti.SIMPLELINK_SDK_BLE_PLUGIN__1.40.00.42::com.ti.SIMPLELINK_MSP432_SDK_WIFI_PLUGIN__2.40.00.22::com.ti.SIMPLELINK_SDK_VOICE_DETECTION_PLUGIN__1.50.00.15::com.ti.SIMPLELINK_SDK_TI_15_4_STACK_PLUGIN__2.20.00.05::com.ti.SIMPLELINK_ZIGBEE_SDK_PLUGIN__2.20.00.06::com.ti.AWS_CC32XX__2.20.00.02::com.ti.AWS_MSP432E4__2.20.00.02::com.ti.WATSON_MSP432E4__1.20.00.04::com.ti.WATSON_CC32XX__1.20.00.04::com.ti.SAIL__1.30.00.02::com.ti.AZURE_CC32XX__2.20.00.05::com.ti.AZURE_MSP432E4__2.20.00.05::com.ti.SIMPLELINK_SDK_NFC_PLUGIN__2.20.00.08::com.ti.mmwave_industrial_toolbox__3.3.1::com.ti.mmwave_automotive_toolbox__2.4.7::c2000ware_software_package__1.00.06.00::digital_power_c2000ware_sdk_software_package__1.03.00.00::powerSUITE_software_package__2.04.00.00::msp430ware__3.80.07.00::energia.core__18.0.0::energia.tool.arm-none-eabi-gcc__6.3.1-20170620::energia.tool.ino2cpp__1.0.3::energia.boards.cc13xx__5.20.0::energia.boards.cc3220emt__5.6.2::energia.boards.msp432r__5.6.3::sitara__1.02.00.00::tm4c__2.1.4.178::tirtos_cc13xx_cc26xx__2.21.00.06::tirtos_tivac__2.16.00.08::tirtos_simplelink__2.13.01.09::sysbios__6.50.01.12::xdctools__3.51.02.21::motor_control_c2000ware_sdk_software_package__1.00.00.00",
+    "overviewDescription": "<p>The MSP-EXP430FR5969 LaunchPad is an easy-to-use Evaluation Module for the MSP430FR5969 microcontroller. It contains everything needed to start developing on a MSP430 ULP FRAM platform, including on-board emulation for programming, debugging and Energy Measurements. The board features on-board buttons and LEDs for quick integration of a simple user interface as well as a SuperCap allowing standalone applications without external power supply.</p><p>The Evaluation Module is a development platform based on the MSP430FR5969 device.  This device features embedded FRAM, a non-volatile memory known for its low power, high endurance and high speed write access.</p><p>Rapid prototyping is a snap thanks to 20-pin headers and a wide range of BoosterPack plug-in modules enabling technologies such as wireless, display drivers, temperature sensing, and much more.</p>",
+    "overviewImage": "tirex-product-tree/msp430_devtools_3_80_07_00/.metadata/.tirex/images/msp-exp430fr5969_thumb.png",
+    "packageOrder": 0
+  },
+  {
+    "text": "CC1352P-4 LaunchPad",
+    "type": "folder",
+    "numChildren": 2,
+    "numChildrenLocal": 1,
+    "children": true,
+    "allowPartialDownload": false,
+    "state": {
+      "opened": false
+    },
+    "url": "/api/resources?path=Development%20Tools/Kits%20and%20Boards&package=com.ti.SIMPLELINK_CC13X0_SDK__3.10.00.11::com.ti.SIMPLELINK_CC13X2_26X2_SDK__3.10.00.53::com.ti.SIMPLELINK_CC13X2_SDK__2.30.00.45::com.ti.SIMPLELINK_CC26X2_SDK__2.30.00.34::com.ti.SIMPLELINK_CC2640R2_SDK__2.40.00.32::com.ti.SIMPLELINK_CC2652RB_BLE_SDK__3.10.00.15::com.ti.SIMPLELINK_MSP432_SDK__3.10.00.08::com.ti.SIMPLELINK_MSP432E4_SDK__3.10.00.11::com.ti.SIMPLELINK_CC32XX_SDK__3.10.00.04::com.ti.SIMPLELINK_CC2640R2_SDK_BLE_EXAMPLE_PACK__1.50.00.62::com.ti.SIMPLELINK_SDK_BLE_PLUGIN__1.40.00.42::com.ti.SIMPLELINK_MSP432_SDK_WIFI_PLUGIN__2.40.00.22::com.ti.SIMPLELINK_SDK_VOICE_DETECTION_PLUGIN__1.50.00.15::com.ti.SIMPLELINK_SDK_TI_15_4_STACK_PLUGIN__2.20.00.05::com.ti.SIMPLELINK_ZIGBEE_SDK_PLUGIN__2.20.00.06::com.ti.AWS_CC32XX__2.20.00.02::com.ti.AWS_MSP432E4__2.20.00.02::com.ti.WATSON_MSP432E4__1.20.00.04::com.ti.WATSON_CC32XX__1.20.00.04::com.ti.SAIL__1.30.00.02::com.ti.AZURE_CC32XX__2.20.00.05::com.ti.AZURE_MSP432E4__2.20.00.05::com.ti.SIMPLELINK_SDK_NFC_PLUGIN__2.20.00.08::com.ti.mmwave_industrial_toolbox__3.3.1::com.ti.mmwave_automotive_toolbox__2.4.7::c2000ware_software_package__1.00.06.00::digital_power_c2000ware_sdk_software_package__1.03.00.00::powerSUITE_software_package__2.04.00.00::msp430ware__3.80.07.00::energia.core__18.0.0::energia.tool.arm-none-eabi-gcc__6.3.1-20170620::energia.tool.ino2cpp__1.0.3::energia.boards.cc13xx__5.20.0::energia.boards.cc3220emt__5.6.2::energia.boards.msp432r__5.6.3::sitara__1.02.00.00::tm4c__2.1.4.178::tirtos_cc13xx_cc26xx__2.21.00.06::tirtos_tivac__2.16.00.08::tirtos_simplelink__2.13.01.09::sysbios__6.50.01.12::xdctools__3.51.02.21::motor_control_c2000ware_sdk_software_package__1.00.00.00",
+    "overviewLink": "tirex-product-tree/cc13xx_devtools/.metadata/.tirex/project0_cc1352p1lp/landing_page_index.html",
+    "packageOrder": 0
+  },
+  {
+    "text": "IWR1642 Industrial EVM",
+    "type": "folder",
+    "numChildren": 4,
+    "numChildrenLocal": 0,
+    "children": true,
+    "allowPartialDownload": true,
+    "state": {
+      "opened": false
+    },
+    "url": "/api/resources?path=Development%20Tools/Kits%20and%20Boards&package=com.ti.SIMPLELINK_CC13X0_SDK__3.10.00.11::com.ti.SIMPLELINK_CC13X2_26X2_SDK__3.10.00.53::com.ti.SIMPLELINK_CC13X2_SDK__2.30.00.45::com.ti.SIMPLELINK_CC26X2_SDK__2.30.00.34::com.ti.SIMPLELINK_CC2640R2_SDK__2.40.00.32::com.ti.SIMPLELINK_CC2652RB_BLE_SDK__3.10.00.15::com.ti.SIMPLELINK_MSP432_SDK__3.10.00.08::com.ti.SIMPLELINK_MSP432E4_SDK__3.10.00.11::com.ti.SIMPLELINK_CC32XX_SDK__3.10.00.04::com.ti.SIMPLELINK_CC2640R2_SDK_BLE_EXAMPLE_PACK__1.50.00.62::com.ti.SIMPLELINK_SDK_BLE_PLUGIN__1.40.00.42::com.ti.SIMPLELINK_MSP432_SDK_WIFI_PLUGIN__2.40.00.22::com.ti.SIMPLELINK_SDK_VOICE_DETECTION_PLUGIN__1.50.00.15::com.ti.SIMPLELINK_SDK_TI_15_4_STACK_PLUGIN__2.20.00.05::com.ti.SIMPLELINK_ZIGBEE_SDK_PLUGIN__2.20.00.06::com.ti.AWS_CC32XX__2.20.00.02::com.ti.AWS_MSP432E4__2.20.00.02::com.ti.WATSON_MSP432E4__1.20.00.04::com.ti.WATSON_CC32XX__1.20.00.04::com.ti.SAIL__1.30.00.02::com.ti.AZURE_CC32XX__2.20.00.05::com.ti.AZURE_MSP432E4__2.20.00.05::com.ti.SIMPLELINK_SDK_NFC_PLUGIN__2.20.00.08::com.ti.mmwave_industrial_toolbox__3.3.1::com.ti.mmwave_automotive_toolbox__2.4.7::c2000ware_software_package__1.00.06.00::digital_power_c2000ware_sdk_software_package__1.03.00.00::powerSUITE_software_package__2.04.00.00::msp430ware__3.80.07.00::energia.core__18.0.0::energia.tool.arm-none-eabi-gcc__6.3.1-20170620::energia.tool.ino2cpp__1.0.3::energia.boards.cc13xx__5.20.0::energia.boards.cc3220emt__5.6.2::energia.boards.msp432r__5.6.3::sitara__1.02.00.00::tm4c__2.1.4.178::tirtos_cc13xx_cc26xx__2.21.00.06::tirtos_tivac__2.16.00.08::tirtos_simplelink__2.13.01.09::sysbios__6.50.01.12::xdctools__3.51.02.21::motor_control_c2000ware_sdk_software_package__1.00.00.00",
+    "overviewLink": "tirex-product-tree/mmwave_devtools_1_0_0/IWR1642BOOST.html",
+    "packageOrder": 0
+  },
+  {
+    "text": "MSP-EXP430FR4133",
+    "type": "folder",
+    "numChildren": 2,
+    "numChildrenLocal": 26,
+    "children": true,
+    "allowPartialDownload": false,
+    "state": {
+      "opened": false
+    },
+    "url": "/api/resources?path=Development%20Tools/Kits%20and%20Boards&package=com.ti.SIMPLELINK_CC13X0_SDK__3.10.00.11::com.ti.SIMPLELINK_CC13X2_26X2_SDK__3.10.00.53::com.ti.SIMPLELINK_CC13X2_SDK__2.30.00.45::com.ti.SIMPLELINK_CC26X2_SDK__2.30.00.34::com.ti.SIMPLELINK_CC2640R2_SDK__2.40.00.32::com.ti.SIMPLELINK_CC2652RB_BLE_SDK__3.10.00.15::com.ti.SIMPLELINK_MSP432_SDK__3.10.00.08::com.ti.SIMPLELINK_MSP432E4_SDK__3.10.00.11::com.ti.SIMPLELINK_CC32XX_SDK__3.10.00.04::com.ti.SIMPLELINK_CC2640R2_SDK_BLE_EXAMPLE_PACK__1.50.00.62::com.ti.SIMPLELINK_SDK_BLE_PLUGIN__1.40.00.42::com.ti.SIMPLELINK_MSP432_SDK_WIFI_PLUGIN__2.40.00.22::com.ti.SIMPLELINK_SDK_VOICE_DETECTION_PLUGIN__1.50.00.15::com.ti.SIMPLELINK_SDK_TI_15_4_STACK_PLUGIN__2.20.00.05::com.ti.SIMPLELINK_ZIGBEE_SDK_PLUGIN__2.20.00.06::com.ti.AWS_CC32XX__2.20.00.02::com.ti.AWS_MSP432E4__2.20.00.02::com.ti.WATSON_MSP432E4__1.20.00.04::com.ti.WATSON_CC32XX__1.20.00.04::com.ti.SAIL__1.30.00.02::com.ti.AZURE_CC32XX__2.20.00.05::com.ti.AZURE_MSP432E4__2.20.00.05::com.ti.SIMPLELINK_SDK_NFC_PLUGIN__2.20.00.08::com.ti.mmwave_industrial_toolbox__3.3.1::com.ti.mmwave_automotive_toolbox__2.4.7::c2000ware_software_package__1.00.06.00::digital_power_c2000ware_sdk_software_package__1.03.00.00::powerSUITE_software_package__2.04.00.00::msp430ware__3.80.07.00::energia.core__18.0.0::energia.tool.arm-none-eabi-gcc__6.3.1-20170620::energia.tool.ino2cpp__1.0.3::energia.boards.cc13xx__5.20.0::energia.boards.cc3220emt__5.6.2::energia.boards.msp432r__5.6.3::sitara__1.02.00.00::tm4c__2.1.4.178::tirtos_cc13xx_cc26xx__2.21.00.06::tirtos_tivac__2.16.00.08::tirtos_simplelink__2.13.01.09::sysbios__6.50.01.12::xdctools__3.51.02.21::motor_control_c2000ware_sdk_software_package__1.00.00.00",
+    "overviewDescription": "<p>The MSP-EXP430FR4133 LaunchPad development kit is an easy-to-use Evaluation Module for the MSP430FR4133 microcontroller. It contains everything needed to start developing on the MSP430 Ultra-low-power FRAM-based microcontroller platform, including on-board emulation for programming, debugging and energy measurements.</p><p>The board features on-board buttons and LEDs for quick integration of a simple user interface as well as a Liquid Crystal Display (LCD) display which showcases the integrated driver with flexible software-configurable pins. The MSP430FR4133 device features embedded FRAM (Ferroelectric Random Access Memory), a non-volatile memory known for its ultra-low power, high endurance and high speed write access.</p><p>Rapid prototyping is simplified by the 20-pin BoosterPack™ plug-in module headers, which support a wide range of available BoosterPacks. You can quickly add features like wireless connectivity, graphical displays, environmental sensing, and much more. Design your own BoosterPack or choose among many already available from TI and third party developers.</p>",
+    "overviewImage": "tirex-product-tree/msp430_devtools_3_80_07_00/.metadata/.tirex/images/msp-exp430fr4133_thumb.png",
+    "packageOrder": 0
+  },
+  {
+    "text": "IWR6843ISK Antenna Plug-In Module",
+    "type": "folder",
+    "numChildren": 4,
+    "numChildrenLocal": 0,
+    "children": true,
+    "allowPartialDownload": true,
+    "state": {
+      "opened": false
+    },
+    "url": "/api/resources?path=Development%20Tools/Kits%20and%20Boards&package=com.ti.SIMPLELINK_CC13X0_SDK__3.10.00.11::com.ti.SIMPLELINK_CC13X2_26X2_SDK__3.10.00.53::com.ti.SIMPLELINK_CC13X2_SDK__2.30.00.45::com.ti.SIMPLELINK_CC26X2_SDK__2.30.00.34::com.ti.SIMPLELINK_CC2640R2_SDK__2.40.00.32::com.ti.SIMPLELINK_CC2652RB_BLE_SDK__3.10.00.15::com.ti.SIMPLELINK_MSP432_SDK__3.10.00.08::com.ti.SIMPLELINK_MSP432E4_SDK__3.10.00.11::com.ti.SIMPLELINK_CC32XX_SDK__3.10.00.04::com.ti.SIMPLELINK_CC2640R2_SDK_BLE_EXAMPLE_PACK__1.50.00.62::com.ti.SIMPLELINK_SDK_BLE_PLUGIN__1.40.00.42::com.ti.SIMPLELINK_MSP432_SDK_WIFI_PLUGIN__2.40.00.22::com.ti.SIMPLELINK_SDK_VOICE_DETECTION_PLUGIN__1.50.00.15::com.ti.SIMPLELINK_SDK_TI_15_4_STACK_PLUGIN__2.20.00.05::com.ti.SIMPLELINK_ZIGBEE_SDK_PLUGIN__2.20.00.06::com.ti.AWS_CC32XX__2.20.00.02::com.ti.AWS_MSP432E4__2.20.00.02::com.ti.WATSON_MSP432E4__1.20.00.04::com.ti.WATSON_CC32XX__1.20.00.04::com.ti.SAIL__1.30.00.02::com.ti.AZURE_CC32XX__2.20.00.05::com.ti.AZURE_MSP432E4__2.20.00.05::com.ti.SIMPLELINK_SDK_NFC_PLUGIN__2.20.00.08::com.ti.mmwave_industrial_toolbox__3.3.1::com.ti.mmwave_automotive_toolbox__2.4.7::c2000ware_software_package__1.00.06.00::digital_power_c2000ware_sdk_software_package__1.03.00.00::powerSUITE_software_package__2.04.00.00::msp430ware__3.80.07.00::energia.core__18.0.0::energia.tool.arm-none-eabi-gcc__6.3.1-20170620::energia.tool.ino2cpp__1.0.3::energia.boards.cc13xx__5.20.0::energia.boards.cc3220emt__5.6.2::energia.boards.msp432r__5.6.3::sitara__1.02.00.00::tm4c__2.1.4.178::tirtos_cc13xx_cc26xx__2.21.00.06::tirtos_tivac__2.16.00.08::tirtos_simplelink__2.13.01.09::sysbios__6.50.01.12::xdctools__3.51.02.21::motor_control_c2000ware_sdk_software_package__1.00.00.00",
+    "overviewDescription": "The IWR6843ISK from Texas Instruments™ is an easy-to-use evaluation board for the IWR6843 mmWave sensing device, with direct connectivity to the mmWave carrier platform.",
+    "overviewImage": "tirex-product-tree/mmwave_devtools_1_0_0/images/IWR6843ISK.jpg",
+    "packageOrder": 0
+  },
+  {
+    "text": "MSP-EXP430FR6989",
+    "type": "folder",
+    "numChildren": 2,
+    "numChildrenLocal": 29,
+    "children": true,
+    "allowPartialDownload": false,
+    "state": {
+      "opened": false
+    },
+    "url": "/api/resources?path=Development%20Tools/Kits%20and%20Boards&package=com.ti.SIMPLELINK_CC13X0_SDK__3.10.00.11::com.ti.SIMPLELINK_CC13X2_26X2_SDK__3.10.00.53::com.ti.SIMPLELINK_CC13X2_SDK__2.30.00.45::com.ti.SIMPLELINK_CC26X2_SDK__2.30.00.34::com.ti.SIMPLELINK_CC2640R2_SDK__2.40.00.32::com.ti.SIMPLELINK_CC2652RB_BLE_SDK__3.10.00.15::com.ti.SIMPLELINK_MSP432_SDK__3.10.00.08::com.ti.SIMPLELINK_MSP432E4_SDK__3.10.00.11::com.ti.SIMPLELINK_CC32XX_SDK__3.10.00.04::com.ti.SIMPLELINK_CC2640R2_SDK_BLE_EXAMPLE_PACK__1.50.00.62::com.ti.SIMPLELINK_SDK_BLE_PLUGIN__1.40.00.42::com.ti.SIMPLELINK_MSP432_SDK_WIFI_PLUGIN__2.40.00.22::com.ti.SIMPLELINK_SDK_VOICE_DETECTION_PLUGIN__1.50.00.15::com.ti.SIMPLELINK_SDK_TI_15_4_STACK_PLUGIN__2.20.00.05::com.ti.SIMPLELINK_ZIGBEE_SDK_PLUGIN__2.20.00.06::com.ti.AWS_CC32XX__2.20.00.02::com.ti.AWS_MSP432E4__2.20.00.02::com.ti.WATSON_MSP432E4__1.20.00.04::com.ti.WATSON_CC32XX__1.20.00.04::com.ti.SAIL__1.30.00.02::com.ti.AZURE_CC32XX__2.20.00.05::com.ti.AZURE_MSP432E4__2.20.00.05::com.ti.SIMPLELINK_SDK_NFC_PLUGIN__2.20.00.08::com.ti.mmwave_industrial_toolbox__3.3.1::com.ti.mmwave_automotive_toolbox__2.4.7::c2000ware_software_package__1.00.06.00::digital_power_c2000ware_sdk_software_package__1.03.00.00::powerSUITE_software_package__2.04.00.00::msp430ware__3.80.07.00::energia.core__18.0.0::energia.tool.arm-none-eabi-gcc__6.3.1-20170620::energia.tool.ino2cpp__1.0.3::energia.boards.cc13xx__5.20.0::energia.boards.cc3220emt__5.6.2::energia.boards.msp432r__5.6.3::sitara__1.02.00.00::tm4c__2.1.4.178::tirtos_cc13xx_cc26xx__2.21.00.06::tirtos_tivac__2.16.00.08::tirtos_simplelink__2.13.01.09::sysbios__6.50.01.12::xdctools__3.51.02.21::motor_control_c2000ware_sdk_software_package__1.00.00.00",
+    "overviewDescription": "The MSP-EXP430FR6989 LaunchPad Development Kit is an easy-to-use Evaluation Module (EVM) for the MSP40FR6989 microcontroller (MCU). It contains everything needed to start developing on the ultra-low-power MSP430FRx FRAM microcontroller platform, including on-board emulation for programming, debugging and energy measurements.<br><br>The board features on-board buttons and LEDs for quick integration of a simple user interface as well as a Liquid Crystal Display (LCD) display which showcases the integrated driver that can drive up to 320 segments. It also offers direct access to the Extended Scan Interface, which is a dual analog front-end (AFE) created for low-power rotation detection. The MSP430FR6989 device features ultra-low power consumption, 128 KB of embedded FRAM (Ferroelectric Random Access Memory), a non-volatile memory known for its ultra-low power, high endurance and high speed write access.",
+    "overviewImage": "tirex-product-tree/msp430_devtools_3_80_07_00/.metadata/.tirex/images/msp-exp430fr6989_thumb.png",
+    "packageOrder": 0
+  },
+  {
+    "text": "MSP-EXP430FR2311",
+    "type": "folder",
+    "numChildren": 2,
+    "numChildrenLocal": 25,
+    "children": true,
+    "allowPartialDownload": false,
+    "state": {
+      "opened": false
+    },
+    "url": "/api/resources?path=Development%20Tools/Kits%20and%20Boards&package=com.ti.SIMPLELINK_CC13X0_SDK__3.10.00.11::com.ti.SIMPLELINK_CC13X2_26X2_SDK__3.10.00.53::com.ti.SIMPLELINK_CC13X2_SDK__2.30.00.45::com.ti.SIMPLELINK_CC26X2_SDK__2.30.00.34::com.ti.SIMPLELINK_CC2640R2_SDK__2.40.00.32::com.ti.SIMPLELINK_CC2652RB_BLE_SDK__3.10.00.15::com.ti.SIMPLELINK_MSP432_SDK__3.10.00.08::com.ti.SIMPLELINK_MSP432E4_SDK__3.10.00.11::com.ti.SIMPLELINK_CC32XX_SDK__3.10.00.04::com.ti.SIMPLELINK_CC2640R2_SDK_BLE_EXAMPLE_PACK__1.50.00.62::com.ti.SIMPLELINK_SDK_BLE_PLUGIN__1.40.00.42::com.ti.SIMPLELINK_MSP432_SDK_WIFI_PLUGIN__2.40.00.22::com.ti.SIMPLELINK_SDK_VOICE_DETECTION_PLUGIN__1.50.00.15::com.ti.SIMPLELINK_SDK_TI_15_4_STACK_PLUGIN__2.20.00.05::com.ti.SIMPLELINK_ZIGBEE_SDK_PLUGIN__2.20.00.06::com.ti.AWS_CC32XX__2.20.00.02::com.ti.AWS_MSP432E4__2.20.00.02::com.ti.WATSON_MSP432E4__1.20.00.04::com.ti.WATSON_CC32XX__1.20.00.04::com.ti.SAIL__1.30.00.02::com.ti.AZURE_CC32XX__2.20.00.05::com.ti.AZURE_MSP432E4__2.20.00.05::com.ti.SIMPLELINK_SDK_NFC_PLUGIN__2.20.00.08::com.ti.mmwave_industrial_toolbox__3.3.1::com.ti.mmwave_automotive_toolbox__2.4.7::c2000ware_software_package__1.00.06.00::digital_power_c2000ware_sdk_software_package__1.03.00.00::powerSUITE_software_package__2.04.00.00::msp430ware__3.80.07.00::energia.core__18.0.0::energia.tool.arm-none-eabi-gcc__6.3.1-20170620::energia.tool.ino2cpp__1.0.3::energia.boards.cc13xx__5.20.0::energia.boards.cc3220emt__5.6.2::energia.boards.msp432r__5.6.3::sitara__1.02.00.00::tm4c__2.1.4.178::tirtos_cc13xx_cc26xx__2.21.00.06::tirtos_tivac__2.16.00.08::tirtos_simplelink__2.13.01.09::sysbios__6.50.01.12::xdctools__3.51.02.21::motor_control_c2000ware_sdk_software_package__1.00.00.00",
+    "overviewDescription": "The MSP-EXP430FR2311 LaunchPad Development Kit is an easy-to-use microcontroller development board for the MSP430FR2311 MCU. It contains everything needed to start developing quickly on the MSP430FR2x FRAM platform, including on-board emulation for programming, debugging and Energy Measurements. The board features on-board buttons and LEDs for integration of a simple user interface and a Optical Sensor interface to get started with your development. The kit comes with a  pre-programmed code for testing the light intensity and use of integrated Op-Amp. The MSP430FR2311 microcontroller features embedded FRAM (Ferroelectric Random Access Memory), a non-volatile memory known for its ultra-low power, high endurance and high-speed write capabilities. The device also has integrated Smart Analog Features ( integrated Op-Amp, Comparator, DAC and ADC ) to help connect a variety of industrial sensors enabling single chip implementation for most sensing applications. Rapid prototyping is a snap thanks to 20-pin headers and a wide range of BoosterPack plug-in modules enabling technologies such as wireless connectivity, graphical displays, environmental sensing, and much more.",
+    "overviewImage": "tirex-product-tree/msp430_devtools_3_80_07_00/.metadata/.tirex/images/msp-exp430fr2311_thumb.png",
+    "packageOrder": 0
+  },
+  {
+    "text": "AWR1243 Automotive EVM",
+    "type": "folder",
+    "numChildren": 3,
+    "numChildrenLocal": 0,
+    "children": true,
+    "allowPartialDownload": true,
+    "state": {
+      "opened": false
+    },
+    "url": "/api/resources?path=Development%20Tools/Kits%20and%20Boards&package=com.ti.SIMPLELINK_CC13X0_SDK__3.10.00.11::com.ti.SIMPLELINK_CC13X2_26X2_SDK__3.10.00.53::com.ti.SIMPLELINK_CC13X2_SDK__2.30.00.45::com.ti.SIMPLELINK_CC26X2_SDK__2.30.00.34::com.ti.SIMPLELINK_CC2640R2_SDK__2.40.00.32::com.ti.SIMPLELINK_CC2652RB_BLE_SDK__3.10.00.15::com.ti.SIMPLELINK_MSP432_SDK__3.10.00.08::com.ti.SIMPLELINK_MSP432E4_SDK__3.10.00.11::com.ti.SIMPLELINK_CC32XX_SDK__3.10.00.04::com.ti.SIMPLELINK_CC2640R2_SDK_BLE_EXAMPLE_PACK__1.50.00.62::com.ti.SIMPLELINK_SDK_BLE_PLUGIN__1.40.00.42::com.ti.SIMPLELINK_MSP432_SDK_WIFI_PLUGIN__2.40.00.22::com.ti.SIMPLELINK_SDK_VOICE_DETECTION_PLUGIN__1.50.00.15::com.ti.SIMPLELINK_SDK_TI_15_4_STACK_PLUGIN__2.20.00.05::com.ti.SIMPLELINK_ZIGBEE_SDK_PLUGIN__2.20.00.06::com.ti.AWS_CC32XX__2.20.00.02::com.ti.AWS_MSP432E4__2.20.00.02::com.ti.WATSON_MSP432E4__1.20.00.04::com.ti.WATSON_CC32XX__1.20.00.04::com.ti.SAIL__1.30.00.02::com.ti.AZURE_CC32XX__2.20.00.05::com.ti.AZURE_MSP432E4__2.20.00.05::com.ti.SIMPLELINK_SDK_NFC_PLUGIN__2.20.00.08::com.ti.mmwave_industrial_toolbox__3.3.1::com.ti.mmwave_automotive_toolbox__2.4.7::c2000ware_software_package__1.00.06.00::digital_power_c2000ware_sdk_software_package__1.03.00.00::powerSUITE_software_package__2.04.00.00::msp430ware__3.80.07.00::energia.core__18.0.0::energia.tool.arm-none-eabi-gcc__6.3.1-20170620::energia.tool.ino2cpp__1.0.3::energia.boards.cc13xx__5.20.0::energia.boards.cc3220emt__5.6.2::energia.boards.msp432r__5.6.3::sitara__1.02.00.00::tm4c__2.1.4.178::tirtos_cc13xx_cc26xx__2.21.00.06::tirtos_tivac__2.16.00.08::tirtos_simplelink__2.13.01.09::sysbios__6.50.01.12::xdctools__3.51.02.21::motor_control_c2000ware_sdk_software_package__1.00.00.00",
+    "overviewLink": "tirex-product-tree/mmwave_devtools_1_0_0/AWR1243BOOST.html",
+    "packageOrder": 0
+  },
+  {
+    "text": "AWR1443 Automotive EVM",
+    "type": "folder",
+    "numChildren": 3,
+    "numChildrenLocal": 0,
+    "children": true,
+    "allowPartialDownload": true,
+    "state": {
+      "opened": false
+    },
+    "url": "/api/resources?path=Development%20Tools/Kits%20and%20Boards&package=com.ti.SIMPLELINK_CC13X0_SDK__3.10.00.11::com.ti.SIMPLELINK_CC13X2_26X2_SDK__3.10.00.53::com.ti.SIMPLELINK_CC13X2_SDK__2.30.00.45::com.ti.SIMPLELINK_CC26X2_SDK__2.30.00.34::com.ti.SIMPLELINK_CC2640R2_SDK__2.40.00.32::com.ti.SIMPLELINK_CC2652RB_BLE_SDK__3.10.00.15::com.ti.SIMPLELINK_MSP432_SDK__3.10.00.08::com.ti.SIMPLELINK_MSP432E4_SDK__3.10.00.11::com.ti.SIMPLELINK_CC32XX_SDK__3.10.00.04::com.ti.SIMPLELINK_CC2640R2_SDK_BLE_EXAMPLE_PACK__1.50.00.62::com.ti.SIMPLELINK_SDK_BLE_PLUGIN__1.40.00.42::com.ti.SIMPLELINK_MSP432_SDK_WIFI_PLUGIN__2.40.00.22::com.ti.SIMPLELINK_SDK_VOICE_DETECTION_PLUGIN__1.50.00.15::com.ti.SIMPLELINK_SDK_TI_15_4_STACK_PLUGIN__2.20.00.05::com.ti.SIMPLELINK_ZIGBEE_SDK_PLUGIN__2.20.00.06::com.ti.AWS_CC32XX__2.20.00.02::com.ti.AWS_MSP432E4__2.20.00.02::com.ti.WATSON_MSP432E4__1.20.00.04::com.ti.WATSON_CC32XX__1.20.00.04::com.ti.SAIL__1.30.00.02::com.ti.AZURE_CC32XX__2.20.00.05::com.ti.AZURE_MSP432E4__2.20.00.05::com.ti.SIMPLELINK_SDK_NFC_PLUGIN__2.20.00.08::com.ti.mmwave_industrial_toolbox__3.3.1::com.ti.mmwave_automotive_toolbox__2.4.7::c2000ware_software_package__1.00.06.00::digital_power_c2000ware_sdk_software_package__1.03.00.00::powerSUITE_software_package__2.04.00.00::msp430ware__3.80.07.00::energia.core__18.0.0::energia.tool.arm-none-eabi-gcc__6.3.1-20170620::energia.tool.ino2cpp__1.0.3::energia.boards.cc13xx__5.20.0::energia.boards.cc3220emt__5.6.2::energia.boards.msp432r__5.6.3::sitara__1.02.00.00::tm4c__2.1.4.178::tirtos_cc13xx_cc26xx__2.21.00.06::tirtos_tivac__2.16.00.08::tirtos_simplelink__2.13.01.09::sysbios__6.50.01.12::xdctools__3.51.02.21::motor_control_c2000ware_sdk_software_package__1.00.00.00",
+    "overviewLink": "tirex-product-tree/mmwave_devtools_1_0_0/AWR1443BOOST.html",
+    "packageOrder": 0
+  },
+  {
+    "text": "AWR1642 Automotive EVM",
+    "type": "folder",
+    "numChildren": 3,
+    "numChildrenLocal": 0,
+    "children": true,
+    "allowPartialDownload": true,
+    "state": {
+      "opened": false
+    },
+    "url": "/api/resources?path=Development%20Tools/Kits%20and%20Boards&package=com.ti.SIMPLELINK_CC13X0_SDK__3.10.00.11::com.ti.SIMPLELINK_CC13X2_26X2_SDK__3.10.00.53::com.ti.SIMPLELINK_CC13X2_SDK__2.30.00.45::com.ti.SIMPLELINK_CC26X2_SDK__2.30.00.34::com.ti.SIMPLELINK_CC2640R2_SDK__2.40.00.32::com.ti.SIMPLELINK_CC2652RB_BLE_SDK__3.10.00.15::com.ti.SIMPLELINK_MSP432_SDK__3.10.00.08::com.ti.SIMPLELINK_MSP432E4_SDK__3.10.00.11::com.ti.SIMPLELINK_CC32XX_SDK__3.10.00.04::com.ti.SIMPLELINK_CC2640R2_SDK_BLE_EXAMPLE_PACK__1.50.00.62::com.ti.SIMPLELINK_SDK_BLE_PLUGIN__1.40.00.42::com.ti.SIMPLELINK_MSP432_SDK_WIFI_PLUGIN__2.40.00.22::com.ti.SIMPLELINK_SDK_VOICE_DETECTION_PLUGIN__1.50.00.15::com.ti.SIMPLELINK_SDK_TI_15_4_STACK_PLUGIN__2.20.00.05::com.ti.SIMPLELINK_ZIGBEE_SDK_PLUGIN__2.20.00.06::com.ti.AWS_CC32XX__2.20.00.02::com.ti.AWS_MSP432E4__2.20.00.02::com.ti.WATSON_MSP432E4__1.20.00.04::com.ti.WATSON_CC32XX__1.20.00.04::com.ti.SAIL__1.30.00.02::com.ti.AZURE_CC32XX__2.20.00.05::com.ti.AZURE_MSP432E4__2.20.00.05::com.ti.SIMPLELINK_SDK_NFC_PLUGIN__2.20.00.08::com.ti.mmwave_industrial_toolbox__3.3.1::com.ti.mmwave_automotive_toolbox__2.4.7::c2000ware_software_package__1.00.06.00::digital_power_c2000ware_sdk_software_package__1.03.00.00::powerSUITE_software_package__2.04.00.00::msp430ware__3.80.07.00::energia.core__18.0.0::energia.tool.arm-none-eabi-gcc__6.3.1-20170620::energia.tool.ino2cpp__1.0.3::energia.boards.cc13xx__5.20.0::energia.boards.cc3220emt__5.6.2::energia.boards.msp432r__5.6.3::sitara__1.02.00.00::tm4c__2.1.4.178::tirtos_cc13xx_cc26xx__2.21.00.06::tirtos_tivac__2.16.00.08::tirtos_simplelink__2.13.01.09::sysbios__6.50.01.12::xdctools__3.51.02.21::motor_control_c2000ware_sdk_software_package__1.00.00.00",
+    "overviewLink": "tirex-product-tree/mmwave_devtools_1_0_0/AWR1642BOOST.html",
+    "packageOrder": 0
+  },
+  {
+    "text": "MSP-EXP430FR2355",
+    "type": "folder",
+    "numChildren": 2,
+    "numChildrenLocal": 41,
+    "children": true,
+    "allowPartialDownload": false,
+    "state": {
+      "opened": false
+    },
+    "url": "/api/resources?path=Development%20Tools/Kits%20and%20Boards&package=com.ti.SIMPLELINK_CC13X0_SDK__3.10.00.11::com.ti.SIMPLELINK_CC13X2_26X2_SDK__3.10.00.53::com.ti.SIMPLELINK_CC13X2_SDK__2.30.00.45::com.ti.SIMPLELINK_CC26X2_SDK__2.30.00.34::com.ti.SIMPLELINK_CC2640R2_SDK__2.40.00.32::com.ti.SIMPLELINK_CC2652RB_BLE_SDK__3.10.00.15::com.ti.SIMPLELINK_MSP432_SDK__3.10.00.08::com.ti.SIMPLELINK_MSP432E4_SDK__3.10.00.11::com.ti.SIMPLELINK_CC32XX_SDK__3.10.00.04::com.ti.SIMPLELINK_CC2640R2_SDK_BLE_EXAMPLE_PACK__1.50.00.62::com.ti.SIMPLELINK_SDK_BLE_PLUGIN__1.40.00.42::com.ti.SIMPLELINK_MSP432_SDK_WIFI_PLUGIN__2.40.00.22::com.ti.SIMPLELINK_SDK_VOICE_DETECTION_PLUGIN__1.50.00.15::com.ti.SIMPLELINK_SDK_TI_15_4_STACK_PLUGIN__2.20.00.05::com.ti.SIMPLELINK_ZIGBEE_SDK_PLUGIN__2.20.00.06::com.ti.AWS_CC32XX__2.20.00.02::com.ti.AWS_MSP432E4__2.20.00.02::com.ti.WATSON_MSP432E4__1.20.00.04::com.ti.WATSON_CC32XX__1.20.00.04::com.ti.SAIL__1.30.00.02::com.ti.AZURE_CC32XX__2.20.00.05::com.ti.AZURE_MSP432E4__2.20.00.05::com.ti.SIMPLELINK_SDK_NFC_PLUGIN__2.20.00.08::com.ti.mmwave_industrial_toolbox__3.3.1::com.ti.mmwave_automotive_toolbox__2.4.7::c2000ware_software_package__1.00.06.00::digital_power_c2000ware_sdk_software_package__1.03.00.00::powerSUITE_software_package__2.04.00.00::msp430ware__3.80.07.00::energia.core__18.0.0::energia.tool.arm-none-eabi-gcc__6.3.1-20170620::energia.tool.ino2cpp__1.0.3::energia.boards.cc13xx__5.20.0::energia.boards.cc3220emt__5.6.2::energia.boards.msp432r__5.6.3::sitara__1.02.00.00::tm4c__2.1.4.178::tirtos_cc13xx_cc26xx__2.21.00.06::tirtos_tivac__2.16.00.08::tirtos_simplelink__2.13.01.09::sysbios__6.50.01.12::xdctools__3.51.02.21::motor_control_c2000ware_sdk_software_package__1.00.00.00",
+    "overviewDescription": "<p>The MSP-EXP430FR2355 LaunchPad™ Development Kit is an easy-to-use evaluation module (EVM) based on the MSP430FR2355 Value Line Sensing microcontroller (MCU) with the Smart Analog Combo. It contains everything needed to start developing on the ultra-low-power MSP430FR2x Value Line Sensing MCU platform, including on-board debug probe for programming, debugging and energy measurements. The board includes 2 buttons and 2 LEDs for creating a simple user interface. It also has an ambient light sensor and connector for external analog sources.</p><p>The 24MHz MSP430FR2355 device features 32KB of embedded FRAM (Ferroelectric Random Access Memory), a non-volatile memory known for its ultra-low power, high endurance, and high speed write access. Combined with the 4 KB of on-chip SRAM, users have access to 32KB of memory to split between their program and data as required.  For example, a data logging application may require a large data memory with a relatively small program memory, so the memory may be allocated as required between program and data memory.</p>",
+    "overviewImage": "tirex-product-tree/msp430_devtools_3_80_07_00/.metadata/.tirex/images/msp-exp430fr2355_thumb.png",
+    "packageOrder": 0
+  },
+  {
+    "text": "LP-MSP430FR2476",
+    "type": "folder",
+    "numChildren": 2,
+    "numChildrenLocal": 43,
+    "children": true,
+    "allowPartialDownload": false,
+    "state": {
+      "opened": false
+    },
+    "url": "/api/resources?path=Development%20Tools/Kits%20and%20Boards&package=com.ti.SIMPLELINK_CC13X0_SDK__3.10.00.11::com.ti.SIMPLELINK_CC13X2_26X2_SDK__3.10.00.53::com.ti.SIMPLELINK_CC13X2_SDK__2.30.00.45::com.ti.SIMPLELINK_CC26X2_SDK__2.30.00.34::com.ti.SIMPLELINK_CC2640R2_SDK__2.40.00.32::com.ti.SIMPLELINK_CC2652RB_BLE_SDK__3.10.00.15::com.ti.SIMPLELINK_MSP432_SDK__3.10.00.08::com.ti.SIMPLELINK_MSP432E4_SDK__3.10.00.11::com.ti.SIMPLELINK_CC32XX_SDK__3.10.00.04::com.ti.SIMPLELINK_CC2640R2_SDK_BLE_EXAMPLE_PACK__1.50.00.62::com.ti.SIMPLELINK_SDK_BLE_PLUGIN__1.40.00.42::com.ti.SIMPLELINK_MSP432_SDK_WIFI_PLUGIN__2.40.00.22::com.ti.SIMPLELINK_SDK_VOICE_DETECTION_PLUGIN__1.50.00.15::com.ti.SIMPLELINK_SDK_TI_15_4_STACK_PLUGIN__2.20.00.05::com.ti.SIMPLELINK_ZIGBEE_SDK_PLUGIN__2.20.00.06::com.ti.AWS_CC32XX__2.20.00.02::com.ti.AWS_MSP432E4__2.20.00.02::com.ti.WATSON_MSP432E4__1.20.00.04::com.ti.WATSON_CC32XX__1.20.00.04::com.ti.SAIL__1.30.00.02::com.ti.AZURE_CC32XX__2.20.00.05::com.ti.AZURE_MSP432E4__2.20.00.05::com.ti.SIMPLELINK_SDK_NFC_PLUGIN__2.20.00.08::com.ti.mmwave_industrial_toolbox__3.3.1::com.ti.mmwave_automotive_toolbox__2.4.7::c2000ware_software_package__1.00.06.00::digital_power_c2000ware_sdk_software_package__1.03.00.00::powerSUITE_software_package__2.04.00.00::msp430ware__3.80.07.00::energia.core__18.0.0::energia.tool.arm-none-eabi-gcc__6.3.1-20170620::energia.tool.ino2cpp__1.0.3::energia.boards.cc13xx__5.20.0::energia.boards.cc3220emt__5.6.2::energia.boards.msp432r__5.6.3::sitara__1.02.00.00::tm4c__2.1.4.178::tirtos_cc13xx_cc26xx__2.21.00.06::tirtos_tivac__2.16.00.08::tirtos_simplelink__2.13.01.09::sysbios__6.50.01.12::xdctools__3.51.02.21::motor_control_c2000ware_sdk_software_package__1.00.00.00",
+    "overviewDescription": "<p>The LP-MSP430FR2476 LaunchPad™ Development Kit is an easy-to-use evaluation module (EVM) based on the MSP430FR2476 Value Line Sensing microcontroller (MCU). It contains everything needed to start developing on the ultra-low-power MSP430FR2x Value Line Sensing MCU platform, including on-board debug probe for programming, debugging and energy measurements. The board includes 2 buttons and 2 LEDs (one is an RGB LED) for creating a simple user interface. It also has a CR2032 battery holder (battery purchased separately) enabling standalone applications without an external power supply.</p><p>The 16MHz MSP430FR2433 device features 64KB of embedded FRAM (Ferroelectric Random Access Memory), a non-volatile memory known for its ultra-low power, high endurance, and high speed write access. Combined with the 8 KB of on-chip SRAM, users have access to 64KB of memory to split between their program and data as required.  For example, a data logging application may require a large data memory with a relatively small program memory, so the memory may be allocated as required between program and data memory.</p>",
+    "overviewImage": "tirex-product-tree/msp430_devtools_3_80_07_00/.metadata/.tirex/images/lp-msp430fr2476_thumb.png",
+    "packageOrder": 0
+  },
+  {
+    "text": "MSP-EXP430FR2433",
+    "type": "folder",
+    "numChildren": 1,
+    "numChildrenLocal": 39,
+    "children": true,
+    "allowPartialDownload": false,
+    "state": {
+      "opened": false
+    },
+    "url": "/api/resources?path=Development%20Tools/Kits%20and%20Boards&package=com.ti.SIMPLELINK_CC13X0_SDK__3.10.00.11::com.ti.SIMPLELINK_CC13X2_26X2_SDK__3.10.00.53::com.ti.SIMPLELINK_CC13X2_SDK__2.30.00.45::com.ti.SIMPLELINK_CC26X2_SDK__2.30.00.34::com.ti.SIMPLELINK_CC2640R2_SDK__2.40.00.32::com.ti.SIMPLELINK_CC2652RB_BLE_SDK__3.10.00.15::com.ti.SIMPLELINK_MSP432_SDK__3.10.00.08::com.ti.SIMPLELINK_MSP432E4_SDK__3.10.00.11::com.ti.SIMPLELINK_CC32XX_SDK__3.10.00.04::com.ti.SIMPLELINK_CC2640R2_SDK_BLE_EXAMPLE_PACK__1.50.00.62::com.ti.SIMPLELINK_SDK_BLE_PLUGIN__1.40.00.42::com.ti.SIMPLELINK_MSP432_SDK_WIFI_PLUGIN__2.40.00.22::com.ti.SIMPLELINK_SDK_VOICE_DETECTION_PLUGIN__1.50.00.15::com.ti.SIMPLELINK_SDK_TI_15_4_STACK_PLUGIN__2.20.00.05::com.ti.SIMPLELINK_ZIGBEE_SDK_PLUGIN__2.20.00.06::com.ti.AWS_CC32XX__2.20.00.02::com.ti.AWS_MSP432E4__2.20.00.02::com.ti.WATSON_MSP432E4__1.20.00.04::com.ti.WATSON_CC32XX__1.20.00.04::com.ti.SAIL__1.30.00.02::com.ti.AZURE_CC32XX__2.20.00.05::com.ti.AZURE_MSP432E4__2.20.00.05::com.ti.SIMPLELINK_SDK_NFC_PLUGIN__2.20.00.08::com.ti.mmwave_industrial_toolbox__3.3.1::com.ti.mmwave_automotive_toolbox__2.4.7::c2000ware_software_package__1.00.06.00::digital_power_c2000ware_sdk_software_package__1.03.00.00::powerSUITE_software_package__2.04.00.00::msp430ware__3.80.07.00::energia.core__18.0.0::energia.tool.arm-none-eabi-gcc__6.3.1-20170620::energia.tool.ino2cpp__1.0.3::energia.boards.cc13xx__5.20.0::energia.boards.cc3220emt__5.6.2::energia.boards.msp432r__5.6.3::sitara__1.02.00.00::tm4c__2.1.4.178::tirtos_cc13xx_cc26xx__2.21.00.06::tirtos_tivac__2.16.00.08::tirtos_simplelink__2.13.01.09::sysbios__6.50.01.12::xdctools__3.51.02.21::motor_control_c2000ware_sdk_software_package__1.00.00.00",
+    "overviewDescription": "<p>The MSP-EXP430FR2433 LaunchPad™ Development Kit is an easy-to-use evaluation module (EVM) based on the MSP430FR2433 Value Line Sensing microcontroller (MCU). It contains everything needed to start developing on the ultra-low-power MSP430FR2x Value Line Sensing MCU platform, including on-board debug probe for programming, debugging and energy measurements. The board includes 2 buttons and 2 LEDs for creating a simple user interface. It also supports using a supercapacitor (needs to be purchased and installed by the user) that acts like a rechargeable battering, enabling standalone applications without an external power supply.</p><p>The 16MHz MSP430FR2433 device features 15.5KB of embedded FRAM (Ferroelectric Random Access Memory), a non-volatile memory known for its ultra-low power, high endurance, and high speed write access. Combined with the 4 KB of on-chip SRAM, users have access to 15.5KB of memory to split between their program and data as required.  For example, a data logging application may require a large data memory with a relatively small program memory, so the memory may be allocated as required between program and data memory.</p>",
+    "overviewImage": "tirex-product-tree/msp430_devtools_3_80_07_00/.metadata/.tirex/images/msp-exp430fr2433_thumb.png",
+    "packageOrder": 0
+  },
+  {
+    "text": "mmWave Sensors Development Pack",
+    "type": "folder",
+    "numChildren": 15,
+    "numChildrenLocal": 0,
+    "children": true,
+    "allowPartialDownload": true,
+    "state": {
+      "opened": false
+    },
+    "url": "/api/resources?path=Development%20Tools/Kits%20and%20Boards&package=com.ti.SIMPLELINK_CC13X0_SDK__3.10.00.11::com.ti.SIMPLELINK_CC13X2_26X2_SDK__3.10.00.53::com.ti.SIMPLELINK_CC13X2_SDK__2.30.00.45::com.ti.SIMPLELINK_CC26X2_SDK__2.30.00.34::com.ti.SIMPLELINK_CC2640R2_SDK__2.40.00.32::com.ti.SIMPLELINK_CC2652RB_BLE_SDK__3.10.00.15::com.ti.SIMPLELINK_MSP432_SDK__3.10.00.08::com.ti.SIMPLELINK_MSP432E4_SDK__3.10.00.11::com.ti.SIMPLELINK_CC32XX_SDK__3.10.00.04::com.ti.SIMPLELINK_CC2640R2_SDK_BLE_EXAMPLE_PACK__1.50.00.62::com.ti.SIMPLELINK_SDK_BLE_PLUGIN__1.40.00.42::com.ti.SIMPLELINK_MSP432_SDK_WIFI_PLUGIN__2.40.00.22::com.ti.SIMPLELINK_SDK_VOICE_DETECTION_PLUGIN__1.50.00.15::com.ti.SIMPLELINK_SDK_TI_15_4_STACK_PLUGIN__2.20.00.05::com.ti.SIMPLELINK_ZIGBEE_SDK_PLUGIN__2.20.00.06::com.ti.AWS_CC32XX__2.20.00.02::com.ti.AWS_MSP432E4__2.20.00.02::com.ti.WATSON_MSP432E4__1.20.00.04::com.ti.WATSON_CC32XX__1.20.00.04::com.ti.SAIL__1.30.00.02::com.ti.AZURE_CC32XX__2.20.00.05::com.ti.AZURE_MSP432E4__2.20.00.05::com.ti.SIMPLELINK_SDK_NFC_PLUGIN__2.20.00.08::com.ti.mmwave_industrial_toolbox__3.3.1::com.ti.mmwave_automotive_toolbox__2.4.7::c2000ware_software_package__1.00.06.00::digital_power_c2000ware_sdk_software_package__1.03.00.00::powerSUITE_software_package__2.04.00.00::msp430ware__3.80.07.00::energia.core__18.0.0::energia.tool.arm-none-eabi-gcc__6.3.1-20170620::energia.tool.ino2cpp__1.0.3::energia.boards.cc13xx__5.20.0::energia.boards.cc3220emt__5.6.2::energia.boards.msp432r__5.6.3::sitara__1.02.00.00::tm4c__2.1.4.178::tirtos_cc13xx_cc26xx__2.21.00.06::tirtos_tivac__2.16.00.08::tirtos_simplelink__2.13.01.09::sysbios__6.50.01.12::xdctools__3.51.02.21::motor_control_c2000ware_sdk_software_package__1.00.00.00",
+    "overviewLink": "tirex-product-tree/mmwave_devtools_1_0_0/MMWAVEDP.html",
+    "packageOrder": 0
+  },
+  {
+    "text": "MSP-EXP430FR5994",
+    "type": "folder",
+    "numChildren": 2,
+    "numChildrenLocal": 30,
+    "children": true,
+    "allowPartialDownload": false,
+    "state": {
+      "opened": false
+    },
+    "url": "/api/resources?path=Development%20Tools/Kits%20and%20Boards&package=com.ti.SIMPLELINK_CC13X0_SDK__3.10.00.11::com.ti.SIMPLELINK_CC13X2_26X2_SDK__3.10.00.53::com.ti.SIMPLELINK_CC13X2_SDK__2.30.00.45::com.ti.SIMPLELINK_CC26X2_SDK__2.30.00.34::com.ti.SIMPLELINK_CC2640R2_SDK__2.40.00.32::com.ti.SIMPLELINK_CC2652RB_BLE_SDK__3.10.00.15::com.ti.SIMPLELINK_MSP432_SDK__3.10.00.08::com.ti.SIMPLELINK_MSP432E4_SDK__3.10.00.11::com.ti.SIMPLELINK_CC32XX_SDK__3.10.00.04::com.ti.SIMPLELINK_CC2640R2_SDK_BLE_EXAMPLE_PACK__1.50.00.62::com.ti.SIMPLELINK_SDK_BLE_PLUGIN__1.40.00.42::com.ti.SIMPLELINK_MSP432_SDK_WIFI_PLUGIN__2.40.00.22::com.ti.SIMPLELINK_SDK_VOICE_DETECTION_PLUGIN__1.50.00.15::com.ti.SIMPLELINK_SDK_TI_15_4_STACK_PLUGIN__2.20.00.05::com.ti.SIMPLELINK_ZIGBEE_SDK_PLUGIN__2.20.00.06::com.ti.AWS_CC32XX__2.20.00.02::com.ti.AWS_MSP432E4__2.20.00.02::com.ti.WATSON_MSP432E4__1.20.00.04::com.ti.WATSON_CC32XX__1.20.00.04::com.ti.SAIL__1.30.00.02::com.ti.AZURE_CC32XX__2.20.00.05::com.ti.AZURE_MSP432E4__2.20.00.05::com.ti.SIMPLELINK_SDK_NFC_PLUGIN__2.20.00.08::com.ti.mmwave_industrial_toolbox__3.3.1::com.ti.mmwave_automotive_toolbox__2.4.7::c2000ware_software_package__1.00.06.00::digital_power_c2000ware_sdk_software_package__1.03.00.00::powerSUITE_software_package__2.04.00.00::msp430ware__3.80.07.00::energia.core__18.0.0::energia.tool.arm-none-eabi-gcc__6.3.1-20170620::energia.tool.ino2cpp__1.0.3::energia.boards.cc13xx__5.20.0::energia.boards.cc3220emt__5.6.2::energia.boards.msp432r__5.6.3::sitara__1.02.00.00::tm4c__2.1.4.178::tirtos_cc13xx_cc26xx__2.21.00.06::tirtos_tivac__2.16.00.08::tirtos_simplelink__2.13.01.09::sysbios__6.50.01.12::xdctools__3.51.02.21::motor_control_c2000ware_sdk_software_package__1.00.00.00",
+    "overviewDescription": "<p>The MSP-EXP430FR5994 LaunchPad Development Kit is an easy-to-use Evaluation Module (EVM) for the MSP430FR5994 microcontroller (MCU). It contains everything needed to start developing on the ultra-low-power MSP430FRx FRAM microcontroller platform, including on-board debug probe for programming, debugging and energy measurements. The board features on-board buttons and LEDs for quick integration of a simple user interface as well as an SD card port allowing the user to interface with SD cards, as well as a super capacitor (super cap) that enables standalone applications without an external power supply.</p><p>The MSP430FR5994 device features 256KB of embedded FRAM (Ferroelectric Random Access Memory), a non-volatile memory known for its ultra-low power, high endurance, and high speed write access. The device also features 8 KB of SRAM, supports CPU speeds of up to 16MHz and has integrated peripherals for communication, ADC, timers, AES encryption, Low-Energy Accelerator (LEA), a new hardware module to the FRAM family, designed for fast, efficient and low-power vector math and more – plenty to get you started in your development.</p><p>Rapid prototyping is simplified by the 40-pin BoosterPack™ Plug-in Module headers, which support a wide range of available BoosterPacks. You can quickly add features like wireless connectivity, graphical displays, environmental sensing, and much more. Design your own BoosterPack or choose among many already available from TI and third party developers.</p><p>Free software development tools are also available, such as TI’s Eclipse-based <a href='http://www.ti.com/tool/ccstudio-msp'>Code Composer Studio (CCS)</a> and <a href='http://www.ti.com/tool/iar-kickstart'>IAR Embedded Workbench</a>. Both of these IDEs support <a href='http://www.ti.com/tool/energytrace?DCMP=ep-mcu-msp&HQS=energytrace'>EnergyTrace++&trade; technology</a> for real-time power profiling and debugging when paired with the MSP430FR5994 LaunchPad.</p>",
+    "overviewImage": "tirex-product-tree/msp430_devtools_3_80_07_00/.metadata/.tirex/images/msp-exp430fr5994_thumb.png",
+    "packageOrder": 0
+  },
+  {
+    "text": "MSP-CAPT-FR2633",
+    "type": "folder",
+    "numChildren": 1,
+    "numChildrenLocal": 201,
+    "children": true,
+    "allowPartialDownload": false,
+    "state": {
+      "opened": false
+    },
+    "url": "/api/resources?path=Development%20Tools/Kits%20and%20Boards&package=com.ti.SIMPLELINK_CC13X0_SDK__3.10.00.11::com.ti.SIMPLELINK_CC13X2_26X2_SDK__3.10.00.53::com.ti.SIMPLELINK_CC13X2_SDK__2.30.00.45::com.ti.SIMPLELINK_CC26X2_SDK__2.30.00.34::com.ti.SIMPLELINK_CC2640R2_SDK__2.40.00.32::com.ti.SIMPLELINK_CC2652RB_BLE_SDK__3.10.00.15::com.ti.SIMPLELINK_MSP432_SDK__3.10.00.08::com.ti.SIMPLELINK_MSP432E4_SDK__3.10.00.11::com.ti.SIMPLELINK_CC32XX_SDK__3.10.00.04::com.ti.SIMPLELINK_CC2640R2_SDK_BLE_EXAMPLE_PACK__1.50.00.62::com.ti.SIMPLELINK_SDK_BLE_PLUGIN__1.40.00.42::com.ti.SIMPLELINK_MSP432_SDK_WIFI_PLUGIN__2.40.00.22::com.ti.SIMPLELINK_SDK_VOICE_DETECTION_PLUGIN__1.50.00.15::com.ti.SIMPLELINK_SDK_TI_15_4_STACK_PLUGIN__2.20.00.05::com.ti.SIMPLELINK_ZIGBEE_SDK_PLUGIN__2.20.00.06::com.ti.AWS_CC32XX__2.20.00.02::com.ti.AWS_MSP432E4__2.20.00.02::com.ti.WATSON_MSP432E4__1.20.00.04::com.ti.WATSON_CC32XX__1.20.00.04::com.ti.SAIL__1.30.00.02::com.ti.AZURE_CC32XX__2.20.00.05::com.ti.AZURE_MSP432E4__2.20.00.05::com.ti.SIMPLELINK_SDK_NFC_PLUGIN__2.20.00.08::com.ti.mmwave_industrial_toolbox__3.3.1::com.ti.mmwave_automotive_toolbox__2.4.7::c2000ware_software_package__1.00.06.00::digital_power_c2000ware_sdk_software_package__1.03.00.00::powerSUITE_software_package__2.04.00.00::msp430ware__3.80.07.00::energia.core__18.0.0::energia.tool.arm-none-eabi-gcc__6.3.1-20170620::energia.tool.ino2cpp__1.0.3::energia.boards.cc13xx__5.20.0::energia.boards.cc3220emt__5.6.2::energia.boards.msp432r__5.6.3::sitara__1.02.00.00::tm4c__2.1.4.178::tirtos_cc13xx_cc26xx__2.21.00.06::tirtos_tivac__2.16.00.08::tirtos_simplelink__2.13.01.09::sysbios__6.50.01.12::xdctools__3.51.02.21::motor_control_c2000ware_sdk_software_package__1.00.00.00",
+    "overviewDescription": "<p>The MSP-CAPT-FR2633 MCU Development Kit is an easy to use capacitive sensing development platform for the CapTIvate™ MSP430FR26xx/25xx device family.  The kit features the CapTIvate&trade; MSP430FR2633 MCU, which supports self and mutual capacitance sensors with up to 16 sensing IO, enabling up to 64 buttons in mutual mode.</p><p>Using this modular kit with the CapTIvate&trade; Design Center, you can evaluate the performance of MSP430FR2633 MCU using the three included capacitive sensing demo boards.  Or, you can develop your own sensing board and experience the power of the CapTIvate&trade; Design Center and the ease of real-time sensor tuning, all without writing a single line of code.</p>",
+    "overviewImage": "tirex-product-tree/msp430_devtools_3_80_07_00/.metadata/.tirex/images/msp-capt-fr2633_thumb.png",
+    "packageOrder": 0
+  }
+]

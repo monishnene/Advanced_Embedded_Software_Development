@@ -1,0 +1,392 @@
+[
+  {
+    "downloadLink": "api/bundle?vid=tirtos_tivac__2.16.00.08&download=true&analyticsDevice=TM4C1294NCPDT&analyticsDevtool=undefined&analyticsPath=Software%2FTI-RTOS%20for%20TivaC%2FDevelopment%20Tools%2FEK-TM4C1294XL%2FDriver%20Examples%2FUART%20Examples%2FUART%20Logging",
+    "makeofflineLink": "api/bundles?vids=tirtos_tivac__2.16.00.08",
+    "removeofflineLink": "api/resources?id=SrHRkxxHBSIE2Y&path=Software/TI-RTOS for TivaC/Development Tools/EK-TM4C1294XL/Driver Examples/UART Examples/UART Logging&removeoffline=true",
+    "_id": "SrHRkxxHBSIE2Y",
+    "advanced": {
+      "overrideProjectSpecDeviceId": true
+    },
+    "allowPartialDownload": false,
+    "coreTypes": [
+      "Cortex M.TM4C1294NCPDT"
+    ],
+    "dependencies": [],
+    "devtools": [
+      "EK-TM4C1294XL"
+    ],
+    "devtools_category": [
+      "EK-TM4C1294XL"
+    ],
+    "implictDependencyFile": "tirtos_tivac_2_16_00_08/resources/ek_tm4C1294XLEvaluationKit/driverExamples/tiDriverExamples/uartExamples/com_ti_rtsc_tirtostivac_example_155.dependency.tirex.json",
+    "isIncludedFile": true,
+    "link": "api/linkTo/SrHRkxxHBSIE2Y?analyticsDevice=TM4C1294NCPDT&analyticsDevtool=undefined&analyticsPath=Software%2FTI-RTOS%20for%20TivaC%2FDevelopment%20Tools%2FEK-TM4C1294XL%2FDriver%20Examples%2FUART%20Examples%2FUART%20Logging&extname=.h",
+    "linkType": "local",
+    "name": "Board.h",
+    "package": "TI-RTOS for TivaC",
+    "packageId": "tirtos_tivac",
+    "packagePath": "tirtos_tivac_2_16_00_08",
+    "packageUId": "tirtos_tivac__2.16.00.08",
+    "packageVersion": "2.16.00.08",
+    "parentID": "SrHVvciFyOiTDw",
+    "resourceType": "file",
+    "semver": "0.0.0",
+    "version": "UNVERSIONED",
+    "type": "resource",
+    "text": "Board.h",
+    "url": "/api/resources?device=TM4C1294NCPDT&package=com.ti.SIMPLELINK_CC13X0_SDK__3.10.00.11::com.ti.SIMPLELINK_CC13X2_26X2_SDK__3.10.00.53::com.ti.SIMPLELINK_CC13X2_SDK__2.30.00.45::com.ti.SIMPLELINK_CC26X2_SDK__2.30.00.34::com.ti.SIMPLELINK_CC2640R2_SDK__2.40.00.32::com.ti.SIMPLELINK_CC2652RB_BLE_SDK__3.10.00.15::com.ti.SIMPLELINK_MSP432_SDK__3.10.00.08::com.ti.SIMPLELINK_MSP432E4_SDK__3.10.00.11::com.ti.SIMPLELINK_CC32XX_SDK__3.10.00.04::com.ti.SIMPLELINK_CC2640R2_SDK_BLE_EXAMPLE_PACK__1.50.00.62::com.ti.SIMPLELINK_SDK_BLE_PLUGIN__1.40.00.42::com.ti.SIMPLELINK_MSP432_SDK_WIFI_PLUGIN__2.40.00.22::com.ti.SIMPLELINK_SDK_VOICE_DETECTION_PLUGIN__1.50.00.15::com.ti.SIMPLELINK_SDK_TI_15_4_STACK_PLUGIN__2.20.00.05::com.ti.SIMPLELINK_ZIGBEE_SDK_PLUGIN__2.20.00.06::com.ti.AWS_CC32XX__2.20.00.02::com.ti.AWS_MSP432E4__2.20.00.02::com.ti.WATSON_MSP432E4__1.20.00.04::com.ti.WATSON_CC32XX__1.20.00.04::com.ti.SAIL__1.30.00.02::com.ti.AZURE_CC32XX__2.20.00.05::com.ti.AZURE_MSP432E4__2.20.00.05::com.ti.SIMPLELINK_SDK_NFC_PLUGIN__2.20.00.08::com.ti.mmwave_industrial_toolbox__3.3.1::com.ti.mmwave_automotive_toolbox__2.4.7::c2000ware_software_package__1.00.06.00::digital_power_c2000ware_sdk_software_package__1.03.00.00::powerSUITE_software_package__2.04.00.00::msp430ware__3.80.07.00::energia.core__18.0.0::energia.tool.arm-none-eabi-gcc__6.3.1-20170620::energia.tool.ino2cpp__1.0.3::energia.boards.cc13xx__5.20.0::energia.boards.cc3220emt__5.6.2::energia.boards.msp432r__5.6.3::sitara__1.02.00.00::tm4c__2.1.4.178::tirtos_cc13xx_cc26xx__2.21.00.06::tirtos_tivac__2.16.00.08::tirtos_simplelink__2.13.01.09::sysbios__6.50.01.12::xdctools__3.51.02.21::motor_control_c2000ware_sdk_software_package__1.00.00.00&path=Software/TI-RTOS%20for%20TivaC/Development%20Tools/EK-TM4C1294XL/Driver%20Examples/UART%20Examples/UART%20Logging",
+    "packageOrder": 248,
+    "offline": "true"
+  },
+  {
+    "downloadLink": "api/bundle?vid=tirtos_tivac__2.16.00.08&download=true&analyticsDevice=TM4C1294NCPDT&analyticsDevtool=undefined&analyticsPath=Software%2FTI-RTOS%20for%20TivaC%2FDevelopment%20Tools%2FEK-TM4C1294XL%2FDriver%20Examples%2FUART%20Examples%2FUART%20Logging",
+    "makeofflineLink": "api/bundles?vids=tirtos_tivac__2.16.00.08",
+    "removeofflineLink": "api/resources?id=SrH1lKScGLRszA&path=Software/TI-RTOS for TivaC/Development Tools/EK-TM4C1294XL/Driver Examples/UART Examples/UART Logging&removeoffline=true",
+    "_id": "SrH1lKScGLRszA",
+    "advanced": {
+      "overrideProjectSpecDeviceId": true
+    },
+    "allowPartialDownload": false,
+    "coreTypes": [
+      "Cortex M.TM4C1294NCPDT"
+    ],
+    "dependencies": [],
+    "devtools": [
+      "EK-TM4C1294XL"
+    ],
+    "devtools_category": [
+      "EK-TM4C1294XL"
+    ],
+    "implictDependencyFile": "tirtos_tivac_2_16_00_08/resources/ek_tm4C1294XLEvaluationKit/driverExamples/tiDriverExamples/uartExamples/com_ti_rtsc_tirtostivac_example_155.dependency.tirex.json",
+    "isIncludedFile": true,
+    "link": "api/linkTo/SrH1lKScGLRszA?analyticsDevice=TM4C1294NCPDT&analyticsDevtool=undefined&analyticsPath=Software%2FTI-RTOS%20for%20TivaC%2FDevelopment%20Tools%2FEK-TM4C1294XL%2FDriver%20Examples%2FUART%20Examples%2FUART%20Logging&extname=.c",
+    "linkType": "local",
+    "name": "EK_TM4C1294XL.c",
+    "package": "TI-RTOS for TivaC",
+    "packageId": "tirtos_tivac",
+    "packagePath": "tirtos_tivac_2_16_00_08",
+    "packageUId": "tirtos_tivac__2.16.00.08",
+    "packageVersion": "2.16.00.08",
+    "parentID": "SrHVvciFyOiTDw",
+    "resourceType": "file",
+    "semver": "0.0.0",
+    "version": "UNVERSIONED",
+    "type": "resource",
+    "text": "EK_TM4C1294XL.c",
+    "url": "/api/resources?device=TM4C1294NCPDT&package=com.ti.SIMPLELINK_CC13X0_SDK__3.10.00.11::com.ti.SIMPLELINK_CC13X2_26X2_SDK__3.10.00.53::com.ti.SIMPLELINK_CC13X2_SDK__2.30.00.45::com.ti.SIMPLELINK_CC26X2_SDK__2.30.00.34::com.ti.SIMPLELINK_CC2640R2_SDK__2.40.00.32::com.ti.SIMPLELINK_CC2652RB_BLE_SDK__3.10.00.15::com.ti.SIMPLELINK_MSP432_SDK__3.10.00.08::com.ti.SIMPLELINK_MSP432E4_SDK__3.10.00.11::com.ti.SIMPLELINK_CC32XX_SDK__3.10.00.04::com.ti.SIMPLELINK_CC2640R2_SDK_BLE_EXAMPLE_PACK__1.50.00.62::com.ti.SIMPLELINK_SDK_BLE_PLUGIN__1.40.00.42::com.ti.SIMPLELINK_MSP432_SDK_WIFI_PLUGIN__2.40.00.22::com.ti.SIMPLELINK_SDK_VOICE_DETECTION_PLUGIN__1.50.00.15::com.ti.SIMPLELINK_SDK_TI_15_4_STACK_PLUGIN__2.20.00.05::com.ti.SIMPLELINK_ZIGBEE_SDK_PLUGIN__2.20.00.06::com.ti.AWS_CC32XX__2.20.00.02::com.ti.AWS_MSP432E4__2.20.00.02::com.ti.WATSON_MSP432E4__1.20.00.04::com.ti.WATSON_CC32XX__1.20.00.04::com.ti.SAIL__1.30.00.02::com.ti.AZURE_CC32XX__2.20.00.05::com.ti.AZURE_MSP432E4__2.20.00.05::com.ti.SIMPLELINK_SDK_NFC_PLUGIN__2.20.00.08::com.ti.mmwave_industrial_toolbox__3.3.1::com.ti.mmwave_automotive_toolbox__2.4.7::c2000ware_software_package__1.00.06.00::digital_power_c2000ware_sdk_software_package__1.03.00.00::powerSUITE_software_package__2.04.00.00::msp430ware__3.80.07.00::energia.core__18.0.0::energia.tool.arm-none-eabi-gcc__6.3.1-20170620::energia.tool.ino2cpp__1.0.3::energia.boards.cc13xx__5.20.0::energia.boards.cc3220emt__5.6.2::energia.boards.msp432r__5.6.3::sitara__1.02.00.00::tm4c__2.1.4.178::tirtos_cc13xx_cc26xx__2.21.00.06::tirtos_tivac__2.16.00.08::tirtos_simplelink__2.13.01.09::sysbios__6.50.01.12::xdctools__3.51.02.21::motor_control_c2000ware_sdk_software_package__1.00.00.00&path=Software/TI-RTOS%20for%20TivaC/Development%20Tools/EK-TM4C1294XL/Driver%20Examples/UART%20Examples/UART%20Logging",
+    "packageOrder": 248,
+    "offline": "true"
+  },
+  {
+    "downloadLink": "api/bundle?vid=tirtos_tivac__2.16.00.08&download=true&analyticsDevice=TM4C1294NCPDT&analyticsDevtool=undefined&analyticsPath=Software%2FTI-RTOS%20for%20TivaC%2FDevelopment%20Tools%2FEK-TM4C1294XL%2FDriver%20Examples%2FUART%20Examples%2FUART%20Logging",
+    "makeofflineLink": "api/bundles?vids=tirtos_tivac__2.16.00.08",
+    "removeofflineLink": "api/resources?id=SrH9K5a-WrguFo&path=Software/TI-RTOS for TivaC/Development Tools/EK-TM4C1294XL/Driver Examples/UART Examples/UART Logging&removeoffline=true",
+    "_id": "SrH9K5a-WrguFo",
+    "advanced": {
+      "overrideProjectSpecDeviceId": true
+    },
+    "allowPartialDownload": false,
+    "coreTypes": [
+      "Cortex M.TM4C1294NCPDT"
+    ],
+    "dependencies": [],
+    "devtools": [
+      "EK-TM4C1294XL"
+    ],
+    "devtools_category": [
+      "EK-TM4C1294XL"
+    ],
+    "implictDependencyFile": "tirtos_tivac_2_16_00_08/resources/ek_tm4C1294XLEvaluationKit/driverExamples/tiDriverExamples/uartExamples/com_ti_rtsc_tirtostivac_example_155.dependency.tirex.json",
+    "isIncludedFile": true,
+    "link": "api/linkTo/SrH9K5a-WrguFo?analyticsDevice=TM4C1294NCPDT&analyticsDevtool=undefined&analyticsPath=Software%2FTI-RTOS%20for%20TivaC%2FDevelopment%20Tools%2FEK-TM4C1294XL%2FDriver%20Examples%2FUART%20Examples%2FUART%20Logging&extname=.cmd",
+    "linkType": "local",
+    "name": "EK_TM4C1294XL.cmd",
+    "package": "TI-RTOS for TivaC",
+    "packageId": "tirtos_tivac",
+    "packagePath": "tirtos_tivac_2_16_00_08",
+    "packageUId": "tirtos_tivac__2.16.00.08",
+    "packageVersion": "2.16.00.08",
+    "parentID": "SrHVvciFyOiTDw",
+    "resourceType": "file",
+    "semver": "0.0.0",
+    "version": "UNVERSIONED",
+    "type": "resource",
+    "text": "EK_TM4C1294XL.cmd",
+    "url": "/api/resources?device=TM4C1294NCPDT&package=com.ti.SIMPLELINK_CC13X0_SDK__3.10.00.11::com.ti.SIMPLELINK_CC13X2_26X2_SDK__3.10.00.53::com.ti.SIMPLELINK_CC13X2_SDK__2.30.00.45::com.ti.SIMPLELINK_CC26X2_SDK__2.30.00.34::com.ti.SIMPLELINK_CC2640R2_SDK__2.40.00.32::com.ti.SIMPLELINK_CC2652RB_BLE_SDK__3.10.00.15::com.ti.SIMPLELINK_MSP432_SDK__3.10.00.08::com.ti.SIMPLELINK_MSP432E4_SDK__3.10.00.11::com.ti.SIMPLELINK_CC32XX_SDK__3.10.00.04::com.ti.SIMPLELINK_CC2640R2_SDK_BLE_EXAMPLE_PACK__1.50.00.62::com.ti.SIMPLELINK_SDK_BLE_PLUGIN__1.40.00.42::com.ti.SIMPLELINK_MSP432_SDK_WIFI_PLUGIN__2.40.00.22::com.ti.SIMPLELINK_SDK_VOICE_DETECTION_PLUGIN__1.50.00.15::com.ti.SIMPLELINK_SDK_TI_15_4_STACK_PLUGIN__2.20.00.05::com.ti.SIMPLELINK_ZIGBEE_SDK_PLUGIN__2.20.00.06::com.ti.AWS_CC32XX__2.20.00.02::com.ti.AWS_MSP432E4__2.20.00.02::com.ti.WATSON_MSP432E4__1.20.00.04::com.ti.WATSON_CC32XX__1.20.00.04::com.ti.SAIL__1.30.00.02::com.ti.AZURE_CC32XX__2.20.00.05::com.ti.AZURE_MSP432E4__2.20.00.05::com.ti.SIMPLELINK_SDK_NFC_PLUGIN__2.20.00.08::com.ti.mmwave_industrial_toolbox__3.3.1::com.ti.mmwave_automotive_toolbox__2.4.7::c2000ware_software_package__1.00.06.00::digital_power_c2000ware_sdk_software_package__1.03.00.00::powerSUITE_software_package__2.04.00.00::msp430ware__3.80.07.00::energia.core__18.0.0::energia.tool.arm-none-eabi-gcc__6.3.1-20170620::energia.tool.ino2cpp__1.0.3::energia.boards.cc13xx__5.20.0::energia.boards.cc3220emt__5.6.2::energia.boards.msp432r__5.6.3::sitara__1.02.00.00::tm4c__2.1.4.178::tirtos_cc13xx_cc26xx__2.21.00.06::tirtos_tivac__2.16.00.08::tirtos_simplelink__2.13.01.09::sysbios__6.50.01.12::xdctools__3.51.02.21::motor_control_c2000ware_sdk_software_package__1.00.00.00&path=Software/TI-RTOS%20for%20TivaC/Development%20Tools/EK-TM4C1294XL/Driver%20Examples/UART%20Examples/UART%20Logging",
+    "packageOrder": 248,
+    "offline": "true"
+  },
+  {
+    "downloadLink": "api/bundle?vid=tirtos_tivac__2.16.00.08&download=true&analyticsDevice=TM4C1294NCPDT&analyticsDevtool=undefined&analyticsPath=Software%2FTI-RTOS%20for%20TivaC%2FDevelopment%20Tools%2FEK-TM4C1294XL%2FDriver%20Examples%2FUART%20Examples%2FUART%20Logging",
+    "makeofflineLink": "api/bundles?vids=tirtos_tivac__2.16.00.08",
+    "removeofflineLink": "api/resources?id=SrHent7CF8DYLs&path=Software/TI-RTOS for TivaC/Development Tools/EK-TM4C1294XL/Driver Examples/UART Examples/UART Logging&removeoffline=true",
+    "_id": "SrHent7CF8DYLs",
+    "advanced": {
+      "overrideProjectSpecDeviceId": true
+    },
+    "allowPartialDownload": false,
+    "coreTypes": [
+      "Cortex M.TM4C1294NCPDT"
+    ],
+    "dependencies": [],
+    "devtools": [
+      "EK-TM4C1294XL"
+    ],
+    "devtools_category": [
+      "EK-TM4C1294XL"
+    ],
+    "implictDependencyFile": "tirtos_tivac_2_16_00_08/resources/ek_tm4C1294XLEvaluationKit/driverExamples/tiDriverExamples/uartExamples/com_ti_rtsc_tirtostivac_example_155.dependency.tirex.json",
+    "isIncludedFile": true,
+    "link": "api/linkTo/SrHent7CF8DYLs?analyticsDevice=TM4C1294NCPDT&analyticsDevtool=undefined&analyticsPath=Software%2FTI-RTOS%20for%20TivaC%2FDevelopment%20Tools%2FEK-TM4C1294XL%2FDriver%20Examples%2FUART%20Examples%2FUART%20Logging&extname=.h",
+    "linkType": "local",
+    "name": "EK_TM4C1294XL.h",
+    "package": "TI-RTOS for TivaC",
+    "packageId": "tirtos_tivac",
+    "packagePath": "tirtos_tivac_2_16_00_08",
+    "packageUId": "tirtos_tivac__2.16.00.08",
+    "packageVersion": "2.16.00.08",
+    "parentID": "SrHVvciFyOiTDw",
+    "resourceType": "file",
+    "semver": "0.0.0",
+    "version": "UNVERSIONED",
+    "type": "resource",
+    "text": "EK_TM4C1294XL.h",
+    "url": "/api/resources?device=TM4C1294NCPDT&package=com.ti.SIMPLELINK_CC13X0_SDK__3.10.00.11::com.ti.SIMPLELINK_CC13X2_26X2_SDK__3.10.00.53::com.ti.SIMPLELINK_CC13X2_SDK__2.30.00.45::com.ti.SIMPLELINK_CC26X2_SDK__2.30.00.34::com.ti.SIMPLELINK_CC2640R2_SDK__2.40.00.32::com.ti.SIMPLELINK_CC2652RB_BLE_SDK__3.10.00.15::com.ti.SIMPLELINK_MSP432_SDK__3.10.00.08::com.ti.SIMPLELINK_MSP432E4_SDK__3.10.00.11::com.ti.SIMPLELINK_CC32XX_SDK__3.10.00.04::com.ti.SIMPLELINK_CC2640R2_SDK_BLE_EXAMPLE_PACK__1.50.00.62::com.ti.SIMPLELINK_SDK_BLE_PLUGIN__1.40.00.42::com.ti.SIMPLELINK_MSP432_SDK_WIFI_PLUGIN__2.40.00.22::com.ti.SIMPLELINK_SDK_VOICE_DETECTION_PLUGIN__1.50.00.15::com.ti.SIMPLELINK_SDK_TI_15_4_STACK_PLUGIN__2.20.00.05::com.ti.SIMPLELINK_ZIGBEE_SDK_PLUGIN__2.20.00.06::com.ti.AWS_CC32XX__2.20.00.02::com.ti.AWS_MSP432E4__2.20.00.02::com.ti.WATSON_MSP432E4__1.20.00.04::com.ti.WATSON_CC32XX__1.20.00.04::com.ti.SAIL__1.30.00.02::com.ti.AZURE_CC32XX__2.20.00.05::com.ti.AZURE_MSP432E4__2.20.00.05::com.ti.SIMPLELINK_SDK_NFC_PLUGIN__2.20.00.08::com.ti.mmwave_industrial_toolbox__3.3.1::com.ti.mmwave_automotive_toolbox__2.4.7::c2000ware_software_package__1.00.06.00::digital_power_c2000ware_sdk_software_package__1.03.00.00::powerSUITE_software_package__2.04.00.00::msp430ware__3.80.07.00::energia.core__18.0.0::energia.tool.arm-none-eabi-gcc__6.3.1-20170620::energia.tool.ino2cpp__1.0.3::energia.boards.cc13xx__5.20.0::energia.boards.cc3220emt__5.6.2::energia.boards.msp432r__5.6.3::sitara__1.02.00.00::tm4c__2.1.4.178::tirtos_cc13xx_cc26xx__2.21.00.06::tirtos_tivac__2.16.00.08::tirtos_simplelink__2.13.01.09::sysbios__6.50.01.12::xdctools__3.51.02.21::motor_control_c2000ware_sdk_software_package__1.00.00.00&path=Software/TI-RTOS%20for%20TivaC/Development%20Tools/EK-TM4C1294XL/Driver%20Examples/UART%20Examples/UART%20Logging",
+    "packageOrder": 248,
+    "offline": "true"
+  },
+  {
+    "downloadLink": "api/bundle?vid=tirtos_tivac__2.16.00.08&download=true&analyticsDevice=TM4C1294NCPDT&analyticsDevtool=undefined&analyticsPath=Software%2FTI-RTOS%20for%20TivaC%2FDevelopment%20Tools%2FEK-TM4C1294XL%2FDriver%20Examples%2FUART%20Examples%2FUART%20Logging",
+    "makeofflineLink": "api/bundles?vids=tirtos_tivac__2.16.00.08",
+    "removeofflineLink": "api/resources?id=SrHZKeIQVjvvHY&path=Software/TI-RTOS for TivaC/Development Tools/EK-TM4C1294XL/Driver Examples/UART Examples/UART Logging&removeoffline=true",
+    "_id": "SrHZKeIQVjvvHY",
+    "advanced": {
+      "overrideProjectSpecDeviceId": true
+    },
+    "allowPartialDownload": false,
+    "coreTypes": [
+      "Cortex M.TM4C1294NCPDT"
+    ],
+    "dependencies": [],
+    "devtools": [
+      "EK-TM4C1294XL"
+    ],
+    "devtools_category": [
+      "EK-TM4C1294XL"
+    ],
+    "implictDependencyFile": "tirtos_tivac_2_16_00_08/resources/ek_tm4C1294XLEvaluationKit/driverExamples/tiDriverExamples/uartExamples/com_ti_rtsc_tirtostivac_example_155.dependency.tirex.json",
+    "isIncludedFile": true,
+    "link": "api/linkTo/SrHZKeIQVjvvHY?analyticsDevice=TM4C1294NCPDT&analyticsDevtool=undefined&analyticsPath=Software%2FTI-RTOS%20for%20TivaC%2FDevelopment%20Tools%2FEK-TM4C1294XL%2FDriver%20Examples%2FUART%20Examples%2FUART%20Logging&extname=.c",
+    "linkType": "local",
+    "name": "UARTUtils.c",
+    "package": "TI-RTOS for TivaC",
+    "packageId": "tirtos_tivac",
+    "packagePath": "tirtos_tivac_2_16_00_08",
+    "packageUId": "tirtos_tivac__2.16.00.08",
+    "packageVersion": "2.16.00.08",
+    "parentID": "SrHVvciFyOiTDw",
+    "resourceType": "file",
+    "semver": "0.0.0",
+    "version": "UNVERSIONED",
+    "type": "resource",
+    "text": "UARTUtils.c",
+    "url": "/api/resources?device=TM4C1294NCPDT&package=com.ti.SIMPLELINK_CC13X0_SDK__3.10.00.11::com.ti.SIMPLELINK_CC13X2_26X2_SDK__3.10.00.53::com.ti.SIMPLELINK_CC13X2_SDK__2.30.00.45::com.ti.SIMPLELINK_CC26X2_SDK__2.30.00.34::com.ti.SIMPLELINK_CC2640R2_SDK__2.40.00.32::com.ti.SIMPLELINK_CC2652RB_BLE_SDK__3.10.00.15::com.ti.SIMPLELINK_MSP432_SDK__3.10.00.08::com.ti.SIMPLELINK_MSP432E4_SDK__3.10.00.11::com.ti.SIMPLELINK_CC32XX_SDK__3.10.00.04::com.ti.SIMPLELINK_CC2640R2_SDK_BLE_EXAMPLE_PACK__1.50.00.62::com.ti.SIMPLELINK_SDK_BLE_PLUGIN__1.40.00.42::com.ti.SIMPLELINK_MSP432_SDK_WIFI_PLUGIN__2.40.00.22::com.ti.SIMPLELINK_SDK_VOICE_DETECTION_PLUGIN__1.50.00.15::com.ti.SIMPLELINK_SDK_TI_15_4_STACK_PLUGIN__2.20.00.05::com.ti.SIMPLELINK_ZIGBEE_SDK_PLUGIN__2.20.00.06::com.ti.AWS_CC32XX__2.20.00.02::com.ti.AWS_MSP432E4__2.20.00.02::com.ti.WATSON_MSP432E4__1.20.00.04::com.ti.WATSON_CC32XX__1.20.00.04::com.ti.SAIL__1.30.00.02::com.ti.AZURE_CC32XX__2.20.00.05::com.ti.AZURE_MSP432E4__2.20.00.05::com.ti.SIMPLELINK_SDK_NFC_PLUGIN__2.20.00.08::com.ti.mmwave_industrial_toolbox__3.3.1::com.ti.mmwave_automotive_toolbox__2.4.7::c2000ware_software_package__1.00.06.00::digital_power_c2000ware_sdk_software_package__1.03.00.00::powerSUITE_software_package__2.04.00.00::msp430ware__3.80.07.00::energia.core__18.0.0::energia.tool.arm-none-eabi-gcc__6.3.1-20170620::energia.tool.ino2cpp__1.0.3::energia.boards.cc13xx__5.20.0::energia.boards.cc3220emt__5.6.2::energia.boards.msp432r__5.6.3::sitara__1.02.00.00::tm4c__2.1.4.178::tirtos_cc13xx_cc26xx__2.21.00.06::tirtos_tivac__2.16.00.08::tirtos_simplelink__2.13.01.09::sysbios__6.50.01.12::xdctools__3.51.02.21::motor_control_c2000ware_sdk_software_package__1.00.00.00&path=Software/TI-RTOS%20for%20TivaC/Development%20Tools/EK-TM4C1294XL/Driver%20Examples/UART%20Examples/UART%20Logging",
+    "packageOrder": 248,
+    "offline": "true"
+  },
+  {
+    "downloadLink": "api/bundle?vid=tirtos_tivac__2.16.00.08&download=true&analyticsDevice=TM4C1294NCPDT&analyticsDevtool=undefined&analyticsPath=Software%2FTI-RTOS%20for%20TivaC%2FDevelopment%20Tools%2FEK-TM4C1294XL%2FDriver%20Examples%2FUART%20Examples%2FUART%20Logging",
+    "makeofflineLink": "api/bundles?vids=tirtos_tivac__2.16.00.08",
+    "removeofflineLink": "api/resources?id=SrHgRNEAY1YTdU&path=Software/TI-RTOS for TivaC/Development Tools/EK-TM4C1294XL/Driver Examples/UART Examples/UART Logging&removeoffline=true",
+    "_id": "SrHgRNEAY1YTdU",
+    "advanced": {
+      "overrideProjectSpecDeviceId": true
+    },
+    "allowPartialDownload": false,
+    "coreTypes": [
+      "Cortex M.TM4C1294NCPDT"
+    ],
+    "dependencies": [],
+    "devtools": [
+      "EK-TM4C1294XL"
+    ],
+    "devtools_category": [
+      "EK-TM4C1294XL"
+    ],
+    "implictDependencyFile": "tirtos_tivac_2_16_00_08/resources/ek_tm4C1294XLEvaluationKit/driverExamples/tiDriverExamples/uartExamples/com_ti_rtsc_tirtostivac_example_155.dependency.tirex.json",
+    "isIncludedFile": true,
+    "link": "api/linkTo/SrHgRNEAY1YTdU?analyticsDevice=TM4C1294NCPDT&analyticsDevtool=undefined&analyticsPath=Software%2FTI-RTOS%20for%20TivaC%2FDevelopment%20Tools%2FEK-TM4C1294XL%2FDriver%20Examples%2FUART%20Examples%2FUART%20Logging&extname=.h",
+    "linkType": "local",
+    "name": "UARTUtils.h",
+    "package": "TI-RTOS for TivaC",
+    "packageId": "tirtos_tivac",
+    "packagePath": "tirtos_tivac_2_16_00_08",
+    "packageUId": "tirtos_tivac__2.16.00.08",
+    "packageVersion": "2.16.00.08",
+    "parentID": "SrHVvciFyOiTDw",
+    "resourceType": "file",
+    "semver": "0.0.0",
+    "version": "UNVERSIONED",
+    "type": "resource",
+    "text": "UARTUtils.h",
+    "url": "/api/resources?device=TM4C1294NCPDT&package=com.ti.SIMPLELINK_CC13X0_SDK__3.10.00.11::com.ti.SIMPLELINK_CC13X2_26X2_SDK__3.10.00.53::com.ti.SIMPLELINK_CC13X2_SDK__2.30.00.45::com.ti.SIMPLELINK_CC26X2_SDK__2.30.00.34::com.ti.SIMPLELINK_CC2640R2_SDK__2.40.00.32::com.ti.SIMPLELINK_CC2652RB_BLE_SDK__3.10.00.15::com.ti.SIMPLELINK_MSP432_SDK__3.10.00.08::com.ti.SIMPLELINK_MSP432E4_SDK__3.10.00.11::com.ti.SIMPLELINK_CC32XX_SDK__3.10.00.04::com.ti.SIMPLELINK_CC2640R2_SDK_BLE_EXAMPLE_PACK__1.50.00.62::com.ti.SIMPLELINK_SDK_BLE_PLUGIN__1.40.00.42::com.ti.SIMPLELINK_MSP432_SDK_WIFI_PLUGIN__2.40.00.22::com.ti.SIMPLELINK_SDK_VOICE_DETECTION_PLUGIN__1.50.00.15::com.ti.SIMPLELINK_SDK_TI_15_4_STACK_PLUGIN__2.20.00.05::com.ti.SIMPLELINK_ZIGBEE_SDK_PLUGIN__2.20.00.06::com.ti.AWS_CC32XX__2.20.00.02::com.ti.AWS_MSP432E4__2.20.00.02::com.ti.WATSON_MSP432E4__1.20.00.04::com.ti.WATSON_CC32XX__1.20.00.04::com.ti.SAIL__1.30.00.02::com.ti.AZURE_CC32XX__2.20.00.05::com.ti.AZURE_MSP432E4__2.20.00.05::com.ti.SIMPLELINK_SDK_NFC_PLUGIN__2.20.00.08::com.ti.mmwave_industrial_toolbox__3.3.1::com.ti.mmwave_automotive_toolbox__2.4.7::c2000ware_software_package__1.00.06.00::digital_power_c2000ware_sdk_software_package__1.03.00.00::powerSUITE_software_package__2.04.00.00::msp430ware__3.80.07.00::energia.core__18.0.0::energia.tool.arm-none-eabi-gcc__6.3.1-20170620::energia.tool.ino2cpp__1.0.3::energia.boards.cc13xx__5.20.0::energia.boards.cc3220emt__5.6.2::energia.boards.msp432r__5.6.3::sitara__1.02.00.00::tm4c__2.1.4.178::tirtos_cc13xx_cc26xx__2.21.00.06::tirtos_tivac__2.16.00.08::tirtos_simplelink__2.13.01.09::sysbios__6.50.01.12::xdctools__3.51.02.21::motor_control_c2000ware_sdk_software_package__1.00.00.00&path=Software/TI-RTOS%20for%20TivaC/Development%20Tools/EK-TM4C1294XL/Driver%20Examples/UART%20Examples/UART%20Logging",
+    "packageOrder": 248,
+    "offline": "true"
+  },
+  {
+    "downloadLink": "api/bundle?vid=tirtos_tivac__2.16.00.08&download=true&analyticsDevice=TM4C1294NCPDT&analyticsDevtool=undefined&analyticsPath=Software%2FTI-RTOS%20for%20TivaC%2FDevelopment%20Tools%2FEK-TM4C1294XL%2FDriver%20Examples%2FUART%20Examples%2FUART%20Logging",
+    "makeofflineLink": "api/bundles?vids=tirtos_tivac__2.16.00.08",
+    "removeofflineLink": "api/resources?id=SrH1IP_E_zkp8A&path=Software/TI-RTOS for TivaC/Development Tools/EK-TM4C1294XL/Driver Examples/UART Examples/UART Logging&removeoffline=true",
+    "_id": "SrH1IP_E_zkp8A",
+    "advanced": {
+      "overrideProjectSpecDeviceId": true
+    },
+    "allowPartialDownload": false,
+    "coreTypes": [
+      "Cortex M.TM4C1294NCPDT"
+    ],
+    "dependencies": [],
+    "devtools": [
+      "EK-TM4C1294XL"
+    ],
+    "devtools_category": [
+      "EK-TM4C1294XL"
+    ],
+    "implictDependencyFile": "tirtos_tivac_2_16_00_08/resources/ek_tm4C1294XLEvaluationKit/driverExamples/tiDriverExamples/uartExamples/com_ti_rtsc_tirtostivac_example_155.dependency.tirex.json",
+    "isIncludedFile": true,
+    "link": "api/linkTo/SrH1IP_E_zkp8A?analyticsDevice=TM4C1294NCPDT&analyticsDevtool=undefined&analyticsPath=Software%2FTI-RTOS%20for%20TivaC%2FDevelopment%20Tools%2FEK-TM4C1294XL%2FDriver%20Examples%2FUART%20Examples%2FUART%20Logging&extname=.defs",
+    "linkType": "local",
+    "name": "makefile.defs",
+    "package": "TI-RTOS for TivaC",
+    "packageId": "tirtos_tivac",
+    "packagePath": "tirtos_tivac_2_16_00_08",
+    "packageUId": "tirtos_tivac__2.16.00.08",
+    "packageVersion": "2.16.00.08",
+    "parentID": "SrHVvciFyOiTDw",
+    "resourceType": "file",
+    "semver": "0.0.0",
+    "version": "UNVERSIONED",
+    "type": "resource",
+    "text": "makefile.defs",
+    "url": "/api/resources?device=TM4C1294NCPDT&package=com.ti.SIMPLELINK_CC13X0_SDK__3.10.00.11::com.ti.SIMPLELINK_CC13X2_26X2_SDK__3.10.00.53::com.ti.SIMPLELINK_CC13X2_SDK__2.30.00.45::com.ti.SIMPLELINK_CC26X2_SDK__2.30.00.34::com.ti.SIMPLELINK_CC2640R2_SDK__2.40.00.32::com.ti.SIMPLELINK_CC2652RB_BLE_SDK__3.10.00.15::com.ti.SIMPLELINK_MSP432_SDK__3.10.00.08::com.ti.SIMPLELINK_MSP432E4_SDK__3.10.00.11::com.ti.SIMPLELINK_CC32XX_SDK__3.10.00.04::com.ti.SIMPLELINK_CC2640R2_SDK_BLE_EXAMPLE_PACK__1.50.00.62::com.ti.SIMPLELINK_SDK_BLE_PLUGIN__1.40.00.42::com.ti.SIMPLELINK_MSP432_SDK_WIFI_PLUGIN__2.40.00.22::com.ti.SIMPLELINK_SDK_VOICE_DETECTION_PLUGIN__1.50.00.15::com.ti.SIMPLELINK_SDK_TI_15_4_STACK_PLUGIN__2.20.00.05::com.ti.SIMPLELINK_ZIGBEE_SDK_PLUGIN__2.20.00.06::com.ti.AWS_CC32XX__2.20.00.02::com.ti.AWS_MSP432E4__2.20.00.02::com.ti.WATSON_MSP432E4__1.20.00.04::com.ti.WATSON_CC32XX__1.20.00.04::com.ti.SAIL__1.30.00.02::com.ti.AZURE_CC32XX__2.20.00.05::com.ti.AZURE_MSP432E4__2.20.00.05::com.ti.SIMPLELINK_SDK_NFC_PLUGIN__2.20.00.08::com.ti.mmwave_industrial_toolbox__3.3.1::com.ti.mmwave_automotive_toolbox__2.4.7::c2000ware_software_package__1.00.06.00::digital_power_c2000ware_sdk_software_package__1.03.00.00::powerSUITE_software_package__2.04.00.00::msp430ware__3.80.07.00::energia.core__18.0.0::energia.tool.arm-none-eabi-gcc__6.3.1-20170620::energia.tool.ino2cpp__1.0.3::energia.boards.cc13xx__5.20.0::energia.boards.cc3220emt__5.6.2::energia.boards.msp432r__5.6.3::sitara__1.02.00.00::tm4c__2.1.4.178::tirtos_cc13xx_cc26xx__2.21.00.06::tirtos_tivac__2.16.00.08::tirtos_simplelink__2.13.01.09::sysbios__6.50.01.12::xdctools__3.51.02.21::motor_control_c2000ware_sdk_software_package__1.00.00.00&path=Software/TI-RTOS%20for%20TivaC/Development%20Tools/EK-TM4C1294XL/Driver%20Examples/UART%20Examples/UART%20Logging",
+    "packageOrder": 248,
+    "offline": "true"
+  },
+  {
+    "downloadLink": "api/bundle?vid=tirtos_tivac__2.16.00.08&download=true&analyticsDevice=TM4C1294NCPDT&analyticsDevtool=undefined&analyticsPath=Software%2FTI-RTOS%20for%20TivaC%2FDevelopment%20Tools%2FEK-TM4C1294XL%2FDriver%20Examples%2FUART%20Examples%2FUART%20Logging",
+    "makeofflineLink": "api/bundles?vids=tirtos_tivac__2.16.00.08",
+    "removeofflineLink": "api/resources?id=SrHKERMN-eiV6o&path=Software/TI-RTOS for TivaC/Development Tools/EK-TM4C1294XL/Driver Examples/UART Examples/UART Logging&removeoffline=true",
+    "_id": "SrHKERMN-eiV6o",
+    "advanced": {
+      "overrideProjectSpecDeviceId": true
+    },
+    "allowPartialDownload": false,
+    "coreTypes": [
+      "Cortex M.TM4C1294NCPDT"
+    ],
+    "dependencies": [],
+    "devtools": [
+      "EK-TM4C1294XL"
+    ],
+    "devtools_category": [
+      "EK-TM4C1294XL"
+    ],
+    "implictDependencyFile": "tirtos_tivac_2_16_00_08/resources/ek_tm4C1294XLEvaluationKit/driverExamples/tiDriverExamples/uartExamples/com_ti_rtsc_tirtostivac_example_155.dependency.tirex.json",
+    "isIncludedFile": true,
+    "link": "api/linkTo/SrHKERMN-eiV6o?analyticsDevice=TM4C1294NCPDT&analyticsDevtool=undefined&analyticsPath=Software%2FTI-RTOS%20for%20TivaC%2FDevelopment%20Tools%2FEK-TM4C1294XL%2FDriver%20Examples%2FUART%20Examples%2FUART%20Logging&extname=.c",
+    "linkType": "local",
+    "name": "uartlogging.c",
+    "package": "TI-RTOS for TivaC",
+    "packageId": "tirtos_tivac",
+    "packagePath": "tirtos_tivac_2_16_00_08",
+    "packageUId": "tirtos_tivac__2.16.00.08",
+    "packageVersion": "2.16.00.08",
+    "parentID": "SrHVvciFyOiTDw",
+    "resourceType": "file",
+    "semver": "0.0.0",
+    "version": "UNVERSIONED",
+    "type": "resource",
+    "text": "uartlogging.c",
+    "url": "/api/resources?device=TM4C1294NCPDT&package=com.ti.SIMPLELINK_CC13X0_SDK__3.10.00.11::com.ti.SIMPLELINK_CC13X2_26X2_SDK__3.10.00.53::com.ti.SIMPLELINK_CC13X2_SDK__2.30.00.45::com.ti.SIMPLELINK_CC26X2_SDK__2.30.00.34::com.ti.SIMPLELINK_CC2640R2_SDK__2.40.00.32::com.ti.SIMPLELINK_CC2652RB_BLE_SDK__3.10.00.15::com.ti.SIMPLELINK_MSP432_SDK__3.10.00.08::com.ti.SIMPLELINK_MSP432E4_SDK__3.10.00.11::com.ti.SIMPLELINK_CC32XX_SDK__3.10.00.04::com.ti.SIMPLELINK_CC2640R2_SDK_BLE_EXAMPLE_PACK__1.50.00.62::com.ti.SIMPLELINK_SDK_BLE_PLUGIN__1.40.00.42::com.ti.SIMPLELINK_MSP432_SDK_WIFI_PLUGIN__2.40.00.22::com.ti.SIMPLELINK_SDK_VOICE_DETECTION_PLUGIN__1.50.00.15::com.ti.SIMPLELINK_SDK_TI_15_4_STACK_PLUGIN__2.20.00.05::com.ti.SIMPLELINK_ZIGBEE_SDK_PLUGIN__2.20.00.06::com.ti.AWS_CC32XX__2.20.00.02::com.ti.AWS_MSP432E4__2.20.00.02::com.ti.WATSON_MSP432E4__1.20.00.04::com.ti.WATSON_CC32XX__1.20.00.04::com.ti.SAIL__1.30.00.02::com.ti.AZURE_CC32XX__2.20.00.05::com.ti.AZURE_MSP432E4__2.20.00.05::com.ti.SIMPLELINK_SDK_NFC_PLUGIN__2.20.00.08::com.ti.mmwave_industrial_toolbox__3.3.1::com.ti.mmwave_automotive_toolbox__2.4.7::c2000ware_software_package__1.00.06.00::digital_power_c2000ware_sdk_software_package__1.03.00.00::powerSUITE_software_package__2.04.00.00::msp430ware__3.80.07.00::energia.core__18.0.0::energia.tool.arm-none-eabi-gcc__6.3.1-20170620::energia.tool.ino2cpp__1.0.3::energia.boards.cc13xx__5.20.0::energia.boards.cc3220emt__5.6.2::energia.boards.msp432r__5.6.3::sitara__1.02.00.00::tm4c__2.1.4.178::tirtos_cc13xx_cc26xx__2.21.00.06::tirtos_tivac__2.16.00.08::tirtos_simplelink__2.13.01.09::sysbios__6.50.01.12::xdctools__3.51.02.21::motor_control_c2000ware_sdk_software_package__1.00.00.00&path=Software/TI-RTOS%20for%20TivaC/Development%20Tools/EK-TM4C1294XL/Driver%20Examples/UART%20Examples/UART%20Logging",
+    "packageOrder": 248,
+    "offline": "true"
+  },
+  {
+    "downloadLink": "api/bundle?vid=tirtos_tivac__2.16.00.08&download=true&analyticsDevice=TM4C1294NCPDT&analyticsDevtool=undefined&analyticsPath=Software%2FTI-RTOS%20for%20TivaC%2FDevelopment%20Tools%2FEK-TM4C1294XL%2FDriver%20Examples%2FUART%20Examples%2FUART%20Logging",
+    "makeofflineLink": "api/bundles?vids=tirtos_tivac__2.16.00.08",
+    "removeofflineLink": "api/resources?id=SrHi4BiWcuIoAQ&path=Software/TI-RTOS for TivaC/Development Tools/EK-TM4C1294XL/Driver Examples/UART Examples/UART Logging&removeoffline=true",
+    "_id": "SrHi4BiWcuIoAQ",
+    "advanced": {
+      "overrideProjectSpecDeviceId": true
+    },
+    "allowPartialDownload": false,
+    "coreTypes": [
+      "Cortex M.TM4C1294NCPDT"
+    ],
+    "dependencies": [],
+    "devtools": [
+      "EK-TM4C1294XL"
+    ],
+    "devtools_category": [
+      "EK-TM4C1294XL"
+    ],
+    "implictDependencyFile": "tirtos_tivac_2_16_00_08/resources/ek_tm4C1294XLEvaluationKit/driverExamples/tiDriverExamples/uartExamples/com_ti_rtsc_tirtostivac_example_155.dependency.tirex.json",
+    "isIncludedFile": true,
+    "link": "api/linkTo/SrHi4BiWcuIoAQ?analyticsDevice=TM4C1294NCPDT&analyticsDevtool=undefined&analyticsPath=Software%2FTI-RTOS%20for%20TivaC%2FDevelopment%20Tools%2FEK-TM4C1294XL%2FDriver%20Examples%2FUART%20Examples%2FUART%20Logging&extname=.cfg",
+    "linkType": "local",
+    "name": "uartlogging.cfg",
+    "package": "TI-RTOS for TivaC",
+    "packageId": "tirtos_tivac",
+    "packagePath": "tirtos_tivac_2_16_00_08",
+    "packageUId": "tirtos_tivac__2.16.00.08",
+    "packageVersion": "2.16.00.08",
+    "parentID": "SrHVvciFyOiTDw",
+    "resourceType": "file",
+    "semver": "0.0.0",
+    "version": "UNVERSIONED",
+    "type": "resource",
+    "text": "uartlogging.cfg",
+    "url": "/api/resources?device=TM4C1294NCPDT&package=com.ti.SIMPLELINK_CC13X0_SDK__3.10.00.11::com.ti.SIMPLELINK_CC13X2_26X2_SDK__3.10.00.53::com.ti.SIMPLELINK_CC13X2_SDK__2.30.00.45::com.ti.SIMPLELINK_CC26X2_SDK__2.30.00.34::com.ti.SIMPLELINK_CC2640R2_SDK__2.40.00.32::com.ti.SIMPLELINK_CC2652RB_BLE_SDK__3.10.00.15::com.ti.SIMPLELINK_MSP432_SDK__3.10.00.08::com.ti.SIMPLELINK_MSP432E4_SDK__3.10.00.11::com.ti.SIMPLELINK_CC32XX_SDK__3.10.00.04::com.ti.SIMPLELINK_CC2640R2_SDK_BLE_EXAMPLE_PACK__1.50.00.62::com.ti.SIMPLELINK_SDK_BLE_PLUGIN__1.40.00.42::com.ti.SIMPLELINK_MSP432_SDK_WIFI_PLUGIN__2.40.00.22::com.ti.SIMPLELINK_SDK_VOICE_DETECTION_PLUGIN__1.50.00.15::com.ti.SIMPLELINK_SDK_TI_15_4_STACK_PLUGIN__2.20.00.05::com.ti.SIMPLELINK_ZIGBEE_SDK_PLUGIN__2.20.00.06::com.ti.AWS_CC32XX__2.20.00.02::com.ti.AWS_MSP432E4__2.20.00.02::com.ti.WATSON_MSP432E4__1.20.00.04::com.ti.WATSON_CC32XX__1.20.00.04::com.ti.SAIL__1.30.00.02::com.ti.AZURE_CC32XX__2.20.00.05::com.ti.AZURE_MSP432E4__2.20.00.05::com.ti.SIMPLELINK_SDK_NFC_PLUGIN__2.20.00.08::com.ti.mmwave_industrial_toolbox__3.3.1::com.ti.mmwave_automotive_toolbox__2.4.7::c2000ware_software_package__1.00.06.00::digital_power_c2000ware_sdk_software_package__1.03.00.00::powerSUITE_software_package__2.04.00.00::msp430ware__3.80.07.00::energia.core__18.0.0::energia.tool.arm-none-eabi-gcc__6.3.1-20170620::energia.tool.ino2cpp__1.0.3::energia.boards.cc13xx__5.20.0::energia.boards.cc3220emt__5.6.2::energia.boards.msp432r__5.6.3::sitara__1.02.00.00::tm4c__2.1.4.178::tirtos_cc13xx_cc26xx__2.21.00.06::tirtos_tivac__2.16.00.08::tirtos_simplelink__2.13.01.09::sysbios__6.50.01.12::xdctools__3.51.02.21::motor_control_c2000ware_sdk_software_package__1.00.00.00&path=Software/TI-RTOS%20for%20TivaC/Development%20Tools/EK-TM4C1294XL/Driver%20Examples/UART%20Examples/UART%20Logging",
+    "packageOrder": 248,
+    "offline": "true"
+  },
+  {
+    "downloadLink": "api/bundle?vid=tirtos_tivac__2.16.00.08&download=true&analyticsDevice=TM4C1294NCPDT&analyticsDevtool=undefined&analyticsPath=Software%2FTI-RTOS%20for%20TivaC%2FDevelopment%20Tools%2FEK-TM4C1294XL%2FDriver%20Examples%2FUART%20Examples%2FUART%20Logging",
+    "makeofflineLink": "api/bundles?vids=tirtos_tivac__2.16.00.08",
+    "removeofflineLink": "api/resources?id=SrHvxnFh7dlSig&path=Software/TI-RTOS for TivaC/Development Tools/EK-TM4C1294XL/Driver Examples/UART Examples/UART Logging&removeoffline=true",
+    "_id": "SrHvxnFh7dlSig",
+    "advanced": {
+      "overrideProjectSpecDeviceId": true
+    },
+    "allowPartialDownload": false,
+    "coreTypes": [
+      "Cortex M.TM4C1294NCPDT"
+    ],
+    "dependencies": [],
+    "devtools": [
+      "EK-TM4C1294XL"
+    ],
+    "devtools_category": [
+      "EK-TM4C1294XL"
+    ],
+    "implictDependencyFile": "tirtos_tivac_2_16_00_08/resources/ek_tm4C1294XLEvaluationKit/driverExamples/tiDriverExamples/uartExamples/com_ti_rtsc_tirtostivac_example_155.dependency.tirex.json",
+    "isIncludedFile": true,
+    "link": "api/linkTo/SrHvxnFh7dlSig?analyticsDevice=TM4C1294NCPDT&analyticsDevtool=undefined&analyticsPath=Software%2FTI-RTOS%20for%20TivaC%2FDevelopment%20Tools%2FEK-TM4C1294XL%2FDriver%20Examples%2FUART%20Examples%2FUART%20Logging&extname=.txt",
+    "linkType": "local",
+    "name": "uartlogging_readme.txt",
+    "package": "TI-RTOS for TivaC",
+    "packageId": "tirtos_tivac",
+    "packagePath": "tirtos_tivac_2_16_00_08",
+    "packageUId": "tirtos_tivac__2.16.00.08",
+    "packageVersion": "2.16.00.08",
+    "parentID": "SrHVvciFyOiTDw",
+    "resourceType": "file",
+    "semver": "0.0.0",
+    "version": "UNVERSIONED",
+    "type": "resource",
+    "text": "uartlogging_readme.txt",
+    "url": "/api/resources?device=TM4C1294NCPDT&package=com.ti.SIMPLELINK_CC13X0_SDK__3.10.00.11::com.ti.SIMPLELINK_CC13X2_26X2_SDK__3.10.00.53::com.ti.SIMPLELINK_CC13X2_SDK__2.30.00.45::com.ti.SIMPLELINK_CC26X2_SDK__2.30.00.34::com.ti.SIMPLELINK_CC2640R2_SDK__2.40.00.32::com.ti.SIMPLELINK_CC2652RB_BLE_SDK__3.10.00.15::com.ti.SIMPLELINK_MSP432_SDK__3.10.00.08::com.ti.SIMPLELINK_MSP432E4_SDK__3.10.00.11::com.ti.SIMPLELINK_CC32XX_SDK__3.10.00.04::com.ti.SIMPLELINK_CC2640R2_SDK_BLE_EXAMPLE_PACK__1.50.00.62::com.ti.SIMPLELINK_SDK_BLE_PLUGIN__1.40.00.42::com.ti.SIMPLELINK_MSP432_SDK_WIFI_PLUGIN__2.40.00.22::com.ti.SIMPLELINK_SDK_VOICE_DETECTION_PLUGIN__1.50.00.15::com.ti.SIMPLELINK_SDK_TI_15_4_STACK_PLUGIN__2.20.00.05::com.ti.SIMPLELINK_ZIGBEE_SDK_PLUGIN__2.20.00.06::com.ti.AWS_CC32XX__2.20.00.02::com.ti.AWS_MSP432E4__2.20.00.02::com.ti.WATSON_MSP432E4__1.20.00.04::com.ti.WATSON_CC32XX__1.20.00.04::com.ti.SAIL__1.30.00.02::com.ti.AZURE_CC32XX__2.20.00.05::com.ti.AZURE_MSP432E4__2.20.00.05::com.ti.SIMPLELINK_SDK_NFC_PLUGIN__2.20.00.08::com.ti.mmwave_industrial_toolbox__3.3.1::com.ti.mmwave_automotive_toolbox__2.4.7::c2000ware_software_package__1.00.06.00::digital_power_c2000ware_sdk_software_package__1.03.00.00::powerSUITE_software_package__2.04.00.00::msp430ware__3.80.07.00::energia.core__18.0.0::energia.tool.arm-none-eabi-gcc__6.3.1-20170620::energia.tool.ino2cpp__1.0.3::energia.boards.cc13xx__5.20.0::energia.boards.cc3220emt__5.6.2::energia.boards.msp432r__5.6.3::sitara__1.02.00.00::tm4c__2.1.4.178::tirtos_cc13xx_cc26xx__2.21.00.06::tirtos_tivac__2.16.00.08::tirtos_simplelink__2.13.01.09::sysbios__6.50.01.12::xdctools__3.51.02.21::motor_control_c2000ware_sdk_software_package__1.00.00.00&path=Software/TI-RTOS%20for%20TivaC/Development%20Tools/EK-TM4C1294XL/Driver%20Examples/UART%20Examples/UART%20Logging",
+    "packageOrder": 248,
+    "offline": "true"
+  }
+]
