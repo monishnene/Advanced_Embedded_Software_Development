@@ -1,0 +1,4026 @@
+/******************************************
+* server.h
+* Remote socket task
+* Author: Sanika Dongre and Monish Nene
+* Date created: 03/29/19
+*******************************************/
+
+#ifndef SERVER_H
+#define SERVER_H
+
+
+/*******************************************
+* Includes
+*******************************************/
+
+#include "common.h"
+
+/*******************************************
+* Macro
+*******************************************/
+
+void remote_server(void);
+#endif
+/******************************************
+* temperature_read.h
+* Author: Sanika Dongre and Monish Nene
+* Date created: 03/26/19
+*******************************************/
+
+#ifndef TEMPERATURE_READ_H
+#define TEMPERATURE_READ_H
+
+/*******************************************
+* Includes
+*******************************************/
+
+#include "common.h"
+#include "bbgled.h"
+
+/*******************************************
+* Macros
+*******************************************/
+
+#define TEMP_SLAVE_ADDR	(0x48)
+#define TEMP_REG_ADDR	(00)
+
+void temperature_read(void);
+void temperature_init(void);
+
+#endif
+/******************************************
+* temperature_read.c
+* Author: Sanika Dongre and Monish Nene
+* Date created: 03/26/19
+*******************************************/
+
+/*******************************************
+* Includes
+*******************************************/
+
+#include "temperature_read.h"
+
+/*****************************
+* Global variables
+* shared mem and semaphores
+*****************************/
+
+int32_t shm_temp;
+sem_t* sem_temp;
+sem_t* sem_i2c;
+uint8_t* shm_ptr;
+
+/***********************************************************************
+ * i2c_read()
+ * @param fd file desciptor for i2c
+ * @param regval address to be written
+ * @brief This function is used to write data to i2c file
+***********************************************************************/
+static void i2c_write(int32_t fd,uint8_t regval)
+{
+	if(write(fd, &regval, sizeof(regval))<0)
+	{
+		perror("write function has been failed");
+	}
+}
+
+/***********************************************************************
+ * i2c_read()
+ * @param fd file desciptor for i2c
+ * @param buffer to fill data in
+ * @param size of the data to be read
+ * @brief This function is used to read data from i2c file
+***********************************************************************/
+static int32_t i2c_read(int32_t fd,uint8_t* buffer,uint32_t size)
+{
+	return read(fd, buffer, size);
+}
+
+/***********************************************************************
+ * get_temperature()
+ * @return Temperature value read from sensor in Celcius
+ * @brief This function is used to read data from i2c for temperature
+***********************************************************************/
+static int32_t get_temperature(void)
+{
+	//printf("Temperature Get\n");
+	int32_t data=0;
+	int32_t error=0,fd=0;
+	uint8_t buffer[2];
+	sem_wait(sem_i2c);
+	//file open
+	fd=open("/dev/i2c-2", O_RDWR);
+	ioctl(fd, I2C_SLAVE, TEMP_SLAVE_ADDR);
+	//sensor tasks
+	i2c_write(fd,TEMP_REG_ADDR);
+	error = i2c_read(fd,buffer,sizeof(buffer));
+	sem_post(sem_i2c);
+	data = (((buffer[0] << 8) | buffer[1]) >> 4)/16.0; // temp data in C
+	return data;
+}
+
+
+/***********************************************************************
+ * temperature_init()
+ * @brief This function is used to initialize temperature measurement
+***********************************************************************/
+void temperature_init(void)
+{
+	//printf("Temperature Init\n");
+	sem_temp = sem_open(shm_temp_id,0);
+	sem_i2c = sem_open(i2c_sem_id,0);
+	shm_temp = shmget(temperature_id,LOG_SIZE,0666|IPC_CREAT);
+}
+
+/***********************************************************************
+ * temperature_read()
+ * @brief This function is used to read data from temperature sensor and log it
+***********************************************************************/
+void temperature_read(void)
+{
+	uint8_t* msg= (uint8_t*)malloc(STR_SIZE);
+	led_toggle(temperature_led);
+	//declare variables
+	log_t log_data;
+	int32_t celcius=0,error=0;
+	//data collection
+	celcius = get_temperature();
+	log_data.data[celcius_id]=celcius;
+	clock_gettime(CLOCK_REALTIME,&log_data.timestamp);
+	log_data.header=temperature_id;
+	log_data.data[fahrenheit_id]=(celcius*1.8)+32.0; // celcuis to Fahrenheit
+	log_data.data[kelvin_id]=celcius+273.15; // celcius to kelvin
+	//shared memory send
+	sem_wait(sem_temp);
+	shm_ptr=shmat(shm_temp,(void*)0,0);
+	memcpy(shm_ptr,&log_data,LOG_SIZE);
+	shmdt(shm_ptr);
+	sem_post(sem_temp);
+	if(celcius<15)
+	{
+		log_creator(LOG_ERROR,"The Temperature is below 15°C");
+		led_off(error_led);
+	}
+	else
+	{
+		led_on(error_led);
+	}
+	sprintf(msg,"Temperature: %d°C, %d°K, %d°F",log_data.data[celcius_id],log_data.data[kelvin_id],log_data.data[fahrenheit_id]);
+	log_creator(LOG_DATA,msg);
+	free(msg);
+	return;
+}
+
+/******************************************
+* bist_test.c
+* Advanced Embedded Software Development Project 1
+* Author: Sanika Dongre and Monish Nene
+* Date created: 03/29/19
+* @brief This file has built in self test funcitons
+*******************************************/
+
+#include "bist_test.h"
+sem_t* sem_i2c;
+
+/*************************************************rea**********************
+ * i2c_file()
+ * @param fd file descriptor
+ * @return success or failure
+ * @brief This function is used to open i2c input output file
+***********************************************************************/
+uint8_t i2c_file(int32_t fd)
+{
+	fd=open("/dev/i2c-2", O_RDWR);
+	if (fd<0)
+	{
+		return error;
+	}
+	if(ioctl(fd, I2C_SLAVE, LUX_SLAVE_ADDR)<0)
+	{
+		return error;
+	}
+	return success;
+}
+
+
+/***********************************************************************
+ * i2c_writeb()
+ * @param fd file descriptor
+ * @param regval data to be written
+ * @return success or failure
+ * @brief This function is used to write write to i2c file
+***********************************************************************/
+uint8_t i2c_writeb(int32_t fd,uint8_t regval)
+{
+	if(write(fd, &regval, sizeof(regval))!=sizeof(regval))
+	{
+		return error;
+	}
+	return success;
+}
+
+/***********************************************************************
+ * i2c_readb()
+ * @param fd file descriptor
+ * @param buffer pointer to store data
+ * @param size of data to be read
+ * @return success or failure
+ * @brief This function is used to read data from i2c file
+***********************************************************************/
+uint8_t i2c_readb(int32_t fd,uint8_t* buffer,uint32_t size)
+{
+	if(read(fd, buffer, size)!=size)
+	{
+		return error;
+	}
+	return success;
+}
+
+/***********************************************************************
+ * cmdreg_write_test()
+ * @param fd file descriptor
+ * @return success or failure
+ * @brief This function is used to test command register
+***********************************************************************/
+uint8_t cmdreg_write_test(int32_t fd)
+{
+	uint8_t comm=START_COMMAND; //sending stard command = 80
+	if(write(fd, &comm, 1) < 0)
+	{
+		return error;
+	}
+	return success;
+}
+
+/***********************************************************************
+ * id_reg_test()
+ * @param fd file descriptor
+ * @return success or failure
+ * @brief This function is used to test id register
+***********************************************************************/
+uint8_t id_reg_test(int32_t fd)
+{
+	uint8_t comm=ID_REGISTER;
+	uint8_t value;
+	int32_t check=0;
+	write(fd,&comm,1);
+	comm=ID_VAL;
+	write(fd,&comm,1);
+	check=read(fd,&value,1);
+	if(value!=ID_VAL)
+	{
+		return error;
+	}
+	return success;
+}
+
+/***********************************************************************
+ * timing_reg_test()
+ * @param fd file descriptor
+ * @return success or failure
+ * @brief This function is used to test timing register
+***********************************************************************/
+uint8_t timing_reg_test(int32_t fd)
+{
+	uint8_t value;
+	uint8_t check=0;
+	uint8_t comm=TIMING_REG;
+	write(fd,&comm,1);
+	comm=TIMING_VAL;
+	write(fd,&comm,1);
+	check=read(fd,&value,1);
+	if(value!=TIMING_VAL)
+	{
+		return error;
+	}
+	return success;
+}
+
+
+/***********************************************************************
+ * i2c_readbword()
+ * @param fd file descriptor
+ * @return success or failure
+ * @brief This function is used to read a word from i2c
+***********************************************************************/
+uint8_t i2c_readbword(int32_t fd,uint8_t* buff)
+{
+	if(read(fd, buff, 2)!=2)
+	{
+		return error;
+	}
+	return success;
+}
+
+/***********************************************************************
+ * register_read()
+ * @param fd file descriptor
+ * @param regval value to be written
+ * @return data read
+ * @brief This function is used to read data from register
+***********************************************************************/
+uint16_t register_read(int32_t fd, uint8_t regval)
+{
+	uint8_t* buffer=malloc(sizeof(uint8_t)*2);
+	write(fd,&regval,sizeof(regval));
+	i2c_readbword(fd,buffer);
+	return ((uint16_t)buffer[0]<<8|buffer[1]);
+}
+
+
+/***********************************************************************
+ * bist_check()
+ * @return success or failure
+ * @brief This function is used to run built in self test
+***********************************************************************/
+int bist_check()
+{
+	uint8_t op,op1,op2,op3,op4,op5;
+	uint16_t op6;
+	int32_t error=0;
+	int32_t fd;
+	uint8_t powerval=0,sensor_id=0, timer=0, interr=0;
+	sem_i2c = sem_open(i2c_sem_id,0);
+	//i2c_init
+	sem_wait(sem_i2c);
+	fd=open("/dev/i2c-2", O_RDWR);
+	ioctl(fd, I2C_SLAVE, LUX_SLAVE_ADDR);
+	//power on
+	i2c_writeb(fd,POWER_ADDR);
+	i2c_writeb(fd,POWER_ON_CMD);
+	error=i2c_readb(fd,&powerval,1);
+	sem_post(sem_i2c);
+	//test timing reg
+	op4=timing_reg_test(fd);
+	if(op4==1)
+	{
+		log_creator(LOG_INFO,"LUX sensor test timing register successful - BIST Successful");
+	}
+	else
+	{
+		log_creator(LOG_ERROR,"LUX sensor test timing register fails - BIST Unsuccessful");
+	}
+	//i2c_init for temp
+	sem_wait(sem_i2c);
+	fd=open("/dev/i2c-2", O_RDWR);
+	ioctl(fd, I2C_SLAVE, slave_addr);
+	log_creator(LOG_INFO,"Temperature sensor is connected and it works properly - BIST Successful");
+	uint8_t conn= configregaddr;
+	write(fd,&conn,1);
+	//conn=6;
+	//write(fd,&conn,1);
+	op6=register_read(fd,configregaddr);
+	sem_post(sem_i2c);
+	if(op6==24736)
+	{
+		log_creator(LOG_INFO,"Temperature sensor I2C works- BIST successful");
+	}
+	else
+	{
+		log_creator(LOG_ERROR,"Temperature sensor I2C doesn't work- BIST unsuccessful");
+	}
+	return success;
+}
+
+/******************************************
+* light_read.c
+* Author: Sanika Dongre and Monish Nene
+* Date created: 03/26/19
+*******************************************/
+
+/*******************************************
+* Includes
+*******************************************/
+
+#include "light_read.h"
+
+/*****************************
+* Global variables
+* shared mem and semaphores
+*****************************/
+int32_t shm_light;
+sem_t* sem_light;
+sem_t* sem_i2c;
+uint8_t* shm_ptr;
+
+/***********************************************************************
+ * i2c_write()
+ * @param fd file descriptor
+ * @param regval register to be written
+ * @brief This function is used to write data to i2c file
+ /***********************************************************************/
+static void i2c_write(int32_t fd,uint8_t regval)
+{
+	if(write(fd,&regval,1)<0)
+	{
+		perror("write function has been failed");
+	}
+}
+
+/***********************************************************************
+ * i2c_read()
+ * @param fd file descriptor
+ * @param buffer to save data
+ * @param size of buffer
+ * @return size of data read
+ * @brief This function is used to read data from i2c file
+ /***********************************************************************/
+static int32_t i2c_read(int32_t fd,uint8_t* buffer,uint32_t size)
+{
+	return read(fd, buffer, size);
+}
+
+/***********************************************************************
+ * get_luminosity()
+ * @return light value read from the sensor
+ * @brief This function is used to read luminosity from sensor and save  it in shared memory
+/***********************************************************************/
+float get_luminosity()
+{
+	uint8_t sensor_id=0, powerval=0, timer=0;
+	int32_t error=0,fd=0;
+	uint8_t databuff=1, dataop;
+	uint8_t regval;
+	uint16_t ch0_l=0,ch1_l=0,ch0_h=0,ch1_h=0;
+	uint16_t ch0=0,ch1=0;
+	float adcval=0.0;
+	int16_t lux_output=0;
+	sem_wait(sem_i2c);
+	//i2c init
+	fd=open("/dev/i2c-2", O_RDWR);
+	ioctl(fd, I2C_SLAVE, LUX_SLAVE_ADDR);
+	//power on
+	i2c_write(fd,POWER_ADDR);
+	i2c_write(fd,POWER_ON_CMD);
+	error=i2c_read(fd,&powerval,1);
+	if(powerval==POWER_ON_CMD)
+	{
+		//printf("the value of power is %x\n", powerval);
+	}
+	//read channels
+	uint8_t addr = 0x8C;
+	if(write(fd,&addr,1)!=1)
+	{
+		perror("errror in write ch0l\n");
+	}
+	if(read(fd,&ch0_l,1)!=1)
+	{
+		perror("error in read ch0l\n");
+	}
+	addr=0x8D;
+	if(write(fd,&addr,1)!=1)
+	{
+		perror("error in write ch0h\n");
+	}
+	if(read(fd,&ch0_h,1)!=1)
+	{
+		perror("error in read choh\n");
+	}
+	addr=0x8E;
+	if(write(fd,&addr,1)!=1)
+	{
+		perror("error in write ch1l\n");
+	}
+	if(read(fd,&ch1_l,1)!=1)
+	{
+		perror("error in read ch1li\n");
+	}
+	addr=0x8F;
+	if(write(fd,&addr,1)!=1)
+	{
+		perror("error in write ch1h\n");
+	}
+	if(read(fd,&ch1_h,1)!=1)
+	{
+		perror("error in read ch1h\n");
+	}
+	sem_post(sem_i2c);
+	ch1=(ch1_h<<8)|ch1_l;
+	ch0=(ch0_h<<8)|ch0_l;
+	adcval = (float)ch1/(float)ch0;
+	//check adc range
+	if(adcval>0 && adcval <= 0.5)
+	{
+		lux_output = (0.0304 * ch0) - (0.062 * ch0 * pow(adcval, 1.4));
+	}
+	else if(adcval<0.61)
+	{
+		lux_output = (0.0224 * ch0) - (0.031 * ch1);
+	}
+	else if(adcval<0.80)
+	{
+        	lux_output = (0.0128 * ch0) - (0.0153 * ch1);
+	}
+	else if(adcval<1.30)
+	{
+        	lux_output = (0.00146 * ch0) - (0.00112 * ch1);
+	}
+    	else
+	{
+		lux_output=0;
+	}
+	return lux_output;
+}
+
+/***********************************************************************
+ * light_init()
+ * @brief This function is used to initializing the resources required for light measurement
+/***********************************************************************/
+void light_init(void)
+{
+	sem_light = sem_open(shm_light_id,0);
+	sem_i2c = sem_open(i2c_sem_id,0);
+	shm_light = shmget(luminosity_id,LOG_SIZE,0666|IPC_CREAT);
+}
+
+/***********************************************************************
+ * light_read()
+ * @brief This function is used to read luminosity from sensor and log it
+/***********************************************************************/
+void light_read(void)
+{
+	int32_t error=0;
+	uint8_t* msg= (uint8_t*)malloc(STR_SIZE);
+	//printf("Light Read\n");
+	led_toggle(light_led);
+	//declare variables
+	log_t log_data;
+	//data collection
+	log_data.data[luminosity_id]=(int16_t)get_luminosity();
+	clock_gettime(CLOCK_REALTIME,&log_data.timestamp);
+	log_data.header=light_id;
+	//shared memory send
+	sem_wait(sem_light);
+	shm_ptr=shmat(shm_light,(void*)0,0);
+	memcpy(shm_ptr,&log_data,LOG_SIZE);
+	shmdt(shm_ptr);
+	sem_post(sem_light);
+	sprintf(msg,"Luminosity: %d",log_data.data[luminosity_id]);
+	log_creator(LOG_DATA,msg);
+	//printf("Light Read Done\n");
+	free(msg);
+	return;
+}
+
+/******************************************
+* logger.c logger task
+* Author: Monish Nene and Sanika Dongre
+* Date created: 03/25/19
+*******************************************/
+
+/*******************************************
+* Includes
+*******************************************/
+
+
+#include "logger.h"
+
+/*****************************
+* Global variables
+* shared mem and semaphores
+*****************************/
+
+uint8_t* str;
+int32_t n;
+sem_t* sem_logfile;
+sem_t* sem_temp;
+sem_t* sem_light;
+sem_t* sem_logger_ready;
+int32_t	shm_light,shm_temp;
+time_t present_time;
+struct tm *time_and_date;
+int32_t socket_desc;
+struct sockaddr_in sock_struct_client,sock_struct_server;
+
+/***********************************************************************
+ * logger_init()
+ * @brief This function is used to intialize the resources required for logger
+ /***********************************************************************/
+void logger_init(void)
+{
+	FILE* fptr;
+	int32_t error=0;
+	str=(uint8_t*)calloc(STR_SIZE,1);
+	//printf("Logger Init\n");
+	sem_logfile = sem_open(logfile_sem_id, 0);
+	sem_temp = sem_open(shm_temp_id,0);
+	sem_light = sem_open(shm_light_id,0);
+	sem_logger_ready = sem_open(logger_ready_id,0);
+	shm_light=shmget(luminosity_id,LOG_SIZE,0666|IPC_CREAT);
+	shm_temp=shmget(temperature_id,LOG_SIZE,0666|IPC_CREAT);
+      	//sem_getvalue(sem_logfile,&error);
+	//printf("sem_logfile = %d\n",error);
+	sem_wait(sem_logfile);
+	fptr=fopen(logfile,"w");
+	if(fptr==NULL)  //error check
+	{
+		printf("File opening error\n");
+	}
+	fclose(fptr);
+	sem_post(sem_logfile);
+	sock_struct_server.sin_addr.s_addr = INADDR_ANY;
+    sock_struct_server.sin_family = AF_INET;
+	sock_struct_server.sin_port = htons(logger_port);
+	sock_struct_client.sin_addr.s_addr = INADDR_ANY;
+    sock_struct_client.sin_family = AF_INET;
+	sock_struct_client.sin_port = htons(logger_port);
+}
+
+/***********************************************************************
+ * logger_creator()
+ * @param logid type of log
+ * @param str message to be logged
+ * @brief log creator to create log
+ /***********************************************************************/
+void log_creator(uint8_t logid, uint8_t* str)
+{
+	int32_t error=0,sock=0;
+	uint8_t* msg = (uint8_t*)malloc(STR_SIZE);
+	pid_t process_id=getpid();
+	pid_t thread_id=syscall(SYS_gettid);
+	struct timespec timestamp;
+	clock_gettime(CLOCK_REALTIME,&timestamp);
+	sprintf(msg,"[PID:%d][TID:%d][%d.%d sec] %s-> %s\n",process_id,thread_id,timestamp.tv_sec,timestamp.tv_nsec,logtype[logid],str);
+	sock = socket(AF_INET, SOCK_STREAM, 0);
+        error = connect(sock, (struct sockaddr *)&sock_struct_client, sizeof(sock_struct_client));
+	error = write(sock,msg,strlen(msg));
+	close(sock);
+}
+
+/***********************************************************************
+ * logger()
+ * @brief logger to run continuously and log data
+ /***********************************************************************/
+void logger(void)
+{
+	FILE* fptr;
+	uint8_t* msg = (uint8_t*)malloc(STR_SIZE);
+	int32_t error=0,sock=0,struct_size = sizeof(struct sockaddr_in),size=0;
+	socket_desc = socket(AF_INET , SOCK_STREAM , 0);
+    	error=bind(socket_desc,(struct sockaddr *)&sock_struct_server, sizeof(sock_struct_server));
+    	listen(socket_desc , 3);
+	printf("logger started\n");
+	sem_post(sem_logger_ready);
+	while(condition)
+	{
+		//connection accept
+		sock = accept(socket_desc,(struct sockaddr*)&sock_struct_server,(socklen_t*)&struct_size);
+		if(!fork())
+		{
+			led_toggle(logger_led);
+			size=read(sock,msg,STR_SIZE); //receive data from log creator
+			if(*(msg)=='?')
+			{
+				size=write(sock,msg,1);
+				break;
+			}
+			sem_wait(sem_logfile);
+			fptr=fopen(logfile,"a");
+			n=fwrite(msg,1,size,fptr);
+			fclose(fptr);
+			sem_post(sem_logfile);
+			break;
+		}
+	}
+	//socket close
+	free(msg);
+	close(sock);
+	return;
+}
+/******************************************
+* light_read.h
+* Author: Sanika Dongre and Monish Nene
+* Date created: 03/26/19
+*******************************************/
+
+/*******************************************
+* Includes
+*******************************************/
+
+#ifndef LIGHT_READ_H
+#define LIGHT_READ_H
+#include "common.h"
+#include "bbgled.h"
+#include <math.h>
+
+/*********************************************
+* Macros
+**********************************************/
+
+void light_read(void);
+void light_init(void);
+
+#endif
+/******************************************
+* tempsensor.c
+* Author: Sanika Dongre and Monish Nene
+* Date created: 03/25/19
+*******************************************/
+
+/*******************************************
+* Includes
+*******************************************/
+
+#include <stdio.h>
+#include <errno.h>
+#include <fcntl.h>
+#include <stdlib.h>
+#include <unistd.h>
+#include <sys/ioctl.h>
+#include <linux/i2c-dev.h>
+#include <stdint.h>
+#include <time.h>
+
+/*******************************************
+* Macros
+*******************************************/
+
+#define SLAVE     (0x48)
+#define TEMPREG    (00)
+#define INITIAL        (0x60A0)
+#define CONFIG  (0x01)
+#define TLOW    (0x02)
+#define THIGH   (0x03)
+#define HIGHMASK       (0x00FF)
+#define INTTERUPT         (0x62a0)
+#define SHUTDOWN       (0x61a0)
+
+/*******************************************
+* Global variables
+*******************************************/
+int val;
+int16_t celcius=0,kelvin=0,fahrenheit=0;
+
+
+typedef enum  //error or success enum
+{
+	error=0,
+	success=1
+}error_check;
+
+
+/***********************
+*temp_file function
+************************/
+
+uint8_t temp_file_func()
+{
+	int output;
+	output= open("/dev/i2c-2", O_RDWR);
+	if(output<0)
+	{	
+		perror("file open failed\n");
+		return error;
+	}
+	if(ioctl(output, I2C_SLAVE, SLAVE)<0)
+	{
+		return error;
+	}
+	return success;
+}
+
+/********************
+* Write operation 
+***********************/
+uint8_t i2c_write(int32_t temp_fd,uint8_t regval)   //used for writing pointer reg
+{
+	if(write(temp_fd, &regval, sizeof(regval))!=sizeof(regval))
+	{
+		return error;
+	}
+	return success;
+}
+
+float resolution_set_func(int temp_fd, int data_in)
+{
+	float data_resolution=0;
+	uint8_t* buffer=malloc(sizeof(uint8_t)*2);
+	if(data_in==1)
+	{
+		data_resolution = 0.0625;
+
+	}
+	if(data_in==2)
+	{
+		data_resolution=0.5;
+	}
+	printf("resolution set is %f\n",data_resolution);
+	return data_resolution;
+}
+
+uint16_t register_read(int temp_fd, uint8_t regval)
+{
+	uint8_t buffer[2];
+	uint16_t data;
+	write(temp_fd,&regval,1);
+	read(temp_fd,&buffer,2);
+	data=buffer[0];
+	data=data<<8;
+	data|=buffer[1];
+	return data;
+}
+
+void register_write(int temp_fd, uint8_t regval, uint16_t data)
+{
+	uint8_t* buffer=malloc(sizeof(uint8_t)*3);
+	buffer[0]=regval;
+	*((uint16_t*)(buffer+1))=data;
+	write(temp_fd,buffer, 3);
+	free(buffer);
+}
+		
+/***************************
+* configuration reg write
+****************************/
+uint16_t configreg_test(int temp_fd)
+{
+	uint16_t output;
+	register_write(temp_fd,CONFIG,4096);
+	output=register_read(temp_fd,CONFIG);
+	if(output<0)
+	{
+		return error;
+	}
+	return success;
+}
+
+uint16_t configreg_INTTERUPTmode(int temp_fd)
+{
+	uint16_t output;
+	register_write(temp_fd,CONFIG,INITIAL|INTTERUPT);
+	output=register_read(temp_fd,CONFIG);
+	if(output==INITIAL|INTTERUPT)
+	{
+		return success;
+	}
+	return error;
+}
+
+uint16_t configreg_shutdown(int temp_fd)
+{
+	uint16_t output;
+	register_write(temp_fd,CONFIG,INITIAL|SHUTDOWN);
+	output=register_read(temp_fd,CONFIG);
+	if(output==INITIAL|SHUTDOWN)
+	{
+		return success;
+	}
+	return error;
+}
+
+uint16_t tlowreg_write(int temp_fd)
+{
+	uint16_t output;
+	uint16_t data=75;
+	register_write(temp_fd,TLOW,data);
+	output= register_read(temp_fd,TLOW);
+	if(output<0)
+	{
+		return error;
+	}
+	return success;
+}
+
+uint16_t thighreg_write(int temp_fd)
+{
+	uint16_t output;
+	uint16_t data=80;
+	register_write(temp_fd,THIGH,data);
+	output = register_read(temp_fd,THIGH);
+	if(output<0)
+	{
+		return error;
+	}
+	return success;
+}
+
+/********************************************************
+* Get temperature function
+* Reads tempreg
+* and obtained temp in celsius is output/16
+* return the temperature value
+*****************************************************/	
+	
+int get_temperature(int temp_fd)
+{
+	int data, h_bit=0;
+	uint8_t buffer[2], valmsb, vallsb;
+	uint8_t addr= TEMPREG;
+	write(temp_fd,&addr,1);
+	val = read(temp_fd, &buffer, sizeof(buffer));
+	valmsb = buffer[0];
+	vallsb = buffer[1];
+	data = ((valmsb << 8) | vallsb) >> 4; //12 bits resolution
+	if(h_bit!=0)
+	{	
+		return data;
+	}
+	else 
+	{
+		data = data/16;
+		return data;
+	}
+}
+
+
+uint16_t data_check(int temp_fd)
+{
+	int data = get_temperature(temp_fd);
+	if(data<20)
+	{
+		return success;
+	}
+	return error;
+}
+
+void main()
+{
+	uint16_t regval, buffer, op;
+	uint16_t tester, tester1, tester2, tester3, tester4,tester5;
+	int temp_fd;
+	op = temp_file_func();
+	if(op==0)
+	{	
+		perror("init failed\n");
+	}
+	printf("temp sensor is ready\n");
+	tester = configreg_test(temp_fd);
+	if(tester==1)
+	{
+		printf("config reg test successful\n");
+	}
+	else
+	{
+		printf("config reg test failed\n");
+	}
+	tester1= configreg_INTTERUPTmode(temp_fd);
+	if(tester1==1)
+	{
+		printf("config reg INTTERUPT test successful\n");
+	}
+	else
+	{
+		printf("config reg INTTERUPT test failed\n");
+	}
+	tester2=configreg_shutdown(temp_fd);
+	if(tester2==1)
+	{
+		printf("config reg shutdown test successful\n");
+	}
+	else
+	{
+		printf("config reg shutdown test failed\n");
+	}
+	tester3=tlowreg_write(temp_fd);
+	if(tester3==1)
+	{
+		printf("tlow reg test successful\n");
+	}
+	else
+	{
+		printf("tlow reg test failed\n");
+	}
+	tester4=thighreg_write(temp_fd);
+	if(tester4==1)
+	{
+		printf("thigh reg test successful\n");
+	}
+	else
+	{
+		printf("thigh reg test failed\n");
+	}
+	if(tester5==1)
+	{
+		printf("temperature within control\n");
+	}
+	else
+	{
+		printf("temperature out of control\n");
+	}
+	celcius = get_temperature(temp_fd);
+	fahrenheit=celcius*1.8+32; // celcius to Fahrenheit
+	kelvin=celcius+273.15; // celcius to kelvin
+	printf("\ntemperature value in celcius is %d\n", celcius); //temp data in C
+	printf("\ntemperature value in fahrenheit is %d\n", fahrenheit); // temp data in F
+	printf("\ntemperature value in kelvin is %d\n", kelvin); // temp data in K
+}
+/******************************************
+* client.c
+* Author: Sanika Dongre and Monish Nene
+* Date created: 03/29/19
+*******************************************/
+
+/*****************
+* Includes
+*******************/
+
+#include <sys/types.h>
+#include <sys/socket.h>
+#include <stdio.h>
+#include <netinet/in.h>
+#include <netdb.h>
+#include <string.h>
+#include <stdlib.h>
+#include <stdint.h>
+#include <errno.h>
+#include <unistd.h>
+
+//ip addr
+#define IP_ADDR "10.0.0.152"
+
+int main(void)
+{
+	int sockfd, operation, send_data, received, data, acc_conn;
+	struct sockaddr_in server_addr;
+	struct hostent* hostptr;
+	//socket create
+	sockfd=socket(AF_INET,SOCK_STREAM,0);
+	if(sockfd<0)
+	{
+		perror("socket creation failed\n");
+	}
+	puts("socket creation successfull\n");
+	memset((char*)&server_addr,0,sizeof(server_addr));
+	server_addr.sin_family=AF_INET;
+	server_addr.sin_port = htons(10001);
+	hostptr=gethostbyname(IP_ADDR);
+	memcpy(&server_addr.sin_addr,hostptr->h_addr,hostptr->h_length);
+	acc_conn = connect(sockfd,(struct  sockaddr*)&server_addr, sizeof(server_addr)); //accept conn
+	if((acc_conn)<0)
+	{
+		printf("server is not connection ready\n");
+		exit(-1);
+	}
+	while(1)
+	{
+		received = read(sockfd,&data,sizeof(data));
+		printf("%d received data from server\n", received);
+		if(received==sizeof(data))
+		{
+			printf("The received temperature data is %d C\n", data);
+		}
+		else
+		{
+			printf("data read from the server is faulty\n");
+		}
+		
+	  }
+	  return 0;
+}
+/******************************************
+* logger.c logger task
+* Author: Monish Nene and Sanika Dongre
+* Date created: 03/25/19
+*******************************************/
+
+/*******************************************
+* Includes
+*******************************************/
+
+#include <errno.h>
+#include <fcntl.h>
+#include <linux/i2c-dev.h>
+#include <pthread.h>
+#include <semaphore.h>
+#include <signal.h>
+#include <stdio.h>
+#include <stdint.h>
+#include <stdlib.h>
+#include <string.h>
+#include <syscall.h>
+#include <sys/ioctl.h>
+#include <sys/ipc.h>
+#include <sys/shm.h>
+#include <sys/stat.h>
+#include <sys/types.h>
+#include <sys/wait.h>
+#include <time.h>
+#include <unistd.h>
+#include <sys/socket.h>
+#include <netinet/in.h>
+
+/*****************************
+* Global variables
+* shared mem and semaphores
+*****************************/
+#define STR_SIZE 200
+#define logger_port 8000
+uint8_t* logfile;
+uint8_t* str;
+sem_t* sem_logfile;
+sem_t* sem_logger_ready;
+int32_t	shm_light,shm_temp,n,i,condition;
+time_t present_time;
+struct tm *time_and_date;
+int32_t socket_desc;
+struct sockaddr_in sock_struct_client,sock_struct_server;
+static uint8_t* logtype[]={"LOG_INFO","LOG_DATA","LOG_ERROR"};
+static uint8_t logger_ready_id[]="check if logger is ready";
+static uint8_t logfile_sem_id[]="sem_logfile";
+
+typedef enum
+{
+	LOG_INFO=0,
+	LOG_DATA=1,
+	LOG_ERROR=2,
+}logtype_t;
+
+/*************************************
+* logger init function
+**************************************/
+void logger_init(void)
+{
+	FILE* fptr;
+	int32_t error=0;
+	str=(uint8_t*)calloc(STR_SIZE,1);
+	//printf("Logger Init\n");
+      	//sem_getvalue(sem_logfile,&error);
+	//printf("sem_logfile = %d\n",error);
+	sem_wait(sem_logfile);	
+	fptr=fopen(logfile,"w");
+	if(fptr==NULL)  //error check
+	{
+		printf("File opening error\n"); 
+	}	
+	fclose(fptr);
+	condition=1;
+	sem_post(sem_logfile);
+	sock_struct_server.sin_addr.s_addr = INADDR_ANY;
+        sock_struct_server.sin_family = AF_INET;
+	sock_struct_server.sin_port = htons(logger_port);
+	sock_struct_client.sin_addr.s_addr = INADDR_ANY;
+        sock_struct_client.sin_family = AF_INET;
+	sock_struct_client.sin_port = htons(logger_port);
+}
+
+void log_creator(uint8_t logid, uint8_t* str)
+{
+	int32_t error=0,sock=0;
+	uint8_t* msg = (uint8_t*)malloc(STR_SIZE);
+	pid_t process_id=getpid();
+	pid_t thread_id=syscall(SYS_gettid);
+	struct timespec timestamp;
+	clock_gettime(CLOCK_REALTIME,&timestamp);
+	sprintf(msg,"[PID:%d][TID:%d][%ld.%ld sec] %s-> %s\n",process_id,thread_id,timestamp.tv_sec,timestamp.tv_nsec,logtype[logid],str);
+	sock = socket(AF_INET, SOCK_STREAM, 0);
+        error = connect(sock, (struct sockaddr *)&sock_struct_client, sizeof(sock_struct_client));
+	error = write(sock,msg,strlen(msg));	
+	close(sock);
+}
+
+/*****************************
+* logger function to log data
+******************************/
+void logger(void)
+{	
+	FILE* fptr;
+	uint8_t* msg = (uint8_t*)malloc(STR_SIZE);
+	int32_t error=0,sock=0,struct_size = sizeof(struct sockaddr_in),size=0;
+	socket_desc = socket(AF_INET , SOCK_STREAM , 0);
+    	error=bind(socket_desc,(struct sockaddr *)&sock_struct_server, sizeof(sock_struct_server));
+    	listen(socket_desc , 3);
+	printf("logger started\n");
+	sem_post(sem_logger_ready);
+	while(condition)
+	{
+		//connection accept
+		sock = accept(socket_desc,(struct sockaddr*)&sock_struct_server,(socklen_t*)&struct_size);
+		if(!fork()) 
+		{
+			size=read(sock,msg,STR_SIZE); //receive data from log creator
+			if(*(msg)=='?')
+			{
+				size=write(sock,msg,1);
+				break;
+			}
+			sem_wait(sem_logfile);	
+			fptr=fopen(logfile,"a");
+			n=fwrite(msg,1,size,fptr);
+			fclose(fptr);
+			sem_post(sem_logfile);	
+			break;
+		}
+	}
+	//socket close
+	free(msg);
+	close(sock);
+	return;
+}
+
+/*****************************
+* log file setup function
+********************************/
+void logfile_setup(void)
+{
+	FILE* fptr=fopen(logfile,"r");
+	if(fptr==NULL)
+	{
+		return;
+	}
+	uint8_t* new_filename=malloc(STR_SIZE);
+	uint32_t counter=1;
+	while(fptr!=NULL)
+	{
+		fclose(fptr);
+		sprintf(new_filename,"backup_%d_%s",counter++,logfile); //to create backup files
+		fptr=fopen(new_filename,"r");	
+	}
+	rename(logfile,new_filename);
+	return;
+}
+
+int32_t main(int32_t argc, uint8_t **argv)
+{
+	if(argc<2)
+	{
+		printf("%s <logfilename>\n",argv[0]);	 //log file name as command line argument
+		return 0;
+	}	
+	sem_logger_ready=sem_open(logger_ready_id, O_CREAT, 0644,0);	
+	sem_logfile=sem_open(logfile_sem_id, O_CREAT, 0644,1);
+	logfile=argv[1];
+	logfile_setup();
+	logger_init();
+	if(!fork())
+	{
+		logger();
+	}
+	sem_wait(sem_logger_ready);
+	for(i=0;i<10;i++)
+	{
+		log_creator(LOG_INFO,"New test log");
+		usleep(1e6);
+	}
+	condition=0;
+	sem_unlink(logfile_sem_id);
+	sem_unlink(logger_ready_id);
+}
+#ifndef BBGLED_H
+#define BBGLED_H 
+#include <stdio.h>
+#include <unistd.h>
+#include <fcntl.h>
+#include <stdint.h>
+#include <linux/gpio.h>
+#include <stdlib.h>
+#include <errno.h>
+#include <time.h>
+#define STR_SIZE 30
+#define	LED_COUNT 4
+
+static uint8_t path[]="/sys/class/gpio/gpio5x/value";
+static uint8_t pathx=21;
+static uint8_t led_init_cmd[]="./led_init.sh";
+
+void led_toggle(uint8_t led);
+void led_off(uint8_t led);
+void led_on(uint8_t led);
+void led_init(void);
+
+#endif
+/******************************************
+* light_test.c
+* Author: Sanika Dongre and Monish Nene
+* Date created: 03/29/19
+*******************************************/
+
+/*******************************************
+* Includes
+*******************************************/
+
+#include "common.h"
+#include <math.h>
+
+/*******************************************
+* Macros
+*******************************************/
+
+#define ID_VALUE (0x50)
+#define ID_REGISTER (0x8A)
+#define ID_VAL (0X07)
+#define LUX_SLAVE_ADDR (0x39)
+#define POWER_ADDR (0x80)
+#define TIMING_REG (0X81)
+#define TIMING_VAL (0X12)
+#define START_COMMAND (0X80)
+#define POWER_ON_CMD (0x3)
+#define CONTROL_VAL (0X09)
+#define TLL (0x82)
+#define TLH (0x83)
+#define THL (0X84)
+#define THH (0X85)
+#define INTERRUPT_REG (0X86)
+#define INTERRUPT_VALUE (0X05)
+#define POWER_OFF_CMD (0x00)
+#define CH0_L (0x8C)
+#define CH0_H (0x8D)
+#define CH1_L (0x8E)
+#define CH1_H (0x8F)
+
+typedef enum //error or success enum
+{
+	error=0,
+	success=1
+}error_check;
+
+/***********************
+*i2c_file function
+************************/
+
+uint8_t i2c_file(int32_t fd)
+{
+	fd=open("/dev/i2c-2", O_RDWR);
+	if (fd<0)
+	{
+		return error;
+	}
+	if(ioctl(fd, I2C_SLAVE, LUX_SLAVE_ADDR)<0)
+	{
+		return error;
+	}
+	return success;
+}
+
+/********************
+* Write operation 
+***********************/
+uint8_t i2c_write(int32_t fd,uint8_t regval)
+{
+	if(write(fd, &regval, sizeof(regval))!=sizeof(regval))
+	{
+		return error;
+	}
+	return success;
+}
+
+/***************************
+* Read operation
+****************************/
+
+uint8_t i2c_read(int32_t fd,uint8_t* buffer,uint32_t size)
+{
+	if(read(fd, buffer, size)!=size)
+	{
+		return error;
+	}
+	return success;
+
+}
+
+/*************************
+* command register test
+****************************/
+
+uint8_t cmdreg_write_test(int32_t fd)
+{
+	uint8_t comm=START_COMMAND; //sending stard command = 80
+	if(write(fd, &comm, 1) < 0)
+	{
+		return error;
+	}
+	return success;
+}
+
+/******************************************
+* control register test
+* To write and read the control register
+******************************************/
+
+uint8_t control_reg_test(int32_t fd)
+{
+	uint8_t comm=POWER_ADDR;
+	int32_t check=0;
+	uint8_t value;
+	write(fd,&comm,1);
+	comm=CONTROL_VAL;
+	write(fd,&comm,1);
+	check=read(fd,&value,1);
+	if(value!=CONTROL_VAL)
+	{
+		return error;
+	}
+	return success;
+}
+
+/************************************************
+* identification register test
+* To write and read the identification register
+************************************************/
+
+uint8_t id_reg_test(int32_t fd)
+{
+	uint8_t comm=ID_REGISTER;
+	uint8_t value;
+	int32_t check=0;
+	write(fd,&comm,1);
+	comm=ID_VAL;
+	write(fd,&comm,1);
+	check=read(fd,&value,1);
+	if(value!=ID_VAL)
+	{
+		return error;
+	}
+	return success;
+}
+
+/******************************************
+* timing register test
+* To write and read the timing register
+******************************************/
+
+uint8_t timing_reg_test(int32_t fd)
+{
+	uint8_t value;
+	uint8_t check=0;
+	uint8_t comm=TIMING_REG;
+	write(fd,&comm,1);
+	comm=TIMING_VAL;
+	write(fd,&comm,1);
+	check=read(fd,&value,1);
+	if(value!=TIMING_VAL)
+	{
+		return error;
+	}
+	return success;
+}
+
+/******************************************
+* interrupt control register test
+* To write and read the  interrupt control register
+******************************************/
+
+uint8_t int_control_reg_test(int32_t fd)
+{
+	int32_t check=0;
+	uint8_t value;
+	uint8_t comm=INTERRUPT_REG;
+	write(fd,&comm,1);
+	comm=INTERRUPT_VALUE;
+	write(fd,&comm,1);
+	check=read(fd,&value,1);
+	if(value!=INTERRUPT_VALUE)
+	{
+		return error;
+	}
+	return success;
+}
+/******************************************************
+* interrupt threshold register test
+* To write and read the interrupt threshold register
+*******************************************************/
+
+uint8_t int_threshold_test(int fd)
+{
+	uint8_t dataop=0;
+	uint8_t databuff=1;
+	int32_t error=0;
+	i2c_write(fd,TLL);
+	i2c_write(fd,databuff);
+	error=i2c_read(fd,&dataop,1);
+	if(dataop!=1)
+	{
+		return error;
+	}
+	i2c_write(fd,TLH);
+	databuff=2;
+	i2c_write(fd, databuff);
+	error=i2c_read(fd,&dataop,1);
+	if(dataop!=2)
+	{
+		return error;
+	}
+	i2c_write(fd,THL);
+	databuff=3;
+	i2c_write(fd,databuff);
+	error=i2c_read(fd,&dataop,1);
+	if(dataop!=3)
+	{
+		return error;
+	}
+	i2c_write(fd,THH);
+	databuff=4;
+	i2c_write(fd,databuff);
+	error=i2c_read(fd,&dataop,1);
+	if(dataop!=4)
+	{
+		return error;
+	}
+	return success;
+}
+
+/******************************************
+* power off function
+******************************************/
+
+uint8_t poweroff_func(int32_t fd)
+{
+	uint8_t value=3;
+	int32_t check=0;
+	uint8_t comm=POWER_ADDR;
+	write(fd,&comm,1);
+	comm=POWER_OFF_CMD;
+	write(fd,&comm,1);
+	check=read(fd,&value,1);
+	if(value!=0)
+	{
+		return error;
+	}
+	return success;	
+}
+
+/******************************************************
+* Get luminosity function
+* Reads data registers (0 and 1)
+* and then lux output is calculated based on formula
+* return the lux value in float
+*********************************************************/
+
+float get_luminosity(int32_t fd)
+{
+	uint8_t sensor_id=0, powerval=0, timer=0;
+	int32_t error=0;
+	uint8_t databuff=1, dataop;
+	uint8_t regval;
+	uint16_t ch0_l=0,ch1_l=0,ch0_h=0,ch1_h=0;
+	uint16_t ch0=0,ch1=0;
+	float adcval=0.0;
+	int16_t lux_output=0;
+	//read channels
+	uint8_t addr = 0x8C;
+	if(write(fd,&addr,1)!=1)
+	{
+		perror("errror in write ch0l\n");
+	}
+	if(read(fd,&ch0_l,1)!=1)
+	{
+		perror("error in read ch0l\n");
+	}
+	addr=0x8D;
+	if(write(fd,&addr,1)!=1)
+	{
+		perror("error in write ch0h\n");
+	}
+	if(read(fd,&ch0_h,1)!=1)
+	{
+		perror("error in read choh\n");
+	}
+	addr=0x8E;
+	if(write(fd,&addr,1)!=1)
+	{
+		perror("error in write ch1l\n");
+	}
+	if(read(fd,&ch1_l,1)!=1)
+	{
+		perror("error in read ch1li\n");
+	}
+	addr=0x8F;
+	if(write(fd,&addr,1)!=1)
+	{
+		perror("error in write ch1h\n");
+	}
+	if(read(fd,&ch1_h,1)!=1)
+	{
+		perror("error in read ch1h\n");
+	}
+	printf("ch0l=%d,ch1l=%d, ch0h=%d, ch1h=%d\n",ch0_l,ch1_l, ch0_l,ch0_h);
+	ch1=(ch1_h<<8)|ch1_l;
+	ch0=(ch0_h<<8)|ch0_l;
+	adcval = (float)ch1/(float)ch0;	
+	printf("ch0=%d,ch1=%d,adcval=%f\n",ch0,ch1,adcval);
+	if(adcval>0 && adcval <= 0.5)
+	{
+		lux_output = (0.0304 * ch0) - (0.062 * ch0 * pow(adcval, 1.4));
+	}
+	else if(adcval<0.61)
+	{
+		lux_output = (0.0224 * ch0) - (0.031 * ch1);
+	} 
+	else if(adcval<0.80)
+	{
+        	lux_output = (0.0128 * ch0) - (0.0153 * ch1);
+	}
+	else if(adcval<1.30)
+	{
+        	lux_output = (0.00146 * ch0) - (0.00112 * ch1);
+	}
+    	else
+	{
+		lux_output=0;
+	}	
+	return lux_output;
+}
+
+/************************************************
+* test luminosity 
+* To check if luminosity is within certain range
+*************************************************/
+
+uint8_t test_luminosity(int32_t fd)
+{
+	float lux_output;
+	lux_output = get_luminosity(fd);
+	if(lux_output<-100 && lux_output>1800)
+	{
+		return error;
+	}
+	return success;
+}
+	
+
+int main()
+{
+	float lux_output;
+	uint8_t op,op1,op2,op3,op4,op5;
+	int32_t error=0;	
+	int32_t fd;
+	uint8_t powerval=0,sensor_id=0, timer=0, interr=0;
+	//i2c_init
+	fd=open("/dev/i2c-2", O_RDWR);
+	ioctl(fd, I2C_SLAVE, LUX_SLAVE_ADDR);	
+	//power on	
+	i2c_write(fd,POWER_ADDR);
+	i2c_write(fd,POWER_ON_CMD);
+	error=i2c_read(fd,&powerval,1);
+	if(powerval==POWER_ON_CMD)
+	{
+		printf("the value of power is %x\n", powerval);
+	}
+	//test luminosity
+	op1=test_luminosity(fd);
+	if(op1==1)
+	{
+		printf("test luminosity successful\n");
+	}
+	//test control reg
+	op2=control_reg_test(fd);
+	if(op2==1)
+	{
+		printf("test control reg successful\n");
+	}
+	//test identification reg
+	op3=id_reg_test(fd);
+	if(op3==1)
+	{
+		printf("test identificarion register successful\n");
+	}
+	//test timing reg
+	op4=timing_reg_test(fd);
+	if(op4==1)
+	{
+		printf("test timing register successful\n");
+	}
+	//test interrupt threshold reg
+	op5=int_threshold_test(fd);
+	if(op5==1)
+	{
+		printf("test threshold successful\n");
+	}
+	//test interrupt control reg
+	op=int_control_reg_test(fd);
+	if(op==1)
+	{
+		printf("test interrupt control register successful\n");
+	}
+}
+/******************************************
+* tempsensor.c
+* Author: Sanika Dongre and Monish Nene
+* Date created: 03/25/19
+*******************************************/
+
+/*******************************************
+* Includes
+*******************************************/
+
+#include <stdio.h>
+#include <errno.h>
+#include <fcntl.h>
+#include <stdlib.h>
+#include <unistd.h>
+#include <sys/ioctl.h>
+#include <linux/i2c-dev.h>
+#include <stdint.h>
+#include <time.h>
+
+/*******************************************
+* Macros
+*******************************************/
+
+#define SLAVE     (0x48)
+#define TEMPREG    (00)
+#define INITIAL        (0x60A0)
+#define CONFIG  (0x01)
+#define TLOW    (0x02)
+#define THIGH   (0x03)
+#define HIGHMASK       (0x00FF)
+#define INTTERUPT         (0x62a0)
+#define SHUTDOWN       (0x61a0)
+
+/*******************************************
+* Global variables
+*******************************************/
+int val;
+int16_t celcius=0,kelvin=0,fahrenheit=0;
+
+
+typedef enum  //error or success enum
+{
+	error=0,
+	success=1
+}error_check;
+
+
+/***********************
+*temp_file function
+************************/
+
+uint8_t temp_file_func()
+{
+	int output;
+	output= open("/dev/i2c-2", O_RDWR);
+	if(output<0)
+	{	
+		perror("file open failed\n");
+		return error;
+	}
+	if(ioctl(output, I2C_SLAVE, SLAVE)<0)
+	{
+		return error;
+	}
+	return success;
+}
+
+/********************
+* Write operation 
+***********************/
+uint8_t i2c_write(int32_t temp_fd,uint8_t regval)   //used for writing pointer reg
+{
+	if(write(temp_fd, &regval, sizeof(regval))!=sizeof(regval))
+	{
+		return error;
+	}
+	return success;
+}
+
+float resolution_set_func(int temp_fd, int data_in)
+{
+	float data_resolution=0;
+	uint8_t* buffer=malloc(sizeof(uint8_t)*2);
+	if(data_in==1)
+	{
+		data_resolution = 0.0625;
+
+	}
+	if(data_in==2)
+	{
+		data_resolution=0.5;
+	}
+	printf("resolution set is %f\n",data_resolution);
+	return data_resolution;
+}
+
+uint16_t register_read(int temp_fd, uint8_t regval)
+{
+	uint8_t buffer[2];
+	uint16_t data;
+	write(temp_fd,&regval,1);
+	read(temp_fd,&buffer,2);
+	data=buffer[0];
+	data=data<<8;
+	data|=buffer[1];
+	return data;
+}
+
+void register_write(int temp_fd, uint8_t regval, uint16_t data)
+{
+	uint8_t* buffer=malloc(sizeof(uint8_t)*3);
+	buffer[0]=regval;
+	*((uint16_t*)(buffer+1))=data;
+	write(temp_fd,buffer, 3);
+	free(buffer);
+}
+		
+/***************************
+* configuration reg write
+****************************/
+uint16_t configreg_test(int temp_fd)
+{
+	uint16_t output;
+	register_write(temp_fd,CONFIG,4096);
+	output=register_read(temp_fd,CONFIG);
+	if(output<0)
+	{
+		return error;
+	}
+	return success;
+}
+
+uint16_t configreg_INTTERUPTmode(int temp_fd)
+{
+	uint16_t output;
+	register_write(temp_fd,CONFIG,INITIAL|INTTERUPT);
+	output=register_read(temp_fd,CONFIG);
+	if(output==INITIAL|INTTERUPT)
+	{
+		return success;
+	}
+	return error;
+}
+
+uint16_t configreg_shutdown(int temp_fd)
+{
+	uint16_t output;
+	register_write(temp_fd,CONFIG,INITIAL|SHUTDOWN);
+	output=register_read(temp_fd,CONFIG);
+	if(output==INITIAL|SHUTDOWN)
+	{
+		return success;
+	}
+	return error;
+}
+
+uint16_t tlowreg_write(int temp_fd)
+{
+	uint16_t output;
+	uint16_t data=75;
+	register_write(temp_fd,TLOW,data);
+	output= register_read(temp_fd,TLOW);
+	if(output<0)
+	{
+		return error;
+	}
+	return success;
+}
+
+uint16_t thighreg_write(int temp_fd)
+{
+	uint16_t output;
+	uint16_t data=80;
+	register_write(temp_fd,THIGH,data);
+	output = register_read(temp_fd,THIGH);
+	if(output<0)
+	{
+		return error;
+	}
+	return success;
+}
+
+/********************************************************
+* Get temperature function
+* Reads tempreg
+* and obtained temp in celsius is output/16
+* return the temperature value
+*****************************************************/	
+	
+int get_temperature(int temp_fd)
+{
+	int data, h_bit=0;
+	uint8_t buffer[2], valmsb, vallsb;
+	uint8_t addr= TEMPREG;
+	write(temp_fd,&addr,1);
+	val = read(temp_fd, &buffer, sizeof(buffer));
+	valmsb = buffer[0];
+	vallsb = buffer[1];
+	data = ((valmsb << 8) | vallsb) >> 4; //12 bits resolution
+	if(h_bit!=0)
+	{	
+		return data;
+	}
+	else 
+	{
+		data = data/16;
+		return data;
+	}
+}
+
+
+uint16_t data_check(int temp_fd)
+{
+	int data = get_temperature(temp_fd);
+	if(data<20)
+	{
+		return success;
+	}
+	return error;
+}
+
+void main()
+{
+	uint16_t regval, buffer, op;
+	uint16_t tester, tester1, tester2, tester3, tester4,tester5;
+	int temp_fd;
+	op = temp_file_func();
+	if(op==0)
+	{	
+		perror("init failed\n");
+	}
+	printf("temp sensor is ready\n");
+	tester = configreg_test(temp_fd);
+	if(tester==1)
+	{
+		printf("config reg test successful\n");
+	}
+	else
+	{
+		printf("config reg test failed\n");
+	}
+	tester1= configreg_INTTERUPTmode(temp_fd);
+	if(tester1==1)
+	{
+		printf("config reg INTTERUPT test successful\n");
+	}
+	else
+	{
+		printf("config reg INTTERUPT test failed\n");
+	}
+	tester2=configreg_shutdown(temp_fd);
+	if(tester2==1)
+	{
+		printf("config reg shutdown test successful\n");
+	}
+	else
+	{
+		printf("config reg shutdown test failed\n");
+	}
+	tester3=tlowreg_write(temp_fd);
+	if(tester3==1)
+	{
+		printf("tlow reg test successful\n");
+	}
+	else
+	{
+		printf("tlow reg test failed\n");
+	}
+	tester4=thighreg_write(temp_fd);
+	if(tester4==1)
+	{
+		printf("thigh reg test successful\n");
+	}
+	else
+	{
+		printf("thigh reg test failed\n");
+	}
+	if(tester5==1)
+	{
+		printf("temperature within control\n");
+	}
+	else
+	{
+		printf("temperature out of control\n");
+	}
+	celcius = get_temperature(temp_fd);
+	fahrenheit=celcius*1.8+32; // celcius to Fahrenheit
+	kelvin=celcius+273.15; // celcius to kelvin
+	printf("\ntemperature value in celcius is %d\n", celcius); //temp data in C
+	printf("\ntemperature value in fahrenheit is %d\n", fahrenheit); // temp data in F
+	printf("\ntemperature value in kelvin is %d\n", kelvin); // temp data in K
+}
+/******************************************
+* server.c
+* Remote socket task
+* Author: Sanika Dongre and Monish Nene
+* Date created: 03/29/19
+*******************************************/
+
+/*******************************************
+* Includes
+*******************************************/
+
+#include <sys/types.h>
+#include <sys/socket.h>
+#include <stdio.h>
+#include <netinet/in.h>
+#include <netdb.h>
+#include <string.h>
+#include <stdlib.h>
+#include <stdint.h>
+#include <errno.h>
+#include <unistd.h>
+
+int main(void)
+{
+	int sockfd, conn, fork_child=1, serverlen, data=10, received, input, send_data, temp=20;
+	struct hostent* hostptr;
+	struct sockaddr_in server_addr, client_addr;
+	//socket create
+	sockfd = socket(AF_INET, SOCK_STREAM,0);
+	if(sockfd < 0)
+	{
+		perror("socket creation error\n");
+	}
+	puts("socket created successful\n");
+	memset((char*)&server_addr,0,sizeof(server_addr));
+	server_addr.sin_family=AF_INET;
+	server_addr.sin_port= htons(10001);
+	server_addr.sin_addr.s_addr=htonl(INADDR_ANY);
+	serverlen = sizeof(struct sockaddr_in);
+	//bind
+	if(bind(sockfd,(struct sockaddr*)&server_addr,sizeof(server_addr))<0)
+	{
+		perror("socket binding error\n");
+	}
+	puts("socket binding successful\n");
+	//listen
+	if(listen(sockfd,5)<0)
+	{
+		perror("socket listening error\n");
+	}
+	puts("socket listening successful\n");
+	while(1)
+	{
+		//connection accept
+		conn=accept(sockfd,(struct sockaddr*)&client_addr,&serverlen);
+		if(conn<0)
+		{
+			perror("connection accept failed\n");
+		}
+		puts("connection accepted\n");
+		fork_child=fork(); //fork
+		if(fork_child==0)
+		{
+			send_data=send(conn,(void*)&temp,sizeof(temp),0); //send temp data to client
+			printf("%d data sent to client\n", send_data);
+		}
+	}
+	//close socket
+	close(sockfd);
+	printf("\n socket closed from server side\n");
+	return 0;
+}
+/*********************
+*LED test
+*Author: Sanika Dongre
+*Date created: 03/25/19
+***********************/
+
+/************************************
+* Includes
+*************************************/
+#include <stdio.h>
+#include <unistd.h>
+#include <fcntl.h>
+#include <stdint.h>
+#include <linux/gpio.h>
+#include <stdlib.h>
+#include <errno.h>
+#include <time.h>
+#include "bbgled.h"
+
+/************************************
+* led_init function
+* Function used for initializing LEDs
+*************************************/
+void led_init(void)
+{
+	system(led_init_cmd);
+}
+
+/**************************************
+* LED ON function to turn on the USR LEDs
+* by accessing the gpio pins
+****************************************/
+
+void led_on(uint8_t led)
+{
+	if(led<LED_COUNT)
+	{
+		path[pathx]='3'+led;
+		FILE* fptr=fopen(path,"w");
+		uint8_t data='1',error=0;
+		error=fwrite(&data,1,1,fptr);
+		fclose(fptr);
+	}
+	else
+	{
+		printf("LED index error\n");
+	}
+	return;
+}
+
+/**********************************************
+* LED OFF function to turn off LEDs by accessing 
+* the GPIO pins that can be accessed by user
+************************************************/
+
+void led_off(uint8_t led)
+{
+	if(led<LED_COUNT)
+	{
+		path[pathx]='3'+led;
+		FILE* fptr=fopen(path,"w");
+		uint8_t data='0',error=0;
+		error=fwrite(&data,1,1,fptr);
+		fclose(fptr);
+	}
+	else
+	{
+		printf("LED index error\n");
+	}
+	return;
+}
+
+/************************************
+* led toggle function to toggle leds 
+* in a pattern
+*************************************/
+
+void led_toggle(uint8_t led)
+{
+	printf("LED%d Toggle\n",led);
+	if(led<LED_COUNT)
+	{
+		path[pathx]='3'+led;
+		FILE* fptr=fopen(path,"w+");
+		uint8_t data='1',error=0,prev=0;
+		error=fread(&prev,1,1,fptr);
+		data=(prev=='0')?'1':'0';
+		error=fwrite(&data,1,1,fptr);
+		fclose(fptr);
+	}
+	else
+	{
+		printf("LED index error\n");
+	}
+	return;
+}
+
+/**************************************
+* void main: to toggle leds with 
+* a specific delay
+***************************************/
+
+void main()
+{
+	uint8_t led=0,i=0;
+	led_off(0);	
+	led_off(1);		
+	led_off(2);		
+	led_off(3);
+	for(i=0;;i++)
+	{
+		usleep(1e5);
+		led_toggle(led);		
+		led=(led==LED_COUNT-1)?0:(led+1);
+	}
+}
+/***************************************
+* common.h
+* Author: Monish Nene and Sanika Dongre
+* Date created: 03/25/19
+***************************************/
+
+#ifndef COMMON_H
+#define COMMON_H
+#include <errno.h>
+#include <fcntl.h>
+#include <linux/i2c-dev.h>
+#include <pthread.h>
+#include <semaphore.h>
+#include <signal.h>
+#include <stdio.h>
+#include <stdint.h>
+#include <stdlib.h>
+#include <string.h>
+#include <syscall.h>
+#include <sys/ioctl.h>
+#include <sys/ipc.h>
+#include <sys/shm.h>
+#include <sys/stat.h>
+#include <sys/types.h>
+#include <sys/wait.h>
+#include <time.h>
+#include <unistd.h>
+#include <sys/socket.h>
+#include <netinet/in.h>
+
+//My includes
+#include "logger.h"
+#include "light_read.h"
+#include "bbgled.h"
+#include "temperature_read.h"
+#include "server.h"
+#include "bist_test.h"
+
+//Macros
+#define STR_SIZE 200
+#define LOGPORT 12047
+#define PORT_ADDRESS 12048
+#define ID_VALUE (0x50)
+#define ID_REGISTER (0x8A)
+#define ID_VAL (0x07)
+#define LUX_SLAVE_ADDR (0x39)
+#define POWER_ADDR (0x80)
+#define TIMING_REG (0x81)
+#define TIMING_VAL (0x12)
+#define START_COMMAND (0x80)
+#define POWER_ON_CMD (0x3)
+#define CONTROL_VAL (0x09)
+#define TLL (0x82)
+#define TLH (0x83)
+#define THL (0x84)
+#define THH (0x85)
+#define INTERRUPT_REG (0x86)
+#define INTERRUPT_VALUE (0x05)
+#define POWER_OFF_CMD (0x00)
+#define CH0_L (0x8C)
+#define CH0_H (0x8D)
+#define CH1_L (0x8E)
+#define CH1_H (0x8F)
+#define slave_addr     (0x48)
+#define tempregaddr    (00)
+#define inicond        (0x60A0)
+#define configregaddr  (0x01)
+#define tlowregaddr    (0x02)
+#define thighregaddr   (0x03)
+#define highmask       (0x00FF)
+#define interruptval   (0x62a0)
+#define shutdown       (0x61a0)
+#define TOTAL_HEARTS 4
+
+typedef enum //This enum is used for heartbeats
+{
+	logger_heart=0,
+	server_heart=1,
+	temperature_heart=2,
+	light_heart=3,
+}heart_t;
+
+typedef enum //This enum is used for logtypr
+{
+	LOG_INFO=0,
+	LOG_DATA=1,
+	LOG_ERROR=2,
+}logtype_t;
+
+typedef enum   //enum to turn on/off leds according to the tasks
+{
+	logger_led=0,
+	light_led=1,
+	temperature_led=2,
+	error_led=3,
+}led_t;
+
+typedef enum   //enum with id values  assigned according to tasks
+{
+	kelvin_id=0,
+	celcius_id=1,
+	fahrenheit_id=2,
+	luminosity_id=2,
+	light_id=3,
+	temperature_id=8,
+	remote_id=5,
+	default_id=6,
+	project_id=7,
+}header_t;
+
+typedef struct //This struct is used to store data in shared memory
+{
+	header_t header;
+	struct timespec timestamp;
+	int32_t data[3];
+}log_t;
+
+#define LOG_SIZE sizeof(log_t)
+
+uint8_t* logfile;
+static uint32_t logger_port=LOGPORT,server_port=PORT_ADDRESS;
+static uint8_t heartbeat_check[TOTAL_HEARTS]={0,0,0,0};
+static uint8_t* thread_names[]={"Logger","Server","Temperature","Light"};
+static uint8_t* logtype[]={"LOG_INFO","LOG_DATA","LOG_ERROR"};
+static uint8_t condition=1,logger_condition=1,server_condition=1;
+static uint8_t logger_ready_id[]="check if logger is ready";
+static uint8_t trigger_sem_id[]="sem_trigger";
+static uint8_t i2c_sem_id[]="sem_i2c";
+static uint8_t logfile_sem_id[]="sem_logfile";
+static uint8_t shm_temp_id[]="temperature";
+static uint8_t shm_light_id[]="light";
+static uint8_t led_sem_id[]="sem_leds";
+#endif
+
+
+/***************************************
+* bbgled.h
+* Author: Monish Nene and Sanika Dongre
+* Date created: 03/25/19
+***************************************/
+
+#ifndef BBGLED_H
+#define BBGLED_H
+#include "common.h"
+#define	LED_COUNT 4
+
+static uint8_t path[]="/sys/class/gpio/gpio5x/value";
+static uint8_t pathx=21;
+static uint8_t led_init_cmd[]="./led_init.sh";
+
+void led_toggle(uint8_t led);
+void led_off(uint8_t led);
+void led_on(uint8_t led);
+void led_init(void);
+
+#endif
+/******************************************
+* server.c
+* Remote socket task
+* Author: Sanika Dongre and Monish Nene
+* Date created: 03/29/19
+*******************************************/
+
+/*******************************************
+* Includes
+*******************************************/
+
+#include <sys/types.h>
+#include <sys/socket.h>
+#include <stdio.h>
+#include <netinet/in.h>
+#include <netdb.h>
+#include <string.h>
+#include <stdlib.h>
+#include <stdint.h>
+#include <errno.h>
+#include <unistd.h>
+
+int main(void)
+{
+	int sockfd, conn, fork_child=1, serverlen, data=10, received, input, send_data, temp=20;
+	struct hostent* hostptr;
+	struct sockaddr_in server_addr, client_addr;
+	//socket create
+	sockfd = socket(AF_INET, SOCK_STREAM,0);
+	if(sockfd < 0)
+	{
+		perror("socket creation error\n");
+	}
+	puts("socket created successful\n");
+	memset((char*)&server_addr,0,sizeof(server_addr));
+	server_addr.sin_family=AF_INET;
+	server_addr.sin_port= htons(10001);
+	server_addr.sin_addr.s_addr=htonl(INADDR_ANY);
+	serverlen = sizeof(struct sockaddr_in);
+	//bind
+	if(bind(sockfd,(struct sockaddr*)&server_addr,sizeof(server_addr))<0)
+	{
+		perror("socket binding error\n");
+	}
+	puts("socket binding successful\n");
+	//listen
+	if(listen(sockfd,5)<0)
+	{
+		perror("socket listening error\n");
+	}
+	puts("socket listening successful\n");
+	while(1)
+	{
+		//connection accept
+		conn=accept(sockfd,(struct sockaddr*)&client_addr,&serverlen);
+		if(conn<0)
+		{
+			perror("connection accept failed\n");
+		}
+		puts("connection accepted\n");
+		fork_child=fork(); //fork
+		if(fork_child==0)
+		{
+			received=read(conn,&input,sizeof(input)); //receive input
+			printf("%d received data from client\n", received);
+			if(received==sizeof(input))
+			{
+				printf("The data received by server from client is %d\n",input);
+				if(input==2)
+				{
+					send_data=send(conn,(void*)&temp,sizeof(temp),0); //send temp data to client
+					printf("%d data sent to client\n", send_data);
+				}
+			}
+		}
+	}
+	//close socket
+	close(sockfd);
+	printf("\n socket closed from server side\n");
+	return 0;
+}
+/******************************************
+* logger.h
+* Author: Monish Nene and Sanika Dongre
+* Date created: 03/25/19
+*******************************************/
+
+#ifndef LOGGER_H
+#define LOGGER_H
+
+/*******************************************
+* Includes
+*******************************************/
+
+#include "common.h"
+#include "bbgled.h"
+
+void logger_init(void);
+void logger(void);
+void log_creator(uint8_t logid, uint8_t* str);
+
+#endif
+/******************************************
+* bist_test.h
+* Author: Sanika Dongre and Monish Nene
+* Date created: 03/29/19
+*******************************************/
+
+#ifndef BIST_H
+#define BIST_H
+
+/*******************************************
+* Includes
+*******************************************/
+
+#include "common.h"
+#include <math.h>
+
+/*******************************************
+* Macros
+*******************************************/
+
+typedef enum //error or success enum
+{
+	error=0,
+	success=1
+}error_check;
+
+uint8_t i2c_file(int32_t fd);
+static uint8_t i2c_writeb(int32_t fd,uint8_t regval);
+static uint8_t i2c_readb(int32_t fd,uint8_t* buffer,uint32_t size);
+uint8_t cmdreg_write_test(int32_t fd);
+uint8_t id_reg_test(int32_t fd);
+uint8_t timing_reg_test(int32_t fd);
+uint8_t i2c_readword(int32_t fd,uint8_t* buff);
+uint16_t register_read(int32_t fd, uint8_t regval);
+int bist_check(void);
+
+#endif
+/******************************************
+* bist_test.c
+* Author: Sanika Dongre and Monish Nene
+* Date created: 03/29/19
+*******************************************/
+
+#include "bist_test.h"
+
+/***********************
+*i2c_file function
+************************/
+
+uint8_t i2c_file(int32_t fd)
+{
+	fd=open("/dev/i2c-2", O_RDWR);
+	if (fd<0)
+	{
+		return error;
+	}
+	if(ioctl(fd, I2C_SLAVE, LUX_SLAVE_ADDR)<0)
+	{
+		return error;
+	}
+	return success;
+}
+
+/********************
+* Write operation 
+***********************/
+uint8_t i2c_write(int32_t fd,uint8_t regval)
+{
+	if(write(fd, &regval, sizeof(regval))!=sizeof(regval))
+	{
+		return error;
+	}
+	return success;
+}
+
+/***************************
+* Read operation
+****************************/
+
+uint8_t i2c_read(int32_t fd,uint8_t* buffer,uint32_t size)
+{
+	if(read(fd, buffer, size)!=size)
+	{
+		return error;
+	}
+	return success;
+
+}
+
+/*************************
+* command register test
+****************************/
+
+uint8_t cmdreg_write_test(int32_t fd)
+{
+	uint8_t comm=START_COMMAND; //sending stard command = 80
+	if(write(fd, &comm, 1) < 0)
+	{
+		return error;
+	}
+	return success;
+}
+
+/************************************************
+* identification register test
+* To write and read the identification register
+************************************************/
+
+uint8_t id_reg_test(int32_t fd)
+{
+	uint8_t comm=ID_REGISTER;
+	uint8_t value;
+	int32_t check=0;
+	write(fd,&comm,1);
+	comm=ID_VAL;
+	write(fd,&comm,1);
+	check=read(fd,&value,1);
+	if(value!=ID_VAL)
+	{
+		return error;
+	}
+	return success;
+}
+
+/******************************************
+* timing register test
+* To write and read the timing register
+******************************************/
+
+uint8_t timing_reg_test(int32_t fd)
+{
+	uint8_t value;
+	uint8_t check=0;
+	uint8_t comm=TIMING_REG;
+	write(fd,&comm,1);
+	comm=TIMING_VAL;
+	write(fd,&comm,1);
+	check=read(fd,&value,1);
+	if(value!=TIMING_VAL)
+	{
+		return error;
+	}
+	return success;
+}
+
+uint8_t i2c_readword(int32_t fd,uint8_t* buff)
+{
+	if(read(fd, buff, 2)!=2)
+	{
+		return error;
+	}
+	return success;
+
+}
+
+uint16_t register_read(int32_t fd, uint8_t regval)
+{
+	uint8_t* buffer=malloc(sizeof(uint8_t)*2);
+	write(fd,&regval,sizeof(regval));
+	i2c_readword(fd,buffer);
+	return ((uint16_t)buffer[0]<<8|buffer[1]);
+}
+
+int bist_check()
+{
+	uint8_t op,op1,op2,op3,op4,op5;
+	uint16_t op6;
+	int32_t error=0;	
+	int32_t fd;
+	uint8_t powerval=0,sensor_id=0, timer=0, interr=0;
+	//i2c_init
+	fd=open("/dev/i2c-2", O_RDWR);
+	ioctl(fd, I2C_SLAVE, LUX_SLAVE_ADDR);	
+	//power on	
+	i2c_write(fd,POWER_ADDR);
+	i2c_write(fd,POWER_ON_CMD);
+	error=i2c_read(fd,&powerval,1);
+	if(powerval==POWER_ON_CMD)
+	{
+		printf("the value of power is %x\n", powerval);
+		printf("Device powered on - BIST Successful\n");
+	}
+	else
+	{
+		printf("The device is not powered on - BIST Unsuccessful\n");
+	}
+	//test identification reg
+	op3=id_reg_test(fd);
+	if(op3==1)
+	{
+<<<<<<< HEAD
+		printf("The I2C works for light - BIST Successfull\n");
+	}
+	else
+	{
+		perror("The I2C fails for light- BIST is not successfull\n");
+=======
+		printf("test identification register successful - BIST Successful\n");
+	}
+	else
+	{
+		printf("The device identification register failed to configure - BIST Unsuccessful\n");
+>>>>>>> 8c4b43d6cd81bdbbe4f8a5b3a37c53b3c0e8b84b
+	}
+	//test timing reg
+	op4=timing_reg_test(fd);
+	if(op4==1)
+	{
+		printf("test timing register successful - BIST Successful\n");
+	}
+	else
+	{
+<<<<<<< HEAD
+		perror("The temp sensor is not connected thus I/O error\n");
+	}	
+	op1=i2c_write(fd,configregaddr);
+	error=i2c_read(fd,&readop,1);
+	if(readop==81)
+	{
+		printf("The I2C works for temp - BIST Successfull\n");
+	}
+	else
+	{
+		perror("The I2C fails for temp - BIST is not successfull\n");
+=======
+		printf("test timing register fails - BIST Unsuccessful\n");
+>>>>>>> 8c4b43d6cd81bdbbe4f8a5b3a37c53b3c0e8b84b
+	}
+	//i2c_init for temp
+	fd=open("/dev/i2c-2", O_RDWR);
+	ioctl(fd, I2C_SLAVE, slave_addr);
+	printf("The temperature sensor is connected and it works properly - BIST Successful\n");	
+	uint8_t conn= configregaddr;
+	write(fd,&conn,1);
+	//conn=6;
+	//write(fd,&conn,1);
+	op6=register_read(fd,configregaddr);
+	if(op6==24736)
+	{
+		printf("The temperature sensor I2C works- BIST successful\n");
+	}
+	else
+	{
+		printf("The temperature sensor I2C doesn't work- BIST unsuccessful\n");
+	}
+	printf("BIST test completed\n");
+	return success;
+}
+
+/******************************************
+* bist_test.h
+* Author: Sanika Dongre and Monish Nene
+* Date created: 03/29/19
+*******************************************/
+
+#ifndef BIST_H
+#define BIST_H
+
+/*******************************************
+* Includes
+*******************************************/
+
+#include "common.h"
+#include <math.h>
+
+/*******************************************
+* Macros
+*******************************************/
+
+#define ID_VALUE (0x50)
+#define ID_REGISTER (0x8A)
+#define ID_VAL (0X07)
+#define LUX_SLAVE_ADDR (0x39)
+#define POWER_ADDR (0x80)
+#define TIMING_REG (0X81)
+#define TIMING_VAL (0X12)
+#define START_COMMAND (0X80)
+#define POWER_ON_CMD (0x3)
+#define CONTROL_VAL (0X09)
+#define TLL (0x82)
+#define TLH (0x83)
+#define THL (0X84)
+#define THH (0X85)
+#define INTERRUPT_REG (0X86)
+#define INTERRUPT_VALUE (0X05)
+#define POWER_OFF_CMD (0x00)
+#define CH0_L (0x8C)
+#define CH0_H (0x8D)
+#define CH1_L (0x8E)
+#define CH1_H (0x8F)
+
+#define slave_addr     (0x48)
+#define tempregaddr    (00)
+#define inicond        (0x60A0)
+#define configregaddr  (0x01)
+#define tlowregaddr    (0x02)
+#define thighregaddr   (0x03)
+#define highmask       (0x00FF)
+#define interruptval   (0x62a0)
+#define shutdown       (0x61a0)
+
+typedef enum //error or success enum
+{
+	error=0,
+	success=1
+}error_check;
+
+uint8_t i2c_file(int32_t fd);
+uint8_t i2c_write(int32_t fd,uint8_t regval);
+uint8_t i2c_read(int32_t fd,uint8_t* buffer,uint32_t size);
+uint8_t cmdreg_write_test(int32_t fd);
+uint8_t id_reg_test(int32_t fd);
+uint8_t timing_reg_test(int32_t fd);
+uint8_t i2c_readword(int32_t fd,uint8_t* buff);
+uint16_t register_read(int32_t fd, uint8_t regval);
+int bist_check(void);
+
+#endif
+/******************************************
+* project.c
+* Main task
+* Author: Monish Nene and Sanika Dongre
+* Date created: 03/28/19
+*******************************************/
+
+/*******************************************
+* Includes
+*******************************************/
+
+#include "common.h"
+#include "light_read.h"
+#include "logger.h"
+#include "temperature_read.h"
+#include "server.h"
+
+/*******************************************
+* Macros
+*******************************************/
+
+#define PERIOD 1
+#define DEBUG 1
+#ifndef DEBUG
+#define printf(fmt, ...) (0)
+#endif
+
+/*******************************************
+* Global variables
+*******************************************/
+
+uint8_t* msg;
+int32_t shm_temp=0,shm_light=0;
+uint8_t trigger=1;
+uint8_t* shm_ptr;
+void* ptr;
+sem_t* sem_temp;
+sem_t* sem_light;
+sem_t* sem_trigger;
+sem_t* sem_logger_ready;
+int32_t celcius=0,fahrenheit=0,kelvin=0,luminosity=0;
+timer_t timerid;
+struct sigevent signal_event;
+struct itimerspec timer_data;
+struct sigaction signal_action;
+pthread_t thread_light,thread_temperature,thread_logger,thread_server;
+sigset_t mask;
+
+/***********************************************************************
+ * temperature_run()
+ * param ptr pointer to data passed
+ * return ptr pointer to data to be returned
+ * @brief run temperature measurement functions
+/***********************************************************************/
+void* temperature_run(void* ptr)
+{
+	heartbeat_check[temperature_heart]=1;
+	temperature_read();
+	pthread_exit(ptr);
+}
+
+/***********************************************************************
+ * light_run()
+ * param ptr pointer to data passed
+ * return ptr pointer to data to be returned
+ * @brief run light measurement functions
+/***********************************************************************/
+void* light_run(void* ptr)
+{
+	heartbeat_check[light_heart]=1;
+	light_read();
+	pthread_exit(ptr);
+}
+
+/***********************************************************************
+ * logger_run()
+ * @param ptr pointer to data passed
+ * @return ptr pointer to data to be returned
+ * @brief run logger functions
+/***********************************************************************/
+void* logger_run(void* ptr)
+{
+	logger();
+	pthread_exit(ptr);
+}
+
+/***********************************************************************
+ * server_run()
+ * @param ptr pointer to data passed
+ * @return ptr pointer to data to be returned
+ * @brief run server functions
+/***********************************************************************/
+void* server_run(void* ptr)
+{
+	remote_server();
+	pthread_exit(ptr);
+}
+
+/***********************************************************************
+ * logfile_setup()
+ * @brief create a backup of old log file and create a new one
+/***********************************************************************/
+void logfile_setup(void)
+{
+	FILE* fptr=fopen(logfile,"r");
+	if(fptr==NULL)
+	{
+		return;
+	}
+	uint8_t* new_filename=malloc(STR_SIZE);
+	uint32_t counter=1;
+	while(fptr!=NULL)
+	{
+		fclose(fptr);
+		sprintf(new_filename,"backup_%d_%s",counter++,logfile); //to create backup files
+		fptr=fopen(new_filename,"r");
+	}
+	rename(logfile,new_filename);
+	return;
+}
+
+
+/***********************************************************************
+ * temperature_thread()
+ * @brief create and join temperature measurement thread
+/***********************************************************************/
+void temperature_thread()
+{
+	int32_t error = pthread_create(&thread_temperature,NULL,temperature_run,NULL);
+	if(error)
+	{
+		log_creator(LOG_ERROR,"Error Creating Temperature Thread");
+	}
+	//pthread join
+	error=pthread_join(thread_temperature,NULL);
+	if(error)
+	{
+		sprintf(msg,"Error Joining Temperature Thread %d",error);
+		log_creator(LOG_ERROR,msg);
+		bzero(msg,STR_SIZE);
+	}
+	log_creator(LOG_INFO,"Created and joined new thread for measuring temperature");
+}
+
+
+/***********************************************************************
+ * light_thread()
+ * @brief create and join light measurement thread
+/***********************************************************************/
+void light_thread()
+{
+	int32_t error = pthread_create(&thread_light,NULL,light_run,NULL);
+	if(error)
+	{
+		log_creator(LOG_ERROR,"Error Creating Light Thread");
+	}
+	error=pthread_join(thread_light,NULL);
+	if(error)
+	{
+		sprintf(msg,"Error Joining light Thread %d",error);
+		log_creator(LOG_ERROR,msg);
+		bzero(msg,STR_SIZE);
+	}
+	log_creator(LOG_INFO,"Created and joined new thread for measuring light");
+}
+
+/***********************************************************************
+ * logger_thread()
+ * @brief create and join logger thread
+/***********************************************************************/
+void logger_thread()
+{
+	//pthread creation logger
+	int32_t error = pthread_create(&thread_logger,NULL,logger_run,NULL);
+	if(error)
+	{
+		printf("Error Creating Logger Thread\n");
+		kill(getpid(),SIGINT);
+	}
+	if(!fork())
+	{
+		error=pthread_join(thread_logger,NULL);
+	}
+	if(error)
+	{
+		printf("Error Joining logger Thread %d\n",error);
+		kill(getpid(),SIGINT);
+	}
+}
+
+/***********************************************************************
+ * server_thread()
+ * @brief create and join server thread
+/***********************************************************************/
+void server_thread(void)
+{
+	//pthread creation server
+	printf("Creating server with port address:%d\n",server_port);
+	int32_t error=pthread_create(&thread_server,NULL,server_run,NULL);   //error checks
+	if(error)
+	{
+		log_creator(LOG_ERROR,"Error Creating Server Thread");
+	}
+	if(!fork())
+	{
+		error=pthread_join(thread_server,NULL);
+	}
+	if(error)
+	{
+		sprintf(msg,"Error Joining Server Thread %d",error);
+		log_creator(LOG_ERROR,msg);
+		bzero(msg,STR_SIZE);
+	}
+	log_creator(LOG_INFO,"Created and joined new thread for server");
+}
+
+/***********************************************************************
+ * system_end()
+ * @param sig to be handled
+ * @brief this function is used to exit smoothly when SIGINT is sent to main process
+ /***********************************************************************/
+void system_end(int sig)
+{
+	condition=0;
+	logger_condition=0;
+	server_condition=0;
+	sem_unlink(shm_temp_id);
+    	sem_unlink(shm_light_id);
+	sem_unlink(trigger_sem_id);
+	sem_unlink(led_sem_id);
+	sem_unlink(logfile_sem_id);
+	sem_unlink(i2c_sem_id);
+	sem_unlink(logger_ready_id);
+}
+
+/***********************************************************************
+ * heartbeat()
+ * @brief this function is used check if all threads are running properly and restart any stopped thread
+ /***********************************************************************/
+static void heartbeat(void)
+{
+	uint8_t i=0,count=0,dummy='?',reply=0;
+	int32_t socket_desc=0,query=0,error=0;
+	struct sockaddr_in sock_heartbeat;
+	struct timespec timer;
+	timer.tv_sec=1;
+        setsockopt(query,SOL_SOCKET,SO_SNDTIMEO, (const char*)&timer,sizeof(timer));
+	sock_heartbeat.sin_addr.s_addr = INADDR_ANY;
+        sock_heartbeat.sin_family = AF_INET;
+	sock_heartbeat.sin_port = htons(logger_port);
+	query = socket(AF_INET, SOCK_STREAM, 0);
+        error = connect(query, (struct sockaddr *)&sock_heartbeat, sizeof(sock_heartbeat));
+	error = write(query,&dummy,sizeof(dummy));
+	error = read(query,&reply,sizeof(reply));
+	if(dummy==reply)
+	{
+		heartbeat_check[logger_heart]=1;
+	}
+	close(query);
+	reply=0;
+	sock_heartbeat.sin_port = htons(server_port);
+	query = socket(AF_INET, SOCK_STREAM, 0);
+        error = connect(query, (struct sockaddr *)&sock_heartbeat, sizeof(sock_heartbeat));
+	error = write(query,&dummy,sizeof(dummy));
+	error = read(query,&reply,sizeof(reply));
+	if(dummy==reply)
+	{
+		heartbeat_check[server_heart]=1;
+	}
+	close(query);
+	for(i=0;i<TOTAL_HEARTS;i++)
+	{
+		if(!heartbeat_check[i])
+		{
+			switch(i)
+			{
+				case logger_heart:
+				{
+					printf("logger thread is dead and will be restarted");
+					logger_condition=1;
+					logger_port+=2;
+					logger_thread();
+					break;
+				}
+				case temperature_heart:
+				{
+					log_creator(LOG_ERROR,"temperature thread is dead and will be restarted");
+					if(!fork())
+					{
+						temperature_thread();
+					}
+					break;
+				}
+				case light_heart:
+				{
+					log_creator(LOG_ERROR,"light thread is dead and will be restarted");
+					if(!fork())
+					{
+						light_thread();
+					}
+					break;
+				}
+				case server_heart:
+				{
+					log_creator(LOG_ERROR,"server thread is dead and will be restarted");
+					server_condition=1;
+					server_port+=2;
+					server_thread();
+					break;
+				}
+			}
+		}
+		count+=heartbeat_check[i];
+	}
+	if(count==TOTAL_HEARTS)
+	{
+		log_creator(LOG_INFO,"All threads are alive");
+	}
+	for(i=0;i<TOTAL_HEARTS;i++)
+	{
+		heartbeat_check[i]=0;
+	}
+}
+
+/***********************************************************************
+ * join_threads()
+ * @param sig to be handled
+ * @param si signal information
+ * @param uc data passed
+ * @brief this function is used to run threads when triggered by timer
+ /***********************************************************************/
+static void join_threads(int sig, siginfo_t *si, void *uc)
+{
+	temperature_thread();
+	light_thread();
+	heartbeat();
+}
+
+/***********************************************************************
+ * timer_init()
+ * @return error if any
+ * @brief this function is used to setup timer for temperature and light measurement
+ /***********************************************************************/
+int32_t timer_init(void)
+{
+	int32_t error=0;
+	printf("Timer Init\n");
+	// Timer init
+	signal_action.sa_flags = SA_SIGINFO;
+	signal_action.sa_sigaction = join_threads;//Function to be executed
+	sigemptyset(&signal_action.sa_mask);
+	error=sigaction(SIGRTMIN, &signal_action, NULL);
+    signal_event.sigev_notify = SIGEV_SIGNAL;
+    signal_event.sigev_signo = SIGRTMIN;
+    signal_event.sigev_value.sival_ptr = &timerid;
+    error=timer_create(CLOCK_REALTIME, &signal_event, &timerid);
+	/* Start the timer */
+    timer_data.it_value.tv_sec = PERIOD;
+    timer_data.it_value.tv_nsec = 0;
+    timer_data.it_interval.tv_sec = timer_data.it_value.tv_sec;
+    timer_data.it_interval.tv_nsec = timer_data.it_value.tv_nsec;
+	error=timer_settime(timerid, 0, &timer_data, NULL);
+	return error;
+}
+
+
+/***********************************************************************
+ * kill_logger()
+ * @param sig to be handled
+ * @brief this function is used to kill logger thread with USR1
+ /***********************************************************************/
+void kill_logger(int sig)
+{
+	log_creator(LOG_ERROR,"USR1 Kill logger command received");
+	printf("USR1 Kill logger command received\n");
+	pthread_cancel(thread_logger);
+	logger_condition=0;
+}
+
+/***********************************************************************
+ * kill_server()
+ * @param sig to be handled
+ * @brief this function is used to kill server thread with USR2
+ /***********************************************************************/
+void kill_server(int sig)
+{
+	log_creator(LOG_ERROR,"USR2 Kill server command received");
+	printf("USR2 Kill server command received\n");
+	pthread_cancel(thread_server);
+	server_condition=0;
+}
+
+/***********************************************************************
+ * system_init()
+ * @return error if any
+ * @brief this function is used to initialize all the resources of the project
+ /***********************************************************************/
+int32_t system_init(void)
+{
+	int32_t error=0;
+	logger_condition=1;
+	server_condition=1;
+	condition=1;
+	ptr=NULL;
+	printf("System Init\n");
+	shm_temp=shmget(temperature_id,LOG_SIZE,0666|IPC_CREAT);
+	shm_light=shmget(luminosity_id,LOG_SIZE,0666|IPC_CREAT);
+	sem_logger_ready=sem_open(logger_ready_id, O_CREAT, 0644,0);
+	sem_open(shm_temp_id, O_CREAT, 0644,1);
+	sem_open(led_sem_id, O_CREAT, 0644,1);
+	sem_open(shm_light_id, O_CREAT, 0644,1);
+	sem_open(logfile_sem_id, O_CREAT, 0644,1);
+	sem_open(i2c_sem_id, O_CREAT, 0644,1);
+	sem_trigger=sem_open(trigger_sem_id, O_CREAT, 0644,1);
+	logfile_setup();
+	logger_init();
+	led_init();
+	temperature_init();
+	light_init();
+	//Signal Handling
+	signal(SIGUSR1,kill_logger);
+	signal(SIGUSR2,kill_server);
+	signal(SIGINT,system_end);
+	error=timer_init();
+    return error;
+}
+
+/***********************************************************************
+ * main()
+ * @param argc number of command line arguments passed
+ * @param argv command line arguments passed (logfile name)
+ * @brief This is the main function for the Project.
+ /***********************************************************************/
+int32_t main(int32_t argc, uint8_t **argv)
+{
+	int32_t error=0;
+	pid_t process_id = getpid();
+	printf("Process ID = %d\n",process_id);
+	msg=(uint8_t*)malloc(STR_SIZE);
+	ptr=&error;
+	if(argc<2)
+	{
+		printf("%s <logfilename>\n",argv[0]);	 //log file name as command line argument
+		return 0;
+	}
+	logfile=argv[1];
+	error=system_init();
+	logger_thread();
+	sem_wait(sem_logger_ready);
+	log_creator(LOG_INFO,"Built in start up tests done");
+	server_thread();
+	if(process_id!=getpid())
+	{
+		kill(getpid(),SIGINT);
+	}
+	error=bist_check();
+	while(condition)
+	{
+
+	}
+	free(msg);
+}
+/******************************************
+* light_task_registers.c
+* Author: Sanika Dongre and Monish Nene
+* Date created: 03/25/19
+*******************************************/
+
+/*******************************************
+* Includes
+*******************************************/
+
+#include "common.h"
+#include <math.h>
+
+/*********************************************
+* Macros
+**********************************************/
+#define ID_VALUE (0x50)
+#define ID_REGISTER (0x8A)
+#define ID_VAL (0X07)
+#define LUX_SLAVE_ADDR (0x39)
+#define POWER_ADDR (0x80)
+#define TIMING_REG (0X81)
+#define TIMING_VAL (0X12)
+#define START_COMMAND (0X80)
+#define POWER_ON_CMD (0x3)
+#define CONTROL_VAL (0X09)
+#define GAIN (0x10)
+#define TLL (0x82)
+#define INTEGRATION (0X03)
+#define TLH (0x83)
+#define THL (0X84)
+#define THH (0X85)
+#define INTERRUPT_REG (0X86)
+#define INTERRUPT_VALUE (0X05)
+#define POWER_OFF_CMD (0x00)
+#define CH0_L (0x8C)
+#define CH0_H (0x8D)
+#define CH1_L (0x8E)
+#define CH1_H (0x8F)
+
+typedef enum  //error or success enum
+{
+	error=0,
+	success=1
+}error_check;
+
+/***********************
+*i2c_file function
+************************/
+
+uint8_t i2c_file(int32_t fd)
+{
+	fd=open("/dev/i2c-2", O_RDWR);
+	if (fd<0)
+	{
+		return error;     //opening error
+	}
+	if(ioctl(fd, I2C_SLAVE, LUX_SLAVE_ADDR)<0)
+	{
+		return error;  //write has been failed
+	}
+	return success;
+}
+
+/********************
+* Write operation 
+***********************/
+
+uint8_t i2c_write(int32_t fd,uint8_t regval)
+{
+	if(write(fd, &regval, sizeof(regval))!=sizeof(regval))
+	{
+		return error;
+	}
+	return success;
+}
+
+/***************************
+* Read operation
+****************************/
+
+uint8_t i2c_read(int32_t fd,uint8_t* buffer,uint32_t size)
+{
+	if(read(fd, buffer, size)!=size)
+	{
+		return error;
+	}
+	return success;
+
+}
+
+/*************************
+* command register test
+****************************/
+
+uint8_t cmdreg_write_test(int32_t fd)
+{
+	uint8_t comm=START_COMMAND; //sending stard command = 80
+	if(write(fd, &comm, 1) < 0)
+	{
+		return error;
+	}
+	return success;
+}
+
+/******************************************
+* control register test
+* To write and read the control register
+******************************************/
+
+uint8_t control_reg_test(int32_t fd)
+{
+	uint8_t comm=POWER_ADDR;
+	int32_t check=0;
+	uint8_t value;
+	write(fd,&comm,1);
+	comm=CONTROL_VAL;
+	write(fd,&comm,1);
+	check=read(fd,&value,1);
+	if(value!=CONTROL_VAL)
+	{
+		return error;
+	}
+	return value;
+}
+
+/************************************************
+* identification register test
+* To write and read the identification register
+************************************************/
+
+uint8_t id_reg_test(int32_t fd)
+{
+	uint8_t comm=ID_REGISTER;
+	uint8_t value;
+	int32_t check=0;
+	write(fd,&comm,1);
+	comm=ID_VAL;
+	write(fd,&comm,1);
+	check=read(fd,&value,1);
+	if(value!=ID_VAL)
+	{
+		return error;
+	}
+	return value;
+}
+
+/******************************************
+* timing register test
+* To write and read the timing register
+******************************************/
+
+uint8_t timing_reg_test(int32_t fd)
+{
+	uint8_t value;
+	uint8_t check=0;
+	uint8_t comm=TIMING_REG;
+	write(fd,&comm,1);
+	comm=TIMING_VAL;
+	write(fd,&comm,1);
+	check=read(fd,&value,1);
+	if(value!=TIMING_VAL)
+	{
+		return error;
+	}
+	return value;
+}
+
+/******************************************
+* to set gain timing register test
+* To set gain bit in the timing register
+* gain of 16 times is obtained
+******************************************/
+uint8_t set_gain(int32_t fd)
+{
+	uint8_t value;
+	uint8_t check=0;
+	uint8_t comm=TIMING_REG;
+	write(fd,&comm,1);
+	comm=GAIN;
+	write(fd,&comm,1);
+	check=read(fd,&value,1);
+	if(value!=GAIN)
+	{
+		return error;
+	}
+	return value;
+}
+
+/******************************************
+* Integration time function 
+* To set the integration time in timing reg
+******************************************/
+uint8_t integration_time(int32_t fd)
+{
+	uint8_t value;
+	uint8_t check=0;
+	uint8_t comm=TIMING_REG;
+	write(fd,&comm,1);
+	comm=INTEGRATION;
+	write(fd,&comm,1);
+	check=read(fd,&value,1);
+	if(value!=INTEGRATION)
+	{
+		return error;
+	}
+	return value;
+}
+
+/******************************************
+* interrupt control register test
+* To write and read the  interrupt control register
+******************************************/
+
+uint8_t int_control_reg_test(int32_t fd)
+{
+	int32_t check=0;
+	uint8_t value;
+	uint8_t comm=INTERRUPT_REG;
+	write(fd,&comm,1);
+	comm=INTERRUPT_VALUE;
+	write(fd,&comm,1);
+	check=read(fd,&value,1);
+	if(value!=INTERRUPT_VALUE)
+	{
+		return error;
+	}
+	return value;
+}
+
+/******************************************************
+* interrupt threshold register test
+* To write and read the interrupt threshold register
+*******************************************************/
+
+uint8_t int_threshold_test(int fd)
+{
+	uint8_t dataop=0;
+	uint8_t databuff=1;
+	int32_t error=0;
+	i2c_write(fd,TLL);
+	i2c_write(fd,databuff);
+	error=i2c_read(fd,&dataop,1);
+	if(dataop!=1)
+	{
+		return error;
+	}
+	i2c_write(fd,TLH);
+	databuff=2;
+	i2c_write(fd, databuff);
+	error=i2c_read(fd,&dataop,1);
+	if(dataop!=2)
+	{
+		return error;
+	}
+	i2c_write(fd,THL);
+	databuff=3;
+	i2c_write(fd,databuff);
+	error=i2c_read(fd,&dataop,1);
+	if(dataop!=3)
+	{
+		return error;
+	}
+	i2c_write(fd,THH);
+	databuff=4;
+	i2c_write(fd,databuff);
+	error=i2c_read(fd,&dataop,1);
+	if(dataop!=4)
+	{
+		return error;
+	}
+	return success;
+}
+
+/******************************************
+* power off function
+******************************************/
+
+uint8_t poweroff_func(int32_t fd)
+{
+	uint8_t value=3;
+	int32_t check=0;
+	uint8_t comm=POWER_ADDR;
+	write(fd,&comm,1);
+	comm=POWER_OFF_CMD;
+	write(fd,&comm,1);
+	check=read(fd,&value,1);
+	if(value!=0)
+	{
+		return error;
+	}
+	return success;	
+}
+
+/******************************************
+* channel0 read test
+* To read the data0 register
+******************************************/
+
+uint16_t channel0_read(int32_t fd)
+{
+	uint8_t lsbval;	
+	uint16_t msbval, outval;
+	int value_ob;
+	value_ob =  CH0_L;
+	write(fd, &value_ob, 1);
+	read(fd, &lsbval, 1);
+	value_ob =  CH0_H;
+  	write(fd, &value_ob, 1);
+	read(fd, &msbval, 1);
+	outval = msbval<<8 | lsbval;
+	return outval;
+}
+
+/******************************************
+* channel1 register test
+* To read the data1 register
+******************************************/
+
+uint16_t channel1_read(int32_t fd)
+{
+	int value_ob;
+	uint8_t lsbval;
+	uint16_t msbval, outval;
+	value_ob =  CH1_L;
+	write(fd, &value_ob, 1);
+  	read(fd, &lsbval, 1);
+	value_ob =  CH1_H;
+	write(fd, &value_ob, 1);
+	read(fd, &msbval, 1);
+	outval = msbval<<8 | lsbval;
+	return outval;
+}
+
+/******************************************************
+* Get luminosity function
+* Reads data registers (0 and 1)
+* and then lux output is calculated based on formula
+* return the lux value in float
+*********************************************************/
+
+float get_luminosity(int32_t fd)
+{
+	uint8_t sensor_id=0, powerval=0, timer=0;
+	int32_t error=0;
+	uint8_t databuff=1, dataop;
+	uint8_t regval;
+	uint16_t ch0_l=0,ch1_l=0,ch0_h=0,ch1_h=0;
+	uint16_t ch0=0,ch1=0;
+	float adcval=0.0;
+	int16_t lux_output=0;
+	//read channels
+	uint8_t addr = 0x8C;
+	if(write(fd,&addr,1)!=1)
+	{
+		perror("errror in write ch0l\n");
+	}
+	if(read(fd,&ch0_l,1)!=1)
+	{
+		perror("error in read ch0l\n");
+	}
+	addr=0x8D;
+	if(write(fd,&addr,1)!=1)
+	{
+		perror("error in write ch0h\n");
+	}
+	if(read(fd,&ch0_h,1)!=1)
+	{
+		perror("error in read choh\n");
+	}
+	addr=0x8E;
+	if(write(fd,&addr,1)!=1)
+	{
+		perror("error in write ch1l\n");
+	}
+	if(read(fd,&ch1_l,1)!=1)
+	{
+		perror("error in read ch1li\n");
+	}
+	addr=0x8F;
+	if(write(fd,&addr,1)!=1)
+	{
+		perror("error in write ch1h\n");
+	}
+	if(read(fd,&ch1_h,1)!=1)
+	{
+		perror("error in read ch1h\n");
+	}
+	printf("ch0l=%d,ch1l=%d, ch0h=%d, ch1h=%d\n",ch0_l,ch1_l, ch0_l,ch0_h);
+	ch1=(ch1_h<<8)|ch1_l;
+	ch0=(ch0_h<<8)|ch0_l;
+	adcval = (float)ch1/(float)ch0;	
+	printf("ch0=%d,ch1=%d,adcval=%f\n",ch0,ch1,adcval);
+	//adc count val range check
+	if(adcval>0 && adcval <= 0.5)
+	{
+		lux_output = (0.0304 * ch0) - (0.062 * ch0 * pow(adcval, 1.4));
+	}
+	else if(adcval<0.61)
+	{
+		lux_output = (0.0224 * ch0) - (0.031 * ch1);
+	} 
+	else if(adcval<0.80)
+	{
+        	lux_output = (0.0128 * ch0) - (0.0153 * ch1);
+	}
+	else if(adcval<1.30)
+	{
+        	lux_output = (0.00146 * ch0) - (0.00112 * ch1);
+	}
+    	else
+	{
+		lux_output=0;
+	}	
+	return lux_output;
+}
+
+/************************************************
+* test luminosity 
+* To check if luminosity is within certain range
+*************************************************/
+
+uint8_t test_luminosity(int32_t fd)
+{
+	float lux_output;
+	lux_output = get_luminosity(fd);
+	printf("%f is the luminosity value\n", lux_output);
+	if(lux_output<-100 && lux_output>1800)
+	{
+		return error;
+	}
+	return success;
+}
+	
+
+int main()
+{
+	float lux_output;
+	uint8_t op;
+	int32_t error=0;	
+	int32_t fd;
+	uint8_t powerval=0,sensor_id=0, timer=0, interr=0;
+	//i2c_init
+	fd=open("/dev/i2c-2", O_RDWR);
+	ioctl(fd, I2C_SLAVE, LUX_SLAVE_ADDR);	
+	//power on	
+	i2c_write(fd,POWER_ADDR);
+	i2c_write(fd,POWER_ON_CMD);
+	error=i2c_read(fd,&powerval,1);
+	if(powerval==POWER_ON_CMD)
+	{
+		printf("the value of power is %x\n", powerval);
+	}
+	//test luminosity
+	op=test_luminosity(fd);
+	if(op==1)
+	{
+		printf("test luminosity successfull\n");
+	}
+	//test control reg
+	op=control_reg_test(fd);
+	if(op==9)
+	{
+		printf("test control reg successfull\n");
+	}
+	//test id reg
+	op=id_reg_test(fd);
+	if(op==7)
+	{
+		printf("test identificarion register successfull\n");
+	}
+	// test timing reg
+	op=timing_reg_test(fd);
+	if(op==12)
+	{
+		printf("test timing register successfull\n");
+	}
+	//test interrupt threshold reg
+	op=int_threshold_test(fd);
+	if(op==1)
+	{
+		printf("test threshold successfull\n");
+	}
+	//test interrupt control reg
+	op=int_control_reg_test(fd);
+	if(op==5)
+	{
+		printf("test interrupt control register successfull\n");
+	}
+	//set gain in timing reg
+	op=set_gain(fd);
+	if(op==10)
+	{
+		printf("timing register gain set successfully\n");
+	}
+	//set integration time in timing reg
+	op=integration_time(fd);
+	if(op==3)
+	{
+		printf("timing register integration set successfully\n");
+	}
+}
+/*****************************************
+* LED task
+* Author: Sanika Dongre and Monish Nene
+* Date created: 03/25/19
+*****************************************/
+
+/************************************
+* Includes
+*************************************/
+
+#include "bbgled.h"
+
+/************************************
+* Global variable
+*************************************/
+
+sem_t* sem_led;
+
+/***********************************************************************
+ * led_init()
+ * @brief This function is used to initialize files and folders for led
+***********************************************************************/
+void led_init(void)
+{
+	sem_led = sem_open(led_sem_id,0);
+	system(led_init_cmd);
+}
+
+
+/***********************************************************************
+ * led_on()
+ * @param led to be turned on
+ * @brief This function is used to turn on led
+***********************************************************************/
+void led_on(uint8_t led)
+{
+	sem_wait(sem_led);
+	if(led<LED_COUNT)
+	{
+		path[pathx]='3'+led;
+		FILE* fptr=fopen(path,"w+");
+		uint8_t data='1',error=0;
+		error=fwrite(&data,1,1,fptr);
+		//fclose(fptr);
+	}
+	else
+	{
+		printf("LED index error\n");
+	}
+	sem_post(sem_led);
+	return;
+}
+
+/***********************************************************************
+ * led_off()
+ * @param led to be turned off
+ * @brief This function is used to turn off led
+***********************************************************************/
+void led_off(uint8_t led)
+{
+	sem_wait(sem_led);
+	if(led<LED_COUNT)
+	{
+		path[pathx]='3'+led;
+		FILE* fptr=fopen(path,"w+");
+		uint8_t data='0',error=0;
+		error=fwrite(&data,1,1,fptr);
+		//fclose(fptr);
+	}
+	else
+	{
+		printf("LED index error\n");
+	}
+	sem_post(sem_led);
+	return;
+}
+
+/***********************************************************************
+ * led_toggle()
+ * @param led to be toggled
+ * @brief This function is used to toggle led
+***********************************************************************/
+void led_toggle(uint8_t led)
+{
+	FILE* fptr;
+	sem_wait(sem_led);
+	if(led<LED_COUNT)
+	{
+		path[pathx]='3'+led;
+		fptr=fopen(path,"w+");
+		if(fptr==NULL)
+		{
+			printf("file not found for %s\n",path);
+		}
+		uint8_t data='1',error=0,prev=0;
+		error=fread(&prev,1,1,fptr);
+		data=(prev=='0')?'1':'0';
+		error=fwrite(&data,1,1,fptr);
+	}
+	else
+	{
+		printf("LED index error\n");
+	}
+	sem_post(sem_led);
+}
+
+/********************************************t***************************
+ * main()
+ * @brief This function is used to test leds
+***********************************************************************/
+#ifdef LED_TEST
+void main()
+{
+	uint8_t led=0,i=0;
+	led_off(0);
+	led_off(1);
+	led_off(2);
+	led_off(3);
+	for(i=0;;i++)
+	{
+		usleep(1e5);
+		led_toggle(led);
+		led=(led==LED_COUNT-1)?0:(led+1);
+	}
+}
+#endif
+/******************************************
+* server.c
+* Remote socket task
+* Author: Sanika Dongre and Monish Nene
+* Date created: 03/29/19
+*******************************************/
+
+/*******************************************
+* Includes
+*******************************************/
+#include "server.h"
+
+/*******************************************
+* Global variables
+*******************************************/
+
+int32_t server_temp=0,server_light=0;
+sem_t* sem_temp;
+sem_t* sem_light;
+uint8_t* shm_ptr;
+
+/***********************************************************************
+ * find_temperature()
+ * @return temperature value read
+ * @brief This function is used to read temperature from shared memory
+/***********************************************************************/
+static int16_t find_temperature (void)
+{
+	int32_t error=0;
+	log_t temp_data;
+	sem_wait(sem_temp);
+	shm_ptr=shmat(server_temp,(void*)0,0);
+	memcpy(&temp_data,shm_ptr,LOG_SIZE);
+	shmdt(shm_ptr);
+	sem_post(sem_temp);
+	return temp_data.data[celcius_id];
+}
+
+/***********************************************************************
+ * find_luminosity()
+ * @return light value read
+ * @brief This function is used to read luminosity from shared memory
+/***********************************************************************/
+static int16_t find_luminosity(void)
+{
+	int32_t error=0;
+	log_t light_data;
+    sem_wait(sem_light);
+	shm_ptr=shmat(server_light,(void*)0,0);
+	memcpy(&light_data,shm_ptr,LOG_SIZE);
+	shmdt(shm_ptr);
+	sem_post(sem_light);
+	return light_data.data[luminosity_id];
+}
+
+/***********************************************************************
+ * remote_server()
+ * @brief This function is used to continuously run remote server
+***********************************************************************/
+void remote_server(void)
+{
+	int32_t sockfd=0,conn=0, fork_child=1, serverlen=0, size=0, temp=0, light=0;
+	uint8_t value=0;
+	struct hostent* hostptr;
+	struct sockaddr_in server_addr, client_addr;
+	sockfd = socket(AF_INET, SOCK_STREAM,0);
+	//shared mem
+	server_temp=shmget(temperature_id,LOG_SIZE,0666|IPC_CREAT);
+	server_light=shmget(luminosity_id,LOG_SIZE,0666|IPC_CREAT);
+	sem_temp = sem_open(shm_temp_id,0);
+	sem_light = sem_open(shm_light_id,0);
+	//socket create
+	if(sockfd < 0)
+	{
+		perror("socket creation error\n");
+	}
+	memset((char*)&server_addr,0,sizeof(server_addr));
+	server_addr.sin_family=AF_INET;
+	server_addr.sin_port= htons(server_port);
+	server_addr.sin_addr.s_addr=htonl(INADDR_ANY);
+	serverlen = sizeof(struct sockaddr_in);
+	//socket bind
+	if(bind(sockfd,(struct sockaddr*)&server_addr,sizeof(server_addr))<0)
+	{
+		perror("socket binding error\n");
+	}
+	//listen
+	if(listen(sockfd,5)<0)
+	{
+		perror("socket listening error\n");
+	}
+	log_creator(LOG_INFO,"Server Started and waiting for remote client requests");
+	while(condition)
+	{
+		//connection accept
+		conn=accept(sockfd,(struct sockaddr*)&client_addr,&serverlen);
+		if(!fork())
+		{
+			size=recv(conn,&value,sizeof(value),0);
+			if(value=='?')
+			{
+				size=write(conn,&value,sizeof(value));
+				break;
+			}
+			log_creator(LOG_INFO,"Data sent to remote client from server");
+			temp=find_temperature();
+			light=find_luminosity();
+			size=write(conn,&light,sizeof(light)); //send lux value to client
+			size=write(conn,&temp,sizeof(temp)); // send temperature value to client
+			break;
+		}
+	}
+	//socket close
+	close(sockfd);
+	return;
+}
+
+
+/******************************************
+* client.c
+* Remote socket task
+* Author: Sanika Dongre and Monish Nene
+* Date created: 03/29/19
+*******************************************/
+
+
+/*******************************************
+* Includes
+*******************************************/
+
+#include <sys/types.h>
+#include <sys/socket.h>
+#include <stdio.h>
+#include <netinet/in.h>
+#include <netdb.h>
+#include <string.h>
+#include <stdlib.h>
+#include <stdint.h>
+#include <errno.h>
+#include <unistd.h>
+
+/*******************************************
+* Macros
+*******************************************/
+
+#define IP_ADDR "10.0.0.152" //ip addr
+#define PORT_ADDRESS 12048
+
+int main(void)
+{
+	int sockfd, operation, send_data, received, data, acc_conn, data_f;
+	struct sockaddr_in server_addr;
+	struct hostent* hostptr;
+	sockfd=socket(AF_INET,SOCK_STREAM,0);
+	//socket create
+	if(sockfd<0)
+	{
+		perror("socket creation failed\n");
+	}
+	puts("socket creation successful\n");
+	memset((char*)&server_addr,0,sizeof(server_addr));
+	server_addr.sin_family=AF_INET;
+	server_addr.sin_port = htons(PORT_ADDRESS);
+	hostptr=gethostbyname(IP_ADDR);
+	memcpy(&server_addr.sin_addr,hostptr->h_addr,hostptr->h_length);
+	// connection accept
+	acc_conn = connect(sockfd,(struct  sockaddr*)&server_addr, sizeof(server_addr));
+	if((acc_conn)<0)
+	{
+		printf("server is not connection ready\n");
+		exit(-1);
+	}
+	received = write(sockfd,&data,sizeof(data));
+	received = read(sockfd,&data,sizeof(data)); // receive lux data
+	if(data>-10)
+	{
+		printf("Light=%d\n",data);  // print lux data
+	}
+	else
+	{
+		printf("LUX Error\n"); // error
+	}
+	received = read(sockfd,&data,sizeof(data)); //recieve temp data
+	if(data<1e5)
+	{
+		printf("Temperature: %d°C %d°F %d°K\n",data,((data*9)/5)+32,data+273); // print temperature data 
+	}		
+	else	
+	{	
+		printf("Temperature Error\n"); // error
+	}
+	//close socket
+	close(sockfd);
+	return 0;
+}
